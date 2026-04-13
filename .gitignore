@@ -69,3 +69,12 @@ quantum-agent-env/
 
 # Node
 node_modules/
+hiv_md_simulation/
+protein_ligand_md/
+mmpbsa_pipeline/
+gromacs_md/
+gromacs_md_simulation/
+*.xtc
+*.trr
+*.tpr
+*.edr
