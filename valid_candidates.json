@@ -1,0 +1,72 @@
+[
+  {
+    "core": "Naphthalene",
+    "p1": "meta-F",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@@H](Cc1cccc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21"
+  },
+  {
+    "core": "Naphthalene",
+    "p1": "meta-F",
+    "p2": "bis-THF",
+    "linker": "Thioamide",
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@@H](Cc1cccc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21"
+  },
+  {
+    "core": "Naphthalene",
+    "p1": "meta-F",
+    "p2": "spiro-THF",
+    "linker": "Amide",
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@@H](Cc1cccc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21"
+  },
+  {
+    "core": "Naphthalene",
+    "p1": "3,5-diF",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@@H](Cc1cc(F)cc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21"
+  },
+  {
+    "core": "Naphthalene",
+    "p1": "tert-Butyl",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@@H](Cc1cccc(C(C)(C)C)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21"
+  },
+  {
+    "core": "Isoquinoline",
+    "p1": "meta-F",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "smiles": "c1ccc2cccnc2c1C(=O)N[C@@H](Cc1cccc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21"
+  },
+  {
+    "core": "Isoquinoline",
+    "p1": "3,5-diF",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "smiles": "c1ccc2cccnc2c1C(=O)N[C@@H](Cc1cc(F)cc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21"
+  },
+  {
+    "core": "Quinazoline",
+    "p1": "meta-F",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "smiles": "c1ccc2c(c1)ncnc2C(=O)N[C@@H](Cc1cccc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21"
+  },
+  {
+    "core": "Quinazoline",
+    "p1": "meta-CF3",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "smiles": "c1ccc2c(c1)ncnc2C(=O)N[C@@H](Cc1cccc(C(F)(F)F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21"
+  },
+  {
+    "core": "Indole",
+    "p1": "meta-CF3",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "smiles": "c1ccc2[nH]ccc2c1C(=O)N[C@@H](Cc1cccc(C(F)(F)F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21"
+  }
+]

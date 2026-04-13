@@ -1,0 +1,32 @@
+[
+  {
+    "name": "CURE_4G_007",
+    "smiles": "c1cc(F)c(F)c(F)c1C(=O)NCC(O)CNC(=O)CCCCCF",
+    "modification": "Chain +2 carbons",
+    "description": "Extended hydrophobic chain",
+    "expected_boost": 0.5,
+    "mw": 364.3390000000002,
+    "logp": 1.8407,
+    "predicted": -4.865
+  },
+  {
+    "name": "CURE_4G_008",
+    "smiles": "c1cc(F)c(F)c(F)c1C(=O)NCC(O)CNC(=O)CCCCCCF",
+    "modification": "Chain +4 carbons",
+    "description": "Further extended chain",
+    "expected_boost": 0.7,
+    "mw": 378.36600000000027,
+    "logp": 2.2308000000000003,
+    "predicted": -4.665
+  },
+  {
+    "name": "CURE_4G_009",
+    "smiles": "c1cc(F)c(F)c(F)c1C(=O)NCC(O)CNC(=O)CCCCCCCF",
+    "modification": "Chain +5 carbons",
+    "description": "Maximum extension",
+    "expected_boost": 0.8,
+    "mw": 392.3930000000003,
+    "logp": 2.6209000000000007,
+    "predicted": -4.565
+  }
+]

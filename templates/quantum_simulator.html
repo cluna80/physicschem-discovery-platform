@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Quantum Simulator</title>
+<style>
+body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 20px; }
+.container { max-width: 600px; margin: 0 auto; }
+.card { background: white; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.back-btn { display: inline-block; margin-bottom: 20px; padding: 8px 16px; background: #667eea; color: white; text-decoration: none; border-radius: 5px; }
+select, input { padding: 8px; margin: 5px; }
+button { background: #667eea; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+.bar { height: 30px; background: #4caf50; margin: 10px 0; border-radius: 3px; width: 0%; }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="/" class="back-btn">← Back to Lab</a>
+<h1>Quantum Simulator</h1>
+<div class="card">
+<h2>Grover's Algorithm</h2>
+<p>Qubits:
+<select id="qubits">
+<option value="3">3 qubits (8 states)</option>
+<option value="4">4 qubits (16 states)</option>
+<option value="10">10 qubits (1024 states)</option>
+<option value="15">15 qubits (32768 states)</option>
+<option value="20">20 qubits (1M states)</option>
+</select>
+</p>
+<p>Target: <input type="number" id="target" value="5"></p>
+<p>Noise: <input type="range" id="noise" min="0" max="10" value="5"> <span id="noise_val">5%</span></p>
+<button onclick="runSimulation()">⚛️ Run Quantum Simulation</button>
+<div id="result"></div>
+</div>
+</div>
+<script>
+async function runSimulation() {
+    const qubits = document.getElementById('qubits').value;
+    const target = document.getElementById('target').value;
+    const noise = document.getElementById('noise').value;
+    const resultDiv = document.getElementById('result');
+    
+    resultDiv.innerHTML = '<p>Running quantum simulation...</p>';
+    
+    const response = await fetch('/api/run_quantum', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            n_qubits: parseInt(qubits),
+            target: parseInt(target),
+            noise: parseFloat(noise) / 100
+        })
+    });
+    const data = await response.json();
+    
+    resultDiv.innerHTML = `
+        <h3>Results</h3>
+        <p>Qubits: ${data.n_qubits} | Noise: ${data.noise}% | Target: |${data.target}></p>
+        <div class="bar" style="width: ${data.success_probability}%"></div>
+        <p><strong>Success Probability: ${data.success_probability}%</strong></p>
+        <p>Insight: With ${data.noise}% noise, ${data.n_qubits}-qubit Grover achieves ${data.success_probability}% success.</p>
+        <p>From scaling study: At 20 qubits, success collapses to 3.7%.</p>
+    `;
+}
+document.getElementById('noise').oninput = function() {
+    document.getElementById('noise_val').innerText = this.value + '%';
+};
+</script>
+</body>
+</html>

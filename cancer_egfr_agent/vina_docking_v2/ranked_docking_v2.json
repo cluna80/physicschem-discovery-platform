@@ -1,0 +1,1374 @@
+{
+  "box_center": [
+    24.77,
+    9.19,
+    -0.0
+  ],
+  "box_size": [
+    22.0,
+    22.0,
+    22.0
+  ],
+  "results": [
+    {
+      "generation": 38,
+      "smiles": "C#Cc1cnc2c(C#C)c(OCCN)c(-c3cc(C=CC(=O)NCC)c4ncncc4c3)c(C)c2n1",
+      "fitness": 183.99128000000002,
+      "mw": 476.5400000000003,
+      "logp": 2.997820000000001,
+      "evol_rank": 1,
+      "docking": {
+        "success": true,
+        "best": -10.54,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -10.54,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -9.582,
+            "rmsd_lb": 2.425,
+            "rmsd_ub": 5.219
+          },
+          {
+            "mode": 3,
+            "affinity": -9.291,
+            "rmsd_lb": 1.846,
+            "rmsd_ub": 3.825
+          },
+          {
+            "mode": 4,
+            "affinity": -9.165,
+            "rmsd_lb": 2.611,
+            "rmsd_ub": 5.527
+          },
+          {
+            "mode": 5,
+            "affinity": -9.123,
+            "rmsd_lb": 2.774,
+            "rmsd_ub": 8.23
+          },
+          {
+            "mode": 6,
+            "affinity": -9.113,
+            "rmsd_lb": 3.19,
+            "rmsd_ub": 7.166
+          },
+          {
+            "mode": 7,
+            "affinity": -9.106,
+            "rmsd_lb": 4.401,
+            "rmsd_ub": 9.712
+          },
+          {
+            "mode": 8,
+            "affinity": -8.995,
+            "rmsd_lb": 4.246,
+            "rmsd_ub": 9.564
+          },
+          {
+            "mode": 9,
+            "affinity": -8.557,
+            "rmsd_lb": 2.318,
+            "rmsd_ub": 4.791
+          }
+        ]
+      }
+    },
+    {
+      "generation": 29,
+      "smiles": "C#CN(CN(N)c1cnc2ccccc2n1)c1cc(C(C)NC(=O)C=C)c2cncnc2c1",
+      "fitness": 182.6844,
+      "mw": 438.4950000000002,
+      "logp": 2.6711,
+      "evol_rank": 18,
+      "docking": {
+        "success": true,
+        "best": -10.44,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -10.44,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -9.23,
+            "rmsd_lb": 2.386,
+            "rmsd_ub": 3.716
+          },
+          {
+            "mode": 3,
+            "affinity": -9.158,
+            "rmsd_lb": 3.302,
+            "rmsd_ub": 7.809
+          },
+          {
+            "mode": 4,
+            "affinity": -9.132,
+            "rmsd_lb": 3.621,
+            "rmsd_ub": 7.749
+          },
+          {
+            "mode": 5,
+            "affinity": -9.131,
+            "rmsd_lb": 4.424,
+            "rmsd_ub": 8.31
+          },
+          {
+            "mode": 6,
+            "affinity": -9.11,
+            "rmsd_lb": 3.606,
+            "rmsd_ub": 7.335
+          },
+          {
+            "mode": 7,
+            "affinity": -8.997,
+            "rmsd_lb": 1.397,
+            "rmsd_ub": 1.867
+          },
+          {
+            "mode": 8,
+            "affinity": -8.864,
+            "rmsd_lb": 3.662,
+            "rmsd_ub": 7.978
+          },
+          {
+            "mode": 9,
+            "affinity": -8.852,
+            "rmsd_lb": 5.013,
+            "rmsd_ub": 9.256
+          }
+        ]
+      }
+    },
+    {
+      "generation": 23,
+      "smiles": "C#CN(CCc1cnc2ccccc2n1)c1cc(C(C)NC(=O)C=C)c2cncnc2c1",
+      "fitness": 180.496,
+      "mw": 422.4920000000002,
+      "logp": 3.5760000000000023,
+      "evol_rank": 20,
+      "docking": {
+        "success": true,
+        "best": -10.31,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -10.31,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -9.599,
+            "rmsd_lb": 2.289,
+            "rmsd_ub": 3.608
+          },
+          {
+            "mode": 3,
+            "affinity": -9.375,
+            "rmsd_lb": 1.696,
+            "rmsd_ub": 4.154
+          },
+          {
+            "mode": 4,
+            "affinity": -9.05,
+            "rmsd_lb": 3.515,
+            "rmsd_ub": 7.601
+          },
+          {
+            "mode": 5,
+            "affinity": -9.016,
+            "rmsd_lb": 2.745,
+            "rmsd_ub": 5.771
+          },
+          {
+            "mode": 6,
+            "affinity": -9.012,
+            "rmsd_lb": 3.598,
+            "rmsd_ub": 6.959
+          },
+          {
+            "mode": 7,
+            "affinity": -8.926,
+            "rmsd_lb": 3.342,
+            "rmsd_ub": 7.742
+          },
+          {
+            "mode": 8,
+            "affinity": -8.909,
+            "rmsd_lb": 3.254,
+            "rmsd_ub": 7.388
+          },
+          {
+            "mode": 9,
+            "affinity": -8.902,
+            "rmsd_lb": 2.993,
+            "rmsd_ub": 5.395
+          }
+        ]
+      }
+    },
+    {
+      "generation": 26,
+      "smiles": "C#Cc1c(OCC)c(-c2cc(C=CC(=O)NCCN)c3ncncc3c2)c(C)c2nccnc12",
+      "fitness": 183.93392,
+      "mw": 452.51800000000026,
+      "logp": 3.0165200000000008,
+      "evol_rank": 2,
+      "docking": {
+        "success": true,
+        "best": -10.05,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -10.05,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -9.981,
+            "rmsd_lb": 2.971,
+            "rmsd_ub": 5.415
+          },
+          {
+            "mode": 3,
+            "affinity": -9.931,
+            "rmsd_lb": 1.404,
+            "rmsd_ub": 3.073
+          },
+          {
+            "mode": 4,
+            "affinity": -9.604,
+            "rmsd_lb": 2.965,
+            "rmsd_ub": 5.129
+          },
+          {
+            "mode": 5,
+            "affinity": -9.263,
+            "rmsd_lb": 3.41,
+            "rmsd_ub": 8.006
+          },
+          {
+            "mode": 6,
+            "affinity": -9.18,
+            "rmsd_lb": 2.833,
+            "rmsd_ub": 5.573
+          },
+          {
+            "mode": 7,
+            "affinity": -9.142,
+            "rmsd_lb": 2.694,
+            "rmsd_ub": 6.421
+          },
+          {
+            "mode": 8,
+            "affinity": -9.061,
+            "rmsd_lb": 2.628,
+            "rmsd_ub": 5.681
+          },
+          {
+            "mode": 9,
+            "affinity": -8.96,
+            "rmsd_lb": 2.921,
+            "rmsd_ub": 5.774
+          }
+        ]
+      }
+    },
+    {
+      "generation": 30,
+      "smiles": "C#CN(CNc1cnc2ccccc2n1)c1cc(CNC(=O)C=C)c2cncnc2c1",
+      "fitness": 183.3676,
+      "mw": 409.4530000000002,
+      "logp": 2.8419000000000008,
+      "evol_rank": 12,
+      "docking": {
+        "success": true,
+        "best": -10.04,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -10.04,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -9.861,
+            "rmsd_lb": 1.689,
+            "rmsd_ub": 4.227
+          },
+          {
+            "mode": 3,
+            "affinity": -9.835,
+            "rmsd_lb": 2.011,
+            "rmsd_ub": 4.124
+          },
+          {
+            "mode": 4,
+            "affinity": -9.358,
+            "rmsd_lb": 2.94,
+            "rmsd_ub": 4.817
+          },
+          {
+            "mode": 5,
+            "affinity": -9.266,
+            "rmsd_lb": 3.198,
+            "rmsd_ub": 7.261
+          },
+          {
+            "mode": 6,
+            "affinity": -9.206,
+            "rmsd_lb": 3.458,
+            "rmsd_ub": 8.186
+          },
+          {
+            "mode": 7,
+            "affinity": -9.095,
+            "rmsd_lb": 2.12,
+            "rmsd_ub": 3.429
+          },
+          {
+            "mode": 8,
+            "affinity": -8.943,
+            "rmsd_lb": 1.765,
+            "rmsd_ub": 4.456
+          },
+          {
+            "mode": 9,
+            "affinity": -8.918,
+            "rmsd_lb": 3.061,
+            "rmsd_ub": 5.757
+          }
+        ]
+      }
+    },
+    {
+      "generation": 34,
+      "smiles": "C#Cc1cnc2c(C#C)c(OCCO)c(-c3cc(C=CC(=O)NCC)c4ncncc4c3)c(C)c2n1",
+      "fitness": 183.87432,
+      "mw": 477.5240000000003,
+      "logp": 3.0314200000000007,
+      "evol_rank": 5,
+      "docking": {
+        "success": true,
+        "best": -9.979,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -9.979,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -9.148,
+            "rmsd_lb": 2.767,
+            "rmsd_ub": 5.277
+          },
+          {
+            "mode": 3,
+            "affinity": -8.843,
+            "rmsd_lb": 2.126,
+            "rmsd_ub": 3.835
+          },
+          {
+            "mode": 4,
+            "affinity": -8.665,
+            "rmsd_lb": 2.991,
+            "rmsd_ub": 8.201
+          },
+          {
+            "mode": 5,
+            "affinity": -8.621,
+            "rmsd_lb": 3.446,
+            "rmsd_ub": 7.163
+          },
+          {
+            "mode": 6,
+            "affinity": -8.62,
+            "rmsd_lb": 2.921,
+            "rmsd_ub": 5.469
+          },
+          {
+            "mode": 7,
+            "affinity": -8.599,
+            "rmsd_lb": 4.625,
+            "rmsd_ub": 9.774
+          },
+          {
+            "mode": 8,
+            "affinity": -8.558,
+            "rmsd_lb": 4.508,
+            "rmsd_ub": 9.624
+          },
+          {
+            "mode": 9,
+            "affinity": -8.367,
+            "rmsd_lb": 2.469,
+            "rmsd_ub": 4.623
+          }
+        ]
+      }
+    },
+    {
+      "generation": 37,
+      "smiles": "C#Cc1c(OCC)c(-c2cc(C=CC(=O)NC)c3nc(C(CN)OC)ncc3c2)cc2nccnc12",
+      "fitness": 183.8984,
+      "mw": 482.54400000000027,
+      "logp": 3.0254000000000003,
+      "evol_rank": 4,
+      "docking": {
+        "success": true,
+        "best": -9.507,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -9.507,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -9.463,
+            "rmsd_lb": 1.425,
+            "rmsd_ub": 2.875
+          },
+          {
+            "mode": 3,
+            "affinity": -8.789,
+            "rmsd_lb": 3.263,
+            "rmsd_ub": 7.708
+          },
+          {
+            "mode": 4,
+            "affinity": -8.783,
+            "rmsd_lb": 1.875,
+            "rmsd_ub": 2.56
+          },
+          {
+            "mode": 5,
+            "affinity": -8.653,
+            "rmsd_lb": 2.765,
+            "rmsd_ub": 7.815
+          },
+          {
+            "mode": 6,
+            "affinity": -8.609,
+            "rmsd_lb": 3.577,
+            "rmsd_ub": 7.129
+          },
+          {
+            "mode": 7,
+            "affinity": -8.598,
+            "rmsd_lb": 1.772,
+            "rmsd_ub": 5.572
+          },
+          {
+            "mode": 8,
+            "affinity": -8.521,
+            "rmsd_lb": 2.157,
+            "rmsd_ub": 5.682
+          },
+          {
+            "mode": 9,
+            "affinity": -8.457,
+            "rmsd_lb": 3.278,
+            "rmsd_ub": 7.99
+          }
+        ]
+      }
+    },
+    {
+      "generation": 40,
+      "smiles": "CC#Cc1c(OC)c(-c2cc(C=CC(=O)NCON)c3ncncc3c2)c(C)c2nccnc12",
+      "fitness": 183.62248,
+      "mw": 454.49000000000024,
+      "logp": 2.90562,
+      "evol_rank": 11,
+      "docking": {
+        "success": true,
+        "best": -9.423,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -9.423,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -9.406,
+            "rmsd_lb": 1.517,
+            "rmsd_ub": 3.232
+          },
+          {
+            "mode": 3,
+            "affinity": -8.777,
+            "rmsd_lb": 2.516,
+            "rmsd_ub": 4.897
+          },
+          {
+            "mode": 4,
+            "affinity": -8.563,
+            "rmsd_lb": 1.686,
+            "rmsd_ub": 1.768
+          },
+          {
+            "mode": 5,
+            "affinity": -8.509,
+            "rmsd_lb": 2.792,
+            "rmsd_ub": 5.252
+          },
+          {
+            "mode": 6,
+            "affinity": -8.508,
+            "rmsd_lb": 1.505,
+            "rmsd_ub": 2.093
+          },
+          {
+            "mode": 7,
+            "affinity": -8.47,
+            "rmsd_lb": 3.148,
+            "rmsd_ub": 6.461
+          },
+          {
+            "mode": 8,
+            "affinity": -8.46,
+            "rmsd_lb": 2.483,
+            "rmsd_ub": 6.064
+          },
+          {
+            "mode": 9,
+            "affinity": -8.433,
+            "rmsd_lb": 3.16,
+            "rmsd_ub": 6.18
+          }
+        ]
+      }
+    },
+    {
+      "generation": 28,
+      "smiles": "C#Cc1c(OCC)c(-c2cc(C=CC(=O)NCCN)c3ncncc3c2)cc2nccnc12",
+      "fitness": 182.8324,
+      "mw": 438.49100000000027,
+      "logp": 2.7081,
+      "evol_rank": 17,
+      "docking": {
+        "success": true,
+        "best": -9.409,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -9.409,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -9.385,
+            "rmsd_lb": 3.064,
+            "rmsd_ub": 7.127
+          },
+          {
+            "mode": 3,
+            "affinity": -9.371,
+            "rmsd_lb": 1.315,
+            "rmsd_ub": 2.925
+          },
+          {
+            "mode": 4,
+            "affinity": -9.185,
+            "rmsd_lb": 2.988,
+            "rmsd_ub": 6.789
+          },
+          {
+            "mode": 5,
+            "affinity": -9.149,
+            "rmsd_lb": 3.177,
+            "rmsd_ub": 5.57
+          },
+          {
+            "mode": 6,
+            "affinity": -8.76,
+            "rmsd_lb": 2.368,
+            "rmsd_ub": 5.019
+          },
+          {
+            "mode": 7,
+            "affinity": -8.732,
+            "rmsd_lb": 3.063,
+            "rmsd_ub": 6.577
+          },
+          {
+            "mode": 8,
+            "affinity": -8.625,
+            "rmsd_lb": 2.811,
+            "rmsd_ub": 7.567
+          },
+          {
+            "mode": 9,
+            "affinity": -8.618,
+            "rmsd_lb": 2.366,
+            "rmsd_ub": 7.399
+          }
+        ]
+      }
+    },
+    {
+      "generation": 19,
+      "smiles": "C#CN(CC(N)c1cnc2ccccc2n1)c1cc(C(C)NC(=O)C=C)c2cncnc2c1",
+      "fitness": 183.8668,
+      "mw": 437.5070000000002,
+      "logp": 3.0333000000000006,
+      "evol_rank": 6,
+      "docking": {
+        "success": true,
+        "best": -9.392,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -9.392,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -8.62,
+            "rmsd_lb": 3.742,
+            "rmsd_ub": 7.956
+          },
+          {
+            "mode": 3,
+            "affinity": -8.458,
+            "rmsd_lb": 3.152,
+            "rmsd_ub": 7.632
+          },
+          {
+            "mode": 4,
+            "affinity": -8.405,
+            "rmsd_lb": 3.794,
+            "rmsd_ub": 7.907
+          },
+          {
+            "mode": 5,
+            "affinity": -8.31,
+            "rmsd_lb": 4.692,
+            "rmsd_ub": 8.663
+          },
+          {
+            "mode": 6,
+            "affinity": -8.217,
+            "rmsd_lb": 3.566,
+            "rmsd_ub": 8.028
+          },
+          {
+            "mode": 7,
+            "affinity": -8.194,
+            "rmsd_lb": 3.724,
+            "rmsd_ub": 7.968
+          },
+          {
+            "mode": 8,
+            "affinity": -8.036,
+            "rmsd_lb": 3.166,
+            "rmsd_ub": 8.776
+          },
+          {
+            "mode": 9,
+            "affinity": -7.962,
+            "rmsd_lb": 5.005,
+            "rmsd_ub": 9.374
+          }
+        ]
+      }
+    },
+    {
+      "generation": 22,
+      "smiles": "C#CN(CC(N)c1cnc2ccccc2n1)c1cc(CNC(=O)C=C)c2cncnc2c1",
+      "fitness": 181.8892,
+      "mw": 423.4800000000002,
+      "logp": 2.4722999999999997,
+      "evol_rank": 19,
+      "docking": {
+        "success": true,
+        "best": -9.309,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -9.309,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -9.303,
+            "rmsd_lb": 1.663,
+            "rmsd_ub": 4.196
+          },
+          {
+            "mode": 3,
+            "affinity": -9.275,
+            "rmsd_lb": 3.204,
+            "rmsd_ub": 7.071
+          },
+          {
+            "mode": 4,
+            "affinity": -9.182,
+            "rmsd_lb": 2.908,
+            "rmsd_ub": 7.589
+          },
+          {
+            "mode": 5,
+            "affinity": -9.076,
+            "rmsd_lb": 1.208,
+            "rmsd_ub": 1.818
+          },
+          {
+            "mode": 6,
+            "affinity": -9.063,
+            "rmsd_lb": 2.988,
+            "rmsd_ub": 7.952
+          },
+          {
+            "mode": 7,
+            "affinity": -9.061,
+            "rmsd_lb": 1.798,
+            "rmsd_ub": 4.45
+          },
+          {
+            "mode": 8,
+            "affinity": -8.882,
+            "rmsd_lb": 3.768,
+            "rmsd_ub": 7.201
+          },
+          {
+            "mode": 9,
+            "affinity": -8.797,
+            "rmsd_lb": 2.753,
+            "rmsd_ub": 6.29
+          }
+        ]
+      }
+    },
+    {
+      "generation": 21,
+      "smiles": "C#CN(CC(N)c1cnc2ccccc2n1)c1cc(C(CCl)NC(=O)C=C)c2cncnc2c1",
+      "fitness": 182.9912,
+      "mw": 471.9520000000002,
+      "logp": 3.252200000000001,
+      "evol_rank": 15,
+      "docking": {
+        "success": true,
+        "best": -9.283,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -9.283,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -9.204,
+            "rmsd_lb": 3.543,
+            "rmsd_ub": 7.288
+          },
+          {
+            "mode": 3,
+            "affinity": -9.136,
+            "rmsd_lb": 2.21,
+            "rmsd_ub": 3.089
+          },
+          {
+            "mode": 4,
+            "affinity": -9.092,
+            "rmsd_lb": 1.409,
+            "rmsd_ub": 1.738
+          },
+          {
+            "mode": 5,
+            "affinity": -8.925,
+            "rmsd_lb": 2.006,
+            "rmsd_ub": 4.306
+          },
+          {
+            "mode": 6,
+            "affinity": -8.733,
+            "rmsd_lb": 2.745,
+            "rmsd_ub": 5.359
+          },
+          {
+            "mode": 7,
+            "affinity": -8.722,
+            "rmsd_lb": 2.911,
+            "rmsd_ub": 5.391
+          },
+          {
+            "mode": 8,
+            "affinity": -8.681,
+            "rmsd_lb": 2.921,
+            "rmsd_ub": 4.79
+          },
+          {
+            "mode": 9,
+            "affinity": -8.594,
+            "rmsd_lb": 2.337,
+            "rmsd_ub": 4.294
+          }
+        ]
+      }
+    },
+    {
+      "generation": 31,
+      "smiles": "C#Cc1c(OCCF)c(-c2cc(C=CC(=O)NCCN)c3ncncc3c2)c(F)c2nccnc12",
+      "fitness": 183.1872,
+      "mw": 474.4710000000003,
+      "logp": 2.7968,
+      "evol_rank": 13,
+      "docking": {
+        "success": true,
+        "best": -9.27,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -9.27,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -9.14,
+            "rmsd_lb": 1.479,
+            "rmsd_ub": 3.35
+          },
+          {
+            "mode": 3,
+            "affinity": -9.107,
+            "rmsd_lb": 3.272,
+            "rmsd_ub": 5.446
+          },
+          {
+            "mode": 4,
+            "affinity": -9.041,
+            "rmsd_lb": 3.846,
+            "rmsd_ub": 7.264
+          },
+          {
+            "mode": 5,
+            "affinity": -9.005,
+            "rmsd_lb": 3.039,
+            "rmsd_ub": 6.849
+          },
+          {
+            "mode": 6,
+            "affinity": -8.809,
+            "rmsd_lb": 2.526,
+            "rmsd_ub": 5.033
+          },
+          {
+            "mode": 7,
+            "affinity": -8.562,
+            "rmsd_lb": 3.09,
+            "rmsd_ub": 8.177
+          },
+          {
+            "mode": 8,
+            "affinity": -8.318,
+            "rmsd_lb": 3.278,
+            "rmsd_ub": 6.369
+          },
+          {
+            "mode": 9,
+            "affinity": -8.243,
+            "rmsd_lb": 3.223,
+            "rmsd_ub": 8.055
+          }
+        ]
+      }
+    },
+    {
+      "generation": 33,
+      "smiles": "C#Cc1c(OCCO)c(-c2cc(C=CC(=O)NCC)c3ncncc3c2)cc2nccnc12",
+      "fitness": 182.9668,
+      "mw": 439.47500000000025,
+      "logp": 2.7417000000000007,
+      "evol_rank": 16,
+      "docking": {
+        "success": true,
+        "best": -9.149,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -9.149,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -8.826,
+            "rmsd_lb": 2.972,
+            "rmsd_ub": 7.566
+          },
+          {
+            "mode": 3,
+            "affinity": -8.751,
+            "rmsd_lb": 3.188,
+            "rmsd_ub": 5.67
+          },
+          {
+            "mode": 4,
+            "affinity": -8.617,
+            "rmsd_lb": 2.829,
+            "rmsd_ub": 5.436
+          },
+          {
+            "mode": 5,
+            "affinity": -8.583,
+            "rmsd_lb": 3.138,
+            "rmsd_ub": 7.922
+          },
+          {
+            "mode": 6,
+            "affinity": -8.349,
+            "rmsd_lb": 2.455,
+            "rmsd_ub": 3.886
+          },
+          {
+            "mode": 7,
+            "affinity": -8.224,
+            "rmsd_lb": 2.385,
+            "rmsd_ub": 8.529
+          },
+          {
+            "mode": 8,
+            "affinity": -8.157,
+            "rmsd_lb": 3.614,
+            "rmsd_ub": 5.498
+          },
+          {
+            "mode": 9,
+            "affinity": -8.108,
+            "rmsd_lb": 2.875,
+            "rmsd_ub": 6.062
+          }
+        ]
+      }
+    },
+    {
+      "generation": 32,
+      "smiles": "C#CN(CN(Cl)c1cnc2ccccc2n1)c1cc(NNC(=O)C=C)c2cncnc2c1",
+      "fitness": 183.1316,
+      "mw": 444.8860000000002,
+      "logp": 3.217100000000001,
+      "evol_rank": 14,
+      "docking": {
+        "success": true,
+        "best": -9.123,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -9.123,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -9.07,
+            "rmsd_lb": 2.079,
+            "rmsd_ub": 4.15
+          },
+          {
+            "mode": 3,
+            "affinity": -9.058,
+            "rmsd_lb": 2.921,
+            "rmsd_ub": 8.391
+          },
+          {
+            "mode": 4,
+            "affinity": -8.993,
+            "rmsd_lb": 2.675,
+            "rmsd_ub": 4.25
+          },
+          {
+            "mode": 5,
+            "affinity": -8.956,
+            "rmsd_lb": 2.037,
+            "rmsd_ub": 2.181
+          },
+          {
+            "mode": 6,
+            "affinity": -8.852,
+            "rmsd_lb": 3.223,
+            "rmsd_ub": 7.588
+          },
+          {
+            "mode": 7,
+            "affinity": -8.625,
+            "rmsd_lb": 3.446,
+            "rmsd_ub": 8.13
+          },
+          {
+            "mode": 8,
+            "affinity": -8.569,
+            "rmsd_lb": 3.433,
+            "rmsd_ub": 9.213
+          },
+          {
+            "mode": 9,
+            "affinity": -8.389,
+            "rmsd_lb": 3.649,
+            "rmsd_ub": 9.864
+          }
+        ]
+      }
+    },
+    {
+      "generation": 27,
+      "smiles": "C#Cc1c(OCCO)c(-c2cc(C=CC(=O)NCC)c3ncncc3c2)c(C)c2nccnc12",
+      "fitness": 183.79952,
+      "mw": 453.50200000000024,
+      "logp": 3.0501200000000006,
+      "evol_rank": 9,
+      "docking": {
+        "success": true,
+        "best": -8.819,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -8.819,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -8.438,
+            "rmsd_lb": 2.849,
+            "rmsd_ub": 5.5
+          },
+          {
+            "mode": 3,
+            "affinity": -8.268,
+            "rmsd_lb": 1.947,
+            "rmsd_ub": 3.48
+          },
+          {
+            "mode": 4,
+            "affinity": -7.929,
+            "rmsd_lb": 1.934,
+            "rmsd_ub": 3.446
+          },
+          {
+            "mode": 5,
+            "affinity": -7.919,
+            "rmsd_lb": 3.004,
+            "rmsd_ub": 6.868
+          },
+          {
+            "mode": 6,
+            "affinity": -7.9,
+            "rmsd_lb": 2.751,
+            "rmsd_ub": 7.67
+          },
+          {
+            "mode": 7,
+            "affinity": -7.784,
+            "rmsd_lb": 5.074,
+            "rmsd_ub": 9.557
+          },
+          {
+            "mode": 8,
+            "affinity": -7.714,
+            "rmsd_lb": 2.132,
+            "rmsd_ub": 7.851
+          },
+          {
+            "mode": 9,
+            "affinity": -7.582,
+            "rmsd_lb": 5.07,
+            "rmsd_ub": 9.145
+          }
+        ]
+      }
+    },
+    {
+      "generation": 39,
+      "smiles": "C#CN(OC(N)c1cnc2ccccc2n1)c1cc(C(C)NC(=O)C=C)c2cncnc2c1",
+      "fitness": 183.6896,
+      "mw": 439.4790000000002,
+      "logp": 2.9224000000000006,
+      "evol_rank": 10,
+      "docking": {
+        "success": true,
+        "best": -8.738,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -8.738,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -8.682,
+            "rmsd_lb": 2.361,
+            "rmsd_ub": 4.758
+          },
+          {
+            "mode": 3,
+            "affinity": -8.617,
+            "rmsd_lb": 2.605,
+            "rmsd_ub": 4.912
+          },
+          {
+            "mode": 4,
+            "affinity": -8.563,
+            "rmsd_lb": 1.776,
+            "rmsd_ub": 2.603
+          },
+          {
+            "mode": 5,
+            "affinity": -8.475,
+            "rmsd_lb": 1.358,
+            "rmsd_ub": 1.648
+          },
+          {
+            "mode": 6,
+            "affinity": -8.341,
+            "rmsd_lb": 3.644,
+            "rmsd_ub": 7.156
+          },
+          {
+            "mode": 7,
+            "affinity": -8.295,
+            "rmsd_lb": 2.472,
+            "rmsd_ub": 3.74
+          },
+          {
+            "mode": 8,
+            "affinity": -8.204,
+            "rmsd_lb": 2.474,
+            "rmsd_ub": 4.314
+          },
+          {
+            "mode": 9,
+            "affinity": -8.192,
+            "rmsd_lb": 3.376,
+            "rmsd_ub": 6.302
+          }
+        ]
+      }
+    },
+    {
+      "generation": 25,
+      "smiles": "C#Cc1c(OCCF)c(-c2cc(C=CC(=O)NCCN)c3ncncc3c2)c(C)c2nccnc12",
+      "fitness": 183.86448000000001,
+      "mw": 470.50800000000027,
+      "logp": 2.966120000000001,
+      "evol_rank": 7,
+      "docking": {
+        "success": true,
+        "best": -8.293,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -8.293,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -8.146,
+            "rmsd_lb": 2.849,
+            "rmsd_ub": 5.306
+          },
+          {
+            "mode": 3,
+            "affinity": -8.08,
+            "rmsd_lb": 3.188,
+            "rmsd_ub": 5.329
+          },
+          {
+            "mode": 4,
+            "affinity": -7.726,
+            "rmsd_lb": 3.512,
+            "rmsd_ub": 7.877
+          },
+          {
+            "mode": 5,
+            "affinity": -7.602,
+            "rmsd_lb": 2.204,
+            "rmsd_ub": 3.476
+          },
+          {
+            "mode": 6,
+            "affinity": -7.34,
+            "rmsd_lb": 3.556,
+            "rmsd_ub": 7.113
+          },
+          {
+            "mode": 7,
+            "affinity": -7.208,
+            "rmsd_lb": 3.732,
+            "rmsd_ub": 5.778
+          },
+          {
+            "mode": 8,
+            "affinity": -7.095,
+            "rmsd_lb": 2.376,
+            "rmsd_ub": 3.687
+          },
+          {
+            "mode": 9,
+            "affinity": -7.072,
+            "rmsd_lb": 4.791,
+            "rmsd_ub": 9.836
+          }
+        ]
+      }
+    },
+    {
+      "generation": 35,
+      "smiles": "CC#Cc1c(OC)c(-c2cc(C=CC(=O)NCCN)c3ncncc3c2)c(C)c2nccnc12",
+      "fitness": 183.93392,
+      "mw": 452.51800000000026,
+      "logp": 3.0165200000000008,
+      "evol_rank": 3,
+      "docking": {
+        "success": true,
+        "best": -8.026,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -8.026,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -7.872,
+            "rmsd_lb": 1.509,
+            "rmsd_ub": 3.225
+          },
+          {
+            "mode": 3,
+            "affinity": -7.439,
+            "rmsd_lb": 2.072,
+            "rmsd_ub": 4.696
+          },
+          {
+            "mode": 4,
+            "affinity": -7.382,
+            "rmsd_lb": 1.694,
+            "rmsd_ub": 2.242
+          },
+          {
+            "mode": 5,
+            "affinity": -7.347,
+            "rmsd_lb": 2.643,
+            "rmsd_ub": 4.655
+          },
+          {
+            "mode": 6,
+            "affinity": -7.252,
+            "rmsd_lb": 2.082,
+            "rmsd_ub": 3.983
+          },
+          {
+            "mode": 7,
+            "affinity": -7.247,
+            "rmsd_lb": 2.141,
+            "rmsd_ub": 4.188
+          },
+          {
+            "mode": 8,
+            "affinity": -7.149,
+            "rmsd_lb": 2.65,
+            "rmsd_ub": 6.145
+          },
+          {
+            "mode": 9,
+            "affinity": -7.074,
+            "rmsd_lb": 3.482,
+            "rmsd_ub": 6.321
+          }
+        ]
+      }
+    },
+    {
+      "generation": 36,
+      "smiles": "CC#Cc1c(NC)c(-c2cc(C=CC(=O)NCCN)c3ncncc3c2)c(C)c2nccnc12",
+      "fitness": 183.80151999999998,
+      "mw": 451.5340000000002,
+      "logp": 3.049620000000001,
+      "evol_rank": 8,
+      "docking": {
+        "success": true,
+        "best": -7.878,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -7.878,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -7.817,
+            "rmsd_lb": 1.468,
+            "rmsd_ub": 3.261
+          },
+          {
+            "mode": 3,
+            "affinity": -7.441,
+            "rmsd_lb": 2.552,
+            "rmsd_ub": 4.638
+          },
+          {
+            "mode": 4,
+            "affinity": -7.394,
+            "rmsd_lb": 2.081,
+            "rmsd_ub": 3.981
+          },
+          {
+            "mode": 5,
+            "affinity": -7.364,
+            "rmsd_lb": 2.074,
+            "rmsd_ub": 3.985
+          },
+          {
+            "mode": 6,
+            "affinity": -7.177,
+            "rmsd_lb": 4.39,
+            "rmsd_ub": 7.719
+          },
+          {
+            "mode": 7,
+            "affinity": -7.161,
+            "rmsd_lb": 5.176,
+            "rmsd_ub": 9.224
+          },
+          {
+            "mode": 8,
+            "affinity": -7.01,
+            "rmsd_lb": 2.962,
+            "rmsd_ub": 6.34
+          },
+          {
+            "mode": 9,
+            "affinity": -6.902,
+            "rmsd_lb": 2.369,
+            "rmsd_ub": 4.284
+          }
+        ]
+      }
+    }
+  ]
+}

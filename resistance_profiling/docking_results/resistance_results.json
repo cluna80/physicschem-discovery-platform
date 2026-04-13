@@ -1,0 +1,32 @@
+{
+  "Wild_Type": {
+    "mutation": "WT",
+    "cnn": null,
+    "vina": null
+  },
+  "D30N": {
+    "mutation": "D30N",
+    "cnn": null,
+    "vina": null
+  },
+  "L90M": {
+    "mutation": "L90M",
+    "cnn": null,
+    "vina": null
+  },
+  "V82A": {
+    "mutation": "V82A",
+    "cnn": null,
+    "vina": null
+  },
+  "I50V": {
+    "mutation": "I50V",
+    "cnn": null,
+    "vina": null
+  },
+  "G48V": {
+    "mutation": "G48V",
+    "cnn": null,
+    "vina": null
+  }
+}

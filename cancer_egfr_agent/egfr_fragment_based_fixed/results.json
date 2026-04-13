@@ -1,0 +1,282 @@
+[
+  {
+    "generation": 38,
+    "smiles": "C#Cc1cnc2c(C#C)c(OCCN)c(-c3cc(C=CC(=O)NCC)c4ncncc4c3)c(C)c2n1",
+    "fitness": 183.99128000000002,
+    "mw": 476.5400000000003,
+    "logp": 2.997820000000001
+  },
+  {
+    "generation": 26,
+    "smiles": "C#Cc1c(OCC)c(-c2cc(C=CC(=O)NCCN)c3ncncc3c2)c(C)c2nccnc12",
+    "fitness": 183.93392,
+    "mw": 452.51800000000026,
+    "logp": 3.0165200000000008
+  },
+  {
+    "generation": 35,
+    "smiles": "CC#Cc1c(OC)c(-c2cc(C=CC(=O)NCCN)c3ncncc3c2)c(C)c2nccnc12",
+    "fitness": 183.93392,
+    "mw": 452.51800000000026,
+    "logp": 3.0165200000000008
+  },
+  {
+    "generation": 37,
+    "smiles": "C#Cc1c(OCC)c(-c2cc(C=CC(=O)NC)c3nc(C(CN)OC)ncc3c2)cc2nccnc12",
+    "fitness": 183.8984,
+    "mw": 482.54400000000027,
+    "logp": 3.0254000000000003
+  },
+  {
+    "generation": 34,
+    "smiles": "C#Cc1cnc2c(C#C)c(OCCO)c(-c3cc(C=CC(=O)NCC)c4ncncc4c3)c(C)c2n1",
+    "fitness": 183.87432,
+    "mw": 477.5240000000003,
+    "logp": 3.0314200000000007
+  },
+  {
+    "generation": 19,
+    "smiles": "C#CN(CC(N)c1cnc2ccccc2n1)c1cc(C(C)NC(=O)C=C)c2cncnc2c1",
+    "fitness": 183.8668,
+    "mw": 437.5070000000002,
+    "logp": 3.0333000000000006
+  },
+  {
+    "generation": 25,
+    "smiles": "C#Cc1c(OCCF)c(-c2cc(C=CC(=O)NCCN)c3ncncc3c2)c(C)c2nccnc12",
+    "fitness": 183.86448000000001,
+    "mw": 470.50800000000027,
+    "logp": 2.966120000000001
+  },
+  {
+    "generation": 36,
+    "smiles": "CC#Cc1c(NC)c(-c2cc(C=CC(=O)NCCN)c3ncncc3c2)c(C)c2nccnc12",
+    "fitness": 183.80151999999998,
+    "mw": 451.5340000000002,
+    "logp": 3.049620000000001
+  },
+  {
+    "generation": 27,
+    "smiles": "C#Cc1c(OCCO)c(-c2cc(C=CC(=O)NCC)c3ncncc3c2)c(C)c2nccnc12",
+    "fitness": 183.79952,
+    "mw": 453.50200000000024,
+    "logp": 3.0501200000000006
+  },
+  {
+    "generation": 39,
+    "smiles": "C#CN(OC(N)c1cnc2ccccc2n1)c1cc(C(C)NC(=O)C=C)c2cncnc2c1",
+    "fitness": 183.6896,
+    "mw": 439.4790000000002,
+    "logp": 2.9224000000000006
+  },
+  {
+    "generation": 40,
+    "smiles": "CC#Cc1c(OC)c(-c2cc(C=CC(=O)NCON)c3ncncc3c2)c(C)c2nccnc12",
+    "fitness": 183.62248,
+    "mw": 454.49000000000024,
+    "logp": 2.90562
+  },
+  {
+    "generation": 30,
+    "smiles": "C#CN(CNc1cnc2ccccc2n1)c1cc(CNC(=O)C=C)c2cncnc2c1",
+    "fitness": 183.3676,
+    "mw": 409.4530000000002,
+    "logp": 2.8419000000000008
+  },
+  {
+    "generation": 31,
+    "smiles": "C#Cc1c(OCCF)c(-c2cc(C=CC(=O)NCCN)c3ncncc3c2)c(F)c2nccnc12",
+    "fitness": 183.1872,
+    "mw": 474.4710000000003,
+    "logp": 2.7968
+  },
+  {
+    "generation": 32,
+    "smiles": "C#CN(CN(Cl)c1cnc2ccccc2n1)c1cc(NNC(=O)C=C)c2cncnc2c1",
+    "fitness": 183.1316,
+    "mw": 444.8860000000002,
+    "logp": 3.217100000000001
+  },
+  {
+    "generation": 21,
+    "smiles": "C#CN(CC(N)c1cnc2ccccc2n1)c1cc(C(CCl)NC(=O)C=C)c2cncnc2c1",
+    "fitness": 182.9912,
+    "mw": 471.9520000000002,
+    "logp": 3.252200000000001
+  },
+  {
+    "generation": 33,
+    "smiles": "C#Cc1c(OCCO)c(-c2cc(C=CC(=O)NCC)c3ncncc3c2)cc2nccnc12",
+    "fitness": 182.9668,
+    "mw": 439.47500000000025,
+    "logp": 2.7417000000000007
+  },
+  {
+    "generation": 28,
+    "smiles": "C#Cc1c(OCC)c(-c2cc(C=CC(=O)NCCN)c3ncncc3c2)cc2nccnc12",
+    "fitness": 182.8324,
+    "mw": 438.49100000000027,
+    "logp": 2.7081
+  },
+  {
+    "generation": 29,
+    "smiles": "C#CN(CN(N)c1cnc2ccccc2n1)c1cc(C(C)NC(=O)C=C)c2cncnc2c1",
+    "fitness": 182.6844,
+    "mw": 438.4950000000002,
+    "logp": 2.6711
+  },
+  {
+    "generation": 22,
+    "smiles": "C#CN(CC(N)c1cnc2ccccc2n1)c1cc(CNC(=O)C=C)c2cncnc2c1",
+    "fitness": 181.8892,
+    "mw": 423.4800000000002,
+    "logp": 2.4722999999999997
+  },
+  {
+    "generation": 23,
+    "smiles": "C#CN(CCc1cnc2ccccc2n1)c1cc(C(C)NC(=O)C=C)c2cncnc2c1",
+    "fitness": 180.496,
+    "mw": 422.4920000000002,
+    "logp": 3.5760000000000023
+  },
+  {
+    "generation": 24,
+    "smiles": "C#Cc1c(OCCO)c(-c2cc(C=CC(=O)NCCN)c3ncncc3c2)c(C)c2nccnc12",
+    "fitness": 179.95568,
+    "mw": 468.5170000000003,
+    "logp": 1.9889199999999996
+  },
+  {
+    "generation": 18,
+    "smiles": "C#CN(CC(N)c1cnc2ccccc2n1)c1cc(C(CN)NC(=O)C=C)c2cncnc2c1",
+    "fitness": 179.8884,
+    "mw": 452.5220000000002,
+    "logp": 1.9720999999999995
+  },
+  {
+    "generation": 11,
+    "smiles": "C#Cc1c(OCCOC)c(-c2cc(C=CC(=O)NCCN)c3ncncc3c2)c(C)c2nccnc12",
+    "fitness": 174.57208,
+    "mw": 482.5440000000003,
+    "logp": 2.64302
+  },
+  {
+    "generation": 16,
+    "smiles": "Cc1c(-c2cc(C=CC(=O)NF)c3ncncc3c2)c(OCCO)cc2nccnc12",
+    "fitness": 168.73368,
+    "mw": 419.41600000000017,
+    "logp": 2.933420000000001
+  },
+  {
+    "generation": 12,
+    "smiles": "NC(=O)C=Cc1cc(NCC(N)(N)c2cnc3ccccc3n2)cc2nc(-c3ccccc3)ncc12",
+    "fitness": 168.6832,
+    "mw": 476.5440000000002,
+    "logp": 2.9208
+  },
+  {
+    "generation": 20,
+    "smiles": "C#Cc1cccc2ncc(C(NC)(NN(C#C)c3ccc4cncnc4c3)Oc3cccc(O)c3)nc12",
+    "fitness": 167.918,
+    "mw": 487.5230000000002,
+    "logp": 3.270500000000001
+  },
+  {
+    "generation": 15,
+    "smiles": "CNC(=O)C=Cc1cc(-c2c(OCCO)cc3nccnc3c2C)cc2cncnc12",
+    "fitness": 167.71488,
+    "mw": 415.4530000000002,
+    "logp": 2.67872
+  },
+  {
+    "generation": 13,
+    "smiles": "CNC(=O)C=Cc1cc(-c2c(OCCOC)cc3nccnc3c2C)cc2cncnc12",
+    "fitness": 166.96872000000002,
+    "mw": 429.48000000000025,
+    "logp": 3.3328200000000017
+  },
+  {
+    "generation": 14,
+    "smiles": "C#Cc1cccc2ncc(C(N)(CN(C#C)c3ccc4cncnc4c3)Oc3cccc(O)c3)nc12",
+    "fitness": 166.8092,
+    "mw": 472.5080000000002,
+    "logp": 3.5477000000000016
+  },
+  {
+    "generation": 17,
+    "smiles": "C#CN(CC(N)(Oc1cccc(O)c1)c1cnc2ccccc2n1)c1ccc2cncnc2c1",
+    "fitness": 166.7344,
+    "mw": 448.48600000000016,
+    "logp": 3.5664000000000016
+  },
+  {
+    "generation": 9,
+    "smiles": "C#CN(CC(NC)(Oc1cccc(O)c1)c1cnc2ccccc2n1)c1ccc2cncnc2c1",
+    "fitness": 165.6916,
+    "mw": 462.51300000000015,
+    "logp": 3.8271000000000024
+  },
+  {
+    "generation": 10,
+    "smiles": "COCCOc1cc2nccnc2c(C)c1-c1cc(C=CC(=O)NCCN)c2ncncc2c1",
+    "fitness": 159.64688,
+    "mw": 458.52200000000033,
+    "logp": 2.66172
+  },
+  {
+    "generation": 6,
+    "smiles": "COc1cccc(NC(CNc2ccc3cncnc3c2)(NN)c2cnc3ccccc3n2)c1",
+    "fitness": 152.3124,
+    "mw": 452.52200000000016,
+    "logp": 3.4219000000000017
+  },
+  {
+    "generation": 5,
+    "smiles": "COc1cccc(NC(CNc2ccc3cncnc3c2)(c2cnc3ccccc3n2)N(C)N)c1",
+    "fitness": 150.9436,
+    "mw": 466.5490000000002,
+    "logp": 3.7641000000000018
+  },
+  {
+    "generation": 7,
+    "smiles": "CNC(CNc1ccc2cncnc2c1)(Oc1cccc(O)c1)c1cnc2ccccc2n1",
+    "fitness": 150.6324,
+    "mw": 438.4910000000001,
+    "logp": 3.8419000000000016
+  },
+  {
+    "generation": 8,
+    "smiles": "COc1cccc(NC(N)(CNc2ccc3cncnc3c2)c2cnc3ccccc3n2)c1",
+    "fitness": 150.33079999999998,
+    "mw": 437.5070000000002,
+    "logp": 3.917300000000002
+  },
+  {
+    "generation": 3,
+    "smiles": "C=C(C(N)=O)c1cccc2nc(-c3ccc4nc[nH]c4c3)c(C#Cc3cccc4[nH]cnc34)nc12",
+    "fitness": 140.1092,
+    "mw": 455.48100000000005,
+    "logp": 3.947700000000001
+  },
+  {
+    "generation": 1,
+    "smiles": "C#CC(=C)C(=O)NCC(N)c1cc2ncncc2c(-c2cccc3nc[nH]c23)c1-c1ccccc1",
+    "fitness": 139.31799999999998,
+    "mw": 458.52500000000026,
+    "logp": 4.145500000000002
+  },
+  {
+    "generation": 4,
+    "smiles": "C#Cc1nc2c(C(=C)C(N)=O)cccc2nc1-c1cc2[nH]cnc2cc1-c1cnc2ccccc2n1",
+    "fitness": 138.5476,
+    "mw": 467.4920000000001,
+    "logp": 4.263100000000001
+  },
+  {
+    "generation": 2,
+    "smiles": "COc1cccc(NC(CNc2ccc3cncnc3c2)(c2cnc3ccccc3n2)N(C)C)c1",
+    "fitness": 133.79799999999997,
+    "mw": 465.5610000000002,
+    "logp": 4.520200000000003
+  }
+]

@@ -1,0 +1,8 @@
+O=C(N[C@@H](Cc1cccc(Cl)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)c1ccc2cccnc2c1
+O=C(N[C@@H](Cc1cccc(C(F)(F)F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)c1ccc2[nH]ccc2c1
+O=C(N[C@@H](Cc1ccccc1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)c1ccc2[nH]ccc2c1
+O=C(N[C@@H](Cc1cc(F)cc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)c1ccc2ccccc2c1
+O=C(N[C@@H](Cc1cc(F)cc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)c1ccc2cccnc2c1
+O=C(N[C@@H](Cc1cccc(C(F)(F)F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)c1ccc2ccccc2c1
+O=C(N[C@@H](Cc1ccccc1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)c1ccc2[nH]ccc2c1
+O=C(N[C@@H](Cc1cccc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)c1ccc2ccccc2c1

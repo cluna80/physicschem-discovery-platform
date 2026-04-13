@@ -1,0 +1,26 @@
+[
+  {
+    "name": "CURE_4G_003",
+    "smiles": "c1cc(F)c(F)c(F)c1C(=O)NCC(O)CNC(=O)CCCF",
+    "modification": "Amide-linked core",
+    "description": "Amide version for stronger H-bonds",
+    "mw": 336.28500000000014,
+    "logp": 1.0605,
+    "hbd": 3,
+    "hba": 3,
+    "predicted_affinity": -4.437,
+    "improvement": 0.3
+  },
+  {
+    "name": "CURE_4G_001",
+    "smiles": "c1cc(F)c(F)c(F)c1C(=O)OCC(O)CNC(=O)CCCF",
+    "modification": "Hydroxyethylamine core",
+    "description": "Simplified Darunavir-like core",
+    "mw": 337.2690000000001,
+    "logp": 1.4875,
+    "hbd": 2,
+    "hba": 4,
+    "predicted_affinity": -3.737,
+    "improvement": 1.0
+  }
+]

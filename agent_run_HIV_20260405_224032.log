@@ -1,0 +1,54 @@
+PhysicsChem Agent v2 - 2026-04-05 22:40:32.135500
+============================================================
+========================================================================
+  AUTONOMOUS DRUG DISCOVERY AGENT v2  -  HIV-1 Protease
+========================================================================
+[22:40:32] Orchestrator     Disease target  : HIV/AIDS
+[22:40:32] Orchestrator     Receptor        : hiv_protease.pdbqt
+[22:40:32] Orchestrator     Reference drug  : Darunavir (-10.4 kcal/mol)
+[22:40:32] Orchestrator     Fragment budget : 20
+[22:40:32] Orchestrator     Max iterations  : 1
+[22:40:32] Orchestrator     Confidence goal : 70%
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+[22:40:32] Orchestrator     ITERATION 1/1  (best confidence so far: 0%)
+------------------------------------------------------------------------
+[22:40:32] FragmentAgent    Loading fragment library (120 total)...
+[22:40:32] FragmentAgent    Selected 20 Ro3-compliant fragments (MW<=300, LogP<=3.5, HBD<=3)
+[22:40:32] FragmentAgent    PAINS filter removed 1 fragments
+[22:40:32] DockingAgent     Screening 19 fragments (exhaustiveness=4)...
+[22:40:32] DockingAgent     Threshold: affinity < -6.9 kcal/mol
+[22:40:34] DockingAgent       . F001     pyridine                         -2.69 kcal/mol  7 poses
+[22:40:37] DockingAgent       . F002     quinoline                        -3.85 kcal/mol  8 poses
+[22:40:40] DockingAgent       . F003     benzimidazole                    -3.90 kcal/mol  8 poses
+[22:40:43] DockingAgent       . F004     7-azaindole                      -3.65 kcal/mol  8 poses
+[22:40:46] DockingAgent       . F005     4-azaindole                      -3.68 kcal/mol  8 poses
+[22:40:48] DockingAgent       . F006     isoquinoline                     -3.65 kcal/mol  8 poses
+[22:40:53] DockingAgent       . F007     2-aminoquinoline                 -3.49 kcal/mol  8 poses
+[22:40:57] DockingAgent       . F008     4-aminoquinazoline               -3.66 kcal/mol  7 poses
+[22:41:00] DockingAgent       . F009     adenine                          -3.23 kcal/mol  7 poses
+[22:41:03] DockingAgent       . F010     quinoxaline                      -3.88 kcal/mol  8 poses
+[22:41:06] DockingAgent       . F011     1,6-naphthyridine                -3.71 kcal/mol  8 poses
+[22:41:08] DockingAgent       . F012     pyrrolo[2,3-b]pyridine           -3.43 kcal/mol  8 poses
+[22:41:11] DockingAgent       . F014     indazole-2H                      -3.46 kcal/mol  8 poses
+[22:41:15] DockingAgent       . F015     2-aminopurine                    -3.69 kcal/mol  7 poses
+[22:41:17] DockingAgent       . F016     aniline                          -2.82 kcal/mol  8 poses
+[22:41:19] DockingAgent       . F017     4-fluoroaniline                  -3.11 kcal/mol  8 poses
+[22:41:22] DockingAgent       . F018     3-fluoroaniline                  -3.15 kcal/mol  8 poses
+[22:41:25] DockingAgent       . F019     4-chloroaniline                  -2.97 kcal/mol  8 poses
+[22:41:30] DockingAgent       . F020     4-trifluoromethylaniline         -3.32 kcal/mol  8 poses
+[22:41:30] DockingAgent     Fragment screening complete: 0/19 hit threshold
+[22:41:30] Orchestrator     Top 3 fragment hits selected for growing
+------------------------------------------------------------------------
+[22:41:30] Orchestrator     Fitting 5-sigma null distribution from fragment scores...
+[22:41:30] HiggsTest        Null distribution: affinity = -3.44 +/- 0.35 kcal/mol (n=19)
+[22:41:30] HiggsTest        Fragment null median: -3.49 kcal/mol
+[22:41:30] HiggsTest        5-sigma threshold: -5.18 kcal/mol
+[22:41:30] HiggsTest        3-sigma threshold: -4.49 kcal/mol
+------------------------------------------------------------------------
+[22:41:30] GrowingAgent     Growing 3 fragment hits -> target leads...
+[22:41:30] GrowingAgent     Strategy: R-group + pharmacophore tail attachment
+[22:41:30] GrowingAgent       Growing SEED_R1C1 (isobutyl-piperidine-aniline (R1-C1 proven)) - base affinity -7.52 kcal/mol
+[22:41:30] GrowingAgent         Generated 70 candidates -> docking top 15...
+[23:09:59] GrowingAgent       Growing SEED_R1C2 (decalin-fluorophenyl (R1-C2 proven)) - base affinity -8.48 kcal/mol
+[23:09:59] GrowingAgent         Generated 53 candidates -> docking top 15...

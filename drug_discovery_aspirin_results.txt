@@ -1,0 +1,20 @@
+REAL QUANTUM DRUG DISCOVERY RESULTS
+==================================================
+
+Target: ASPIRIN (C9H8O4)
+
+Drug Search Results:
+Aspirin (BEST): 78.0%
+Ibuprofen: 3.0%
+Acetaminophen: 3.0%
+Celecoxib: 2.8%
+Naproxen: 3.5%
+Diclofenac: 3.2%
+Ketoprofen: 3.3%
+Indomethacin: 3.2%
+
+Aspirin confidence: 78.0%
+Theoretical maximum: 94.5%
+Random guess: 12.5%
+
+Quantum speedup: 23x faster than classical

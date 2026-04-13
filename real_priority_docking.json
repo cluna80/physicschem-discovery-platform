@@ -1,0 +1,37 @@
+[
+  {
+    "name": "CURE_7G_007",
+    "feature": "THP ring (6-membered O-ring)",
+    "real_score": 2.335,
+    "affinity": 10.0,
+    "improvement": 16.772
+  },
+  {
+    "name": "CURE_7G_008",
+    "feature": "Isobutyl (low MW, high LogP)",
+    "real_score": 2.326,
+    "affinity": 10.0,
+    "improvement": 16.772
+  },
+  {
+    "name": "CURE_7G_005",
+    "feature": "Fluoronaphthyl",
+    "real_score": 2.263,
+    "affinity": 10.0,
+    "improvement": 16.772
+  },
+  {
+    "name": "CURE_7G_003",
+    "feature": "Naphthalene + bis-THF",
+    "real_score": 2.1,
+    "affinity": 10.0,
+    "improvement": 16.772
+  },
+  {
+    "name": "CURE_7G_001",
+    "feature": "Naphthalene + THF",
+    "real_score": 2.153,
+    "affinity": 10.0,
+    "improvement": 16.772
+  }
+]

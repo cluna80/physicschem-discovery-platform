@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quantum Virtual Lab</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a1a 0%, #0d1b2e 50%, #071a2e 100%);
+            min-height: 100vh; color: #e0e8ff; padding: 20px;
+        }
+        .container { max-width: 1100px; margin: 0 auto; }
+        h1 { background: linear-gradient(135deg, #00f5ff, #a855f7); -webkit-background-clip: text;
+             -webkit-text-fill-color: transparent; font-size: 2em; margin-bottom: 6px; }
+        .subtitle { color: #60a0c0; margin-bottom: 30px; }
+        .nav-btn { background: rgba(255,255,255,0.1); padding: 8px 18px; border-radius: 50px;
+                   color: white; text-decoration: none; font-size: 0.9em; display:inline-block; margin-bottom:20px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(0,245,255,0.15);
+                border-radius: 16px; padding: 24px; }
+        .card h2 { color: #00f5ff; margin-bottom: 16px; font-size: 1.1em; }
+        label { display: block; color: #8090b0; font-size: 0.85em; margin-bottom: 4px; margin-top: 14px; }
+        input[type=range] { width: 100%; accent-color: #00f5ff; }
+        input[type=number] { width: 100%; background: rgba(0,0,0,0.4); border: 1px solid rgba(0,245,255,0.3);
+                             border-radius: 8px; color: #e0e8ff; padding: 8px 12px; font-size: 0.95em; }
+        .val { color: #00f5ff; font-weight: bold; font-size: 1.1em; }
+        .btn { background: linear-gradient(135deg, #00f5ff, #a855f7); border: none; border-radius: 50px;
+               color: #000; font-weight: bold; padding: 12px 28px; cursor: pointer; font-size: 1em;
+               margin-top: 20px; width: 100%; }
+        .btn:hover { opacity: 0.85; }
+        .results { margin-top: 24px; }
+        .result-row { display: flex; justify-content: space-between; align-items: center;
+                      padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .result-label { color: #8090b0; font-size: 0.9em; }
+        .result-val { font-weight: bold; font-size: 1.05em; }
+        .good { color: #4caf50; } .warn { color: #ff9800; } .bad { color: #f44336; }
+        .prob-bar-bg { background: rgba(255,255,255,0.08); border-radius: 8px; height: 12px;
+                       margin-top: 8px; overflow: hidden; }
+        .prob-bar { height: 100%; border-radius: 8px; transition: width 0.5s;
+                    background: linear-gradient(90deg, #00f5ff, #a855f7); }
+        .qubit-viz { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+        .qubit { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center;
+                 justify-content: center; font-size: 0.7em; font-weight: bold; transition: all 0.3s; }
+        .qubit-0 { background: rgba(0,245,255,0.15); border: 1px solid rgba(0,245,255,0.3); color: #00f5ff; }
+        .qubit-1 { background: rgba(168,85,247,0.4); border: 1px solid #a855f7; color: #e0c0ff; }
+        .qubit-super { background: rgba(255,200,0,0.2); border: 1px solid #ffc800; color: #ffd040; }
+        .info-box { background: rgba(0,245,255,0.05); border: 1px solid rgba(0,245,255,0.15);
+                    border-radius: 10px; padding: 14px; margin-top: 16px; font-size: 0.85em;
+                    color: #a0c0e0; line-height: 1.6; }
+        .speedup-badge { background: linear-gradient(135deg,rgba(0,245,255,0.2),rgba(168,85,247,0.2));
+                         border: 1px solid rgba(0,245,255,0.3); border-radius: 12px; padding: 16px;
+                         text-align: center; margin-top: 20px; }
+        .speedup-num { font-size: 2.5em; font-weight: bold; background: linear-gradient(135deg,#00f5ff,#a855f7);
+                       -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+        .circuit-display { font-family: monospace; font-size: 0.78em; background: rgba(0,0,0,0.4);
+                           border-radius: 8px; padding: 12px; margin-top: 12px; color: #00f5ff;
+                           white-space: pre; overflow-x: auto; line-height: 1.5; }
+        @media(max-width:700px){ .grid{grid-template-columns:1fr;} }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="/" class="nav-btn">← Back to Lab</a>
+    <h1>⚛️ Quantum Virtual Lab</h1>
+    <p class="subtitle">Grover's Algorithm — Quantum-Accelerated Drug Candidate Search</p>
+
+    <div class="grid">
+        <!-- Controls -->
+        <div class="card">
+            <h2>🎛 Experiment Parameters</h2>
+
+            <label>Number of Qubits: <span class="val" id="qubit-val">5</span></label>
+            <input type="range" id="n-qubits" min="2" max="20" value="5"
+                   oninput="document.getElementById('qubit-val').textContent=this.value; updateViz()">
+
+            <label>Target State (drug candidate index): <span class="val" id="target-val">5</span></label>
+            <input type="range" id="target" min="0" max="31" value="5"
+                   oninput="document.getElementById('target-val').textContent=this.value">
+
+            <label>Noise Level: <span class="val" id="noise-val">0%</span></label>
+            <input type="range" id="noise" min="0" max="5" step="0.1" value="0"
+                   oninput="document.getElementById('noise-val').textContent=(parseFloat(this.value)*20).toFixed(0)+'%'">
+
+            <label>Grover Iterations (0 = auto-optimal):</label>
+            <input type="number" id="iterations" value="0" min="0" max="50">
+
+            <button class="btn" onclick="runGrover()">⚛️ Run Grover's Search</button>
+
+            <div class="info-box">
+                <strong>What is Grover's Algorithm?</strong><br>
+                Grover's algorithm searches an unsorted database of N items in O(√N) steps vs
+                O(N) classically. For your drug library of 128 candidates: classical = 128 queries,
+                quantum = ~11 queries. <strong>Quadratic speedup.</strong><br><br>
+                In this lab it ranks drug candidates by binding affinity using quantum amplitude amplification —
+                the best binders are amplified and measured with high probability.
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="card">
+            <h2>📊 Quantum Results</h2>
+            <div id="qubit-viz" class="qubit-viz"></div>
+
+            <div class="results" id="results">
+                <div style="color:#607080;text-align:center;padding:40px 0">
+                    Set parameters and click Run to see results
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Circuit display -->
+    <div class="card" style="margin-top:24px">
+        <h2>🔬 Circuit Diagram (ASCII)</h2>
+        <div class="circuit-display" id="circuit">
+Click "Run Grover's Search" to see the quantum circuit
+        </div>
+    </div>
+
+    <!-- Drug search integration -->
+    <div class="card" style="margin-top:24px">
+        <h2>🧬 Run Quantum Drug Search on Your Library</h2>
+        <p style="color:#8090b0;font-size:0.9em;margin-bottom:16px">
+            Uses Grover's algorithm on your actual drug library to find top candidates.
+            Runs on IBM Quantum simulator (or real hardware if token is set).
+        </p>
+        <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+            <div>
+                <label style="display:inline">Top N candidates:</label>
+                <input type="number" id="top-n" value="10" min="1" max="20"
+                       style="width:80px;display:inline;margin-left:8px">
+            </div>
+            <label style="display:flex;align-items:center;gap:8px;color:#8090b0">
+                <input type="checkbox" id="use-real-hw"> Use real IBM hardware
+            </label>
+            <button class="btn" style="width:auto;padding:10px 24px" onclick="runQuantumSearch()">
+                ⚛️ Quantum Search Library
+            </button>
+        </div>
+        <div id="search-results" style="margin-top:16px"></div>
+    </div>
+</div>
+
+<script>
+function updateViz() {
+    const n = parseInt(document.getElementById('n-qubits').value);
+    const viz = document.getElementById('qubit-viz');
+    viz.innerHTML = '';
+    for (let i = 0; i < Math.min(n, 16); i++) {
+        const q = document.createElement('div');
+        q.className = 'qubit qubit-super';
+        q.textContent = 'q' + i;
+        viz.appendChild(q);
+    }
+    if (n > 16) {
+        const more = document.createElement('div');
+        more.style.cssText = 'color:#607080;font-size:0.8em;padding:8px';
+        more.textContent = `+${n-16} more`;
+        viz.appendChild(more);
+    }
+    // Update target max
+    document.getElementById('target').max = Math.pow(2, n) - 1;
+}
+
+function buildCircuit(n, iters) {
+    const lines = [];
+    lines.push(`Grover's Circuit — ${n} qubits, ${iters} iteration(s)`);
+    lines.push('─'.repeat(52));
+    for (let i = 0; i < Math.min(n, 6); i++) {
+        lines.push(`q${i}: ─[H]─${'─[Oracle]─[Diffuser]─'.repeat(iters)}─[M]─`);
+    }
+    if (n > 6) lines.push(`... (${n-6} more qubits)`);
+    lines.push('─'.repeat(52));
+    lines.push(`State space: 2^${n} = ${Math.pow(2,n).toLocaleString()} states`);
+    lines.push(`Classical queries needed: ${Math.pow(2,n).toLocaleString()}`);
+    lines.push(`Quantum queries needed:   ~${Math.ceil(Math.PI/4*Math.sqrt(Math.pow(2,n))).toLocaleString()}`);
+    return lines.join('\n');
+}
+
+async function runGrover() {
+    const n = parseInt(document.getElementById('n-qubits').value);
+    const target = parseInt(document.getElementById('target').value);
+    const noise = parseFloat(document.getElementById('noise').value) / 100;
+    const iterations = parseInt(document.getElementById('iterations').value);
+
+    document.getElementById('results').innerHTML = '<div style="color:#00f5ff;text-align:center;padding:20px">⚛️ Running quantum simulation...</div>';
+
+    try {
+        const res = await fetch('/api/run_quantum', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({n_qubits: n, target, noise, iterations})
+        });
+        const d = await res.json();
+
+        const prob = d.success_probability;
+        const probClass = prob > 80 ? 'good' : prob > 40 ? 'warn' : 'bad';
+        const classicalQ = Math.pow(2, d.n_qubits);
+        const quantumQ = Math.ceil(Math.PI / 4 * Math.sqrt(classicalQ));
+        const speedup = (classicalQ / quantumQ).toFixed(1);
+
+        // Animate qubits
+        const viz = document.getElementById('qubit-viz');
+        viz.innerHTML = '';
+        for (let i = 0; i < Math.min(n, 16); i++) {
+            const q = document.createElement('div');
+            const isMeasured = (i < Math.floor(n * prob / 100));
+            q.className = 'qubit ' + (isMeasured ? 'qubit-1' : 'qubit-0');
+            q.textContent = isMeasured ? '|1⟩' : '|0⟩';
+            viz.appendChild(q);
+        }
+
+        document.getElementById('results').innerHTML = `
+            <div class="result-row">
+                <span class="result-label">Qubits</span>
+                <span class="result-val">${d.n_qubits}</span>
+            </div>
+            <div class="result-row">
+                <span class="result-label">State space</span>
+                <span class="result-val">${Math.pow(2,d.n_qubits).toLocaleString()} states</span>
+            </div>
+            <div class="result-row">
+                <span class="result-label">Optimal iterations</span>
+                <span class="result-val">${d.optimal_iterations}</span>
+            </div>
+            <div class="result-row">
+                <span class="result-label">Noise level</span>
+                <span class="result-val ${d.noise > 2 ? 'bad' : 'good'}">${d.noise}%</span>
+            </div>
+            <div class="result-row">
+                <span class="result-label">Success probability</span>
+                <span class="result-val ${probClass}">${prob.toFixed(2)}%</span>
+            </div>
+            <div class="prob-bar-bg">
+                <div class="prob-bar" style="width:${prob}%"></div>
+            </div>
+            <div class="speedup-badge">
+                <div style="color:#8090b0;font-size:0.85em;margin-bottom:4px">Quantum Speedup vs Classical</div>
+                <div class="speedup-num">${speedup}×</div>
+                <div style="color:#607080;font-size:0.8em;margin-top:4px">
+                    Classical: ${classicalQ.toLocaleString()} queries &nbsp;|&nbsp;
+                    Quantum: ~${quantumQ.toLocaleString()} queries
+                </div>
+            </div>
+        `;
+
+        document.getElementById('circuit').textContent = buildCircuit(d.n_qubits, d.optimal_iterations);
+
+    } catch(err) {
+        document.getElementById('results').innerHTML = `<div style="color:#f44336">Error: ${err.message}</div>`;
+    }
+}
+
+async function runQuantumSearch() {
+    const topN = parseInt(document.getElementById('top-n').value);
+    const useReal = document.getElementById('use-real-hw').checked;
+    const div = document.getElementById('search-results');
+    div.innerHTML = '<div style="color:#00f5ff">⚛️ Running Grover search on drug library...</div>';
+
+    try {
+        const res = await fetch('/api/quantum_search', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({top_n: topN, use_real_hardware: useReal})
+        });
+        const d = await res.json();
+
+        if (d.error) {
+            div.innerHTML = `<div style="color:#ff9800">⚠️ ${d.error}</div>`;
+            return;
+        }
+
+        let html = `
+            <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:16px">
+                <div class="result-row" style="flex:1">
+                    <span class="result-label">Method</span>
+                    <span class="result-val good">${d.method}</span>
+                </div>
+                <div class="result-row" style="flex:1">
+                    <span class="result-label">Speedup</span>
+                    <span class="result-val good">${d.quantum_speedup}×</span>
+                </div>
+                <div class="result-row" style="flex:1">
+                    <span class="result-label">Qubits used</span>
+                    <span class="result-val">${d.n_qubits}</span>
+                </div>
+                <div class="result-row" style="flex:1">
+                    <span class="result-label">Candidates searched</span>
+                    <span class="result-val">${d.n_candidates_searched}</span>
+                </div>
+            </div>
+            <table style="width:100%;border-collapse:collapse;font-size:0.88em">
+                <tr style="color:#607080;border-bottom:1px solid rgba(255,255,255,0.1)">
+                    <th style="text-align:left;padding:6px">Rank</th>
+                    <th style="text-align:left;padding:6px">ID</th>
+                    <th style="text-align:right;padding:6px">Binding</th>
+                    <th style="text-align:right;padding:6px">QED</th>
+                    <th style="text-align:right;padding:6px">Q-Confidence</th>
+                </tr>`;
+
+        (d.top_candidates || []).forEach((c, i) => {
+            const bindColor = c.best_binding <= -10 ? '#4caf50' : c.best_binding <= -9 ? '#ff9800' : '#e0e8ff';
+            html += `<tr style="border-bottom:1px solid rgba(255,255,255,0.05)">
+                <td style="padding:6px;color:#607080">${i+1}</td>
+                <td style="padding:6px"><a href="/synthesis/${c.id}" style="color:#00f5ff">${c.id}</a></td>
+                <td style="padding:6px;text-align:right;color:${bindColor}">${c.best_binding}</td>
+                <td style="padding:6px;text-align:right">${c.qed}</td>
+                <td style="padding:6px;text-align:right;color:#a855f7">${c.quantum_confidence !== undefined ? (c.quantum_confidence*100).toFixed(1)+'%' : '—'}</td>
+            </tr>`;
+        });
+        html += '</table>';
+        div.innerHTML = html;
+
+    } catch(err) {
+        div.innerHTML = `<div style="color:#f44336">Error: ${err.message}</div>`;
+    }
+}
+
+// Init
+updateViz();
+</script>
+</body>
+</html>

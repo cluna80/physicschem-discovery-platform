@@ -1,0 +1,42 @@
+[
+  {
+    "name": "isoquinoline_metaCl_spiroTHF",
+    "error": "No score in output",
+    "vina": null
+  },
+  {
+    "name": "indole_metaCF3",
+    "error": "No score in output",
+    "vina": null
+  },
+  {
+    "name": "indole_benzyl",
+    "error": "No score in output",
+    "vina": null
+  },
+  {
+    "name": "naphthalene_35diF",
+    "error": "No score in output",
+    "vina": null
+  },
+  {
+    "name": "isoquinoline_35diF",
+    "error": "No score in output",
+    "vina": null
+  },
+  {
+    "name": "naphthalene_metaCF3",
+    "error": "No score in output",
+    "vina": null
+  },
+  {
+    "name": "indole_benzyl_spiroTHF",
+    "error": "No score in output",
+    "vina": null
+  },
+  {
+    "name": "naphthalene_metaF",
+    "error": "No score in output",
+    "vina": null
+  }
+]

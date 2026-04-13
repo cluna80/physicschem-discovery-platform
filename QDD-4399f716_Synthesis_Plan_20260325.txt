@@ -1,0 +1,55 @@
+SYNTHESIS PLAN: QDD-4399f716
+================================================================================
+
+Date: 2026-03-25
+SMILES: CC1=CC=C(C=C1)NS(=O)(=O)C2=CC=C(C=C2)C3=CC=NN3C4=CC=NC=C4
+
+RETROSYNTHETIC ANALYSIS:
+------------------------------------------------------------
+The molecule can be assembled from a sulfonamide core, pyrazole ring, and pyridine group.
+
+SYNTHETIC ROUTE:
+Step 1: Synthesis of 4-methylbenzenesulfonyl chloride
+  Reagents: Chlorosulfonic acid, 4-methylbenzene
+  Conditions: 0-5°C, 2h
+  Yield: 85-90%
+
+Step 2: Coupling with 4-aminophenylboronic acid
+  Reagents: Pyridine, DCM
+  Conditions: RT, 12h
+  Yield: 75-80%
+
+Step 3: Suzuki coupling with 4-bromopyridine
+  Reagents: Pd(PPh3)4, Na2CO3, DME/H2O
+  Conditions: 80°C, 8h
+  Yield: 70-75%
+
+Step 4: Synthesis of pyrazole-3-carboxylic acid
+  Reagents: Hydrazine, ethyl acetoacetate
+  Conditions: Reflux, 4h
+  Yield: 80-85%
+
+Step 5: Formation of acid chloride
+  Reagents: SOCl2, DMF (cat.)
+  Conditions: 60°C, 2h
+  Yield: 90-95%
+
+Step 6: Amide coupling
+  Reagents: Triethylamine, DCM
+  Conditions: 0-25°C, 6h
+  Yield: 70-75%
+
+Step 7: Pyrazole cyclization
+  Reagents: Hydrazine hydrate, ethanol
+  Conditions: Reflux, 8h
+  Yield: 65-70%
+
+Step 8: Final purification
+  Reagents: Column chromatography, recrystallization
+  Conditions: EtOAc/hexane
+  Yield: 85-90%
+
+Overall Yield: 12.4%
+
+ESTIMATED COST: $6,500-20,500
+TIMELINE: 2-3 months

@@ -1,0 +1,222 @@
+[
+  {
+    "name": "HIV_CURE_070",
+    "smiles": "C1CCCCC1C(=O)OOCC(=O)O",
+    "mw": 202.20599999999996,
+    "logp": 1.1261,
+    "hbd": 1,
+    "hba": 4,
+    "quantum_potential": 0.55,
+    "quantum_probability": 0.013115500227327142,
+    "quantum_score": 0.55721352512503
+  },
+  {
+    "name": "HIV_CURE_021",
+    "smiles": "C1CCCCC1CCC(=O)O",
+    "mw": 156.225,
+    "logp": 2.4314999999999998,
+    "hbd": 1,
+    "hba": 1,
+    "quantum_potential": 0.5,
+    "quantum_probability": 0.014721183539762477,
+    "quantum_score": 0.5073605917698812
+  },
+  {
+    "name": "HIV_CURE_039",
+    "smiles": "C1CCCCC1C(=O)NC(=O)NC(F)(F)F",
+    "mw": 238.20899999999997,
+    "logp": 1.9122999999999999,
+    "hbd": 2,
+    "hba": 2,
+    "quantum_potential": 0.44999999999999996,
+    "quantum_probability": 0.016509331963612865,
+    "quantum_score": 0.45742919938362575
+  },
+  {
+    "name": "HIV_CURE_054",
+    "smiles": "C1CCCCC1C(=O)CC(=O)N",
+    "mw": 169.224,
+    "logp": 1.0111999999999999,
+    "hbd": 1,
+    "hba": 2,
+    "quantum_potential": 0.44999999999999996,
+    "quantum_probability": 0.016509331963612844,
+    "quantum_score": 0.45742919938362575
+  },
+  {
+    "name": "HIV_CURE_058",
+    "smiles": "C1CCCCC1C(=O)CC(=O)NC",
+    "mw": 183.251,
+    "logp": 1.2719,
+    "hbd": 1,
+    "hba": 2,
+    "quantum_potential": 0.44999999999999996,
+    "quantum_probability": 0.016509331963612865,
+    "quantum_score": 0.45742919938362575
+  },
+  {
+    "name": "HIV_CURE_016",
+    "smiles": "c1ncccc1CNCl",
+    "mw": 142.589,
+    "logp": 1.325,
+    "hbd": 1,
+    "hba": 2,
+    "quantum_potential": 0.44999999999999996,
+    "quantum_probability": 0.008746458315415564,
+    "quantum_score": 0.45393590624193697
+  },
+  {
+    "name": "HIV_CURE_024",
+    "smiles": "c1ccncc1CNCCC",
+    "mw": 150.22499999999997,
+    "logp": 1.5812,
+    "hbd": 1,
+    "hba": 2,
+    "quantum_potential": 0.44999999999999996,
+    "quantum_probability": 0.00874645831541556,
+    "quantum_score": 0.45393590624193697
+  },
+  {
+    "name": "HIV_CURE_038",
+    "smiles": "c1ccccc1C(=O)OC(=O)O",
+    "mw": 166.13199999999998,
+    "logp": 1.5214,
+    "hbd": 1,
+    "hba": 3,
+    "quantum_potential": 0.44999999999999996,
+    "quantum_probability": 0.008746458315415566,
+    "quantum_score": 0.45393590624193697
+  },
+  {
+    "name": "HIV_CURE_051",
+    "smiles": "C1CCCCC1C(=O)NC(=O)C",
+    "mw": 169.224,
+    "logp": 1.2294,
+    "hbd": 1,
+    "hba": 2,
+    "quantum_potential": 0.44999999999999996,
+    "quantum_probability": 0.008746458315415566,
+    "quantum_score": 0.45393590624193697
+  },
+  {
+    "name": "HIV_CURE_069",
+    "smiles": "c1ccccc1C(=O)CCNC",
+    "mw": 163.22,
+    "logp": 1.4788,
+    "hbd": 1,
+    "hba": 2,
+    "quantum_potential": 0.44999999999999996,
+    "quantum_probability": 0.008746458315415555,
+    "quantum_score": 0.45393590624193697
+  },
+  {
+    "name": "HIV_CURE_071",
+    "smiles": "c1ccccc1C(=O)CCN",
+    "mw": 149.19299999999998,
+    "logp": 1.2181,
+    "hbd": 1,
+    "hba": 2,
+    "quantum_potential": 0.44999999999999996,
+    "quantum_probability": 0.00874645831541556,
+    "quantum_score": 0.45393590624193697
+  },
+  {
+    "name": "HIV_CURE_002",
+    "smiles": "c1ncccc1C(F)(F)F",
+    "mw": 147.099,
+    "logp": 2.1004,
+    "hbd": 0,
+    "hba": 1,
+    "quantum_potential": 0.4,
+    "quantum_probability": 0.010219240011782956,
+    "quantum_score": 0.40408769600471317
+  },
+  {
+    "name": "HIV_CURE_017",
+    "smiles": "c1ccccc1Cl",
+    "mw": 112.559,
+    "logp": 2.34,
+    "hbd": 0,
+    "hba": 0,
+    "quantum_potential": 0.4,
+    "quantum_probability": 0.010219240011782961,
+    "quantum_score": 0.40408769600471317
+  },
+  {
+    "name": "HIV_CURE_026",
+    "smiles": "C1CCCCC1Cl",
+    "mw": 118.607,
+    "logp": 2.557900000000001,
+    "hbd": 0,
+    "hba": 0,
+    "quantum_potential": 0.4,
+    "quantum_probability": 0.010219240011782949,
+    "quantum_score": 0.40408769600471317
+  },
+  {
+    "name": "HIV_CURE_035",
+    "smiles": "c1ccccc1CC",
+    "mw": 106.16799999999999,
+    "logp": 2.2490000000000006,
+    "hbd": 0,
+    "hba": 0,
+    "quantum_potential": 0.4,
+    "quantum_probability": 0.010219240011782961,
+    "quantum_score": 0.40408769600471317
+  },
+  {
+    "name": "HIV_CURE_036",
+    "smiles": "c1ccncc1C(F)(F)F",
+    "mw": 147.09899999999996,
+    "logp": 2.1004,
+    "hbd": 0,
+    "hba": 1,
+    "quantum_potential": 0.4,
+    "quantum_probability": 0.010219240011782949,
+    "quantum_score": 0.40408769600471317
+  },
+  {
+    "name": "HIV_CURE_042",
+    "smiles": "c1ccncc1CC(=O)OC(=O)O",
+    "mw": 181.14699999999996,
+    "logp": 0.8452999999999999,
+    "hbd": 1,
+    "hba": 4,
+    "quantum_potential": 0.4,
+    "quantum_probability": 0.010219240011782961,
+    "quantum_score": 0.40408769600471317
+  },
+  {
+    "name": "HIV_CURE_049",
+    "smiles": "C1CCCCC1F",
+    "mw": 102.152,
+    "logp": 2.2886000000000006,
+    "hbd": 0,
+    "hba": 0,
+    "quantum_potential": 0.4,
+    "quantum_probability": 0.010219240011782949,
+    "quantum_score": 0.40408769600471317
+  },
+  {
+    "name": "HIV_CURE_050",
+    "smiles": "c1ccccc1C(F)(F)F",
+    "mw": 146.111,
+    "logp": 2.705400000000001,
+    "hbd": 0,
+    "hba": 0,
+    "quantum_potential": 0.4,
+    "quantum_probability": 0.010219240011782961,
+    "quantum_score": 0.40408769600471317
+  },
+  {
+    "name": "HIV_CURE_056",
+    "smiles": "C1COCCN1CCC(=O)CC(=O)O",
+    "mw": 201.22199999999998,
+    "logp": -0.24749999999999966,
+    "hbd": 1,
+    "hba": 4,
+    "quantum_potential": 0.4,
+    "quantum_probability": 0.010219240011782956,
+    "quantum_score": 0.40408769600471317
+  }
+]

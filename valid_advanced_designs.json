@@ -1,0 +1,12 @@
+[
+  {
+    "name": "CURE_4G_007",
+    "smiles": "c1cc(F)c(F)c(F)c1C(=O)NCC(O)CNC(=O)CCCCCF",
+    "modification": "Extended chain (+2 carbons)",
+    "description": "Better hydrophobic pocket filling",
+    "expected_boost": 0.5,
+    "mw": 364.3390000000002,
+    "logp": 1.8407,
+    "predicted": -4.865
+  }
+]

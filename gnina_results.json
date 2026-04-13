@@ -1,0 +1,50 @@
+[
+  {
+    "name": "CURE_17G_002",
+    "pdbqt": "ligand_meeko/CURE_17G_002.pdbqt",
+    "vina": -7.753,
+    "note": "Best overall \u2014 hydroxy-IQ + 3,5-diF + S-OH + bis-THF",
+    "gnina_vina": null,
+    "cnn_score": null
+  },
+  {
+    "name": "CURE_17G_003",
+    "pdbqt": "ligand_meeko/CURE_17G_003.pdbqt",
+    "vina": -7.549,
+    "note": "Hydroxy-IQ + meta-Cl + S-OH + bis-THF",
+    "gnina_vina": null,
+    "cnn_score": null
+  },
+  {
+    "name": "CURE_17G_007",
+    "pdbqt": "ligand_meeko/CURE_17G_007.pdbqt",
+    "vina": -7.522,
+    "note": "Hydroxy-IQ + meta-F + S-OH + hydroxy-bis-THF",
+    "gnina_vina": null,
+    "cnn_score": null
+  },
+  {
+    "name": "CURE_16G_007",
+    "pdbqt": "ligand_meeko/CURE_16G_007.pdbqt",
+    "vina": -7.487,
+    "note": "Hydroxy-IQ + meta-F + S-OH + bis-THF",
+    "gnina_vina": null,
+    "cnn_score": null
+  },
+  {
+    "name": "Q15_020",
+    "pdbqt": "ligand_meeko/Q15_020.pdbqt",
+    "vina": -7.398,
+    "note": "Isoquinoline + meta-F + S-OH + bis-THF",
+    "gnina_vina": null,
+    "cnn_score": null
+  },
+  {
+    "name": "CURE_13G_001",
+    "pdbqt": "ligand_meeko/CURE_13G_001.pdbqt",
+    "vina": -7.333,
+    "note": "Naphthalene + meta-F + R-OH + bis-THF (original best)",
+    "gnina_vina": null,
+    "cnn_score": null
+  }
+]

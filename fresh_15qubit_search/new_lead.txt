@@ -1,0 +1,4 @@
+NEW LEAD: naphthalene_35diF
+Vina: -11.222 kcal/mol
+CNN: 0.9206
+Structure: Naphthalene core + 3,5-diF phenyl + bis-THF

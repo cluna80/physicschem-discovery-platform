@@ -1,0 +1,101 @@
+{
+  "history": [
+    {
+      "gen": 4,
+      "best": "CURE_4G_003",
+      "affinity": -5.365,
+      "key_discovery": "Initial amide + trifluorophenyl scaffold"
+    },
+    {
+      "gen": 5,
+      "best": "CURE_5G_002",
+      "affinity": -6.122,
+      "key_discovery": "Single THF ring added to right arm"
+    },
+    {
+      "gen": 6,
+      "best": "CURE_6G_002",
+      "affinity": -6.772,
+      "key_discovery": "Naphthalene left arm \u2014 pi-stacking in S2"
+    },
+    {
+      "gen": 7,
+      "best": "CURE_7G_007",
+      "affinity": -5.183,
+      "key_discovery": "Regression \u2014 THP ring worse than THF"
+    },
+    {
+      "gen": 8,
+      "best": "CURE_8G_001",
+      "affinity": -5.335,
+      "key_discovery": "Regression \u2014 naphthalene substituents hurt"
+    },
+    {
+      "gen": 9,
+      "best": "CURE_9G_008",
+      "affinity": -6.207,
+      "key_discovery": "Chiral THF stereo exploration"
+    },
+    {
+      "gen": 10,
+      "best": "CURE_10G_007",
+      "affinity": -6.861,
+      "key_discovery": "P1 benzyl group added \u2014 first major P1 improvement"
+    },
+    {
+      "gen": 11,
+      "best": "CURE_11G_007",
+      "affinity": -7.265,
+      "key_discovery": "meta-Fluorobenzyl P1 \u2014 breakthrough +0.4 kcal/mol"
+    },
+    {
+      "gen": 12,
+      "best": "CURE_12G_001",
+      "affinity": -7.29,
+      "key_discovery": "Chiral R-OH on linker stereochemistry"
+    },
+    {
+      "gen": 13,
+      "best": "CURE_13G_001",
+      "affinity": -7.333,
+      "key_discovery": "R-OH + bis-THF optimised \u2014 best naphthalene result"
+    },
+    {
+      "gen": 15,
+      "best": "Q15_020",
+      "affinity": -7.398,
+      "key_discovery": "S-OH stereochemistry better than R-OH on isoquinoline"
+    },
+    {
+      "gen": 16,
+      "best": "CURE_16G_007",
+      "affinity": -7.487,
+      "key_discovery": "Hydroxy-isoquinoline left arm \u2014 OH on ring reaches Asp30"
+    },
+    {
+      "gen": 17,
+      "best": "CURE_17G_002",
+      "affinity": -7.753,
+      "key_discovery": "Hydroxy-isoquinoline + 3,5-difluorobenzyl + S-OH + bis-THF",
+      "smiles": "",
+      "timestamp": "2026-03-26T19:43:09.059222"
+    },
+    {
+      "gen": 18,
+      "best": "CURE_18G_010",
+      "affinity": -7.66,
+      "key_discovery": "Regression \u2014 scaffold plateau reached, new scaffold needed",
+      "smiles": "",
+      "timestamp": "2026-03-26T19:43:41.712122"
+    },
+    {
+      "gen": 19,
+      "best": "CURE_19G_002",
+      "affinity": -7.812,
+      "key_discovery": "Indole + 3,5-diF + S-OH + bis-THF",
+      "smiles": "",
+      "timestamp": "2026-03-26T20:22:50.964712"
+    }
+  ],
+  "created": "2026-03-26T19:05:41.651126"
+}

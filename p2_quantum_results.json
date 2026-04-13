@@ -1,0 +1,112 @@
+[
+  {
+    "name": "CH3",
+    "substituent": "C",
+    "feature": "Methyl",
+    "predicted_boost": 0.3,
+    "smiles": "c1Cc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CNC(=O)[C@@H]3CO[C@H]4OCCO[C@H]34)ccc2c1",
+    "valid": true,
+    "quantum_score": 1.769317161533907,
+    "quantum_prob": 0.1844820709393777
+  },
+  {
+    "name": "OMe",
+    "substituent": "OC",
+    "feature": "Methoxy",
+    "predicted_boost": 0.4,
+    "smiles": "c1OCc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CNC(=O)[C@@H]3CO[C@H]4OCCO[C@H]34)ccc2c1",
+    "valid": true,
+    "quantum_score": 1.7372846133431659,
+    "quantum_prob": 0.17866628462143874
+  },
+  {
+    "name": "OH",
+    "substituent": "O",
+    "feature": "Hydroxyl",
+    "predicted_boost": 0.4,
+    "smiles": "c1Oc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CNC(=O)[C@@H]3CO[C@H]4OCCO[C@H]34)ccc2c1",
+    "valid": true,
+    "quantum_score": 1.649827596659289,
+    "quantum_prob": 0.16370445810715756
+  },
+  {
+    "name": "H",
+    "substituent": "H",
+    "feature": "Hydrogen (baseline)",
+    "predicted_boost": 0.0,
+    "smiles": "c1ccc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CNC(=O)[C@@H]3CO[C@H]4OCCO[C@H]34)ccc2c1",
+    "valid": true,
+    "quantum_score": 1.6463583170022367,
+    "quantum_prob": 0.08156875279397345
+  },
+  {
+    "name": "NH2",
+    "substituent": "N",
+    "feature": "Amino",
+    "predicted_boost": 0.5,
+    "smiles": "c1Nc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CNC(=O)[C@@H]3CO[C@H]4OCCO[C@H]34)ccc2c1",
+    "valid": true,
+    "quantum_score": 1.5616828032785774,
+    "quantum_prob": 0.07494621653813342
+  },
+  {
+    "name": "CH2OH",
+    "substituent": "CO",
+    "feature": "Hydroxymethyl",
+    "predicted_boost": 0.4,
+    "smiles": "c1COc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CNC(=O)[C@@H]3CO[C@H]4OCCO[C@H]34)ccc2c1",
+    "valid": true,
+    "quantum_score": 1.4355621408277028,
+    "quantum_prob": 0.06606572507699772
+  },
+  {
+    "name": "NHCOCH3",
+    "substituent": "NC(=O)C",
+    "feature": "Acetamido",
+    "predicted_boost": 0.5,
+    "smiles": "c1NC(=O)Cc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CNC(=O)[C@@H]3CO[C@H]4OCCO[C@H]34)ccc2c1",
+    "valid": true,
+    "quantum_score": 1.281229465378549,
+    "quantum_prob": 0.05661745928428961
+  },
+  {
+    "name": "COOH",
+    "substituent": "C(=O)O",
+    "feature": "Carboxylic acid",
+    "predicted_boost": 0.5,
+    "smiles": "c1C(=O)Oc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CNC(=O)[C@@H]3CO[C@H]4OCCO[C@H]34)ccc2c1",
+    "valid": true,
+    "quantum_score": 1.2580268693401084,
+    "quantum_prob": 0.05531891035764465
+  },
+  {
+    "name": "CONH2",
+    "substituent": "C(=O)N",
+    "feature": "Carboxamide",
+    "predicted_boost": 0.6,
+    "smiles": "c1C(=O)Nc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CNC(=O)[C@@H]3CO[C@H]4OCCO[C@H]34)ccc2c1",
+    "valid": true,
+    "quantum_score": 1.2136024662834377,
+    "quantum_prob": 0.052915188056127486
+  },
+  {
+    "name": "SO2CH3",
+    "substituent": "S(=O)(=O)C",
+    "feature": "Methylsulfonyl",
+    "predicted_boost": 0.5,
+    "smiles": "c1S(=O)(=O)Cc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CNC(=O)[C@@H]3CO[C@H]4OCCO[C@H]34)ccc2c1",
+    "valid": true,
+    "quantum_score": 1.0501087131858322,
+    "quantum_prob": 0.04493408568360291
+  },
+  {
+    "name": "SO2NH2",
+    "substituent": "S(=O)(=O)N",
+    "feature": "Sulfonamide",
+    "predicted_boost": 0.7,
+    "smiles": "c1S(=O)(=O)Nc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CNC(=O)[C@@H]3CO[C@H]4OCCO[C@H]34)ccc2c1",
+    "valid": true,
+    "quantum_score": 0.9531246325250915,
+    "quantum_prob": 0.04078084854125671
+  }
+]

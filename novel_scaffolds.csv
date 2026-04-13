@@ -1,0 +1,9 @@
+﻿rank,smiles,predicted_ic50_nM,significance_sigma,novel_space,status,model_r2,model_rmse_log10nM,timestamp
+2,Fc1ccc(CCNc2ccc(Nc3ncnc4ccccc34)cc2)cc1,122.01,4.40,True,"📈 EVIDENCE (3σ, novel space)",0.763,0.832,2026-03-30T21:27:07
+9,O=C(O)CCCNc1ccc2[nH]cnc2c1,149.92,4.23,True,"📈 EVIDENCE (3σ, novel space)",0.763,0.832,2026-03-30T21:27:07
+12,O=C(O)CCOCc1ccc2[nH]cnc2c1,181.67,4.07,True,"📈 EVIDENCE (3σ, novel space)",0.763,0.832,2026-03-30T21:27:07
+27,c1ccc(CCCCc2ccc(Nc3ncnc4ccccc34)cc2)cc1,231.11,3.87,True,"📈 EVIDENCE (3σ, novel space)",0.763,0.832,2026-03-30T21:27:07
+31,Nc1cccc(CCCc2cnc3ccccc3n2)c1,266.39,3.75,True,"📈 EVIDENCE (3σ, novel space)",0.763,0.832,2026-03-30T21:27:07
+36,Oc1cccc(CCCc2cnc3ccccc3n2)c1,349.48,3.53,True,"📈 EVIDENCE (3σ, novel space)",0.763,0.832,2026-03-30T21:27:07
+38,Nc1cccc(CCOc2cnc3ccccc3n2)c1,369.56,3.48,True,"📈 EVIDENCE (3σ, novel space)",0.763,0.832,2026-03-30T21:27:07
+47,OCCCOc1cnc2ccccc2n1,449.46,3.32,True,"📈 EVIDENCE (3σ, novel space)",0.763,0.832,2026-03-30T21:27:07

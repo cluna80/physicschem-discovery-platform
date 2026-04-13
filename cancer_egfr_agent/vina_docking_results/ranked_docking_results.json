@@ -1,0 +1,454 @@
+[
+  {
+    "rank": 1,
+    "smiles": "C#Cc1cnc2c(C#C)c(OCCN)c(-c3cc(C=CC(=O)NCC)c4ncncc4c3)c(C)c2n1",
+    "generation": 38,
+    "evol_fitness": 183.99128000000002,
+    "docking": {
+      "success": true,
+      "best_affinity": -9.19,
+      "poses": [
+        {
+          "mode": 1,
+          "affinity_kcal_mol": -9.19,
+          "rmsd_lb": 0.0,
+          "rmsd_ub": 0.0
+        },
+        {
+          "mode": 2,
+          "affinity_kcal_mol": -8.381,
+          "rmsd_lb": 2.519,
+          "rmsd_ub": 5.309
+        },
+        {
+          "mode": 3,
+          "affinity_kcal_mol": -7.966,
+          "rmsd_lb": 2.633,
+          "rmsd_ub": 5.616
+        },
+        {
+          "mode": 4,
+          "affinity_kcal_mol": -7.937,
+          "rmsd_lb": 1.847,
+          "rmsd_ub": 3.794
+        },
+        {
+          "mode": 5,
+          "affinity_kcal_mol": -7.889,
+          "rmsd_lb": 4.574,
+          "rmsd_ub": 9.809
+        }
+      ],
+      "vina_log": "AutoDock Vina v1.2.3\n#################################################################\n# If you used AutoDock Vina in your work, please cite:          #\n#                                                               #\n# J. Eberhardt, D. Santos-Martins, A. F. Tillack, and S. Forli  #\n# AutoDock Vina 1.2.0: New Docking Methods, Expanded Force      #\n# Field, and Python Bindings, J. Chem. Inf. Model. (2021)       #\n# DOI 10.1021/acs.jcim.1c00203                                  #\n#                                                               #\n# O. Trott, A. J. Olson,                                        #\n# AutoDock Vina: improving the speed and accuracy of docking    #\n# with a new scoring function, efficient optimization and       #\n# multithreading, J. Comp. Chem. (2010)                         #\n# DOI 10.1002/jcc.21334                                         #\n#                                                               #\n# Please see https://github.com/ccsb-scripps/AutoDock-Vina for  #\n# more information.                                             #\n#################################################################\n\nScoring function : vina\nRigid receptor: egfr_receptor.pdbqt\nLigand: vina_docking_results/ligand_01.pdbqt\nGrid center: X 24.77 Y 9.19 Z 0\nGrid size  : X 20 Y 20 Z 20\nGrid space : 0.375\nExhaustiveness: 16\nCPU: 0\nVerbosity: 1\n\nComputing Vina grid ... done.\nPerforming docking (random seed: -811531543) ... \n0%   10   20   30   40   50   60   70   80   90   100%\n|----|----|----|----|----|----|----|----|----|----|\n***************************************************\n\nmode |   affinity | dist from best mode\n     | (kcal/mol) | rmsd l.b.| rmsd u.b.\n-----+------------+----------+----------\n   1        -9.19          0          0\n   2       -8.381      2.519      5.309\n   3       -7.966      2.633      5.616\n   4       -7.937      1.847      3.794\n   5       -7.889      4.574      9.809\n"
+    },
+    "properties": {
+      "mw": 476.5,
+      "logp": 3.0,
+      "hbd": 2,
+      "hba": 7,
+      "rot_bonds": 7,
+      "rings": 4,
+      "tpsa": 115.9,
+      "qed": 0.311
+    }
+  },
+  {
+    "rank": 2,
+    "smiles": "C#Cc1c(OCC)c(-c2cc(C=CC(=O)NCCN)c3ncncc3c2)c(C)c2nccnc12",
+    "generation": 26,
+    "evol_fitness": 183.93392,
+    "docking": {
+      "success": false,
+      "error": "No poses parsed",
+      "vina_log": "AutoDock Vina v1.2.3\n#################################################################\n# If you used AutoDock Vina in your work, please cite:          #\n#                                                               #\n# J. Eberhardt, D. Santos-Martins, A. F. Tillack, and S. Forli  #\n# AutoDock Vina 1.2.0: New Docking Methods, Expanded Force      #\n# Field, and Python Bindings, J. Chem. Inf. Model. (2021)       #\n# DOI 10.1021/acs.jcim.1c00203                                  #\n#                                                               #\n# O. Trott, A. J. Olson,                                        #\n# AutoDock Vina: improving the speed and accuracy of docking    #\n# with a new scoring function, efficient optimization and       #\n# multithreading, J. Comp. Chem. (2010)                         #\n# DOI 10.1002/jcc.21334                                         #\n#                                                               #\n# Please see https://github.com/ccsb-scripps/AutoDock-Vina for  #\n# more information.                                             #\n#################################################################\n\nScoring function : vina\nRigid receptor: egfr_receptor.pdbqt\nLigand: vina_docking_results/ligand_02.pdbqt\nGrid center: X 24.77 Y 9.19 Z 0\nGrid size  : X 20 Y 20 Z 20\nGrid space : 0.375\nExhaustiveness: 16\nCPU: 0\nVerbosity: 1\n\nComputing Vina grid ... done.\nPerforming docking (random seed: 1678351315) ... \n0%   10   20   30   40   50   60   70   80   90   100%\n|----|----|----|----|----|----|----|----|----|----|\n********************************************"
+    },
+    "properties": {
+      "mw": 452.5,
+      "logp": 3.02,
+      "hbd": 2,
+      "hba": 7,
+      "rot_bonds": 7,
+      "rings": 4,
+      "tpsa": 115.9,
+      "qed": 0.327
+    }
+  },
+  {
+    "rank": 3,
+    "smiles": "CC#Cc1c(OC)c(-c2cc(C=CC(=O)NCCN)c3ncncc3c2)c(C)c2nccnc12",
+    "generation": 35,
+    "evol_fitness": 183.93392,
+    "docking": {
+      "success": false,
+      "error": "No poses parsed",
+      "vina_log": "AutoDock Vina v1.2.3\n#################################################################\n# If you used AutoDock Vina in your work, please cite:          #\n#                                                               #\n# J. Eberhardt, D. Santos-Martins, A. F. Tillack, and S. Forli  #\n# AutoDock Vina 1.2.0: New Docking Methods, Expanded Force      #\n# Field, and Python Bindings, J. Chem. Inf. Model. (2021)       #\n# DOI 10.1021/acs.jcim.1c00203                                  #\n#                                                               #\n# O. Trott, A. J. Olson,                                        #\n# AutoDock Vina: improving the speed and accuracy of docking    #\n# with a new scoring function, efficient optimization and       #\n# multithreading, J. Comp. Chem. (2010)                         #\n# DOI 10.1002/jcc.21334                                         #\n#                                                               #\n# Please see https://github.com/ccsb-scripps/AutoDock-Vina for  #\n# more information.                                             #\n#################################################################\n\nScoring function : vina\nRigid receptor: egfr_receptor.pdbqt\nLigand: vina_docking_results/ligand_03.pdbqt\nGrid center: X 24.77 Y 9.19 Z 0\nGrid size  : X 20 Y 20 Z 20\nGrid space : 0.375\nExhaustiveness: 16\nCPU: 0\nVerbosity: 1\n\nComputing Vina grid ... done.\nPerforming docking (random seed: 1565583739) ... \n0%   10   20   30   40   50   60   70   80   90   100%\n|----|----|----|----|----|----|----|----|----|----|\n*"
+    },
+    "properties": {
+      "mw": 452.5,
+      "logp": 3.02,
+      "hbd": 2,
+      "hba": 7,
+      "rot_bonds": 6,
+      "rings": 4,
+      "tpsa": 115.9,
+      "qed": 0.341
+    }
+  },
+  {
+    "rank": 4,
+    "smiles": "C#Cc1c(OCC)c(-c2cc(C=CC(=O)NC)c3nc(C(CN)OC)ncc3c2)cc2nccnc12",
+    "generation": 37,
+    "evol_fitness": 183.8984,
+    "docking": {
+      "success": false,
+      "error": "No poses parsed",
+      "vina_log": ""
+    },
+    "properties": {
+      "mw": 482.5,
+      "logp": 3.03,
+      "hbd": 2,
+      "hba": 8,
+      "rot_bonds": 8,
+      "rings": 4,
+      "tpsa": 125.1,
+      "qed": 0.29
+    }
+  },
+  {
+    "rank": 5,
+    "smiles": "C#Cc1cnc2c(C#C)c(OCCO)c(-c3cc(C=CC(=O)NCC)c4ncncc4c3)c(C)c2n1",
+    "generation": 34,
+    "evol_fitness": 183.87432,
+    "docking": {
+      "success": false,
+      "error": "No poses parsed",
+      "vina_log": ""
+    },
+    "properties": {
+      "mw": 477.5,
+      "logp": 3.03,
+      "hbd": 2,
+      "hba": 7,
+      "rot_bonds": 7,
+      "rings": 4,
+      "tpsa": 110.1,
+      "qed": 0.311
+    }
+  },
+  {
+    "rank": 6,
+    "smiles": "C#CN(CC(N)c1cnc2ccccc2n1)c1cc(C(C)NC(=O)C=C)c2cncnc2c1",
+    "generation": 19,
+    "evol_fitness": 183.8668,
+    "docking": {
+      "success": false,
+      "error": "No poses parsed",
+      "vina_log": ""
+    },
+    "properties": {
+      "mw": 437.5,
+      "logp": 3.03,
+      "hbd": 2,
+      "hba": 7,
+      "rot_bonds": 7,
+      "rings": 4,
+      "tpsa": 109.9,
+      "qed": 0.26
+    }
+  },
+  {
+    "rank": 7,
+    "smiles": "C#Cc1c(OCCF)c(-c2cc(C=CC(=O)NCCN)c3ncncc3c2)c(C)c2nccnc12",
+    "generation": 25,
+    "evol_fitness": 183.86448000000001,
+    "docking": {
+      "success": false,
+      "error": "No poses parsed",
+      "vina_log": ""
+    },
+    "properties": {
+      "mw": 470.5,
+      "logp": 2.97,
+      "hbd": 2,
+      "hba": 7,
+      "rot_bonds": 8,
+      "rings": 4,
+      "tpsa": 115.9,
+      "qed": 0.3
+    }
+  },
+  {
+    "rank": 8,
+    "smiles": "CC#Cc1c(NC)c(-c2cc(C=CC(=O)NCCN)c3ncncc3c2)c(C)c2nccnc12",
+    "generation": 36,
+    "evol_fitness": 183.80151999999998,
+    "docking": {
+      "success": false,
+      "error": "No poses parsed",
+      "vina_log": ""
+    },
+    "properties": {
+      "mw": 451.5,
+      "logp": 3.05,
+      "hbd": 3,
+      "hba": 7,
+      "rot_bonds": 6,
+      "rings": 4,
+      "tpsa": 118.7,
+      "qed": 0.304
+    }
+  },
+  {
+    "rank": 9,
+    "smiles": "C#Cc1c(OCCO)c(-c2cc(C=CC(=O)NCC)c3ncncc3c2)c(C)c2nccnc12",
+    "generation": 27,
+    "evol_fitness": 183.79952,
+    "docking": {
+      "success": false,
+      "error": "No poses parsed",
+      "vina_log": ""
+    },
+    "properties": {
+      "mw": 453.5,
+      "logp": 3.05,
+      "hbd": 2,
+      "hba": 7,
+      "rot_bonds": 7,
+      "rings": 4,
+      "tpsa": 110.1,
+      "qed": 0.327
+    }
+  },
+  {
+    "rank": 10,
+    "smiles": "C#CN(OC(N)c1cnc2ccccc2n1)c1cc(C(C)NC(=O)C=C)c2cncnc2c1",
+    "generation": 39,
+    "evol_fitness": 183.6896,
+    "docking": {
+      "success": false,
+      "error": "No poses parsed",
+      "vina_log": ""
+    },
+    "properties": {
+      "mw": 439.5,
+      "logp": 2.92,
+      "hbd": 2,
+      "hba": 8,
+      "rot_bonds": 7,
+      "rings": 4,
+      "tpsa": 119.2,
+      "qed": 0.148
+    }
+  },
+  {
+    "rank": 11,
+    "smiles": "CC#Cc1c(OC)c(-c2cc(C=CC(=O)NCON)c3ncncc3c2)c(C)c2nccnc12",
+    "generation": 40,
+    "evol_fitness": 183.62248,
+    "docking": {
+      "success": false,
+      "error": "No poses parsed",
+      "vina_log": ""
+    },
+    "properties": {
+      "mw": 454.5,
+      "logp": 2.91,
+      "hbd": 2,
+      "hba": 8,
+      "rot_bonds": 6,
+      "rings": 4,
+      "tpsa": 125.1,
+      "qed": 0.197
+    }
+  },
+  {
+    "rank": 12,
+    "smiles": "C#CN(CNc1cnc2ccccc2n1)c1cc(CNC(=O)C=C)c2cncnc2c1",
+    "generation": 30,
+    "evol_fitness": 183.3676,
+    "docking": {
+      "success": false,
+      "error": "No poses parsed",
+      "vina_log": ""
+    },
+    "properties": {
+      "mw": 409.5,
+      "logp": 2.84,
+      "hbd": 2,
+      "hba": 7,
+      "rot_bonds": 7,
+      "rings": 4,
+      "tpsa": 95.9,
+      "qed": 0.21
+    }
+  },
+  {
+    "rank": 13,
+    "smiles": "C#Cc1c(OCCF)c(-c2cc(C=CC(=O)NCCN)c3ncncc3c2)c(F)c2nccnc12",
+    "generation": 31,
+    "evol_fitness": 183.1872,
+    "docking": {
+      "success": false,
+      "error": "No poses parsed",
+      "vina_log": ""
+    },
+    "properties": {
+      "mw": 474.5,
+      "logp": 2.8,
+      "hbd": 2,
+      "hba": 7,
+      "rot_bonds": 8,
+      "rings": 4,
+      "tpsa": 115.9,
+      "qed": 0.298
+    }
+  },
+  {
+    "rank": 14,
+    "smiles": "C#CN(CN(Cl)c1cnc2ccccc2n1)c1cc(NNC(=O)C=C)c2cncnc2c1",
+    "generation": 32,
+    "evol_fitness": 183.1316,
+    "docking": {
+      "success": false,
+      "error": "No poses parsed",
+      "vina_log": ""
+    },
+    "properties": {
+      "mw": 444.9,
+      "logp": 3.22,
+      "hbd": 2,
+      "hba": 8,
+      "rot_bonds": 7,
+      "rings": 4,
+      "tpsa": 99.2,
+      "qed": 0.112
+    }
+  },
+  {
+    "rank": 15,
+    "smiles": "C#CN(CC(N)c1cnc2ccccc2n1)c1cc(C(CCl)NC(=O)C=C)c2cncnc2c1",
+    "generation": 21,
+    "evol_fitness": 182.9912,
+    "docking": {
+      "success": false,
+      "error": "No poses parsed",
+      "vina_log": ""
+    },
+    "properties": {
+      "mw": 472.0,
+      "logp": 3.25,
+      "hbd": 2,
+      "hba": 7,
+      "rot_bonds": 8,
+      "rings": 4,
+      "tpsa": 109.9,
+      "qed": 0.176
+    }
+  },
+  {
+    "rank": 16,
+    "smiles": "C#Cc1c(OCCO)c(-c2cc(C=CC(=O)NCC)c3ncncc3c2)cc2nccnc12",
+    "generation": 33,
+    "evol_fitness": 182.9668,
+    "docking": {
+      "success": false,
+      "error": "No poses parsed",
+      "vina_log": ""
+    },
+    "properties": {
+      "mw": 439.5,
+      "logp": 2.74,
+      "hbd": 2,
+      "hba": 7,
+      "rot_bonds": 7,
+      "rings": 4,
+      "tpsa": 110.1,
+      "qed": 0.337
+    }
+  },
+  {
+    "rank": 17,
+    "smiles": "C#Cc1c(OCC)c(-c2cc(C=CC(=O)NCCN)c3ncncc3c2)cc2nccnc12",
+    "generation": 28,
+    "evol_fitness": 182.8324,
+    "docking": {
+      "success": false,
+      "error": "No poses parsed",
+      "vina_log": ""
+    },
+    "properties": {
+      "mw": 438.5,
+      "logp": 2.71,
+      "hbd": 2,
+      "hba": 7,
+      "rot_bonds": 7,
+      "rings": 4,
+      "tpsa": 115.9,
+      "qed": 0.337
+    }
+  },
+  {
+    "rank": 18,
+    "smiles": "C#CN(CN(N)c1cnc2ccccc2n1)c1cc(C(C)NC(=O)C=C)c2cncnc2c1",
+    "generation": 29,
+    "evol_fitness": 182.6844,
+    "docking": {
+      "success": false,
+      "error": "No poses parsed",
+      "vina_log": ""
+    },
+    "properties": {
+      "mw": 438.5,
+      "logp": 2.67,
+      "hbd": 2,
+      "hba": 8,
+      "rot_bonds": 7,
+      "rings": 4,
+      "tpsa": 113.2,
+      "qed": 0.113
+    }
+  },
+  {
+    "rank": 19,
+    "smiles": "C#CN(CC(N)c1cnc2ccccc2n1)c1cc(CNC(=O)C=C)c2cncnc2c1",
+    "generation": 22,
+    "evol_fitness": 181.8892,
+    "docking": {
+      "success": false,
+      "error": "No poses parsed",
+      "vina_log": ""
+    },
+    "properties": {
+      "mw": 423.5,
+      "logp": 2.47,
+      "hbd": 2,
+      "hba": 7,
+      "rot_bonds": 7,
+      "rings": 4,
+      "tpsa": 109.9,
+      "qed": 0.267
+    }
+  },
+  {
+    "rank": 20,
+    "smiles": "C#CN(CCc1cnc2ccccc2n1)c1cc(C(C)NC(=O)C=C)c2cncnc2c1",
+    "generation": 23,
+    "evol_fitness": 180.496,
+    "docking": {
+      "success": false,
+      "error": "No poses parsed",
+      "vina_log": ""
+    },
+    "properties": {
+      "mw": 422.5,
+      "logp": 3.58,
+      "hbd": 1,
+      "hba": 6,
+      "rot_bonds": 7,
+      "rings": 4,
+      "tpsa": 83.9,
+      "qed": 0.278
+    }
+  }
+]

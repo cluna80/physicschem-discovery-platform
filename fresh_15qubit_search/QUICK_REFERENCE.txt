@@ -1,0 +1,26 @@
+================================================================================
+                    QUANTUM DRUG DISCOVERY - QUICK REFERENCE
+================================================================================
+
+🏆 NEW LEAD COMPOUND: naphthalene_35diF
+   Vina: -11.222 kcal/mol (BEATS CURE_17G_002 by 0.042!)
+   CNN:  0.9206
+
+📊 TOP 5 CANDIDATES:
+   1. naphthalene_35diF     -11.222   0.9206  ← NEW LEAD
+   2. indole_metaCF3        -11.112   0.8937
+   3. isoquinoline_metaCl_spiroTHF -10.934   0.8049
+   4. cand_1                -10.874   0.8383
+   5. indole_benzyl         -10.722   0.8822
+
+📁 KEY FILES:
+   QUANTUM_DISCOVERY_RESULTS.md  - Complete documentation
+   docking_results/              - All docking outputs
+   candidate_smiles.txt          - SMILES for all candidates
+
+🚀 NEXT STEPS:
+   1. Resistance profiling against 5 mutants
+   2. MD simulation of new lead
+   3. Synthesis planning
+
+================================================================================

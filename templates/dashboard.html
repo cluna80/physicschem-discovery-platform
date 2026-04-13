@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Dashboard</title>
+<style>
+body { font-family: Arial; background: #f5f5f5; margin: 0; padding: 20px; }
+.container { max-width: 800px; margin: 0 auto; }
+.card { background: white; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.back-btn { display: inline-block; margin-bottom: 20px; padding: 8px 16px; background: #667eea; color: white; text-decoration: none; border-radius: 5px; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
+.collapse { color: #c62828; font-weight: bold; }
+</style>
+</head>
+<body>
+<div class="container">
+    <a href="/" class="back-btn">← Back to Lab</a>
+    <h1>📊 Research Dashboard</h1>
+    
+    <div class="card">
+        <h2>Quantum Scaling Results</h2>
+        <table>
+            <tr><th>Qubits</th><th>Success Rate</th></tr>
+            <tr><td>4</td><td>94.5%</td></tr>
+            <tr><td>10</td><td>81.3%</td></tr>
+            <tr><td>15</td><td>64.6%</td></tr>
+            <tr><td>20</td><td class="collapse">3.7% (Catastrophic Collapse)</td></tr>
+            <tr><td>25</td><td>0.12%</td></tr>
+            <tr><td>28</td><td>0.0038%</td></tr>
+        </table>
+        <p><strong>Conclusion:</strong> 5% noise kills quantum algorithms by 20 qubits.</p>
+    </div>
+    
+    <div class="card">
+        <h2>QDD-4399f716 Discovery</h2>
+        <p><strong>Best Target:</strong> ACE (Blood Pressure) at -10.22 kcal/mol</p>
+        <p><strong>HIV Binding:</strong> -9.87 kcal/mol</p>
+        <p><strong>Cancer Binding:</strong> -9.32 kcal/mol</p>
+        <p><strong>Lipinski Rules:</strong> PASS (4/4)</p>
+    </div>
+    
+    <div class="card">
+        <h2>📥 Download Complete Data</h2>
+        <p><a href="/download/data" style="background:#28a745; color:white; padding:10px 20px; text-decoration:none; border-radius:5px; display:inline-block;">📄 Download JSON (All Data)</a></p>
+        <p><a href="/download/csv" style="background:#17a2b8; color:white; padding:10px 20px; text-decoration:none; border-radius:5px; display:inline-block;">📊 Download CSV (Library)</a></p>
+        <p><a href="/download/report" style="background:#6c757d; color:white; padding:10px 20px; text-decoration:none; border-radius:5px; display:inline-block;">📝 Download Full Report (Markdown)</a></p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,202 @@
+[
+  {
+    "rank": 1,
+    "core": "Naphthalene",
+    "p1": "meta-F",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "stereo": "S",
+    "combined_score": 0.918,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@@H](Cc11cccc(F)c1)[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21"
+  },
+  {
+    "rank": 2,
+    "core": "Naphthalene",
+    "p1": "meta-F",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "stereo": "R",
+    "combined_score": 0.9115,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@H](Cc11cccc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21"
+  },
+  {
+    "rank": 3,
+    "core": "Naphthalene",
+    "p1": "meta-F",
+    "p2": "bis-THF",
+    "linker": "Reverse amide",
+    "stereo": "S",
+    "combined_score": 0.91,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@@H](Cc11cccc(F)c1)[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21"
+  },
+  {
+    "rank": 4,
+    "core": "Naphthalene",
+    "p1": "meta-F",
+    "p2": "spiro-THF",
+    "linker": "Amide",
+    "stereo": "S",
+    "combined_score": 0.904,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@@H](Cc11cccc(F)c1)[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21"
+  },
+  {
+    "rank": 5,
+    "core": "Naphthalene",
+    "p1": "meta-F",
+    "p2": "bis-THF",
+    "linker": "Reverse amide",
+    "stereo": "R",
+    "combined_score": 0.9035,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@H](Cc11cccc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21"
+  },
+  {
+    "rank": 6,
+    "core": "Isoquinoline",
+    "p1": "meta-F",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "stereo": "S",
+    "combined_score": 0.9005000000000001,
+    "smiles": "c1ccc2cccnc2c1C(=O)N[C@@H](Cc11cccc(F)c1)[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21"
+  },
+  {
+    "rank": 7,
+    "core": "Naphthalene",
+    "p1": "meta-F",
+    "p2": "bis-THF",
+    "linker": "Thioamide",
+    "stereo": "S",
+    "combined_score": 0.898,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@@H](Cc11cccc(F)c1)[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21"
+  },
+  {
+    "rank": 8,
+    "core": "Naphthalene",
+    "p1": "meta-F",
+    "p2": "spiro-THF",
+    "linker": "Amide",
+    "stereo": "R",
+    "combined_score": 0.8975,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@H](Cc11cccc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21"
+  },
+  {
+    "rank": 9,
+    "core": "Naphthalene",
+    "p1": "3,5-diF",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "stereo": "S",
+    "combined_score": 0.897,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@@H](Cc11cc(F)cc(F)c1)[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21"
+  },
+  {
+    "rank": 10,
+    "core": "Naphthalene",
+    "p1": "meta-F",
+    "p2": "spiro-THF",
+    "linker": "Reverse amide",
+    "stereo": "S",
+    "combined_score": 0.896,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@@H](Cc11cccc(F)c1)[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21"
+  },
+  {
+    "rank": 11,
+    "core": "Isoquinoline",
+    "p1": "meta-F",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "stereo": "R",
+    "combined_score": 0.894,
+    "smiles": "c1ccc2cccnc2c1C(=O)N[C@H](Cc11cccc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21"
+  },
+  {
+    "rank": 12,
+    "core": "Isoquinoline",
+    "p1": "meta-F",
+    "p2": "bis-THF",
+    "linker": "Reverse amide",
+    "stereo": "S",
+    "combined_score": 0.8925000000000001,
+    "smiles": "c1ccc2cccnc2c1C(=O)N[C@@H](Cc11cccc(F)c1)[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21"
+  },
+  {
+    "rank": 13,
+    "core": "Naphthalene",
+    "p1": "meta-F",
+    "p2": "bis-THF",
+    "linker": "Thioamide",
+    "stereo": "R",
+    "combined_score": 0.8915,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@H](Cc11cccc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21"
+  },
+  {
+    "rank": 14,
+    "core": "Naphthalene",
+    "p1": "3,5-diF",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "stereo": "R",
+    "combined_score": 0.8905,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@H](Cc11cc(F)cc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21"
+  },
+  {
+    "rank": 15,
+    "core": "Quinazoline",
+    "p1": "meta-F",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "stereo": "S",
+    "combined_score": 0.89,
+    "smiles": "c1ccc2c(c1)ncnc2C(=O)N[C@@H](Cc11cccc(F)c1)[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21"
+  },
+  {
+    "rank": 16,
+    "core": "Naphthalene",
+    "p1": "meta-F",
+    "p2": "spiro-THF",
+    "linker": "Reverse amide",
+    "stereo": "R",
+    "combined_score": 0.8895,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@H](Cc11cccc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21"
+  },
+  {
+    "rank": 17,
+    "core": "Naphthalene",
+    "p1": "3,5-diF",
+    "p2": "bis-THF",
+    "linker": "Reverse amide",
+    "stereo": "S",
+    "combined_score": 0.889,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@@H](Cc11cc(F)cc(F)c1)[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21"
+  },
+  {
+    "rank": 18,
+    "core": "Isoquinoline",
+    "p1": "meta-F",
+    "p2": "spiro-THF",
+    "linker": "Amide",
+    "stereo": "S",
+    "combined_score": 0.8865000000000001,
+    "smiles": "c1ccc2cccnc2c1C(=O)N[C@@H](Cc11cccc(F)c1)[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21"
+  },
+  {
+    "rank": 19,
+    "core": "Isoquinoline",
+    "p1": "meta-F",
+    "p2": "bis-THF",
+    "linker": "Reverse amide",
+    "stereo": "R",
+    "combined_score": 0.886,
+    "smiles": "c1ccc2cccnc2c1C(=O)N[C@H](Cc11cccc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21"
+  },
+  {
+    "rank": 20,
+    "core": "Naphthalene",
+    "p1": "meta-F",
+    "p2": "spiro-THF",
+    "linker": "Thioamide",
+    "stereo": "S",
+    "combined_score": 0.884,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@@H](Cc11cccc(F)c1)[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21"
+  }
+]

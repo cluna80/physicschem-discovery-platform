@@ -1,0 +1,72 @@
+[
+  {
+    "name": "CURE_7G_007",
+    "affinity": -5.183,
+    "generation": 7,
+    "features": "Naphthalene + THP ring",
+    "class": "THP Test"
+  },
+  {
+    "name": "CURE_8G_001",
+    "affinity": -5.335,
+    "generation": 8,
+    "features": "Hydroxynaphthalene + THP",
+    "class": "Hydroxy Test"
+  },
+  {
+    "name": "CURE_4G_003",
+    "affinity": -5.365,
+    "generation": 4,
+    "features": "Trifluorophenyl + amide + hydroxyethylamine",
+    "class": "Early Lead"
+  },
+  {
+    "name": "CURE_5G_002",
+    "affinity": -6.122,
+    "generation": 5,
+    "features": "Naphthalene + THF",
+    "class": "Optimized Lead"
+  },
+  {
+    "name": "CURE_9G_008",
+    "affinity": -6.207,
+    "generation": 9,
+    "features": "Chiral THF",
+    "class": "Stereochemistry"
+  },
+  {
+    "name": "CURE_6G_002",
+    "affinity": -6.772,
+    "generation": 6,
+    "features": "Naphthalene + THF (optimized)",
+    "class": "Strong Lead"
+  },
+  {
+    "name": "CURE_10G_007",
+    "affinity": -6.861,
+    "generation": 10,
+    "features": "Naphthalene + bis-THF",
+    "class": "Bis-THF Breakthrough"
+  },
+  {
+    "name": "CURE_13G_002",
+    "affinity": -7.034,
+    "generation": 13,
+    "features": "Isoquinoline + R-OH + meta-F + bis-THF",
+    "class": "Heteroaromatic"
+  },
+  {
+    "name": "CURE_11G_007",
+    "affinity": -7.265,
+    "generation": 11,
+    "features": "meta-Fluorobenzyl P1 + bis-THF",
+    "class": "P1 Optimized"
+  },
+  {
+    "name": "CURE_12G_001",
+    "affinity": -7.29,
+    "generation": 12,
+    "features": "Chiral OH + meta-F + bis-THF",
+    "class": "Top Candidate"
+  }
+]

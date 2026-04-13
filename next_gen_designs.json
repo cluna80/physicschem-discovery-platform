@@ -1,0 +1,52 @@
+[
+  {
+    "name": "CURE_8G_005",
+    "smiles": "c1ccc2cc(C(=O)NCC(O)CNC(=O)C3CCOCC3)ccc2c1",
+    "feature": "THP ring (alternative position)",
+    "description": "THP at different carbon",
+    "expected_boost": 0.3,
+    "mw": 356.42200000000014,
+    "logp": 1.4732999999999994,
+    "predicted": -4.883
+  },
+  {
+    "name": "CURE_8G_003",
+    "smiles": "c1ccc2cc(C(=O)NCC(O)CNC(=O)C3CCCCO3)ccc2c1C",
+    "feature": "THP ring + methyl naphthalene",
+    "description": "Methyl for hydrophobic filling",
+    "expected_boost": 0.4,
+    "mw": 370.4490000000002,
+    "logp": 1.9242199999999996,
+    "predicted": -4.7829999999999995
+  },
+  {
+    "name": "CURE_8G_002",
+    "smiles": "Fc1ccc2cc(C(=O)NCC(O)CNC(=O)C3CCCCO3)ccc2c1",
+    "feature": "THP ring + fluorinated naphthalene",
+    "description": "Fluorine tunes electron density",
+    "expected_boost": 0.5,
+    "mw": 374.4120000000002,
+    "logp": 1.7548999999999997,
+    "predicted": -4.683
+  },
+  {
+    "name": "CURE_8G_004",
+    "smiles": "c1ccc2cc(C(=O)NCC(O)CNC(=O)C3CCCCO3)ccc2c1F",
+    "feature": "THP ring + fluorinated naphthalene (position 2)",
+    "description": "Alternative fluorine position",
+    "expected_boost": 0.5,
+    "mw": 374.41200000000015,
+    "logp": 1.7548999999999995,
+    "predicted": -4.683
+  },
+  {
+    "name": "CURE_8G_001",
+    "smiles": "Oc1ccc2cc(C(=O)NCC(O)CNC(=O)C3CCCCO3)ccc2c1",
+    "feature": "THP ring + hydroxyl on naphthalene",
+    "description": "Adds H-bond donor to naphthalene",
+    "expected_boost": 0.6,
+    "mw": 372.4210000000002,
+    "logp": 1.3213999999999995,
+    "predicted": -4.583
+  }
+]

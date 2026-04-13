@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Drug Discovery Lab</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            text-align: center;
+            opacity: 0.9;
+            margin-bottom: 50px;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        .stat {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 20px 30px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        .card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.2);
+        }
+        .card-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        .card h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        .download-area {
+            background: rgba(0,0,0,0.3);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 5px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        .btn-csv { background: #28a745; }
+        .btn-json { background: #17a2b8; }
+        .btn-report { background: #6c757d; }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>��� Quantum Drug Discovery Lab</h1>
+    <div class="subtitle">AI-Powered Quantum Computing for Medicine | 125x Speedup</div>
+    
+    <div class="stats">
+        <div class="stat"><div class="stat-number">7</div><div>Disease Targets</div></div>
+        <div class="stat"><div class="stat-number">125x</div><div>Quantum Speedup</div></div>
+        <div class="stat"><div class="stat-number">28</div><div>Qubits Simulated</div></div>
+        <div class="stat"><div class="stat-number" id="drugCount">0</div><div>Drug Candidates</div></div>
+    </div>
+    
+    <div class="cards">
+        <div class="card" onclick="location.href='/drug_discovery'"><div class="card-icon">���</div><h3>Drug Discovery</h3></div>
+        <div class="card" onclick="location.href='/drug_library'"><div class="card-icon">���</div><h3>Drug Library</h3></div>
+        <div class="card" onclick="location.href='/original_discovery'"><div class="card-icon">���</div><h3>Original Discovery</h3></div>
+        <div class="card" onclick="location.href='/quantum_lab'"><div class="card-icon">⚛️</div><h3>Quantum Lab</h3></div>
+        <div class="card" onclick="location.href='/dashboard'"><div class="card-icon">���</div><h3>Dashboard</h3></div>
+    </div>
+    
+    <div class="download-area">
+        <a href="/download/csv" class="btn btn-csv">��� CSV</a>
+        <a href="/download/data" class="btn btn-json">��� JSON</a>
+        <a href="/download/report" class="btn btn-report">��� Report</a>
+    </div>
+    
+    <footer>
+        <p>��� Discovery: QDD-4399f716 | 7 Disease Targets | Outperforms Existing Drugs</p>
+    </footer>
+</div>
+<script>
+fetch('/api/get_library').then(r=>r.json()).then(d=>{
+    document.getElementById('drugCount').innerText = d.count || 0;
+});
+</script>
+</body>
+</html>

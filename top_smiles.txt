@@ -1,0 +1,13 @@
+# Drug Discovery top candidates — 2026-03-30T21:27:07
+# model CV R²=0.763  RMSE=0.832 log10(nM)
+# rank	IC50_nM	sigma	SMILES
+1	83.85	4.71	Fc1cccc(CCCCc2ccc(Nc3ncnc4ccccc34)cc2)c1
+2	122.01	4.40	Fc1ccc(CCNc2ccc(Nc3ncnc4ccccc34)cc2)cc1
+3	124.06	4.38	c1ccc(CCCc2ccc3[nH]cnc3c2)cc1
+4	125.62	4.37	Fc1ccc(CCCc2ccc(Nc3ncnc4ccccc34)cc2)cc1
+5	133.91	4.32	Fc1ccc(CCCCc2ccc(Nc3ncnc4ccccc34)cc2)cc1
+6	135.80	4.31	Clc1cccc(CCCc2ccc3[nH]cnc3c2)c1
+7	139.58	4.29	CC(=O)NCCCCOc1ccc(Nc2ncnc3ccccc23)cc1
+8	149.10	4.23	Nc1cccc(CCNc2ccc3[nH]cnc3c2)c1
+9	149.92	4.23	O=C(O)CCCNc1ccc2[nH]cnc2c1
+10	152.15	4.21	Nc1cccc(CCCc2ccc3[nH]cnc3c2)c1

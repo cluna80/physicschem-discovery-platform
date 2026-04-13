@@ -1,0 +1,149 @@
+{
+  "naph_metaF": {
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc1cccc(F)c1",
+    "mw": 523,
+    "vina_best": -10.35,
+    "cnn_pose_best": 0.5755,
+    "cnn_aff_best": 7.093,
+    "all_vina": [
+      -10.23,
+      -10.07,
+      -10.35,
+      -10.24,
+      -8.68
+    ],
+    "all_cnn_aff": [
+      7.093,
+      7.036,
+      7.037,
+      6.95,
+      6.748
+    ]
+  },
+  "naph_metaCF3": {
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc1cccc(C(F)(F)F)c1",
+    "mw": 573,
+    "vina_best": -10.65,
+    "cnn_pose_best": 0.4199,
+    "cnn_aff_best": 7.226,
+    "all_vina": [
+      -9.99,
+      -10.01,
+      -10.4,
+      -10.65,
+      -9.94
+    ],
+    "all_cnn_aff": [
+      7.226,
+      7.217,
+      6.743,
+      6.805,
+      6.739
+    ]
+  },
+  "naph_35diF": {
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc1cc(F)cc(F)c1",
+    "mw": 541,
+    "vina_best": -10.26,
+    "cnn_pose_best": 0.5678,
+    "cnn_aff_best": 7.491,
+    "all_vina": [
+      -8.87,
+      -9.94,
+      -9.57,
+      -10.23,
+      -10.26
+    ],
+    "all_cnn_aff": [
+      7.491,
+      7.261,
+      7.06,
+      7.447,
+      7.264
+    ]
+  },
+  "isoq_35diF": {
+    "smiles": "c1ccc2cccnc2c1C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc1cc(F)cc(F)c1",
+    "mw": 542,
+    "vina_best": -9.82,
+    "cnn_pose_best": 0.6159,
+    "cnn_aff_best": 7.561,
+    "all_vina": [
+      -9.53,
+      -9.82,
+      -9.26,
+      -9.72,
+      -9.21
+    ],
+    "all_cnn_aff": [
+      7.561,
+      7.384,
+      7.342,
+      7.269,
+      7.003
+    ]
+  },
+  "indole_metaCF3": {
+    "smiles": "c1ccc2[nH]ccc2c1C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc1cccc(C(F)(F)F)c1",
+    "mw": 562,
+    "vina_best": -10.23,
+    "cnn_pose_best": 0.3333,
+    "cnn_aff_best": 6.905,
+    "all_vina": [
+      -10.23,
+      -9.53,
+      -9.49,
+      -9.41,
+      -9.75
+    ],
+    "all_cnn_aff": [
+      6.763,
+      6.905,
+      6.532,
+      6.555,
+      6.585
+    ]
+  },
+  "isoq_metaCl": {
+    "smiles": "c1ccc2cccnc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)Cc1cccc(Cl)c1",
+    "mw": 538,
+    "vina_best": -9.73,
+    "cnn_pose_best": 0.5406,
+    "cnn_aff_best": 7.493,
+    "all_vina": [
+      -9.71,
+      -9.7,
+      -9.73,
+      -9.32,
+      -8.69
+    ],
+    "all_cnn_aff": [
+      7.493,
+      7.222,
+      7.329,
+      7.18,
+      7.187
+    ]
+  },
+  "indole_benzyl": {
+    "smiles": "c1ccc2[nH]ccc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc1ccccc1",
+    "mw": 494,
+    "vina_best": -10.1,
+    "cnn_pose_best": 0.6216,
+    "cnn_aff_best": 7.1,
+    "all_vina": [
+      -10.1,
+      -9.29,
+      -9.14,
+      -9.08,
+      -8.0
+    ],
+    "all_cnn_aff": [
+      6.926,
+      7.1,
+      6.664,
+      6.64,
+      6.62
+    ]
+  }
+}

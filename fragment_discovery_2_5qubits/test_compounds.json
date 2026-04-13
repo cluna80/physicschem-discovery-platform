@@ -1,0 +1,254 @@
+[
+  {
+    "core": "Quinazoline",
+    "p1": "Iodo",
+    "p2": "Morpholine",
+    "linker": "Thioamide",
+    "smiles": "c1ccc2c(c1)ncnc2C(=S)NCc1cccc(I)c1C1COCCN1"
+  },
+  {
+    "core": "Quinazoline",
+    "p1": "Iodo",
+    "p2": "Morpholine",
+    "linker": "Carbamate",
+    "smiles": "c1ccc2c(c1)ncnc2OC(=O)NCc1cccc(I)c1C1COCCN1"
+  },
+  {
+    "core": "Quinazoline",
+    "p1": "Iodo",
+    "p2": "Piperazine",
+    "linker": "Thioamide",
+    "smiles": "c1ccc2c(c1)ncnc2C(=S)NCc1cccc(I)c1C1CNCCN1"
+  },
+  {
+    "core": "Quinazoline",
+    "p1": "Iodo",
+    "p2": "Piperazine",
+    "linker": "Carbamate",
+    "smiles": "c1ccc2c(c1)ncnc2OC(=O)NCc1cccc(I)c1C1CNCCN1"
+  },
+  {
+    "core": "Quinazoline",
+    "p1": "Trifluoromethoxy",
+    "p2": "Morpholine",
+    "linker": "Thioamide",
+    "smiles": "c1ccc2c(c1)ncnc2C(=S)NCc1cccc(OC(F)(F)F)c1C1COCCN1"
+  },
+  {
+    "core": "Quinazoline",
+    "p1": "Trifluoromethoxy",
+    "p2": "Morpholine",
+    "linker": "Carbamate",
+    "smiles": "c1ccc2c(c1)ncnc2OC(=O)NCc1cccc(OC(F)(F)F)c1C1COCCN1"
+  },
+  {
+    "core": "Quinazoline",
+    "p1": "Trifluoromethoxy",
+    "p2": "Piperazine",
+    "linker": "Thioamide",
+    "smiles": "c1ccc2c(c1)ncnc2C(=S)NCc1cccc(OC(F)(F)F)c1C1CNCCN1"
+  },
+  {
+    "core": "Quinazoline",
+    "p1": "Trifluoromethoxy",
+    "p2": "Piperazine",
+    "linker": "Carbamate",
+    "smiles": "c1ccc2c(c1)ncnc2OC(=O)NCc1cccc(OC(F)(F)F)c1C1CNCCN1"
+  },
+  {
+    "core": "Quinazoline",
+    "p1": "tert-Butyl",
+    "p2": "Morpholine",
+    "linker": "Thioamide",
+    "smiles": "c1ccc2c(c1)ncnc2C(=S)NCc1cccc(C(C)(C)C)c1C1COCCN1"
+  },
+  {
+    "core": "Quinazoline",
+    "p1": "tert-Butyl",
+    "p2": "Morpholine",
+    "linker": "Carbamate",
+    "smiles": "c1ccc2c(c1)ncnc2OC(=O)NCc1cccc(C(C)(C)C)c1C1COCCN1"
+  },
+  {
+    "core": "Quinazoline",
+    "p1": "tert-Butyl",
+    "p2": "Piperazine",
+    "linker": "Thioamide",
+    "smiles": "c1ccc2c(c1)ncnc2C(=S)NCc1cccc(C(C)(C)C)c1C1CNCCN1"
+  },
+  {
+    "core": "Quinazoline",
+    "p1": "tert-Butyl",
+    "p2": "Piperazine",
+    "linker": "Carbamate",
+    "smiles": "c1ccc2c(c1)ncnc2OC(=O)NCc1cccc(C(C)(C)C)c1C1CNCCN1"
+  },
+  {
+    "core": "Cinnoline",
+    "p1": "Iodo",
+    "p2": "Morpholine",
+    "linker": "Thioamide",
+    "smiles": "c1ccc2c(c1)ccnn2C(=S)NCc1cccc(I)c1C1COCCN1"
+  },
+  {
+    "core": "Cinnoline",
+    "p1": "Iodo",
+    "p2": "Morpholine",
+    "linker": "Carbamate",
+    "smiles": "c1ccc2c(c1)ccnn2OC(=O)NCc1cccc(I)c1C1COCCN1"
+  },
+  {
+    "core": "Cinnoline",
+    "p1": "Iodo",
+    "p2": "Piperazine",
+    "linker": "Thioamide",
+    "smiles": "c1ccc2c(c1)ccnn2C(=S)NCc1cccc(I)c1C1CNCCN1"
+  },
+  {
+    "core": "Cinnoline",
+    "p1": "Iodo",
+    "p2": "Piperazine",
+    "linker": "Carbamate",
+    "smiles": "c1ccc2c(c1)ccnn2OC(=O)NCc1cccc(I)c1C1CNCCN1"
+  },
+  {
+    "core": "Cinnoline",
+    "p1": "Trifluoromethoxy",
+    "p2": "Morpholine",
+    "linker": "Thioamide",
+    "smiles": "c1ccc2c(c1)ccnn2C(=S)NCc1cccc(OC(F)(F)F)c1C1COCCN1"
+  },
+  {
+    "core": "Cinnoline",
+    "p1": "Trifluoromethoxy",
+    "p2": "Morpholine",
+    "linker": "Carbamate",
+    "smiles": "c1ccc2c(c1)ccnn2OC(=O)NCc1cccc(OC(F)(F)F)c1C1COCCN1"
+  },
+  {
+    "core": "Cinnoline",
+    "p1": "Trifluoromethoxy",
+    "p2": "Piperazine",
+    "linker": "Thioamide",
+    "smiles": "c1ccc2c(c1)ccnn2C(=S)NCc1cccc(OC(F)(F)F)c1C1CNCCN1"
+  },
+  {
+    "core": "Cinnoline",
+    "p1": "Trifluoromethoxy",
+    "p2": "Piperazine",
+    "linker": "Carbamate",
+    "smiles": "c1ccc2c(c1)ccnn2OC(=O)NCc1cccc(OC(F)(F)F)c1C1CNCCN1"
+  },
+  {
+    "core": "Cinnoline",
+    "p1": "tert-Butyl",
+    "p2": "Morpholine",
+    "linker": "Thioamide",
+    "smiles": "c1ccc2c(c1)ccnn2C(=S)NCc1cccc(C(C)(C)C)c1C1COCCN1"
+  },
+  {
+    "core": "Cinnoline",
+    "p1": "tert-Butyl",
+    "p2": "Morpholine",
+    "linker": "Carbamate",
+    "smiles": "c1ccc2c(c1)ccnn2OC(=O)NCc1cccc(C(C)(C)C)c1C1COCCN1"
+  },
+  {
+    "core": "Cinnoline",
+    "p1": "tert-Butyl",
+    "p2": "Piperazine",
+    "linker": "Thioamide",
+    "smiles": "c1ccc2c(c1)ccnn2C(=S)NCc1cccc(C(C)(C)C)c1C1CNCCN1"
+  },
+  {
+    "core": "Cinnoline",
+    "p1": "tert-Butyl",
+    "p2": "Piperazine",
+    "linker": "Carbamate",
+    "smiles": "c1ccc2c(c1)ccnn2OC(=O)NCc1cccc(C(C)(C)C)c1C1CNCCN1"
+  },
+  {
+    "core": "Benzothiophene",
+    "p1": "Iodo",
+    "p2": "Morpholine",
+    "linker": "Thioamide",
+    "smiles": "c1ccc2c(c1)ccs2C(=S)NCc1cccc(I)c1C1COCCN1"
+  },
+  {
+    "core": "Benzothiophene",
+    "p1": "Iodo",
+    "p2": "Morpholine",
+    "linker": "Carbamate",
+    "smiles": "c1ccc2c(c1)ccs2OC(=O)NCc1cccc(I)c1C1COCCN1"
+  },
+  {
+    "core": "Benzothiophene",
+    "p1": "Iodo",
+    "p2": "Piperazine",
+    "linker": "Thioamide",
+    "smiles": "c1ccc2c(c1)ccs2C(=S)NCc1cccc(I)c1C1CNCCN1"
+  },
+  {
+    "core": "Benzothiophene",
+    "p1": "Iodo",
+    "p2": "Piperazine",
+    "linker": "Carbamate",
+    "smiles": "c1ccc2c(c1)ccs2OC(=O)NCc1cccc(I)c1C1CNCCN1"
+  },
+  {
+    "core": "Benzothiophene",
+    "p1": "Trifluoromethoxy",
+    "p2": "Morpholine",
+    "linker": "Thioamide",
+    "smiles": "c1ccc2c(c1)ccs2C(=S)NCc1cccc(OC(F)(F)F)c1C1COCCN1"
+  },
+  {
+    "core": "Benzothiophene",
+    "p1": "Trifluoromethoxy",
+    "p2": "Morpholine",
+    "linker": "Carbamate",
+    "smiles": "c1ccc2c(c1)ccs2OC(=O)NCc1cccc(OC(F)(F)F)c1C1COCCN1"
+  },
+  {
+    "core": "Benzothiophene",
+    "p1": "Trifluoromethoxy",
+    "p2": "Piperazine",
+    "linker": "Thioamide",
+    "smiles": "c1ccc2c(c1)ccs2C(=S)NCc1cccc(OC(F)(F)F)c1C1CNCCN1"
+  },
+  {
+    "core": "Benzothiophene",
+    "p1": "Trifluoromethoxy",
+    "p2": "Piperazine",
+    "linker": "Carbamate",
+    "smiles": "c1ccc2c(c1)ccs2OC(=O)NCc1cccc(OC(F)(F)F)c1C1CNCCN1"
+  },
+  {
+    "core": "Benzothiophene",
+    "p1": "tert-Butyl",
+    "p2": "Morpholine",
+    "linker": "Thioamide",
+    "smiles": "c1ccc2c(c1)ccs2C(=S)NCc1cccc(C(C)(C)C)c1C1COCCN1"
+  },
+  {
+    "core": "Benzothiophene",
+    "p1": "tert-Butyl",
+    "p2": "Morpholine",
+    "linker": "Carbamate",
+    "smiles": "c1ccc2c(c1)ccs2OC(=O)NCc1cccc(C(C)(C)C)c1C1COCCN1"
+  },
+  {
+    "core": "Benzothiophene",
+    "p1": "tert-Butyl",
+    "p2": "Piperazine",
+    "linker": "Thioamide",
+    "smiles": "c1ccc2c(c1)ccs2C(=S)NCc1cccc(C(C)(C)C)c1C1CNCCN1"
+  },
+  {
+    "core": "Benzothiophene",
+    "p1": "tert-Butyl",
+    "p2": "Piperazine",
+    "linker": "Carbamate",
+    "smiles": "c1ccc2c(c1)ccs2OC(=O)NCc1cccc(C(C)(C)C)c1C1CNCCN1"
+  }
+]

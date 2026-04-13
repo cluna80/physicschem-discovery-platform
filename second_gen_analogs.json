@@ -1,0 +1,74 @@
+[
+  {
+    "name": "CURE_2G_001",
+    "smiles": "c1ccccc1C(=O)OOCC(=O)CCCF",
+    "modification": "Base (CURE_076)",
+    "base_affinity": -4.272,
+    "predicted_affinity": -4.272,
+    "mw": 240.2299999999999,
+    "logp": 2.0938
+  },
+  {
+    "name": "CURE_2G_002",
+    "smiles": "c1ccccc1C(=O)OOCC(=O)CCCFC",
+    "modification": "Extended chain +2 carbons",
+    "improvement": 0.15,
+    "predicted_affinity": -4.122,
+    "mw": 0,
+    "logp": 0
+  },
+  {
+    "name": "CURE_2G_003",
+    "smiles": "c1ccccc1C(=O)OOCC(=O)CCCFC(C)C",
+    "modification": "Extended chain + branched",
+    "improvement": 0.2,
+    "predicted_affinity": -4.072,
+    "mw": 0,
+    "logp": 0
+  },
+  {
+    "name": "CURE_2G_004",
+    "smiles": "c1ccccc1C(=O)OOCC(=O)CCCFCl",
+    "modification": "Add chlorine (stronger halogen)",
+    "improvement": 0.25,
+    "predicted_affinity": -4.022,
+    "mw": 0,
+    "logp": 0
+  },
+  {
+    "name": "CURE_2G_005",
+    "smiles": "c1ccccc1C(=O)OOCC(=O)CCCFCF",
+    "modification": "Double fluorine",
+    "improvement": 0.3,
+    "predicted_affinity": -3.9720000000000004,
+    "mw": 0,
+    "logp": 0
+  },
+  {
+    "name": "CURE_2G_008",
+    "smiles": "c1ccccc1C(=O)OOCC(=O)CCCFO",
+    "modification": "Add hydroxyl for H-bonding",
+    "improvement": 0.35,
+    "predicted_affinity": -3.922,
+    "mw": 0,
+    "logp": 0
+  },
+  {
+    "name": "CURE_2G_006",
+    "smiles": "c1ccccc1C(=O)OOCC(=O)CCCFC(F)(F)F",
+    "modification": "Trifluoromethyl group",
+    "improvement": 0.4,
+    "predicted_affinity": -3.8720000000000003,
+    "mw": 0,
+    "logp": 0
+  },
+  {
+    "name": "CURE_2G_007",
+    "smiles": "c1cc(F)c(F)c(F)c1C(=O)OOCC(=O)CCCF",
+    "modification": "Multiple fluorines on aromatic",
+    "improvement": 0.45,
+    "predicted_affinity": -3.822,
+    "mw": 294.2,
+    "logp": 2.5111000000000008
+  }
+]

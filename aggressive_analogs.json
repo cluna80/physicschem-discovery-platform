@@ -1,0 +1,50 @@
+[
+  {
+    "name": "CURE_3G_001",
+    "smiles": "c1ccccc1C(=O)OOCC(=O)CCCFC(F)(F)F",
+    "modification": "Strong electron-withdrawing group",
+    "description": "Trifluoromethyl for stronger interactions",
+    "predicted_improvement": 0.6,
+    "predicted_affinity": -3.65
+  },
+  {
+    "name": "CURE_3G_002",
+    "smiles": "c1cc(F)c(F)c(F)c1C(=O)OOCC(=O)CCCF",
+    "modification": "Multiple fluorines on aromatic",
+    "description": "Enhanced pi-stacking with electron withdrawal",
+    "predicted_improvement": 0.8,
+    "predicted_affinity": -3.45
+  },
+  {
+    "name": "CURE_3G_003",
+    "smiles": "c1ccccc1C(=O)OOCC(=O)CCCFC(F)(F)CF",
+    "modification": "Perfluorinated chain",
+    "description": "Maximum fluorination for H-bonding",
+    "predicted_improvement": 1.0,
+    "predicted_affinity": -3.25
+  },
+  {
+    "name": "CURE_3G_004",
+    "smiles": "c1ccccc1C(=O)OOCC(=O)CCCFC(F)(F)CFC(=O)N",
+    "modification": "Add amide for H-bonding",
+    "description": "Mimics HIV drug interactions",
+    "predicted_improvement": 1.2,
+    "predicted_affinity": -3.05
+  },
+  {
+    "name": "CURE_3G_005",
+    "smiles": "c1ccccc1C(=O)OOCC(=O)CCCFC(F)(F)CFS(=O)(=O)N",
+    "modification": "Sulfonamide (Darunavir-like)",
+    "description": "Known HIV protease inhibitor scaffold",
+    "predicted_improvement": 1.5,
+    "predicted_affinity": -2.75
+  },
+  {
+    "name": "CURE_3G_006",
+    "smiles": "c1ccccc1C(=O)OOCC(=O)CCCFC(F)(F)CFC(=O)NC(C)C",
+    "modification": "Extended with isopropyl",
+    "description": "Improved hydrophobic packing",
+    "predicted_improvement": 1.3,
+    "predicted_affinity": -2.95
+  }
+]

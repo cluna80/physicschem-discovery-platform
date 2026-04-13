@@ -1,0 +1,44 @@
+{
+  "target": "COX-1",
+  "top_candidates": [
+    {
+      "name": "Synthetic_215",
+      "score": 91.80041355794786,
+      "binding": -9.91554155377179,
+      "toxicity": 0.04028180363526091,
+      "status": "\ud83d\udd2c EXPERIMENTAL"
+    },
+    {
+      "name": "Synthetic_38",
+      "score": 91.12622486161341,
+      "binding": -9.692044714682918,
+      "toxicity": 0.06905695226762001,
+      "status": "\ud83d\udd2c EXPERIMENTAL"
+    },
+    {
+      "name": "Synthetic_186",
+      "score": 88.8552854835982,
+      "binding": -9.311521481330395,
+      "toxicity": 0.030773266750243417,
+      "status": "\ud83d\udd2c EXPERIMENTAL"
+    },
+    {
+      "name": "Synthetic_193",
+      "score": 88.0812062335847,
+      "binding": -9.974931527172147,
+      "toxicity": 0.0288108423726071,
+      "status": "\ud83d\udd2c EXPERIMENTAL"
+    },
+    {
+      "name": "Synthetic_407",
+      "score": 87.81990001488592,
+      "binding": -9.157736701566945,
+      "toxicity": 0.09763289872866118,
+      "status": "\ud83d\udd2c EXPERIMENTAL"
+    }
+  ],
+  "quantum_speedup": 23.136363636363637,
+  "best_molecule": "Synthetic_193",
+  "best_score": 93.0812062335847,
+  "timestamp": "2026-03-25T01:28:24.932865"
+}

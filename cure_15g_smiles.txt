@@ -1,0 +1,17 @@
+# TOP CANDIDATES FROM 10-QUBIT QUANTUM SEARCH
+# Base: CURE_13G_001  -7.333 kcal/mol
+# Paste DESIGNS block into cure_dock_quantum.py
+
+DESIGNS = [
+    {"name": "Q15_011", "smiles": "c1ccc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CN(C)C(=O)[C@@H]4CO[C@@H]5OCCO[C@@H]45)ccc2c1", "note": "Naphthyl + meta-F + R-OH + N-Me linker + bis-THF"},
+    {"name": "Q15_012", "smiles": "c1ccc2ccc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CN(C)C(=O)[C@@H]4CO[C@@H]5OCCO[C@@H]45)nc2c1", "note": "Isoquinoline + meta-F + N-Me linker + bis-THF"},
+    {"name": "Q15_001", "smiles": "c1ccc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CNC(=O)[C@@H]4CO[C@@H]5OCCO[C@@H]45)ccc2c1", "note": "Baseline — naphthyl + meta-F + R-OH + bis-THF"},
+    {"name": "Q15_015", "smiles": "c1ccc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CNC(=O)[C@H]4CO[C@@H]5OCCO[C@H]45)ccc2c1", "note": "Naphthyl + meta-F + R-OH + alt-bis-THF stereo B"},
+    {"name": "Q15_014", "smiles": "c1ccc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CNC(=O)[C@H]4CO[C@H]5OCCO[C@@H]45)ccc2c1", "note": "Naphthyl + meta-F + R-OH + alt-bis-THF stereo A"},
+    {"name": "Q15_017", "smiles": "Fc1ccc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CNC(=O)[C@@H]4CO[C@@H]5OCCO[C@@H]45)ccc2c1", "note": "F-naphthyl + meta-F-benzyl + R-OH + bis-THF"},
+    {"name": "Q15_002", "smiles": "c1ccc2ccc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CNC(=O)[C@@H]4CO[C@@H]5OCCO[C@@H]45)nc2c1", "note": "Isoquinoline + meta-F + R-OH + bis-THF"},
+    {"name": "Q15_020", "smiles": "c1ccc2ccc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@H](O)CNC(=O)[C@@H]4CO[C@@H]5OCCO[C@@H]45)nc2c1", "note": "Isoquinoline + meta-F + S-OH + bis-THF"},
+    {"name": "Q15_006", "smiles": "Cc1ccc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CNC(=O)[C@@H]4CO[C@@H]5OCCO[C@@H]45)ccc2c1", "note": "Methyl-naphthyl + meta-F + R-OH + bis-THF"},
+    {"name": "Q15_021", "smiles": "c1ccc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CCNC(=O)[C@@H]4CO[C@@H]5OCCO[C@@H]45)ccc2c1", "note": "Naphthyl + meta-F + R-OH + extended linker (CH2CH2) + bis-THF"},
+]
+BASELINE = {"name": "CURE_13G_001", "affinity": -7.333}

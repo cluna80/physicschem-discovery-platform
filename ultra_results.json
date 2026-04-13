@@ -1,0 +1,67 @@
+[
+  {
+    "name": "ULTRA_003",
+    "smiles": "c1ccc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CNC(=O)[C@@H]4CO[C@@H]5OC[C@H](O)[C@@H]45)ccc2c1",
+    "feature": "Hydroxy-bis-THF",
+    "mechanism": "OH inside bis-THF ring bridges flap water to Ile50",
+    "expected_boost": 0.6,
+    "mw": 508.5,
+    "logp": 1.78,
+    "qed": 0.369,
+    "pred": -7.933,
+    "affinity": -7.358,
+    "pose": "docking_results/ULTRA_003_out.pdbqt"
+  },
+  {
+    "name": "ULTRA_001",
+    "smiles": "O=S(=O)(N)c1ccc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CNC(=O)[C@@H]4CO[C@@H]5OCCO[C@@H]45)ccc2c1",
+    "feature": "Sulfonamide on naphthalene",
+    "mechanism": "SO2NH2 H-bonds to Asp29/Asp30 in P2' pocket",
+    "expected_boost": 0.7,
+    "mw": 587.6,
+    "logp": 0.83,
+    "qed": 0.286,
+    "pred": -8.033,
+    "affinity": -6.984,
+    "pose": "docking_results/ULTRA_001_out.pdbqt"
+  },
+  {
+    "name": "ULTRA_004",
+    "smiles": "c1ccc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CNC(=O)[C@@H]4CO[C@@H]5OC[C@@H](O)[C@@H]45)ccc2c1",
+    "feature": "Hydroxy-bis-THF (S config on OH)",
+    "mechanism": "Alternative OH stereochemistry for flap water",
+    "expected_boost": 0.5,
+    "mw": 508.5,
+    "logp": 1.78,
+    "qed": 0.369,
+    "pred": -7.833,
+    "affinity": -6.981,
+    "pose": "docking_results/ULTRA_004_out.pdbqt"
+  },
+  {
+    "name": "ULTRA_005",
+    "smiles": "c1ccc2cc(C(=O)N[C@@H](Cc3ccc(F)c(F)c3)[C@@H](O)CNC(=O)[C@@H]4CO[C@@H]5OCCO[C@@H]45)ccc2c1",
+    "feature": "3,4-difluorobenzyl P1",
+    "mechanism": "Adjacent F atoms fill S1 pocket electronically",
+    "expected_boost": 0.4,
+    "mw": 526.5,
+    "logp": 2.32,
+    "qed": 0.416,
+    "pred": -7.733,
+    "affinity": -6.836,
+    "pose": "docking_results/ULTRA_005_out.pdbqt"
+  },
+  {
+    "name": "ULTRA_002",
+    "smiles": "Nc1ccc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CNC(=O)[C@@H]4CO[C@@H]5OCCO[C@@H]45)ccc2c1",
+    "feature": "Amino-naphthalene",
+    "mechanism": "NH2 donor to Asp30 backbone carbonyl",
+    "expected_boost": 0.5,
+    "mw": 523.6,
+    "logp": 1.77,
+    "qed": 0.331,
+    "pred": -7.833,
+    "affinity": -6.713,
+    "pose": "docking_results/ULTRA_002_out.pdbqt"
+  }
+]

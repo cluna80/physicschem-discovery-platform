@@ -1,0 +1,112 @@
+[
+  {
+    "name": "SO2NH2",
+    "hbd": true,
+    "hba": true,
+    "boost": 0.9,
+    "mechanism": "Sulfonamide \u2014 strongest Asp29/30 binder",
+    "quantum_prob": 0.6205495286771096,
+    "expected_affinity": -8.233,
+    "gap_to_minus9": 0.767
+  },
+  {
+    "name": "CONH2",
+    "hbd": true,
+    "hba": true,
+    "boost": 0.7,
+    "mechanism": "Carboxamide \u2014 ideal H-bond geometry",
+    "quantum_prob": 0.059743547328912475,
+    "expected_affinity": -8.033,
+    "gap_to_minus9": 0.967
+  },
+  {
+    "name": "SO2CH3",
+    "hbd": false,
+    "hba": true,
+    "boost": 0.6,
+    "mechanism": "Sulfonyl acceptor, metabolically stable",
+    "quantum_prob": 0.05184451024242302,
+    "expected_affinity": -7.933,
+    "gap_to_minus9": 1.067
+  },
+  {
+    "name": "OH",
+    "hbd": true,
+    "hba": true,
+    "boost": 0.5,
+    "mechanism": "Compact H-bond donor/acceptor",
+    "quantum_prob": 0.04485027801105094,
+    "expected_affinity": -7.833,
+    "gap_to_minus9": 1.167
+  },
+  {
+    "name": "NHCOCH3",
+    "hbd": true,
+    "hba": true,
+    "boost": 0.5,
+    "mechanism": "Acetamido \u2014 dual H-bond",
+    "quantum_prob": 0.04485027801105093,
+    "expected_affinity": -7.833,
+    "gap_to_minus9": 1.167
+  },
+  {
+    "name": "COOH",
+    "hbd": true,
+    "hba": true,
+    "boost": 0.4,
+    "mechanism": "Carboxylic acid \u2014 may ionize",
+    "quantum_prob": 0.03866727970381872,
+    "expected_affinity": -7.733,
+    "gap_to_minus9": 1.267
+  },
+  {
+    "name": "CH2OH",
+    "hbd": true,
+    "hba": true,
+    "boost": 0.3,
+    "mechanism": "Flexible H-bond donor",
+    "quantum_prob": 0.033211213028815766,
+    "expected_affinity": -7.633,
+    "gap_to_minus9": 1.367
+  },
+  {
+    "name": "NH2",
+    "hbd": true,
+    "hba": true,
+    "boost": 0.3,
+    "mechanism": "H-bond donor to Asp30 backbone",
+    "quantum_prob": 0.033211213028815766,
+    "expected_affinity": -7.633,
+    "gap_to_minus9": 1.367
+  },
+  {
+    "name": "OMe",
+    "hbd": false,
+    "hba": true,
+    "boost": 0.2,
+    "mechanism": "H-bond acceptor only",
+    "quantum_prob": 0.028406144543930954,
+    "expected_affinity": -7.533,
+    "gap_to_minus9": 1.467
+  },
+  {
+    "name": "CH3",
+    "hbd": false,
+    "hba": false,
+    "boost": 0.1,
+    "mechanism": "Weak hydrophobic fill",
+    "quantum_prob": 0.02418369636010026,
+    "expected_affinity": -7.433,
+    "gap_to_minus9": 1.567
+  },
+  {
+    "name": "H",
+    "hbd": false,
+    "hba": false,
+    "boost": 0.0,
+    "mechanism": "Baseline \u2014 no interaction",
+    "quantum_prob": 0.020482311063971918,
+    "expected_affinity": -7.333,
+    "gap_to_minus9": 1.667
+  }
+]

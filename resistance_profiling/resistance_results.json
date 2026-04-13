@@ -1,0 +1,26 @@
+{
+  "Wild_Type": {
+    "vina": null,
+    "cnn": null
+  },
+  "D30N": {
+    "vina": null,
+    "cnn": null
+  },
+  "L90M": {
+    "vina": null,
+    "cnn": null
+  },
+  "V82A": {
+    "vina": null,
+    "cnn": null
+  },
+  "I50V": {
+    "vina": null,
+    "cnn": null
+  },
+  "G48V": {
+    "vina": null,
+    "cnn": null
+  }
+}

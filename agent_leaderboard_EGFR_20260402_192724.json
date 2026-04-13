@@ -1,0 +1,79 @@
+[
+  {
+    "smiles": "OCCc1ccnc2ccccc12",
+    "MW": 173.2,
+    "id": "F002_G008",
+    "parent": "F002",
+    "dock_affinity": -6.232,
+    "dock_poses": 8,
+    "hERG": 0.14246508479118347,
+    "DILI": 0.46704307198524475,
+    "AMES": 0.2712930142879486,
+    "ClinTox": 0.08276538550853729,
+    "Bioavailability": 0.936855137348175,
+    "Solubility": -0.9929493069648743,
+    "HIA": 0.9999746084213257,
+    "admet_pass": true,
+    "HAC": 13,
+    "LE": 0.479,
+    "LogP": 1.77,
+    "confidence": 60,
+    "reasons": [
+      "good LE",
+      "ADMET pass",
+      "hERG safe",
+      "drug-sized"
+    ]
+  },
+  {
+    "smiles": "CCc1ccnc2ccccc12",
+    "MW": 157.2,
+    "id": "F002_G001",
+    "parent": "F002",
+    "dock_affinity": -6.079,
+    "dock_poses": 8,
+    "hERG": 0.20107248425483704,
+    "DILI": 0.4523707330226898,
+    "AMES": 0.32108861207962036,
+    "ClinTox": 0.03428490087389946,
+    "Bioavailability": 0.9431772232055664,
+    "Solubility": -2.574640989303589,
+    "HIA": 0.9999994039535522,
+    "admet_pass": true,
+    "HAC": 12,
+    "LE": 0.507,
+    "LogP": 2.8,
+    "confidence": 60,
+    "reasons": [
+      "good LE",
+      "ADMET pass",
+      "hERG safe",
+      "drug-sized"
+    ]
+  },
+  {
+    "smiles": "CCCc1ccnc2ccccc12",
+    "MW": 171.2,
+    "id": "F002_G012",
+    "parent": "F002",
+    "dock_affinity": -6.429,
+    "dock_poses": 8,
+    "hERG": 0.31513258814811707,
+    "DILI": 0.4390377104282379,
+    "AMES": 0.31544017791748047,
+    "ClinTox": 0.041640542447566986,
+    "Bioavailability": 0.9178863763809204,
+    "Solubility": -3.3957772254943848,
+    "HIA": 0.9999992251396179,
+    "admet_pass": true,
+    "HAC": 13,
+    "LE": 0.495,
+    "LogP": 3.19,
+    "confidence": 50,
+    "reasons": [
+      "good LE",
+      "ADMET pass",
+      "drug-sized"
+    ]
+  }
+]

@@ -1,0 +1,99 @@
+QUANTUM-ACCELERATED NOVEL DRUG DISCOVERY
+============================================================
+
+Date: 2026-03-25 11:12:59
+Known drugs analyzed: 39
+Novel candidates generated: 1000
+Quantum speedup: 125x
+
+TOP 10 NOVEL DRUG CANDIDATES:
+--------------------------------------------------
+1. ID: b9de4891
+   Score: 100/100
+   MW: 324.9 g/mol
+   LogP: 1.14
+   H-bond donors: 2
+   H-bond acceptors: 2
+   Novelty: 26.3%
+
+2. ID: 935a268f
+   Score: 100/100
+   MW: 332.3 g/mol
+   LogP: 2.01
+   H-bond donors: 0
+   H-bond acceptors: 5
+   Novelty: 6.8%
+
+3. ID: 83b2e58e
+   Score: 100/100
+   MW: 292.0 g/mol
+   LogP: 2.98
+   H-bond donors: 2
+   H-bond acceptors: 2
+   Novelty: 46.2%
+
+4. ID: fe1d852d
+   Score: 100/100
+   MW: 367.1 g/mol
+   LogP: 1.49
+   H-bond donors: 1
+   H-bond acceptors: 5
+   Novelty: 19.2%
+
+5. ID: 27296b55
+   Score: 100/100
+   MW: 405.1 g/mol
+   LogP: 2.51
+   H-bond donors: 1
+   H-bond acceptors: 1
+   Novelty: 38.2%
+
+6. ID: cce17e02
+   Score: 100/100
+   MW: 345.5 g/mol
+   LogP: 1.72
+   H-bond donors: 1
+   H-bond acceptors: 4
+   Novelty: 5.4%
+
+7. ID: cd6c4f7c
+   Score: 100/100
+   MW: 352.2 g/mol
+   LogP: 1.76
+   H-bond donors: 2
+   H-bond acceptors: 3
+   Novelty: 6.9%
+
+8. ID: 6432a21e
+   Score: 100/100
+   MW: 396.9 g/mol
+   LogP: 1.06
+   H-bond donors: 1
+   H-bond acceptors: 4
+   Novelty: 41.2%
+
+9. ID: dfeccc2b
+   Score: 100/100
+   MW: 291.1 g/mol
+   LogP: 2.56
+   H-bond donors: 1
+   H-bond acceptors: 1
+   Novelty: 36.1%
+
+10. ID: c6cc70d4
+   Score: 100/100
+   MW: 491.3 g/mol
+   LogP: 2.52
+   H-bond donors: 0
+   H-bond acceptors: 3
+   Novelty: 70.7%
+
+BEST CANDIDATE DETAILS:
+ID: b9de4891
+Drug Score: 100/100
+Novelty Score: 26.3%
+MW: 324.9 g/mol
+LogP: 1.14
+H-bond donors: 2
+H-bond acceptors: 2
+Lipinski passes: 4/4

@@ -1,0 +1,158 @@
+[
+  {
+    "name": "Q15_011",
+    "smiles": "c1ccc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CN(C)C(=O)[C@@H]4CO[C@@H]5OCCO[C@@H]45)ccc2c1",
+    "note": "Best quantum pick \u2014 naphthyl + meta-F + N-Me + bis-THF",
+    "chembl": [],
+    "pubchem": [
+      {
+        "cid": 122675087,
+        "name": "1-fluoro-N-[(3R,4S)-3-hydroxyoxan-4-yl]-4-[(4-methylphenyl)m",
+        "mw": "393.4",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/122675087"
+      },
+      {
+        "cid": 122675089,
+        "name": "4-benzyl-1-fluoro-N-[(3R,4S)-3-hydroxyoxan-4-yl]naphthalene-",
+        "mw": "379.4",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/122675089"
+      },
+      {
+        "cid": 58802623,
+        "name": "N-[(2R,3S)-1-(3,5-difluorophenyl)-4-[(3-ethylphenyl)methylam",
+        "mw": "550.6",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/58802623"
+      },
+      {
+        "cid": 60111814,
+        "name": "N-[(2S,3R)-1-(3,5-difluorophenyl)-4-[(3-ethylphenyl)methylam",
+        "mw": "550.6",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/60111814"
+      },
+      {
+        "cid": 118257635,
+        "name": "1-fluoro-N-(3-hydroxyoxan-4-yl)-4-[(4-methylphenyl)methyl]na",
+        "mw": "393.4",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/118257635"
+      }
+    ],
+    "novelty": "\u2605   PARTIALLY NOVEL \u2014 Some similar compounds exist"
+  },
+  {
+    "name": "Q15_012",
+    "smiles": "c1ccc2ccc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CN(C)C(=O)[C@@H]4CO[C@@H]5OCCO[C@@H]45)nc2c1",
+    "note": "Isoquinoline + meta-F + N-Me + bis-THF",
+    "chembl": [],
+    "pubchem": [
+      {
+        "cid": 454380,
+        "name": "N-[(1S)-2-[[(2S,3R)-4-[(3S,4aS,8aS)-3-(tert-butylcarbamoyl)-",
+        "mw": "683.9",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/454380"
+      },
+      {
+        "cid": 454381,
+        "name": "N-[(1S)-2-[[(2S,3R)-4-[(3S,4aS,8aS)-3-(tert-butylcarbamoyl)-",
+        "mw": "683.9",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/454381"
+      },
+      {
+        "cid": 44271787,
+        "name": "N-[(1S)-2-[[(2S,3R)-4-[(3S,4aS,8aS)-3-(tert-butylcarbamoyl)-",
+        "mw": "683.9",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/44271787"
+      },
+      {
+        "cid": 73355859,
+        "name": "(1S,2R,5R,6S,7R,8R,11R,13R,17S,18R)-18-[(2S,3R,4S,6R)-4-(dim",
+        "mw": "813.0",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/73355859"
+      },
+      {
+        "cid": 110197447,
+        "name": "(2S,4R)-4-hydroxy-N-(2-methoxyethyl)-1-[1-(quinoline-2-carbo",
+        "mw": "426.5",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/110197447"
+      }
+    ],
+    "novelty": "\u2605   PARTIALLY NOVEL \u2014 Some similar compounds exist"
+  },
+  {
+    "name": "CURE_13G_001",
+    "smiles": "c1ccc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)[C@@H](O)CNC(=O)[C@@H]4CO[C@@H]5OCCO[C@@H]45)ccc2c1",
+    "note": "Best confirmed binder \u2014 naphthyl + meta-F + R-OH + bis-THF",
+    "chembl": [],
+    "pubchem": [
+      {
+        "cid": 76325364,
+        "name": "N-[3-(naphthalene-2-carbonylamino)-2-[(2S,3S,4S,5S,6R)-3,4,5",
+        "mw": "560.6",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/76325364"
+      },
+      {
+        "cid": 122675087,
+        "name": "1-fluoro-N-[(3R,4S)-3-hydroxyoxan-4-yl]-4-[(4-methylphenyl)m",
+        "mw": "393.4",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/122675087"
+      },
+      {
+        "cid": 122675089,
+        "name": "4-benzyl-1-fluoro-N-[(3R,4S)-3-hydroxyoxan-4-yl]naphthalene-",
+        "mw": "379.4",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/122675089"
+      },
+      {
+        "cid": 58802623,
+        "name": "N-[(2R,3S)-1-(3,5-difluorophenyl)-4-[(3-ethylphenyl)methylam",
+        "mw": "550.6",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/58802623"
+      },
+      {
+        "cid": 60111814,
+        "name": "N-[(2S,3R)-1-(3,5-difluorophenyl)-4-[(3-ethylphenyl)methylam",
+        "mw": "550.6",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/60111814"
+      }
+    ],
+    "novelty": "\u2605   PARTIALLY NOVEL \u2014 Some similar compounds exist"
+  },
+  {
+    "name": "CURE_11G_007",
+    "smiles": "c1ccc2cc(C(=O)N[C@@H](Cc3cccc(F)c3)C(O)CNC(=O)[C@@H]4CO[C@@H]5OCCO[C@@H]45)ccc2c1",
+    "note": "First breakthrough compound at -7.265",
+    "chembl": [],
+    "pubchem": [
+      {
+        "cid": 76325364,
+        "name": "N-[3-(naphthalene-2-carbonylamino)-2-[(2S,3S,4S,5S,6R)-3,4,5",
+        "mw": "560.6",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/76325364"
+      },
+      {
+        "cid": 122675087,
+        "name": "1-fluoro-N-[(3R,4S)-3-hydroxyoxan-4-yl]-4-[(4-methylphenyl)m",
+        "mw": "393.4",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/122675087"
+      },
+      {
+        "cid": 122675089,
+        "name": "4-benzyl-1-fluoro-N-[(3R,4S)-3-hydroxyoxan-4-yl]naphthalene-",
+        "mw": "379.4",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/122675089"
+      },
+      {
+        "cid": 58802623,
+        "name": "N-[(2R,3S)-1-(3,5-difluorophenyl)-4-[(3-ethylphenyl)methylam",
+        "mw": "550.6",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/58802623"
+      },
+      {
+        "cid": 60111814,
+        "name": "N-[(2S,3R)-1-(3,5-difluorophenyl)-4-[(3-ethylphenyl)methylam",
+        "mw": "550.6",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/60111814"
+      }
+    ],
+    "novelty": "\u2605   PARTIALLY NOVEL \u2014 Some similar compounds exist"
+  }
+]

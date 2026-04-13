@@ -1,0 +1,52 @@
+PhysicsChem Agent v2 - 2026-04-05 11:19:30.114408
+============================================================
+========================================================================
+  AUTONOMOUS DRUG DISCOVERY AGENT v2  -  EGFR Kinase (Wild-Type)
+========================================================================
+[11:19:30] Orchestrator     Disease target  : Non-Small Cell Lung Cancer
+[11:19:30] Orchestrator     Receptor        : cancer_egfr_agent/egfr_receptor.pdbqt
+[11:19:30] Orchestrator     Reference drug  : Erlotinib (-8.0 kcal/mol)
+[11:19:30] Orchestrator     Fragment budget : 20
+[11:19:30] Orchestrator     Max iterations  : 1
+[11:19:30] Orchestrator     Confidence goal : 70%
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+[11:19:30] Orchestrator     ITERATION 1/1  (best confidence so far: 0%)
+------------------------------------------------------------------------
+[11:19:30] FragmentAgent    Loading fragment library (120 total)...
+[11:19:30] FragmentAgent    Selected 20 Ro3-compliant fragments (MW<=300, LogP<=3.5, HBD<=3)
+[11:19:30] DockingAgent     Screening 20 fragments (exhaustiveness=4)...
+[11:19:30] DockingAgent     Threshold: affinity < -4.5 kcal/mol
+[11:19:32] DockingAgent       OK F071     4-aminoquinazoline-EGFR          -6.26 kcal/mol  8 poses
+[11:19:33] DockingAgent       . F001     pyridine                         -3.65 kcal/mol  8 poses
+[11:19:34] DockingAgent       OK F002     quinoline                        -6.00 kcal/mol  8 poses
+[11:19:35] DockingAgent       OK F003     benzimidazole                    -5.46 kcal/mol  8 poses
+[11:19:36] DockingAgent       OK F004     7-azaindole                      -5.47 kcal/mol  8 poses
+[11:19:38] DockingAgent       OK F005     4-azaindole                      -5.46 kcal/mol  8 poses
+[11:19:39] DockingAgent       OK F006     isoquinoline                     -5.71 kcal/mol  8 poses
+[11:19:40] DockingAgent       OK F007     2-aminoquinoline                 -6.16 kcal/mol  8 poses
+[11:19:40] DockingAgent       OK F008     4-aminoquinazoline               -6.26 kcal/mol  8 poses
+[11:19:42] DockingAgent       OK F009     adenine                          -5.26 kcal/mol  8 poses
+[11:19:43] DockingAgent       OK F010     quinoxaline                      -5.98 kcal/mol  8 poses
+[11:19:44] DockingAgent       OK F011     1,6-naphthyridine                -5.35 kcal/mol  8 poses
+[11:19:46] DockingAgent       OK F012     pyrrolo[2,3-b]pyridine           -5.19 kcal/mol  8 poses
+[11:19:47] DockingAgent       OK F014     indazole-2H                      -5.59 kcal/mol  8 poses
+[11:19:48] DockingAgent       OK F015     2-aminopurine                    -5.56 kcal/mol  8 poses
+[11:19:50] DockingAgent       OK F016     aniline                          -4.84 kcal/mol  8 poses
+[11:19:51] DockingAgent       OK F017     4-fluoroaniline                  -5.18 kcal/mol  8 poses
+[11:19:53] DockingAgent       OK F018     3-fluoroaniline                  -5.30 kcal/mol  8 poses
+[11:19:55] DockingAgent       OK F019     4-chloroaniline                  -4.76 kcal/mol  8 poses
+[11:19:57] DockingAgent       OK F020     4-trifluoromethylaniline         -6.11 kcal/mol  8 poses
+[11:19:57] DockingAgent     Fragment screening complete: 19/20 hit threshold
+[11:19:57] Orchestrator     Top 8 fragment hits selected for growing
+------------------------------------------------------------------------
+[11:19:57] Orchestrator     Fitting 5-sigma null distribution from fragment scores...
+[11:19:57] HiggsTest        Null distribution: affinity = -5.48 +/- 0.60 kcal/mol (n=20)
+[11:19:57] HiggsTest        Fragment null median: -5.47 kcal/mol
+[11:19:57] HiggsTest        5-sigma threshold: -8.48 kcal/mol
+[11:19:57] HiggsTest        3-sigma threshold: -7.28 kcal/mol
+------------------------------------------------------------------------
+[11:19:57] GrowingAgent     Growing 8 fragment hits -> target leads...
+[11:19:57] GrowingAgent     Strategy: R-group + pharmacophore tail attachment
+[11:19:57] GrowingAgent       Growing SEED_R1C1 (isobutyl-piperidine-aniline (R1-C1 proven)) - base affinity -7.52 kcal/mol
+[11:19:57] GrowingAgent         Generated 74 candidates -> docking top 15...

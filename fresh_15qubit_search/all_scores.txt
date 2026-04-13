@@ -1,0 +1,23 @@
+================================================================================
+                    ALL DOCKING SCORES - QUANTUM CANDIDATES
+================================================================================
+
+Candidate                    Vina (kcal/mol)    CNN Score    Status
+----------------------------------------------------------------------
+naphthalene_35diF            -11.222           0.9206       ✅ NEW LEAD
+indole_metaCF3               -11.112           0.8937       ✅
+isoquinoline_metaCl_spiroTHF -10.934           0.8049       ✅
+cand_1                       -10.874           0.8383       ✅
+indole_benzyl                -10.722           0.8822       ✅
+isoquinoline_35diF           -                  -            ❌ Failed
+isoquinoline_metaCl          -                  -            ❌ Failed
+cand_2                       -                  -            ❌ Failed
+cand_3                       -                  -            ❌ Failed
+
+REFERENCE COMPOUNDS:
+CURE_17G_002                 -11.180           0.9310
+opt5_v2_7 (CF3)              -10.790           0.8370
+
+================================================================================
+NEW LEAD IMPROVEMENT: +0.042 kcal/mol over CURE_17G_002!
+================================================================================

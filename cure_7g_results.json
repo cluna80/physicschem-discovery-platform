@@ -1,0 +1,122 @@
+[
+  {
+    "name": "CURE_7G_004",
+    "smiles": "c1ccc2ccc(C(=O)NCC(O)CNC(=O)C3CCCO3)cc2c1",
+    "mod": "2-Naphthyl isomer + THF (different binding angle)",
+    "note": "2-position may access deeper S2 pocket",
+    "mw": 342.4,
+    "logp": 1.23,
+    "hbd": 3,
+    "hba": 6,
+    "affinity": -6.668,
+    "pose": "docking_results/CURE_7G_004_out.pdbqt"
+  },
+  {
+    "name": "CURE_7G_009",
+    "smiles": "c1ccc2cc(C(=O)NCC(O)CNC(=O)Cc3ccccc3)ccc2c1",
+    "mod": "Naphthalene + benzyl (Saquinavir P1 mimic)",
+    "note": "Two aromatic systems \u2014 tests dual pi-stacking",
+    "mw": 362.4,
+    "logp": 2.29,
+    "hbd": 3,
+    "hba": 5,
+    "affinity": -6.589,
+    "pose": "docking_results/CURE_7G_009_out.pdbqt"
+  },
+  {
+    "name": "CURE_7G_010",
+    "smiles": "Oc1ccc2cc(C(=O)NCC(O)CNC(=O)C3CCCO3)ccc2c1",
+    "mod": "Hydroxynaphthyl + THF (H-bond donor on naphthalene)",
+    "note": "OH on naphthalene reaches Asp29/30 directly",
+    "mw": 358.4,
+    "logp": 0.93,
+    "hbd": 4,
+    "hba": 7,
+    "affinity": -6.456,
+    "pose": "docking_results/CURE_7G_010_out.pdbqt"
+  },
+  {
+    "name": "CURE_7G_003",
+    "smiles": "c1ccc2cc(C(=O)NCC(O)CNC(=O)[C@@H]3CO[C@H]4OCCO[C@H]34)ccc2c1",
+    "mod": "Naphthalene + bis-THF (fixed ring numbering)",
+    "note": "Uses unique ring numbers 3,4 \u2014 avoids previous conflict",
+    "mw": 400.4,
+    "logp": 0.43,
+    "hbd": 3,
+    "hba": 8,
+    "affinity": -6.451,
+    "pose": "docking_results/CURE_7G_003_out.pdbqt"
+  },
+  {
+    "name": "CURE_7G_002",
+    "smiles": "c1ccc2cc(C(=O)N[C@@H](CO)CNC(=O)C3CCCO3)ccc2c1",
+    "mod": "Naphthalene + THF + chiral hydroxymethyl linker",
+    "note": "Stereocontrol on linker matches protease geometry",
+    "mw": 342.4,
+    "logp": 1.23,
+    "hbd": 3,
+    "hba": 6,
+    "affinity": -6.435,
+    "pose": "docking_results/CURE_7G_002_out.pdbqt"
+  },
+  {
+    "name": "CURE_7G_007",
+    "smiles": "c1ccc2cc(C(=O)NCC(O)CNC(=O)C3CCCCO3)ccc2c1",
+    "mod": "Naphthalene + THP ring (6-membered O-ring)",
+    "note": "Slightly larger ring may fill P2 more completely",
+    "mw": 356.4,
+    "logp": 1.62,
+    "hbd": 3,
+    "hba": 6,
+    "affinity": -6.418,
+    "pose": "docking_results/CURE_7G_007_out.pdbqt"
+  },
+  {
+    "name": "CURE_7G_005",
+    "smiles": "c1cc2cc(C(=O)NCC(O)CNC(=O)C3CCCO3)ccc2cc1F",
+    "mod": "Fluoronaphthyl + THF (F tunes electron density)",
+    "note": "F at 6-position of naphthalene, improves S2 contacts",
+    "mw": 360.4,
+    "logp": 1.36,
+    "hbd": 3,
+    "hba": 6,
+    "affinity": -6.286,
+    "pose": "docking_results/CURE_7G_005_out.pdbqt"
+  },
+  {
+    "name": "CURE_7G_001",
+    "smiles": "c1ccc2cc(C(=O)NCC(O)CNC(=O)C3CCCO3)ccc2c1",
+    "mod": "Naphthalene + single THF (combine both winners)",
+    "note": "Direct combination of CURE_6G_002 scaffold with THF right arm",
+    "mw": 342.4,
+    "logp": 1.23,
+    "hbd": 3,
+    "hba": 6,
+    "affinity": -6.21,
+    "pose": "docking_results/CURE_7G_001_out.pdbqt"
+  },
+  {
+    "name": "CURE_7G_006",
+    "smiles": "c1ccc2cc(C(=O)NCC(O)C(O)CNC(=O)C3CCCO3)ccc2c1",
+    "mod": "Naphthalene + THF + diol linker",
+    "note": "Second OH for additional H-bond to Asp25 catalytic dyad",
+    "mw": 372.4,
+    "logp": 0.59,
+    "hbd": 4,
+    "hba": 7,
+    "affinity": -6.078,
+    "pose": "docking_results/CURE_7G_006_out.pdbqt"
+  },
+  {
+    "name": "CURE_7G_008",
+    "smiles": "c1ccc2cc(C(=O)NCC(O)CNC(=O)CC(C)C)ccc2c1",
+    "mod": "Naphthalene + isobutyl (P1 hydrophobic fill)",
+    "note": "Replaces THF with isobutyl \u2014 tests P1 vs P2 preference",
+    "mw": 328.4,
+    "logp": 2.09,
+    "hbd": 3,
+    "hba": 5,
+    "affinity": -6.036,
+    "pose": "docking_results/CURE_7G_008_out.pdbqt"
+  }
+]

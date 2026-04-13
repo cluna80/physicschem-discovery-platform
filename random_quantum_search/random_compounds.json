@@ -1,0 +1,982 @@
+[
+  {
+    "id": 1,
+    "ring": "c1ccncc1",
+    "linker": "S(=O)(=O)N",
+    "atom": "F",
+    "group": "C(=O)O",
+    "smiles": "c1ccncc1S(=O)(=O)NFC(=O)ON",
+    "type": "random"
+  },
+  {
+    "id": 2,
+    "ring": "c1ccsc1",
+    "linker": "O",
+    "atom": "F",
+    "group": "N",
+    "smiles": "c1ccsc1OFNN",
+    "type": "random"
+  },
+  {
+    "id": 3,
+    "ring": "C1CCCCC1",
+    "linker": "=",
+    "atom": "N",
+    "group": "C=O",
+    "smiles": "C1CCCCC1=NC=OC1CCCCC1=NC=OC1CCCCC1=NC=O",
+    "type": "random"
+  },
+  {
+    "id": 4,
+    "ring": "C1CCCC1",
+    "linker": "O",
+    "atom": "O",
+    "group": "C",
+    "smiles": "C1CCCC1OOC",
+    "type": "random"
+  },
+  {
+    "id": 5,
+    "ring": "c1ccccc1",
+    "linker": "=",
+    "atom": "O",
+    "group": "Cl",
+    "smiles": "c1ccccc1=OClc1ccccc1=OClc1ccccc1=OClc1ccccc1=OCl",
+    "type": "random"
+  },
+  {
+    "id": 6,
+    "ring": "c1ccccc1",
+    "linker": "-",
+    "atom": "N",
+    "group": "N(=O)=O",
+    "smiles": "c1ccccc1-NN(=O)=Oc1ccccc1-NN(=O)=Oc1ccccc1-NN(=O)=Oc1ccccc1-NN(=O)=O",
+    "type": "random"
+  },
+  {
+    "id": 7,
+    "ring": "c1cncnc1",
+    "linker": "-",
+    "atom": "Br",
+    "group": "N(=O)=O",
+    "smiles": "c1cncnc1-BrN(=O)=Oc1cncnc1-BrN(=O)=Oc1cncnc1-BrN(=O)=Oc1cncnc1-BrN(=O)=O",
+    "type": "random"
+  },
+  {
+    "id": 8,
+    "ring": "c1ccncc1",
+    "linker": "-",
+    "atom": "O",
+    "group": "C#N",
+    "smiles": "c1ccncc1-OC#Nc1ccncc1-OC#Nc1ccncc1-OC#Nc1ccncc1-OC#NC#N",
+    "type": "random"
+  },
+  {
+    "id": 9,
+    "ring": "C1CCCC1",
+    "linker": "C(=O)O",
+    "atom": "O",
+    "group": "N",
+    "smiles": "C1CCCC1C(=O)OON",
+    "type": "random"
+  },
+  {
+    "id": 10,
+    "ring": "c1ccsc1",
+    "linker": "S(=O)(=O)N",
+    "atom": "F",
+    "group": "N",
+    "smiles": "c1ccsc1S(=O)(=O)NFN",
+    "type": "random"
+  },
+  {
+    "id": 11,
+    "ring": "C1CCCC1",
+    "linker": "C(=O)N",
+    "atom": "S",
+    "group": "C",
+    "smiles": "C1CCCC1C(=O)NSC",
+    "type": "random"
+  },
+  {
+    "id": 12,
+    "ring": "c1ccncc1",
+    "linker": "C(=O)N",
+    "atom": "Cl",
+    "group": "CC",
+    "smiles": "c1ccncc1C(=O)NClCC",
+    "type": "random"
+  },
+  {
+    "id": 13,
+    "ring": "c1ccoc1",
+    "linker": "-",
+    "atom": "N",
+    "group": "N(=O)=O",
+    "smiles": "c1ccoc1-NN(=O)=Oc1ccoc1-NN(=O)=O",
+    "type": "random"
+  },
+  {
+    "id": 14,
+    "ring": "c1cc[nH]c1",
+    "linker": "S",
+    "atom": "C",
+    "group": "C(F)(F)F",
+    "smiles": "c1cc[nH]c1SCC(F)(F)F",
+    "type": "random"
+  },
+  {
+    "id": 15,
+    "ring": "c1cncnc1",
+    "linker": "-",
+    "atom": "F",
+    "group": "C#N",
+    "smiles": "c1cncnc1-FC#Nc1cncnc1-FC#Nc1cncnc1-FC#Nc1cncnc1-FC#N",
+    "type": "random"
+  },
+  {
+    "id": 16,
+    "ring": "c1ccccc1",
+    "linker": "-",
+    "atom": "S",
+    "group": "N(=O)=O",
+    "smiles": "c1ccccc1-SN(=O)=Oc1ccccc1-SN(=O)=Oc1ccccc1-SN(=O)=O",
+    "type": "random"
+  },
+  {
+    "id": 17,
+    "ring": "c1ncccn1",
+    "linker": "S",
+    "atom": "O",
+    "group": "N",
+    "smiles": "c1ncccn1SON",
+    "type": "random"
+  },
+  {
+    "id": 18,
+    "ring": "c1ccncc1",
+    "linker": "O",
+    "atom": "Cl",
+    "group": "C(=O)O",
+    "smiles": "c1ccncc1OClC(=O)O",
+    "type": "random"
+  },
+  {
+    "id": 19,
+    "ring": "c1ccncc1",
+    "linker": "-",
+    "atom": "Br",
+    "group": "O",
+    "smiles": "c1ccncc1-BrO",
+    "type": "random"
+  },
+  {
+    "id": 20,
+    "ring": "C1CCCC1",
+    "linker": "S(=O)(=O)N",
+    "atom": "Cl",
+    "group": "CC",
+    "smiles": "C1CCCC1S(=O)(=O)NClCC",
+    "type": "random"
+  },
+  {
+    "id": 21,
+    "ring": "c1ccncc1",
+    "linker": "S",
+    "atom": "Cl",
+    "group": "C#N",
+    "smiles": "c1ccncc1SClC#N",
+    "type": "random"
+  },
+  {
+    "id": 22,
+    "ring": "c1cncnc1",
+    "linker": "C(=O)N",
+    "atom": "O",
+    "group": "O",
+    "smiles": "c1cncnc1C(=O)NOO",
+    "type": "random"
+  },
+  {
+    "id": 23,
+    "ring": "c1ccoc1",
+    "linker": "O",
+    "atom": "Br",
+    "group": "CC",
+    "smiles": "c1ccoc1OBrCC",
+    "type": "random"
+  },
+  {
+    "id": 24,
+    "ring": "C1CCCCC1",
+    "linker": "C(=O)O",
+    "atom": "Br",
+    "group": "C",
+    "smiles": "C1CCCCC1C(=O)OBrCC(F)(F)F",
+    "type": "random"
+  },
+  {
+    "id": 25,
+    "ring": "c1ncccn1",
+    "linker": "S",
+    "atom": "N",
+    "group": "C(F)(F)F",
+    "smiles": "c1ncccn1SNC(F)(F)F",
+    "type": "random"
+  },
+  {
+    "id": 26,
+    "ring": "c1ccncc1",
+    "linker": "C(=O)N",
+    "atom": "Br",
+    "group": "O",
+    "smiles": "c1ccncc1C(=O)NBrO",
+    "type": "random"
+  },
+  {
+    "id": 27,
+    "ring": "c1ccsc1",
+    "linker": "O",
+    "atom": "Br",
+    "group": "C(F)(F)F",
+    "smiles": "c1ccsc1OBrC(F)(F)F",
+    "type": "random"
+  },
+  {
+    "id": 28,
+    "ring": "c1ccncc1",
+    "linker": "=",
+    "atom": "Br",
+    "group": "CC",
+    "smiles": "c1ccncc1=BrCCc1ccncc1=BrCCc1ccncc1=BrCC",
+    "type": "random"
+  },
+  {
+    "id": 29,
+    "ring": "c1ccsc1",
+    "linker": "O",
+    "atom": "F",
+    "group": "Cl",
+    "smiles": "c1ccsc1OFCl",
+    "type": "random"
+  },
+  {
+    "id": 30,
+    "ring": "c1cncnc1",
+    "linker": "S",
+    "atom": "Cl",
+    "group": "CC",
+    "smiles": "c1cncnc1SClCC",
+    "type": "random"
+  },
+  {
+    "id": 31,
+    "ring": "c1ccccc1",
+    "linker": "S",
+    "atom": "N",
+    "group": "CC",
+    "smiles": "c1ccccc1SNCC",
+    "type": "random"
+  },
+  {
+    "id": 32,
+    "ring": "c1cncnc1",
+    "linker": "S",
+    "atom": "C",
+    "group": "C(F)(F)F",
+    "smiles": "c1cncnc1SCC(F)(F)F",
+    "type": "random"
+  },
+  {
+    "id": 33,
+    "ring": "c1ccccc1",
+    "linker": "S(=O)(=O)N",
+    "atom": "Cl",
+    "group": "C=O",
+    "smiles": "c1ccccc1S(=O)(=O)NClC=O",
+    "type": "random"
+  },
+  {
+    "id": 34,
+    "ring": "c1cc[nH]c1",
+    "linker": "S(=O)(=O)N",
+    "atom": "C",
+    "group": "C#N",
+    "smiles": "c1cc[nH]c1S(=O)(=O)NCC#NC=O",
+    "type": "random"
+  },
+  {
+    "id": 35,
+    "ring": "C1CCCCC1",
+    "linker": "C(=O)O",
+    "atom": "S",
+    "group": "C",
+    "smiles": "C1CCCCC1C(=O)OSCCl",
+    "type": "random"
+  },
+  {
+    "id": 36,
+    "ring": "c1ccsc1",
+    "linker": "-",
+    "atom": "F",
+    "group": "CC",
+    "smiles": "c1ccsc1-FCCc1ccsc1-FCC",
+    "type": "random"
+  },
+  {
+    "id": 37,
+    "ring": "c1ccccc1",
+    "linker": "S",
+    "atom": "N",
+    "group": "C#N",
+    "smiles": "c1ccccc1SNC#N",
+    "type": "random"
+  },
+  {
+    "id": 38,
+    "ring": "c1cc[nH]c1",
+    "linker": "=",
+    "atom": "C",
+    "group": "C=O",
+    "smiles": "c1cc[nH]c1=CC=O",
+    "type": "random"
+  },
+  {
+    "id": 39,
+    "ring": "c1ccncc1",
+    "linker": "C(=O)O",
+    "atom": "S",
+    "group": "C",
+    "smiles": "c1ccncc1C(=O)OSCC",
+    "type": "random"
+  },
+  {
+    "id": 40,
+    "ring": "c1ccoc1",
+    "linker": "S(=O)(=O)N",
+    "atom": "Cl",
+    "group": "C#N",
+    "smiles": "c1ccoc1S(=O)(=O)NClC#NCl",
+    "type": "random"
+  },
+  {
+    "id": 41,
+    "ring": "c1ccoc1",
+    "linker": "=",
+    "atom": "F",
+    "group": "O",
+    "smiles": "c1ccoc1=FOc1ccoc1=FOc1ccoc1=FO",
+    "type": "random"
+  },
+  {
+    "id": 42,
+    "ring": "c1cncnc1",
+    "linker": "O",
+    "atom": "Cl",
+    "group": "N(=O)=O",
+    "smiles": "c1cncnc1OClN(=O)=O",
+    "type": "random"
+  },
+  {
+    "id": 43,
+    "ring": "c1ccsc1",
+    "linker": "=",
+    "atom": "O",
+    "group": "N(=O)=O",
+    "smiles": "c1ccsc1=ON(=O)=Oc1ccsc1=ON(=O)=Oc1ccsc1=ON(=O)=Oc1ccsc1=ON(=O)=OO",
+    "type": "random"
+  },
+  {
+    "id": 44,
+    "ring": "C1CCCC1",
+    "linker": "-",
+    "atom": "O",
+    "group": "N(=O)=O",
+    "smiles": "C1CCCC1-ON(=O)=O",
+    "type": "random"
+  },
+  {
+    "id": 45,
+    "ring": "C1CCCC1",
+    "linker": "S",
+    "atom": "C",
+    "group": "C#N",
+    "smiles": "C1CCCC1SCC#NC(=O)O",
+    "type": "random"
+  },
+  {
+    "id": 46,
+    "ring": "C1CCCC1",
+    "linker": "-",
+    "atom": "F",
+    "group": "C(=O)O",
+    "smiles": "C1CCCC1-FC(=O)O",
+    "type": "random"
+  },
+  {
+    "id": 47,
+    "ring": "c1ccccc1",
+    "linker": "C(=O)O",
+    "atom": "S",
+    "group": "N(=O)=O",
+    "smiles": "c1ccccc1C(=O)OSN(=O)=O",
+    "type": "random"
+  },
+  {
+    "id": 48,
+    "ring": "c1ccncc1",
+    "linker": "-",
+    "atom": "S",
+    "group": "C(F)(F)F",
+    "smiles": "c1ccncc1-SC(F)(F)Fc1ccncc1-SC(F)(F)Fc1ccncc1-SC(F)(F)F",
+    "type": "random"
+  },
+  {
+    "id": 49,
+    "ring": "c1cc[nH]c1",
+    "linker": "=",
+    "atom": "F",
+    "group": "C#N",
+    "smiles": "c1cc[nH]c1=FC#Nc1cc[nH]c1=FC#N",
+    "type": "random"
+  },
+  {
+    "id": 50,
+    "ring": "c1ccccc1",
+    "linker": "O",
+    "atom": "F",
+    "group": "C(=O)O",
+    "smiles": "c1ccccc1OFC(=O)OCl",
+    "type": "random"
+  },
+  {
+    "id": 51,
+    "ring": "c1ccsc1",
+    "linker": "C(=O)O",
+    "atom": "Cl",
+    "group": "N",
+    "smiles": "c1ccsc1C(=O)OClN",
+    "type": "random"
+  },
+  {
+    "id": 52,
+    "ring": "c1cncnc1",
+    "linker": "-",
+    "atom": "S",
+    "group": "C",
+    "smiles": "c1cncnc1-SCc1cncnc1-SC",
+    "type": "random"
+  },
+  {
+    "id": 53,
+    "ring": "c1cc[nH]c1",
+    "linker": "S",
+    "atom": "F",
+    "group": "C",
+    "smiles": "c1cc[nH]c1SFC",
+    "type": "random"
+  },
+  {
+    "id": 54,
+    "ring": "C1CCCCC1",
+    "linker": "S",
+    "atom": "Cl",
+    "group": "O",
+    "smiles": "C1CCCCC1SClO",
+    "type": "random"
+  },
+  {
+    "id": 55,
+    "ring": "c1ncccn1",
+    "linker": "S",
+    "atom": "F",
+    "group": "C",
+    "smiles": "c1ncccn1SFCCC",
+    "type": "random"
+  },
+  {
+    "id": 56,
+    "ring": "C1CCCCC1",
+    "linker": "O",
+    "atom": "O",
+    "group": "C(=O)O",
+    "smiles": "C1CCCCC1OOC(=O)OC(=O)O",
+    "type": "random"
+  },
+  {
+    "id": 57,
+    "ring": "c1ccccc1",
+    "linker": "S(=O)(=O)N",
+    "atom": "N",
+    "group": "C(F)(F)F",
+    "smiles": "c1ccccc1S(=O)(=O)NNC(F)(F)F",
+    "type": "random"
+  },
+  {
+    "id": 58,
+    "ring": "c1ccsc1",
+    "linker": "C(=O)N",
+    "atom": "N",
+    "group": "O",
+    "smiles": "c1ccsc1C(=O)NNO",
+    "type": "random"
+  },
+  {
+    "id": 59,
+    "ring": "c1ccsc1",
+    "linker": "-",
+    "atom": "O",
+    "group": "O",
+    "smiles": "c1ccsc1-OOc1ccsc1-OOc1ccsc1-OOO",
+    "type": "random"
+  },
+  {
+    "id": 60,
+    "ring": "c1cncnc1",
+    "linker": "C(=O)N",
+    "atom": "F",
+    "group": "C=O",
+    "smiles": "c1cncnc1C(=O)NFC=OC=O",
+    "type": "random"
+  },
+  {
+    "id": 61,
+    "ring": "C1CCCC1",
+    "linker": "-",
+    "atom": "F",
+    "group": "Cl",
+    "smiles": "C1CCCC1-FClC1CCCC1-FClC1CCCC1-FCl",
+    "type": "random"
+  },
+  {
+    "id": 62,
+    "ring": "c1ccncc1",
+    "linker": "S",
+    "atom": "Cl",
+    "group": "C#N",
+    "smiles": "c1ccncc1SClC#N",
+    "type": "random"
+  },
+  {
+    "id": 63,
+    "ring": "c1ccoc1",
+    "linker": "S(=O)(=O)N",
+    "atom": "N",
+    "group": "Cl",
+    "smiles": "c1ccoc1S(=O)(=O)NNCl",
+    "type": "random"
+  },
+  {
+    "id": 64,
+    "ring": "c1ccncc1",
+    "linker": "S(=O)(=O)N",
+    "atom": "N",
+    "group": "N(=O)=O",
+    "smiles": "c1ccncc1S(=O)(=O)NNN(=O)=OCl",
+    "type": "random"
+  },
+  {
+    "id": 65,
+    "ring": "c1ccsc1",
+    "linker": "O",
+    "atom": "F",
+    "group": "C",
+    "smiles": "c1ccsc1OFC",
+    "type": "random"
+  },
+  {
+    "id": 66,
+    "ring": "c1ccoc1",
+    "linker": "S(=O)(=O)N",
+    "atom": "Cl",
+    "group": "CC",
+    "smiles": "c1ccoc1S(=O)(=O)NClCC",
+    "type": "random"
+  },
+  {
+    "id": 67,
+    "ring": "C1CCCC1",
+    "linker": "C(=O)N",
+    "atom": "F",
+    "group": "C",
+    "smiles": "C1CCCC1C(=O)NFC",
+    "type": "random"
+  },
+  {
+    "id": 68,
+    "ring": "c1ccncc1",
+    "linker": "-",
+    "atom": "O",
+    "group": "N",
+    "smiles": "c1ccncc1-ONc1ccncc1-ON",
+    "type": "random"
+  },
+  {
+    "id": 69,
+    "ring": "c1ccoc1",
+    "linker": "S",
+    "atom": "N",
+    "group": "O",
+    "smiles": "c1ccoc1SNO",
+    "type": "random"
+  },
+  {
+    "id": 70,
+    "ring": "c1ccoc1",
+    "linker": "S",
+    "atom": "Br",
+    "group": "N",
+    "smiles": "c1ccoc1SBrN",
+    "type": "random"
+  },
+  {
+    "id": 71,
+    "ring": "C1CCCCC1",
+    "linker": "C(=O)O",
+    "atom": "O",
+    "group": "Cl",
+    "smiles": "C1CCCCC1C(=O)OOCl",
+    "type": "random"
+  },
+  {
+    "id": 72,
+    "ring": "c1cncnc1",
+    "linker": "S",
+    "atom": "Br",
+    "group": "C#N",
+    "smiles": "c1cncnc1SBrC#N",
+    "type": "random"
+  },
+  {
+    "id": 73,
+    "ring": "C1CCCCC1",
+    "linker": "S(=O)(=O)N",
+    "atom": "S",
+    "group": "O",
+    "smiles": "C1CCCCC1S(=O)(=O)NSO",
+    "type": "random"
+  },
+  {
+    "id": 74,
+    "ring": "c1cc[nH]c1",
+    "linker": "C(=O)O",
+    "atom": "Cl",
+    "group": "C#N",
+    "smiles": "c1cc[nH]c1C(=O)OClC#N",
+    "type": "random"
+  },
+  {
+    "id": 75,
+    "ring": "c1ncccn1",
+    "linker": "C(=O)N",
+    "atom": "Br",
+    "group": "C(=O)O",
+    "smiles": "c1ncccn1C(=O)NBrC(=O)O",
+    "type": "random"
+  },
+  {
+    "id": 76,
+    "ring": "c1ccncc1",
+    "linker": "C(=O)N",
+    "atom": "N",
+    "group": "C(F)(F)F",
+    "smiles": "c1ccncc1C(=O)NNC(F)(F)F",
+    "type": "random"
+  },
+  {
+    "id": 77,
+    "ring": "C1CCCCC1",
+    "linker": "S",
+    "atom": "N",
+    "group": "C(=O)O",
+    "smiles": "C1CCCCC1SNC(=O)O",
+    "type": "random"
+  },
+  {
+    "id": 78,
+    "ring": "c1cncnc1",
+    "linker": "O",
+    "atom": "O",
+    "group": "C(F)(F)F",
+    "smiles": "c1cncnc1OOC(F)(F)FC(=O)O",
+    "type": "random"
+  },
+  {
+    "id": 79,
+    "ring": "C1CCCC1",
+    "linker": "=",
+    "atom": "Br",
+    "group": "C(F)(F)F",
+    "smiles": "C1CCCC1=BrC(F)(F)FC1CCCC1=BrC(F)(F)FC1CCCC1=BrC(F)(F)FC1CCCC1=BrC(F)(F)F",
+    "type": "random"
+  },
+  {
+    "id": 80,
+    "ring": "c1ccncc1",
+    "linker": "O",
+    "atom": "C",
+    "group": "C(F)(F)F",
+    "smiles": "c1ccncc1OCC(F)(F)F",
+    "type": "random"
+  },
+  {
+    "id": 81,
+    "ring": "c1cncnc1",
+    "linker": "O",
+    "atom": "Br",
+    "group": "CC",
+    "smiles": "c1cncnc1OBrCCC=O",
+    "type": "random"
+  },
+  {
+    "id": 82,
+    "ring": "c1cncnc1",
+    "linker": "S",
+    "atom": "Br",
+    "group": "C=O",
+    "smiles": "c1cncnc1SBrC=OC(F)(F)F",
+    "type": "random"
+  },
+  {
+    "id": 83,
+    "ring": "c1ccccc1",
+    "linker": "C(=O)N",
+    "atom": "F",
+    "group": "C#N",
+    "smiles": "c1ccccc1C(=O)NFC#N",
+    "type": "random"
+  },
+  {
+    "id": 84,
+    "ring": "C1CCCCC1",
+    "linker": "-",
+    "atom": "N",
+    "group": "C=O",
+    "smiles": "C1CCCCC1-NC=OC1CCCCC1-NC=OC",
+    "type": "random"
+  },
+  {
+    "id": 85,
+    "ring": "c1cc[nH]c1",
+    "linker": "-",
+    "atom": "C",
+    "group": "N",
+    "smiles": "c1cc[nH]c1-CNc1cc[nH]c1-CNc1cc[nH]c1-CNO",
+    "type": "random"
+  },
+  {
+    "id": 86,
+    "ring": "c1cncnc1",
+    "linker": "-",
+    "atom": "N",
+    "group": "Cl",
+    "smiles": "c1cncnc1-NCl",
+    "type": "random"
+  },
+  {
+    "id": 87,
+    "ring": "C1CCCCC1",
+    "linker": "C(=O)O",
+    "atom": "N",
+    "group": "O",
+    "smiles": "C1CCCCC1C(=O)ONOC(F)(F)F",
+    "type": "random"
+  },
+  {
+    "id": 88,
+    "ring": "c1ccccc1",
+    "linker": "S(=O)(=O)N",
+    "atom": "F",
+    "group": "N(=O)=O",
+    "smiles": "c1ccccc1S(=O)(=O)NFN(=O)=O",
+    "type": "random"
+  },
+  {
+    "id": 89,
+    "ring": "c1ccsc1",
+    "linker": "O",
+    "atom": "S",
+    "group": "N",
+    "smiles": "c1ccsc1OSNC#N",
+    "type": "random"
+  },
+  {
+    "id": 90,
+    "ring": "c1ccsc1",
+    "linker": "-",
+    "atom": "Br",
+    "group": "O",
+    "smiles": "c1ccsc1-BrOc1ccsc1-BrOC#N",
+    "type": "random"
+  },
+  {
+    "id": 91,
+    "ring": "C1CCCC1",
+    "linker": "C(=O)O",
+    "atom": "C",
+    "group": "C",
+    "smiles": "C1CCCC1C(=O)OCCO",
+    "type": "random"
+  },
+  {
+    "id": 92,
+    "ring": "c1ccccc1",
+    "linker": "C(=O)N",
+    "atom": "N",
+    "group": "O",
+    "smiles": "c1ccccc1C(=O)NNO",
+    "type": "random"
+  },
+  {
+    "id": 93,
+    "ring": "C1CCCC1",
+    "linker": "C(=O)O",
+    "atom": "S",
+    "group": "CC",
+    "smiles": "C1CCCC1C(=O)OSCCN",
+    "type": "random"
+  },
+  {
+    "id": 94,
+    "ring": "c1ncccn1",
+    "linker": "C(=O)N",
+    "atom": "O",
+    "group": "N(=O)=O",
+    "smiles": "c1ncccn1C(=O)NON(=O)=OO",
+    "type": "random"
+  },
+  {
+    "id": 95,
+    "ring": "c1ccncc1",
+    "linker": "C(=O)N",
+    "atom": "Cl",
+    "group": "C",
+    "smiles": "c1ccncc1C(=O)NClC",
+    "type": "random"
+  },
+  {
+    "id": 96,
+    "ring": "C1CCCCC1",
+    "linker": "-",
+    "atom": "Cl",
+    "group": "Cl",
+    "smiles": "C1CCCCC1-ClClC1CCCCC1-ClClC1CCCCC1-ClClC1CCCCC1-ClCl",
+    "type": "random"
+  },
+  {
+    "id": 97,
+    "ring": "c1cncnc1",
+    "linker": "=",
+    "atom": "N",
+    "group": "Cl",
+    "smiles": "c1cncnc1=NClc1cncnc1=NCl",
+    "type": "random"
+  },
+  {
+    "id": 98,
+    "ring": "C1CCCCC1",
+    "linker": "-",
+    "atom": "C",
+    "group": "O",
+    "smiles": "C1CCCCC1-COC1CCCCC1-COC1CCCCC1-COC1CCCCC1-CO",
+    "type": "random"
+  },
+  {
+    "id": 99,
+    "ring": "C1CCCC1",
+    "linker": "C(=O)O",
+    "atom": "Br",
+    "group": "C=O",
+    "smiles": "C1CCCC1C(=O)OBrC=O",
+    "type": "random"
+  },
+  {
+    "id": 100,
+    "ring": "C1CCCC1",
+    "linker": "O",
+    "atom": "N",
+    "group": "C#N",
+    "smiles": "C1CCCC1ONC#N",
+    "type": "random"
+  },
+  {
+    "id": 101,
+    "ring": "Indole-piperazi",
+    "linker": "Novel",
+    "atom": "C",
+    "group": "Novel_1",
+    "smiles": "c1ccc2c(c1)CCN2C(=O)CCN3CCOCC3",
+    "type": "novel",
+    "description": "Indole-piperazine hybrid"
+  },
+  {
+    "id": 102,
+    "ring": "Benzimidazole-a",
+    "linker": "Novel",
+    "atom": "C",
+    "group": "Novel_2",
+    "smiles": "c1ccc2c(c1)N=CN2C(=O)C3CCNCC3",
+    "type": "novel",
+    "description": "Benzimidazole-amine hybrid"
+  },
+  {
+    "id": 103,
+    "ring": "Benzodioxane-pi",
+    "linker": "Novel",
+    "atom": "C",
+    "group": "Novel_3",
+    "smiles": "c1ccc2c(c1)OCCO2C(=O)CN3CCN(C)CC3",
+    "type": "novel",
+    "description": "Benzodioxane-piperazine"
+  },
+  {
+    "id": 104,
+    "ring": "Isoindolinone-c",
+    "linker": "Novel",
+    "atom": "C",
+    "group": "Novel_4",
+    "smiles": "c1ccc2c(c1)C(=O)N(C2)C3CCN(C3)C(=O)C4CCCCC4",
+    "type": "novel",
+    "description": "Isoindolinone-cyclohexane"
+  },
+  {
+    "id": 105,
+    "ring": "Tetralin-pipera",
+    "linker": "Novel",
+    "atom": "C",
+    "group": "Novel_5",
+    "smiles": "c1ccc2c(c1)CC(C2)C(=O)N3CCN(C3)C4CCCCC4",
+    "type": "novel",
+    "description": "Tetralin-piperazine hybrid"
+  },
+  {
+    "id": 106,
+    "ring": "Benzodioxane-pi",
+    "linker": "Novel",
+    "atom": "C",
+    "group": "Novel_6",
+    "smiles": "c1ccc2c(c1)OCCO2C(=O)N3CCN(C3)C4CCCCC4",
+    "type": "novel",
+    "description": "Benzodioxane-piperazine"
+  },
+  {
+    "id": 107,
+    "ring": "Tetrahydroisoqu",
+    "linker": "Novel",
+    "atom": "C",
+    "group": "Novel_7",
+    "smiles": "c1ccc2c(c1)CCN2C(=O)C3CCN(C3)C4CCCCC4",
+    "type": "novel",
+    "description": "Tetrahydroisoquinoline"
+  },
+  {
+    "id": 108,
+    "ring": "Oxindole deriva",
+    "linker": "Novel",
+    "atom": "C",
+    "group": "Novel_8",
+    "smiles": "c1ccc2c(c1)C(=O)NC2C3CCN(C3)C4CCCCC4",
+    "type": "novel",
+    "description": "Oxindole derivative"
+  }
+]

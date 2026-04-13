@@ -1,0 +1,28 @@
+name,class,affinity,mol_weight,lipinski_ro5,smiles,status
+Zidovudine,NRTI,-4.379,N/A,N/A,Cc1cn([C@@H]2C[C@H](N=[N+]=[N-])[C@@H](CO)O2)c(=O)[nH]c1=O,success
+Didanosine,NRTI,-3.858,N/A,N/A,O=c1[nH]cnc2c1ncn2[C@@H]1C[C@H](CO)O1,success
+Etravirine,NNRTI,-3.81,N/A,N/A,Cc1ccc(Nc2ncc(Br)c(Nc3ccc(C#N)cc3)n2)cc1C,success
+Stavudine,NRTI,-3.765,N/A,N/A,Cc1cn([C@H]2C=C[C@@H](CO)O2)c(=O)[nH]c1=O,success
+Abacavir,NRTI,-3.722,N/A,N/A,Nc1nc(NC2CC2)c2ncn([C@@H]3C[C@H](CO)C=C3)c2n1,success
+Doravirine,NNRTI,-3.657,N/A,N/A,O=c1[nH]c(Nc2ccc(OC(F)(F)F)c(Cl)c2)nc(n1)c1ccc(C#N)cn1,success
+Zalcitabine,NRTI,-3.435,N/A,N/A,O=C1N=C(N)C=CN1[C@@H]1C[C@H](CO)O1,success
+Tenofovir,NRTI,-3.393,N/A,N/A,C[C@@H](CO[P](O)(O)=O)Cn1cnc2c(N)ncnc12,success
+Emtricitabine,NRTI,-3.381,N/A,N/A,Nc1nc(=O)n(cc1F)[C@@H]1CS[C@H](CO)O1,success
+Lamivudine,NRTI,-3.349,N/A,N/A,Nc1ccn([C@@H]2CS[C@H](CO)O2)c(=O)n1,success
+Efavirenz,NNRTI,-2.909,N/A,N/A,FC(F)(F)[C@]1(C#CC2CC2)Oc2cc(Cl)ccc2NC1=O,success
+Amprenavir,PI,-1.286,N/A,N/A,CC(C)CN(C[C@@H]([C@H](Cc1ccccc1)NC(=O)O[C@H]1CCCO1)O)S(=O)(=O)c1ccc(N)cc1,success
+Rilpivirine,NNRTI,29.68,N/A,N/A,Cc1cc(/C=C/c2ccc(Nc3ncc(C#N)c(Nc4ccc(C#N)cc4)n3)cc2)cc(C)c1,success
+Nevirapine,NNRTI,FAILED,N/A,N/A,Cc1ccnc2N3CC(CC3=O)NC(=O)c3ccncc3N12,failed
+Lopinavir,PI,FAILED,N/A,N/A,CC(C)C[C@H](NC(=O)[C@@H](CC(=O)[C@@H](Cc1ccccc1)NC(=O)c1nc2cc(OC)ccc2cc1)CC(C)C)C(=O)N1CCN(Cc2ccccc2)CC1,failed
+Atazanavir,PI,FAILED,N/A,N/A,COC(=O)N[C@@H](Cc1ccccc1)[C@@H](O)CN(C[C@H]1CCCN(C(=O)[C@@H](NC(=O)OC)Cc2ccccc2)C1)Cc1ccc(-c2ccccn2)cc1,failed
+Fosamprenavir,PI,FAILED,N/A,N/A,CC(C)CN(C[C@@H]([C@H](Cc1ccccc1)NC(=O)O[C@@H]1CCCO1)OC(=O)OP(=O)(O)O)S(=O)(=O)c1ccc(N)cc1,failed
+Darunavir,PI,FAILED,N/A,N/A,CC(C)CN(C[C@@H]([C@H](Cc1ccccc1)NC(=O)O[C@H]1CO[C@@H]2OCC[C@H]12)O)S(=O)(=O)c1ccc(N)cc1,failed
+Raltegravir,INSTI,FAILED,N/A,N/A,Cn1c(C(=O)NCc2ccc(F)cc2)cc(C(=O)NNC(=O)C(C)(C)C)c(=O)c1C,failed
+Elvitegravir,INSTI,FAILED,N/A,N/A,CCOc1cc2c(cc1Cl)N(Cc1ccc(F)cc1)C(=O)C2=C(O)/C=C/c1ccc(OCC)cc1,failed
+Dolutegravir,INSTI,FAILED,N/A,N/A,O=C(O)[C@H]1CCOc2cc3c(cc2F)N(Cc2ccc(F)cc2)C(=O)[C@@H]3CC1=O,failed
+Bictegravir,INSTI,FAILED,N/A,N/A,O=C(O)[C@H]1CC[C@H]2CN(Cc3cc(F)c(F)cc3F)C(=O)[C@@H]2CC1=O,failed
+Cabotegravir,INSTI,FAILED,N/A,N/A,O=C1C[C@@H]2CC(=O)N(Cc3ccc(F)cc3F)[C@H]2CN1c1ccc(F)cc1,failed
+Maraviroc,CCR5 Antagonist,FAILED,N/A,N/A,C[C@@H]1CCN(CC1N(C)C(=O)c1ccc(F)cc1F)[C@@H]1CCc2c(cccc2F)C1,failed
+Fostemsavir,Attachment Inhibitor,FAILED,N/A,N/A,COC(=O)c1ccc(COP(=O)(O)OCC2OC(n3cc(-c4nc5cc(-c6ccc(OC)cc6)cc(F)c5c(=O)n4C)cn3)[C@@H](O)[C@H]2O)cc1,failed
+Lenacapavir,Capsid Inhibitor,FAILED,N/A,N/A,CC(C)N1C(=O)N(Cc2cc(F)cc(F)c2)C(=S)c2cc(-c3ccc(OC(F)(F)F)cc3)ccc21,failed
+Cobicistat,Pharmacoenhancer,FAILED,N/A,N/A,CC(C)c1nc(CN2CCN(C[C@@H](O)[C@@H](Cc2ccccc2)NC(=O)[C@@H](NC(=O)OCc2csc(C)n2)C(C)C)CC2)cs1,failed

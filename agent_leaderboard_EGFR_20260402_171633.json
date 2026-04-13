@@ -1,0 +1,241 @@
+[
+  {
+    "smiles": "c1ccc2nc(NNNc3ccc(Nc4ncnc5ccccc45)cc3)ccc2c1",
+    "MW": 393.5,
+    "LogP": 4.87,
+    "id": "F007_G013",
+    "parent": "F007",
+    "dock_affinity": -10.74,
+    "dock_poses": 8,
+    "admet_pass": true,
+    "HAC": 30,
+    "LE": 0.358,
+    "confidence": 80,
+    "reasons": [
+      "strong docking",
+      "good LE",
+      "ADMET pass",
+      "drug-sized"
+    ]
+  },
+  {
+    "smiles": "c1ccc2nc(NNNc3ncnc4ccccc34)ccc2c1",
+    "MW": 302.3,
+    "LogP": 3.12,
+    "id": "F007_G005",
+    "parent": "F007",
+    "dock_affinity": -9.947,
+    "dock_poses": 8,
+    "admet_pass": true,
+    "HAC": 23,
+    "LE": 0.432,
+    "confidence": 80,
+    "reasons": [
+      "strong docking",
+      "good LE",
+      "ADMET pass",
+      "drug-sized"
+    ]
+  },
+  {
+    "smiles": "c1ccc2nc(NONc3ncnc4ccccc34)ccc2c1",
+    "MW": 303.3,
+    "LogP": 3.55,
+    "id": "F007_G007",
+    "parent": "F007",
+    "dock_affinity": -9.867,
+    "dock_poses": 8,
+    "admet_pass": true,
+    "HAC": 23,
+    "LE": 0.429,
+    "confidence": 80,
+    "reasons": [
+      "strong docking",
+      "good LE",
+      "ADMET pass",
+      "drug-sized"
+    ]
+  },
+  {
+    "smiles": "c1ccc2nc(NNc3ncnc4ccccc34)ccc2c1",
+    "MW": 287.3,
+    "LogP": 3.62,
+    "id": "F007_G001",
+    "parent": "F007",
+    "dock_affinity": -9.81,
+    "dock_poses": 8,
+    "admet_pass": true,
+    "HAC": 22,
+    "LE": 0.446,
+    "confidence": 80,
+    "reasons": [
+      "strong docking",
+      "good LE",
+      "ADMET pass",
+      "drug-sized"
+    ]
+  },
+  {
+    "smiles": "c1ccc2nc(NCNc3ncnc4ccccc34)ccc2c1",
+    "MW": 301.4,
+    "LogP": 3.66,
+    "id": "F007_G002",
+    "parent": "F007",
+    "dock_affinity": -9.714,
+    "dock_poses": 8,
+    "admet_pass": true,
+    "HAC": 23,
+    "LE": 0.422,
+    "confidence": 80,
+    "reasons": [
+      "strong docking",
+      "good LE",
+      "ADMET pass",
+      "drug-sized"
+    ]
+  },
+  {
+    "smiles": "c1ccc(Nc2ncnc3ccccc23)cc1",
+    "MW": 221.3,
+    "id": "F071_G010",
+    "parent": "F071",
+    "dock_affinity": -7.952,
+    "dock_poses": 8,
+    "admet_pass": true,
+    "HAC": 17,
+    "LE": 0.468,
+    "LogP": 3.37,
+    "confidence": 50,
+    "reasons": [
+      "good LE",
+      "ADMET pass",
+      "drug-sized"
+    ]
+  },
+  {
+    "smiles": "c1ccc2c(NC3CCCNC3)ncnc2c1",
+    "MW": 228.3,
+    "id": "F071_G012",
+    "parent": "F071",
+    "dock_affinity": -7.768,
+    "dock_poses": 8,
+    "admet_pass": true,
+    "HAC": 17,
+    "LE": 0.457,
+    "LogP": 1.79,
+    "confidence": 50,
+    "reasons": [
+      "good LE",
+      "ADMET pass",
+      "drug-sized"
+    ]
+  },
+  {
+    "smiles": "c1cncc(Nc2ncnc3ccccc23)c1",
+    "MW": 222.3,
+    "id": "F071_G011",
+    "parent": "F071",
+    "dock_affinity": -7.463,
+    "dock_poses": 8,
+    "admet_pass": true,
+    "HAC": 17,
+    "LE": 0.439,
+    "LogP": 2.77,
+    "confidence": 50,
+    "reasons": [
+      "good LE",
+      "ADMET pass",
+      "drug-sized"
+    ]
+  },
+  {
+    "smiles": "c1ccc2c(NC3CCCO3)ncnc2c1",
+    "MW": 215.3,
+    "id": "F071_G013",
+    "parent": "F071",
+    "dock_affinity": -6.746,
+    "dock_poses": 8,
+    "admet_pass": true,
+    "HAC": 16,
+    "LE": 0.422,
+    "LogP": 2.18,
+    "confidence": 50,
+    "reasons": [
+      "good LE",
+      "ADMET pass",
+      "drug-sized"
+    ]
+  },
+  {
+    "smiles": "NNc1ncnc2ccccc12",
+    "MW": 160.2,
+    "id": "F071_G006",
+    "parent": "F071",
+    "dock_affinity": -6.404,
+    "dock_poses": 8,
+    "admet_pass": true,
+    "HAC": 12,
+    "LE": 0.534,
+    "LogP": 0.92,
+    "confidence": 50,
+    "reasons": [
+      "good LE",
+      "ADMET pass",
+      "drug-sized"
+    ]
+  },
+  {
+    "smiles": "CCCNc1ncnc2ccccc12",
+    "MW": 187.2,
+    "id": "F071_G014",
+    "parent": "F071",
+    "dock_affinity": -6.125,
+    "dock_poses": 8,
+    "admet_pass": true,
+    "HAC": 14,
+    "LE": 0.438,
+    "LogP": 2.45,
+    "confidence": 50,
+    "reasons": [
+      "good LE",
+      "ADMET pass",
+      "drug-sized"
+    ]
+  },
+  {
+    "smiles": "NCNc1ncnc2ccccc12",
+    "MW": 174.2,
+    "id": "F071_G007",
+    "parent": "F071",
+    "dock_affinity": -6.056,
+    "dock_poses": 8,
+    "admet_pass": true,
+    "HAC": 13,
+    "LE": 0.466,
+    "LogP": 0.96,
+    "confidence": 50,
+    "reasons": [
+      "good LE",
+      "ADMET pass",
+      "drug-sized"
+    ]
+  },
+  {
+    "smiles": "OCCNc1ncnc2ccccc12",
+    "MW": 189.2,
+    "id": "F071_G009",
+    "parent": "F071",
+    "dock_affinity": -6.021,
+    "dock_poses": 8,
+    "admet_pass": true,
+    "HAC": 14,
+    "LE": 0.43,
+    "LogP": 1.03,
+    "confidence": 50,
+    "reasons": [
+      "good LE",
+      "ADMET pass",
+      "drug-sized"
+    ]
+  }
+]

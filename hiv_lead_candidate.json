@@ -1,0 +1,12 @@
+{
+  "name": "CURE_4G_003",
+  "smiles": "c1cc(F)c(F)c(F)c1C(=O)NCC(O)CNC(=O)CCCF",
+  "affinity": -5.365,
+  "improvement": -0.774,
+  "features": [
+    "Trifluorophenyl ring (strong electron withdrawal)",
+    "Amide linkage (strong H-bonding)",
+    "Hydroxyethylamine core (Darunavir-inspired)",
+    "Alkyl chain (optimal pocket fit)"
+  ]
+}

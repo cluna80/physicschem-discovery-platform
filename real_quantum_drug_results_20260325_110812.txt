@@ -1,0 +1,31 @@
+REAL QUANTUM DRUG DISCOVERY RESULTS
+============================================================
+
+Date: 2026-03-25 11:08:12
+Drugs analyzed: 32
+
+BEST DRUG CANDIDATE:
+Name: Aspirin
+Formula: C9H8O4
+CID: 2244
+SMILES: CC(=O)OC1=CC=CC=C1C(=O)O
+
+Properties:
+  Molecular Weight: 180.2 g/mol
+  LogP: 1.20
+  H-bond Donors: 1
+  H-bond Acceptors: 4
+  Rotatable Bonds: 3
+  Drug Score: 100/100
+
+Top 10 Drugs:
+  1. Aspirin: 100/100
+  2. Ibuprofen: 100/100
+  3. Acetaminophen: 100/100
+  4. Celecoxib: 100/100
+  5. Naproxen: 100/100
+  6. Diclofenac: 100/100
+  7. Ketoprofen: 100/100
+  8. Indomethacin: 100/100
+  9. Meloxicam: 100/100
+  10. Piroxicam: 100/100

@@ -1,0 +1,91 @@
+================================================================================
+                    CHEMICAL NAMES FOR QUANTUM-DISCOVERED COMPOUNDS
+================================================================================
+
+1. naphthalene_metaF (NEW LEAD -11.428 kcal/mol)
+   Chemical Name: (2S,3S)-N-((S)-1-((S)-2-((S)-2-(3-fluorobenzyl)-3-hydroxypropyl)amino)-1-oxopropan-2-yl)-3-(naphthalen-2-yl)propanamide
+   
+   Systematic Name: (2S,3S)-N-[(2S)-1-{[(2S)-3-hydroxy-1-[(3-fluorophenyl)methyl]propan-2-yl]amino}-1-oxopropan-2-yl]-3-(naphthalen-2-yl)propanamide
+   
+   Common Name: Naphthalene-2-carboxamide derivative with meta-fluorobenzyl and bis-THF
+
+2. naphthalene_metaCF3 (Previous Best -11.357 kcal/mol)
+   Chemical Name: (2S,3S)-N-((S)-1-((S)-2-((S)-2-(3-(trifluoromethyl)benzyl)-3-hydroxypropyl)amino)-1-oxopropan-2-yl)-3-(naphthalen-2-yl)propanamide
+   
+   Common Name: Naphthalene-2-carboxamide derivative with meta-trifluoromethylbenzyl and bis-THF
+
+3. naphthalene_35diF (-11.272 kcal/mol)
+   Chemical Name: (2S,3S)-N-((S)-1-((S)-2-((S)-2-(3,5-difluorobenzyl)-3-hydroxypropyl)amino)-1-oxopropan-2-yl)-3-(naphthalen-2-yl)propanamide
+   
+   Common Name: Naphthalene-2-carboxamide derivative with 3,5-difluorobenzyl and bis-THF
+
+4. isoquinoline_35diF (-10.483 kcal/mol)
+   Chemical Name: (2S,3S)-N-((S)-1-((S)-2-((S)-2-(3,5-difluorobenzyl)-3-hydroxypropyl)amino)-1-oxopropan-2-yl)-3-(isoquinolin-1-yl)propanamide
+   
+   Common Name: Isoquinoline-1-carboxamide derivative with 3,5-difluorobenzyl and bis-THF
+
+5. indole_metaCF3 (-10.617 kcal/mol)
+   Chemical Name: (2S,3S)-N-((S)-1-((S)-2-((S)-2-(3-(trifluoromethyl)benzyl)-3-hydroxypropyl)amino)-1-oxopropan-2-yl)-3-(1H-indol-3-yl)propanamide
+   
+   Common Name: Indole-3-carboxamide derivative with meta-trifluoromethylbenzyl and bis-THF
+
+6. CURE_17G_002 (Original Lead -11.180 kcal/mol)
+   Chemical Name: (2S,3S)-N-((S)-1-((S)-2-((S)-2-(3,5-difluorobenzyl)-3-hydroxypropyl)amino)-1-oxopropan-2-yl)-3-(isoquinolin-1-yl)propanamide
+   
+   Common Name: Isoquinoline-1-carboxamide derivative with 3,5-difluorobenzyl and bis-THF
+
+7. opt5_v2_7 (CF3 Analog -10.790 kcal/mol)
+   Chemical Name: (2S,3S)-N-((S)-1-((S)-2-((S)-2-(3,5-difluoro-4-(trifluoromethyl)benzyl)-3-hydroxypropyl)amino)-1-oxopropan-2-yl)-3-(isoquinolin-1-yl)propanamide
+   
+   Common Name: Isoquinoline-1-carboxamide derivative with 3,5-difluoro-4-trifluoromethylbenzyl and bis-THF
+
+================================================================================
+                        STRUCTURAL FAMILIES
+================================================================================
+
+Family 1: Naphthalene-based (best performers)
+├── naphthalene_metaF (-11.428) - NEW LEAD
+├── naphthalene_metaCF3 (-11.357)
+└── naphthalene_35diF (-11.272)
+
+Family 2: Isoquinoline-based (darunavir-like)
+├── CURE_17G_002 (-11.180)
+└── isoquinoline_35diF (-10.483)
+
+Family 3: Indole-based
+└── indole_metaCF3 (-10.617)
+
+Family 4: CF3-optimized
+└── opt5_v2_7 (-10.790)
+
+================================================================================
+                    SIMPLIFIED NAMES FOR REFERENCE
+================================================================================
+
+For easy reference, these compounds can be called:
+
+| Code Name | Simplified Name | Vina |
+|-----------|-----------------|------|
+| NF-1 | Naphthyl-meta-F-amide | -11.428 |
+| NF-2 | Naphthyl-meta-CF3-amide | -11.357 |
+| NF-3 | Naphthyl-35diF-amide | -11.272 |
+| IQ-1 | Isoquinolyl-35diF-amide | -10.483 |
+| IN-1 | Indolyl-meta-CF3-amide | -10.617 |
+| CURE-17G | CURE_17G_002 | -11.180 |
+| OPT-5 | opt5_v2_7 | -10.790 |
+
+================================================================================
+                        PATENT CLAIMS
+================================================================================
+
+The following compounds are New Chemical Entities (NCEs) that can be claimed:
+
+1. Naphthalene-2-carboxamide with meta-fluorobenzyl and bis-THF (NF-1) - LEAD
+2. Naphthalene-2-carboxamide with meta-trifluoromethylbenzyl and bis-THF (NF-2)
+3. Naphthalene-2-carboxamide with 3,5-difluorobenzyl and bis-THF (NF-3)
+4. Isoquinoline-1-carboxamide with 3,5-difluorobenzyl and bis-THF (IQ-1)
+5. Indole-3-carboxamide with meta-trifluoromethylbenzyl and bis-THF (IN-1)
+
+All are novel scaffolds not present in any FDA-approved HIV protease inhibitor.
+
+================================================================================

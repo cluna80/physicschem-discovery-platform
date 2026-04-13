@@ -1,0 +1,20 @@
+{
+  "EGFR": "ready",
+  "T790M": "ready",
+  "VEGFR2": "ready",
+  "KRAS_G12C": "ready",
+  "BRAF_V600E": "ready",
+  "CDK4": "ready",
+  "PARP1": "ready",
+  "HIV": "ready",
+  "COVID_MPRO": "ready",
+  "TB_INHA": "ready",
+  "BACE1": "ready",
+  "ACHE": "ready",
+  "MAO_B": "ready",
+  "THROMBIN": "ready",
+  "FACTOR_XA": "ready",
+  "DPP4": "ready",
+  "COX2": "ready",
+  "JAK1": "ready"
+}

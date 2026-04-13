@@ -1,0 +1,4 @@
+id,smiles,target,dock_affinity,vina_affinity,validated
+SEED_INT_RAL_G003,O=C(NCC(O)c1cc(F)cc(F)c1)c1cc(C(=O)Cc2ccccc2)on1,HIV_INTEGRASE_20260413,-8.634,-9.221,True
+SEED_INT_RAL_G004,O=C(NCC(O)c1cc(F)cc(F)c1)c1cc(C(=O)Cc2ccccc2F)on1,HIV_INTEGRASE_20260413,-9.118,-9.708,True
+SEED_INT_RAL_G013,O=C(NCC(O)c1cc(F)cc(F)c1)c1cc(C(=O)CC2CCCNC2)on1,HIV_INTEGRASE_20260413,-9.032,-8.763,True

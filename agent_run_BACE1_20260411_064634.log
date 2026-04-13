@@ -1,0 +1,150 @@
+PhysicsChem Agent v2 - 2026-04-11 06:46:34.831119
+============================================================
+========================================================================
+  AUTONOMOUS DRUG DISCOVERY AGENT v2  -  BACE1 Beta-Secretase
+========================================================================
+[06:46:34] Orchestrator     Disease target  : Alzheimer's Disease
+[06:46:34] Orchestrator     Receptor        : bace1.pdbqt
+[06:46:34] Orchestrator     Reference drug  : Verubecestat (-9.1 kcal/mol)
+[06:46:34] Orchestrator     Fragment budget : 20
+[06:46:34] Orchestrator     Max iterations  : 1
+[06:46:34] Orchestrator     Confidence goal : 70%
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+[06:46:34] Orchestrator     ITERATION 1/1  (best confidence so far: 0%)
+------------------------------------------------------------------------
+[06:46:34] FragmentAgent    Loading fragment library (120 total)...
+[06:46:34] FragmentAgent    Selected 20 Ro3-compliant fragments (MW<=300, LogP<=3.5, HBD<=3)
+[06:46:35] FragmentAgent    PAINS filter removed 1 fragments
+[06:46:35] DockingAgent     Screening 19 fragments (exhaustiveness=4)...
+[06:46:35] DockingAgent     Threshold: affinity < -5.6 kcal/mol
+[06:46:37] DockingAgent       . F001     pyridine                         -2.36 kcal/mol  8 poses
+[06:46:39] DockingAgent       . F002     quinoline                        -3.30 kcal/mol  8 poses
+[06:46:41] DockingAgent       . F003     benzimidazole                    -3.11 kcal/mol  7 poses
+[06:46:43] DockingAgent       . F004     7-azaindole                      -3.31 kcal/mol  8 poses
+[06:46:45] DockingAgent       . F005     4-azaindole                      -3.04 kcal/mol  8 poses
+[06:46:48] DockingAgent       . F006     isoquinoline                     -3.34 kcal/mol  8 poses
+[06:46:51] DockingAgent       . F007     2-aminoquinoline                 -3.53 kcal/mol  8 poses
+[06:46:53] DockingAgent       . F008     4-aminoquinazoline               -3.70 kcal/mol  8 poses
+[06:46:56] DockingAgent       . F009     adenine                          -3.61 kcal/mol  8 poses
+[06:46:59] DockingAgent       . F010     quinoxaline                      -3.29 kcal/mol  8 poses
+[06:47:01] DockingAgent       . F011     1,6-naphthyridine                -3.09 kcal/mol  7 poses
+[06:47:03] DockingAgent       . F012     pyrrolo[2,3-b]pyridine           -3.14 kcal/mol  8 poses
+[06:47:05] DockingAgent       . F014     indazole-2H                      -3.34 kcal/mol  8 poses
+[06:47:08] DockingAgent       . F015     2-aminopurine                    -3.79 kcal/mol  8 poses
+[06:47:11] DockingAgent       . F016     aniline                          -3.23 kcal/mol  8 poses
+[06:47:13] DockingAgent       . F017     4-fluoroaniline                  -3.49 kcal/mol  7 poses
+[06:47:15] DockingAgent       . F018     3-fluoroaniline                  -3.54 kcal/mol  8 poses
+[06:47:18] DockingAgent       . F019     4-chloroaniline                  -3.49 kcal/mol  8 poses
+[06:47:21] DockingAgent       . F020     4-trifluoromethylaniline         -3.77 kcal/mol  7 poses
+[06:47:21] DockingAgent     Fragment screening complete: 0/19 hit threshold
+[06:47:21] Orchestrator     Top 3 fragment hits selected for growing
+------------------------------------------------------------------------
+[06:47:21] Orchestrator     Fitting 5-sigma null distribution from fragment scores...
+[06:47:21] HiggsTest        Null distribution: affinity = -3.34 +/- 0.32 kcal/mol (n=19)
+[06:47:21] HiggsTest        Fragment null median: -3.34 kcal/mol
+[06:47:21] HiggsTest        5-sigma threshold: -4.93 kcal/mol
+[06:47:21] HiggsTest        3-sigma threshold: -4.29 kcal/mol
+------------------------------------------------------------------------
+[06:47:21] GrowingAgent     Growing 3 fragment hits -> target leads...
+[06:47:21] GrowingAgent     Strategy: R-group + pharmacophore tail attachment
+[06:47:21] GrowingAgent       Growing SEED_R1C1 (isobutyl-piperidine-aniline (R1-C1 proven)) - base affinity -7.52 kcal/mol
+[06:47:21] GrowingAgent         Generated 46 candidates -> docking top 15...
+[06:55:49] GrowingAgent       Growing SEED_R1C2 (decalin-fluorophenyl (R1-C2 proven)) - base affinity -8.48 kcal/mol
+[06:55:50] GrowingAgent         Generated 46 candidates -> docking top 15...
+[07:03:54] GrowingAgent       Growing SEED_R1C5 (decalin-hydroxyphenyl (R1-C5 proven)) - base affinity -8.34 kcal/mol
+[07:03:54] GrowingAgent         Generated 46 candidates -> docking top 15...
+[07:13:37] GrowingAgent     Growth cycle complete: 45 compounds produced
+[07:13:37] ADMETAgent       Profiling 45 compounds (rule-based fallback)...
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C5_G010   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C5_G039   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C2_G037   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C5_G012   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C5_G040   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C2_G040   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C5_G017   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C5_G037   
+[07:13:37] ADMETAgent         OK PASS  SEED_R1C5_G024   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C5_G038   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C2_G006   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C5_G018   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C2_G029   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C2_G010   
+[07:13:37] ADMETAgent         OK PASS  SEED_R1C5_G034   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C5_G041   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C5_G007   
+[07:13:37] ADMETAgent         OK PASS  SEED_R1C1_G008   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C5_G002   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C5_G003   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C5_G036   
+[07:13:37] ADMETAgent         OK PASS  SEED_R1C1_G015   
+[07:13:37] ADMETAgent         OK PASS  SEED_R1C1_G007   
+[07:13:37] ADMETAgent         OK PASS  SEED_R1C1_G037   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C2_G019   
+[07:13:37] ADMETAgent         OK PASS  SEED_R1C1_G040   
+[07:13:37] ADMETAgent         OK PASS  SEED_R1C1_G010   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C2_G023   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C2_G012   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C2_G018   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C2_G005   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C2_G013   
+[07:13:37] ADMETAgent         OK PASS  SEED_R1C2_G026   
+[07:13:37] ADMETAgent         OK PASS  SEED_R1C2_G031   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C2_G002   
+[07:13:37] ADMETAgent         XX FAIL  SEED_R1C2_G009   
+[07:13:37] ADMETAgent         OK PASS  SEED_R1C1_G006   
+[07:13:37] ADMETAgent         OK PASS  SEED_R1C1_G018   
+[07:13:37] ADMETAgent         OK PASS  SEED_R1C1_G039   
+[07:13:37] ADMETAgent         OK PASS  SEED_R1C1_G009   
+[07:13:37] ADMETAgent         OK PASS  SEED_R1C1_G011   
+[07:13:37] ADMETAgent         OK PASS  SEED_R1C1_G043   
+[07:13:37] ADMETAgent         OK PASS  SEED_R1C1_G024   
+[07:13:37] ADMETAgent         OK PASS  SEED_R1C1_G001   
+[07:13:37] ADMETAgent         OK PASS  SEED_R1C1_G013   
+[07:13:37] ADMETAgent       ADMET filter: 19/45 compounds pass
+[07:13:37] ValidatorAgent   Validating 19 compounds...
+[07:13:37] ValidatorAgent     XX WEAK  SEED_R1C5_G024  aff=-4.75  LE=0.237  conf=30%  [ADMET pass, drug-sized]
+[07:13:37] ValidatorAgent     XX WEAK  SEED_R1C5_G034  aff=-4.64  LE=0.211  conf=30%  [ADMET pass, drug-sized]
+[07:13:37] ValidatorAgent     XX WEAK  SEED_R1C1_G008  aff=-4.62  LE=0.201  conf=30%  [ADMET pass, drug-sized]
+[07:13:37] ValidatorAgent     XX WEAK  SEED_R1C1_G015  aff=-4.59  LE=0.229  conf=30%  [ADMET pass, drug-sized]
+[07:13:37] ValidatorAgent     XX WEAK  SEED_R1C1_G007  aff=-4.58  LE=0.208  conf=30%  [ADMET pass, drug-sized]
+[07:13:37] ValidatorAgent     XX WEAK  SEED_R1C1_G037  aff=-4.56  LE=0.207  conf=30%  [ADMET pass, drug-sized]
+[07:13:37] ValidatorAgent     XX WEAK  SEED_R1C1_G040  aff=-4.55  LE=0.207  conf=30%  [ADMET pass, drug-sized]
+[07:13:37] ValidatorAgent     XX WEAK  SEED_R1C1_G010  aff=-4.54  LE=0.198  conf=30%  [ADMET pass, drug-sized]
+[07:13:37] ValidatorAgent     XX WEAK  SEED_R1C2_G026  aff=-4.46  LE=0.212  conf=30%  [ADMET pass, drug-sized]
+[07:13:37] ValidatorAgent     XX WEAK  SEED_R1C2_G031  aff=-4.46  LE=0.212  conf=30%  [ADMET pass, drug-sized]
+[07:13:37] ValidatorAgent     XX WEAK  SEED_R1C1_G006  aff=-4.39  LE=0.2  conf=30%  [ADMET pass, drug-sized]
+[07:13:37] ValidatorAgent     XX WEAK  SEED_R1C1_G018  aff=-4.39  LE=0.258  conf=30%  [ADMET pass, drug-sized]
+[07:13:37] ValidatorAgent     XX WEAK  SEED_R1C1_G039  aff=-4.37  LE=0.198  conf=30%  [ADMET pass, drug-sized]
+[07:13:37] ValidatorAgent     XX WEAK  SEED_R1C1_G009  aff=-4.33  LE=0.188  conf=30%  [ADMET pass, drug-sized]
+[07:13:37] ValidatorAgent     XX WEAK  SEED_R1C1_G011  aff=-4.31  LE=0.179  conf=30%  [ADMET pass, drug-sized]
+[07:13:37] ValidatorAgent     XX WEAK  SEED_R1C1_G043  aff=-4.31  LE=0.205  conf=30%  [ADMET pass, drug-sized]
+[07:13:37] ValidatorAgent     XX WEAK  SEED_R1C1_G024  aff=-4.20  LE=0.247  conf=30%  [ADMET pass, drug-sized]
+[07:13:37] ValidatorAgent     XX WEAK  SEED_R1C1_G001  aff=-4.20  LE=0.247  conf=30%  [ADMET pass, drug-sized]
+[07:13:37] ValidatorAgent     XX WEAK  SEED_R1C1_G013  aff=-4.19  LE=0.247  conf=30%  [ADMET pass, drug-sized]
+[07:13:37] HiggsTest        Significance scan: 0 x 5-sigma discoveries, 16 x 3-sigma evidence candidates
+[07:13:37] Orchestrator       ** 3-sigma evidence: SEED_R1C5_G024 Z=4.43
+[07:13:37] Orchestrator       ** 3-sigma evidence: SEED_R1C5_G034 Z=4.10
+[07:13:37] Orchestrator       ** 3-sigma evidence: SEED_R1C1_G008 Z=4.02
+[07:13:37] Orchestrator       ** 3-sigma evidence: SEED_R1C1_G015 Z=3.92
+[07:13:37] Orchestrator       ** 3-sigma evidence: SEED_R1C1_G007 Z=3.89
+[07:13:37] Orchestrator       ** 3-sigma evidence: SEED_R1C1_G037 Z=3.84
+[07:13:37] Orchestrator       ** 3-sigma evidence: SEED_R1C1_G040 Z=3.80
+[07:13:37] Orchestrator       ** 3-sigma evidence: SEED_R1C1_G010 Z=3.79
+[07:13:37] Orchestrator       ** 3-sigma evidence: SEED_R1C2_G026 Z=3.53
+[07:13:37] Orchestrator       ** 3-sigma evidence: SEED_R1C2_G031 Z=3.52
+[07:13:37] Orchestrator       ** 3-sigma evidence: SEED_R1C1_G006 Z=3.31
+[07:13:37] Orchestrator       ** 3-sigma evidence: SEED_R1C1_G018 Z=3.31
+[07:13:37] Orchestrator       ** 3-sigma evidence: SEED_R1C1_G039 Z=3.23
+[07:13:37] Orchestrator       ** 3-sigma evidence: SEED_R1C1_G009 Z=3.13
+[07:13:37] Orchestrator       ** 3-sigma evidence: SEED_R1C1_G011 Z=3.05
+[07:13:37] Orchestrator       ** 3-sigma evidence: SEED_R1C1_G043 Z=3.04
+[07:13:37] Orchestrator     Iteration 1 best: confidence=30%  affinity=-4.75
+========================================================================
+[07:13:37] Orchestrator     ===  FINAL LEADERBOARD  (with 5-sigma significance)
+========================================================================
+[07:13:37] Orchestrator     Results saved -> agent_results_BACE1_20260411_064634.csv
+[07:13:37] Orchestrator     Leaderboard -> agent_leaderboard_BACE1_20260411_064634.json
+========================================================================
+========================================================================
+[07:13:37] Orchestrator     Campaign complete. Log -> agent_run_BACE1_20260411_064634.log

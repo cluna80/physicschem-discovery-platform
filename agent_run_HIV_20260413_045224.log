@@ -1,0 +1,42 @@
+PhysicsChem Agent v2 - 2026-04-13 04:52:24.507337
+============================================================
+========================================================================
+  AUTONOMOUS DRUG DISCOVERY AGENT v2  -  HIV-1 Protease
+========================================================================
+[04:52:24] Orchestrator     Disease target  : HIV/AIDS
+[04:52:24] Orchestrator     Receptor        : hiv_protease.pdbqt
+[04:52:24] Orchestrator     Reference drug  : Darunavir (-10.4 kcal/mol)
+[04:52:24] Orchestrator     Fragment budget : 5
+[04:52:24] Orchestrator     Max iterations  : 1
+[04:52:24] Orchestrator     Confidence goal : 70%
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+[04:52:24] Orchestrator     ITERATION 1/1  (best confidence so far: 0%)
+------------------------------------------------------------------------
+[04:52:24] FragmentAgent    Loading fragment library (120 total)...
+[04:52:24] FragmentAgent    Selected 5 Ro3-compliant fragments (MW<=300, LogP<=3.5, HBD<=3)
+[04:52:24] DockingAgent     Screening 5 fragments (exhaustiveness=8)...
+[04:52:24] DockingAgent     Threshold: affinity < -6.9 kcal/mol
+[04:52:26] DockingAgent       . F001     pyridine                         -2.66 kcal/mol  8 poses
+[04:52:28] DockingAgent       . F002     quinoline                        -3.90 kcal/mol  8 poses
+[04:52:31] DockingAgent       . F003     benzimidazole                    -3.94 kcal/mol  8 poses
+[04:52:34] DockingAgent       . F004     7-azaindole                      -3.64 kcal/mol  8 poses
+[04:52:36] DockingAgent       . F005     4-azaindole                      -3.68 kcal/mol  8 poses
+[04:52:36] DockingAgent     Fragment screening complete: 0/5 hit threshold
+[04:52:36] GrowingAgent     Using 4 target-specific seeds for HIV
+[04:52:36] Orchestrator     Top 4 fragment hits selected for growing
+------------------------------------------------------------------------
+[04:52:36] Orchestrator     Fitting 5-sigma null distribution from fragment scores...
+[04:52:36] HiggsTest        Null distribution: affinity = -3.57 +/- 0.47 kcal/mol (n=5)
+[04:52:36] HiggsTest        Fragment null median: -3.68 kcal/mol
+[04:52:36] HiggsTest        5-sigma threshold: -5.91 kcal/mol
+[04:52:36] HiggsTest        3-sigma threshold: -4.97 kcal/mol
+------------------------------------------------------------------------
+[04:52:36] GrowingAgent     Growing 4 fragment hits -> target leads...
+[04:52:36] GrowingAgent     Strategy: R-group + pharmacophore tail attachment
+[04:52:36] GrowingAgent       Growing SEED_HIV_THF1 (bis-THF peptidomimetic (Darunavir core)) - base affinity -8.50 kcal/mol
+[04:52:37] GrowingAgent         Generated 44 candidates -> docking top 15...
+[05:37:15] GrowingAgent       Growing SEED_HIV_THF2 (HIV protease transition state mimic) - base affinity -8.20 kcal/mol
+[05:37:15] GrowingAgent         Generated 48 candidates -> docking top 15...
+[06:32:59] GrowingAgent       Growing SEED_HIV_ISQ (HIV-1 PR isoquinoline inhibitor scaffold) - base affinity -7.80 kcal/mol
+[06:32:59] GrowingAgent         Generated 48 candidates -> docking top 15...

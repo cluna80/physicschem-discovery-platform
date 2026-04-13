@@ -1,0 +1,188 @@
+{
+  "aspirin": {
+    "name": "Aspirin",
+    "cid": 2244,
+    "smiles": "CC(=O)OC1=CC=CC=C1C(=O)O",
+    "molecular_weight": 180.16,
+    "formula": "C9H8O4",
+    "xlogp": 1.2,
+    "h_bond_donor": 1,
+    "h_bond_acceptor": 4,
+    "drug_score": 100,
+    "drug_details": [
+      "MW: 180 \u2713",
+      "LogP: 1.2 \u2713",
+      "H-donors: 1 \u2713",
+      "H-acceptors: 4 \u2713"
+    ]
+  },
+  "ibuprofen": {
+    "name": "Ibuprofen",
+    "cid": 3672,
+    "smiles": "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O",
+    "molecular_weight": 206.28,
+    "formula": "C13H18O2",
+    "xlogp": 3.5,
+    "h_bond_donor": 1,
+    "h_bond_acceptor": 2,
+    "drug_score": 100,
+    "drug_details": [
+      "MW: 206 \u2713",
+      "LogP: 3.5 \u2713",
+      "H-donors: 1 \u2713",
+      "H-acceptors: 2 \u2713"
+    ]
+  },
+  "acetaminophen": {
+    "name": "Acetaminophen",
+    "cid": 1983,
+    "smiles": "CC(=O)NC1=CC=C(C=C1)O",
+    "molecular_weight": 151.16,
+    "formula": "C8H9NO2",
+    "xlogp": 0.5,
+    "h_bond_donor": 2,
+    "h_bond_acceptor": 2,
+    "drug_score": 100,
+    "drug_details": [
+      "MW: 151 \u2713",
+      "LogP: 0.5 \u2713",
+      "H-donors: 2 \u2713",
+      "H-acceptors: 2 \u2713"
+    ]
+  },
+  "celecoxib": {
+    "name": "Celecoxib",
+    "cid": 2662,
+    "smiles": "CC1=CC=C(C=C1)C2=CC(=NN2C3=CC=C(C=C3)S(=O)(=O)N)C(F)(F)F",
+    "molecular_weight": 381.4,
+    "formula": "C17H14F3N3O2S",
+    "xlogp": 3.4,
+    "h_bond_donor": 1,
+    "h_bond_acceptor": 7,
+    "drug_score": 100,
+    "drug_details": [
+      "MW: 381 \u2713",
+      "LogP: 3.4 \u2713",
+      "H-donors: 1 \u2713",
+      "H-acceptors: 7 \u2713"
+    ]
+  },
+  "naproxen": {
+    "name": "Naproxen",
+    "cid": 156391,
+    "smiles": "C[C@@H](C1=CC2=C(C=C1)C=C(C=C2)OC)C(=O)O",
+    "molecular_weight": 230.26,
+    "formula": "C14H14O3",
+    "xlogp": 3.3,
+    "h_bond_donor": 1,
+    "h_bond_acceptor": 3,
+    "drug_score": 100,
+    "drug_details": [
+      "MW: 230 \u2713",
+      "LogP: 3.3 \u2713",
+      "H-donors: 1 \u2713",
+      "H-acceptors: 3 \u2713"
+    ]
+  },
+  "diclofenac": {
+    "name": "Diclofenac",
+    "cid": 3033,
+    "smiles": "C1=CC=C(C(=C1)CC(=O)O)NC2=C(C=CC=C2Cl)Cl",
+    "molecular_weight": 296.1,
+    "formula": "C14H11Cl2NO2",
+    "xlogp": 4.4,
+    "h_bond_donor": 2,
+    "h_bond_acceptor": 3,
+    "drug_score": 100,
+    "drug_details": [
+      "MW: 296 \u2713",
+      "LogP: 4.4 \u2713",
+      "H-donors: 2 \u2713",
+      "H-acceptors: 3 \u2713"
+    ]
+  },
+  "ketoprofen": {
+    "name": "Ketoprofen",
+    "cid": 3825,
+    "smiles": "CC(C1=CC(=CC=C1)C(=O)C2=CC=CC=C2)C(=O)O",
+    "molecular_weight": 254.28,
+    "formula": "C16H14O3",
+    "xlogp": 3.1,
+    "h_bond_donor": 1,
+    "h_bond_acceptor": 3,
+    "drug_score": 100,
+    "drug_details": [
+      "MW: 254 \u2713",
+      "LogP: 3.1 \u2713",
+      "H-donors: 1 \u2713",
+      "H-acceptors: 3 \u2713"
+    ]
+  },
+  "indomethacin": {
+    "name": "Indomethacin",
+    "cid": 3715,
+    "smiles": "CC1=C(C2=C(N1C(=O)C3=CC=C(C=C3)Cl)C=CC(=C2)OC)CC(=O)O",
+    "molecular_weight": 357.8,
+    "formula": "C19H16ClNO4",
+    "xlogp": 4.3,
+    "h_bond_donor": 1,
+    "h_bond_acceptor": 4,
+    "drug_score": 100,
+    "drug_details": [
+      "MW: 358 \u2713",
+      "LogP: 4.3 \u2713",
+      "H-donors: 1 \u2713",
+      "H-acceptors: 4 \u2713"
+    ]
+  },
+  "meloxicam": {
+    "name": "Meloxicam",
+    "cid": 54677470,
+    "smiles": "CC1=CN=C(S1)NC(=O)C2=C(C3=CC=CC=C3S(=O)(=O)N2C)O",
+    "molecular_weight": 351.4,
+    "formula": "C14H13N3O4S2",
+    "xlogp": 3,
+    "h_bond_donor": 2,
+    "h_bond_acceptor": 7,
+    "drug_score": 100,
+    "drug_details": [
+      "MW: 351 \u2713",
+      "LogP: 3.0 \u2713",
+      "H-donors: 2 \u2713",
+      "H-acceptors: 7 \u2713"
+    ]
+  },
+  "piroxicam": {
+    "name": "Piroxicam",
+    "cid": 54676228,
+    "smiles": "CN1C(=C(C2=CC=CC=C2S1(=O)=O)O)C(=O)NC3=CC=CC=N3",
+    "molecular_weight": 331.3,
+    "formula": "C15H13N3O4S",
+    "xlogp": 3.1,
+    "h_bond_donor": 2,
+    "h_bond_acceptor": 6,
+    "drug_score": 100,
+    "drug_details": [
+      "MW: 331 \u2713",
+      "LogP: 3.1 \u2713",
+      "H-donors: 2 \u2713",
+      "H-acceptors: 6 \u2713"
+    ]
+  },
+  "etoricoxib": {
+    "name": "Etoricoxib",
+    "cid": 123619,
+    "smiles": "CC1=NC=C(C=C1)C2=C(C=C(C=N2)Cl)C3=CC=C(C=C3)S(=O)(=O)C",
+    "molecular_weight": 358.8,
+    "formula": "C18H15ClN2O2S",
+    "xlogp": 3.3,
+    "h_bond_donor": 0,
+    "h_bond_acceptor": 4,
+    "drug_score": 75,
+    "drug_details": [
+      "MW: 359 \u2713",
+      "LogP: 3.3 \u2713",
+      "H-acceptors: 4 \u2713"
+    ]
+  }
+}

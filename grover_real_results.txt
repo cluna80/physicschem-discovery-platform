@@ -1,0 +1,21 @@
+GROVER RESULTS ON REAL IBM QUANTUM HARDWARE
+==================================================
+
+Job ID: d71pncmqdfbc73d1987g
+Backend: ibm_marrakesh (156 qubits)
+Shots: 4096
+
+Measurement Results:
+|000>: 1.1% (45 shots)
+|001>: 2.0% (82 shots)
+|010>: 0.9% (35 shots)
+|011>: 1.5% (60 shots)
+|100>: 2.4% (97 shots)
+|101>: 43.8% (1793 shots)
+|110>: 1.6% (66 shots)
+|111>: 46.8% (1918 shots)
+
+Target |101>: 43.8%
+Random guess: 12.5%
+
+Quantum speedup: 3.5x better than random

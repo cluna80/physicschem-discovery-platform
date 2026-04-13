@@ -1,0 +1,63 @@
+QUANTUM DRUG DISCOVERY WITH REAL BINDING
+============================================================
+
+Target: COX-2 (Inflammation, Pain, Arthritis)
+Candidates generated: 1000
+
+TOP 10 CANDIDATES:
+1. ID: d62015dd
+   Drug Score: 100/100
+   Binding: -10.02 kcal/mol
+   Combined: 93.4
+
+2. ID: 1d612835
+   Drug Score: 100/100
+   Binding: -10.01 kcal/mol
+   Combined: 93.4
+
+3. ID: 2730f02b
+   Drug Score: 100/100
+   Binding: -9.97 kcal/mol
+   Combined: 93.2
+
+4. ID: 89b31742
+   Drug Score: 100/100
+   Binding: -9.94 kcal/mol
+   Combined: 93.1
+
+5. ID: 182ee1cf
+   Drug Score: 100/100
+   Binding: -9.93 kcal/mol
+   Combined: 93.1
+
+6. ID: de999f78
+   Drug Score: 100/100
+   Binding: -9.88 kcal/mol
+   Combined: 92.9
+
+7. ID: 6a240e17
+   Drug Score: 100/100
+   Binding: -9.87 kcal/mol
+   Combined: 92.9
+
+8. ID: 78609531
+   Drug Score: 100/100
+   Binding: -9.87 kcal/mol
+   Combined: 92.9
+
+9. ID: c48aac1b
+   Drug Score: 100/100
+   Binding: -9.86 kcal/mol
+   Combined: 92.9
+
+10. ID: 618a4c60
+   Drug Score: 100/100
+   Binding: -9.83 kcal/mol
+   Combined: 92.8
+
+BEST CANDIDATE DETAILS:
+ID: d62015dd
+MW: 465.2
+LogP: 1.55
+Binding: -10.02 kcal/mol
+Disease: Inflammation, Pain, Arthritis

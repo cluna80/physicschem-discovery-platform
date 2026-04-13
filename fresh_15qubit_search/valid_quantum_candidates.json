@@ -1,0 +1,452 @@
+[
+  {
+    "core": "Isoquinoline",
+    "p1": "meta-Cl",
+    "p2": "spiro-THF",
+    "linker": "Amide",
+    "stereo": "S",
+    "quantum_probability": 0.0287813382105713,
+    "smiles": "c1ccc2cccnc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)Cc11cccc(Cl)c1"
+  },
+  {
+    "core": "Indole",
+    "p1": "meta-CF3",
+    "p2": "bis-THF",
+    "linker": "Reverse amide",
+    "stereo": "R",
+    "quantum_probability": 0.02818295788933902,
+    "smiles": "c1ccc2[nH]ccc2c1C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cccc(C(F)(F)F)c1"
+  },
+  {
+    "core": "Indole",
+    "p1": "Benzyl",
+    "p2": "bis-THF",
+    "linker": "Reverse amide",
+    "stereo": "S",
+    "quantum_probability": 0.02369232527921459,
+    "smiles": "c1ccc2[nH]ccc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11ccccc1"
+  },
+  {
+    "core": "Naphthalene",
+    "p1": "3,5-diF",
+    "p2": "bis-THF",
+    "linker": "Reverse amide",
+    "stereo": "S",
+    "quantum_probability": 0.023265728642265445,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cc(F)cc(F)c1"
+  },
+  {
+    "core": "Isoquinoline",
+    "p1": "3,5-diF",
+    "p2": "bis-THF",
+    "linker": "Reverse amide",
+    "stereo": "R",
+    "quantum_probability": 0.023194339903425825,
+    "smiles": "c1ccc2cccnc2c1C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cc(F)cc(F)c1"
+  },
+  {
+    "core": "Naphthalene",
+    "p1": "meta-CF3",
+    "p2": "bis-THF",
+    "linker": "Reverse amide",
+    "stereo": "R",
+    "quantum_probability": 0.022383012540002467,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cccc(C(F)(F)F)c1"
+  },
+  {
+    "core": "Indole",
+    "p1": "Benzyl",
+    "p2": "spiro-THF",
+    "linker": "Amide",
+    "stereo": "R",
+    "quantum_probability": 0.02179451927107552,
+    "smiles": "c1ccc2[nH]ccc2c1C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)Cc11ccccc1"
+  },
+  {
+    "core": "Naphthalene",
+    "p1": "meta-F",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "stereo": "S",
+    "quantum_probability": 0.019989016560611812,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cccc(F)c1"
+  },
+  {
+    "core": "Naphthalene",
+    "p1": "meta-CF3",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "stereo": "S",
+    "quantum_probability": 0.019747075297351337,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cccc(C(F)(F)F)c1"
+  },
+  {
+    "core": "Indole",
+    "p1": "3,5-diF",
+    "p2": "spiro-THF",
+    "linker": "Reverse amide",
+    "stereo": "R",
+    "quantum_probability": 0.01901284610935652,
+    "smiles": "c1ccc2[nH]ccc2c1C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)Cc11cc(F)cc(F)c1"
+  },
+  {
+    "core": "Isoquinoline",
+    "p1": "3,5-diF",
+    "p2": "spiro-THF",
+    "linker": "Amide",
+    "stereo": "R",
+    "quantum_probability": 0.018627513902058124,
+    "smiles": "c1ccc2cccnc2c1C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)Cc11cc(F)cc(F)c1"
+  },
+  {
+    "core": "Quinoline",
+    "p1": "meta-CF3",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "stereo": "R",
+    "quantum_probability": 0.017630465232789376,
+    "smiles": "c1cncc2ccccc12C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cccc(C(F)(F)F)c1"
+  },
+  {
+    "core": "Isoquinoline",
+    "p1": "3,5-diF",
+    "p2": "spiro-THF",
+    "linker": "Reverse amide",
+    "stereo": "S",
+    "quantum_probability": 0.016929784125317617,
+    "smiles": "c1ccc2cccnc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)Cc11cc(F)cc(F)c1"
+  },
+  {
+    "core": "Isoquinoline",
+    "p1": "meta-F",
+    "p2": "bis-THF",
+    "linker": "Reverse amide",
+    "stereo": "S",
+    "quantum_probability": 0.015940251564517536,
+    "smiles": "c1ccc2cccnc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cccc(F)c1"
+  },
+  {
+    "core": "Indole",
+    "p1": "meta-Cl",
+    "p2": "spiro-THF",
+    "linker": "Reverse amide",
+    "stereo": "R",
+    "quantum_probability": 0.015863473354219018,
+    "smiles": "c1ccc2[nH]ccc2c1C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)Cc11cccc(Cl)c1"
+  },
+  {
+    "core": "Quinoline",
+    "p1": "meta-Cl",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "stereo": "R",
+    "quantum_probability": 0.015813035189346656,
+    "smiles": "c1cncc2ccccc12C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cccc(Cl)c1"
+  },
+  {
+    "core": "Indole",
+    "p1": "meta-F",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "stereo": "S",
+    "quantum_probability": 0.015035932885946816,
+    "smiles": "c1ccc2[nH]ccc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cccc(F)c1"
+  },
+  {
+    "core": "Isoquinoline",
+    "p1": "3,5-diF",
+    "p2": "spiro-THF",
+    "linker": "Amide",
+    "stereo": "S",
+    "quantum_probability": 0.014955643687106642,
+    "smiles": "c1ccc2cccnc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)Cc11cc(F)cc(F)c1"
+  },
+  {
+    "core": "Quinoline",
+    "p1": "meta-CF3",
+    "p2": "spiro-THF",
+    "linker": "Reverse amide",
+    "stereo": "R",
+    "quantum_probability": 0.01481394260141072,
+    "smiles": "c1cncc2ccccc12C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)Cc11cccc(C(F)(F)F)c1"
+  },
+  {
+    "core": "Quinoline",
+    "p1": "3,5-diF",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "stereo": "R",
+    "quantum_probability": 0.014491465084557885,
+    "smiles": "c1cncc2ccccc12C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cc(F)cc(F)c1"
+  },
+  {
+    "core": "Quinoline",
+    "p1": "meta-CF3",
+    "p2": "bis-THF",
+    "linker": "Reverse amide",
+    "stereo": "S",
+    "quantum_probability": 0.013623324775739274,
+    "smiles": "c1cncc2ccccc12C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cccc(C(F)(F)F)c1"
+  },
+  {
+    "core": "Naphthalene",
+    "p1": "meta-F",
+    "p2": "spiro-THF",
+    "linker": "Reverse amide",
+    "stereo": "S",
+    "quantum_probability": 0.013355782475874708,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)Cc11cccc(F)c1"
+  },
+  {
+    "core": "Quinoline",
+    "p1": "meta-F",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "stereo": "R",
+    "quantum_probability": 0.013205032239189977,
+    "smiles": "c1cncc2ccccc12C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cccc(F)c1"
+  },
+  {
+    "core": "Indole",
+    "p1": "meta-F",
+    "p2": "spiro-THF",
+    "linker": "Reverse amide",
+    "stereo": "S",
+    "quantum_probability": 0.013090916162001354,
+    "smiles": "c1ccc2[nH]ccc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)Cc11cccc(F)c1"
+  },
+  {
+    "core": "Naphthalene",
+    "p1": "3,5-diF",
+    "p2": "spiro-THF",
+    "linker": "Amide",
+    "stereo": "R",
+    "quantum_probability": 0.011862966510157792,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)Cc11cc(F)cc(F)c1"
+  },
+  {
+    "core": "Isoquinoline",
+    "p1": "Benzyl",
+    "p2": "spiro-THF",
+    "linker": "Reverse amide",
+    "stereo": "R",
+    "quantum_probability": 0.011717725414056667,
+    "smiles": "c1ccc2cccnc2c1C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)Cc11ccccc1"
+  },
+  {
+    "core": "Indole",
+    "p1": "meta-F",
+    "p2": "spiro-THF",
+    "linker": "Reverse amide",
+    "stereo": "R",
+    "quantum_probability": 0.011314454052395926,
+    "smiles": "c1ccc2[nH]ccc2c1C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)Cc11cccc(F)c1"
+  },
+  {
+    "core": "Isoquinoline",
+    "p1": "meta-CF3",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "stereo": "S",
+    "quantum_probability": 0.011221930890873843,
+    "smiles": "c1ccc2cccnc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cccc(C(F)(F)F)c1"
+  },
+  {
+    "core": "Naphthalene",
+    "p1": "meta-CF3",
+    "p2": "bis-THF",
+    "linker": "Reverse amide",
+    "stereo": "S",
+    "quantum_probability": 0.010972475340475176,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cccc(C(F)(F)F)c1"
+  },
+  {
+    "core": "Quinoline",
+    "p1": "meta-CF3",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "stereo": "S",
+    "quantum_probability": 0.01096288304271083,
+    "smiles": "c1cncc2ccccc12C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cccc(C(F)(F)F)c1"
+  },
+  {
+    "core": "Indole",
+    "p1": "meta-F",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "stereo": "R",
+    "quantum_probability": 0.010939383354353729,
+    "smiles": "c1ccc2[nH]ccc2c1C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cccc(F)c1"
+  },
+  {
+    "core": "Quinoline",
+    "p1": "meta-CF3",
+    "p2": "spiro-THF",
+    "linker": "Amide",
+    "stereo": "R",
+    "quantum_probability": 0.010810692812052308,
+    "smiles": "c1cncc2ccccc12C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)Cc11cccc(C(F)(F)F)c1"
+  },
+  {
+    "core": "Isoquinoline",
+    "p1": "meta-Cl",
+    "p2": "bis-THF",
+    "linker": "Reverse amide",
+    "stereo": "S",
+    "quantum_probability": 0.010760985619861671,
+    "smiles": "c1ccc2cccnc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cccc(Cl)c1"
+  },
+  {
+    "core": "Naphthalene",
+    "p1": "meta-Cl",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "stereo": "S",
+    "quantum_probability": 0.010212820013805121,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cccc(Cl)c1"
+  },
+  {
+    "core": "Isoquinoline",
+    "p1": "3,5-diF",
+    "p2": "bis-THF",
+    "linker": "Reverse amide",
+    "stereo": "S",
+    "quantum_probability": 0.009909406726830494,
+    "smiles": "c1ccc2cccnc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cc(F)cc(F)c1"
+  },
+  {
+    "core": "Isoquinoline",
+    "p1": "meta-Cl",
+    "p2": "spiro-THF",
+    "linker": "Reverse amide",
+    "stereo": "R",
+    "quantum_probability": 0.00982466202216757,
+    "smiles": "c1ccc2cccnc2c1C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)Cc11cccc(Cl)c1"
+  },
+  {
+    "core": "Isoquinoline",
+    "p1": "meta-CF3",
+    "p2": "spiro-THF",
+    "linker": "Amide",
+    "stereo": "R",
+    "quantum_probability": 0.009796311633365095,
+    "smiles": "c1ccc2cccnc2c1C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)Cc11cccc(C(F)(F)F)c1"
+  },
+  {
+    "core": "Quinoline",
+    "p1": "3,5-diF",
+    "p2": "spiro-THF",
+    "linker": "Reverse amide",
+    "stereo": "R",
+    "quantum_probability": 0.009787515762888242,
+    "smiles": "c1cncc2ccccc12C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)Cc11cc(F)cc(F)c1"
+  },
+  {
+    "core": "Indole",
+    "p1": "meta-CF3",
+    "p2": "spiro-THF",
+    "linker": "Amide",
+    "stereo": "S",
+    "quantum_probability": 0.009521876165049084,
+    "smiles": "c1ccc2[nH]ccc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)Cc11cccc(C(F)(F)F)c1"
+  },
+  {
+    "core": "Quinoline",
+    "p1": "3,5-diF",
+    "p2": "spiro-THF",
+    "linker": "Amide",
+    "stereo": "R",
+    "quantum_probability": 0.00949866810546488,
+    "smiles": "c1cncc2ccccc12C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)Cc11cc(F)cc(F)c1"
+  },
+  {
+    "core": "Quinoline",
+    "p1": "meta-Cl",
+    "p2": "bis-THF",
+    "linker": "Reverse amide",
+    "stereo": "S",
+    "quantum_probability": 0.00935494154842556,
+    "smiles": "c1cncc2ccccc12C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cccc(Cl)c1"
+  },
+  {
+    "core": "Naphthalene",
+    "p1": "meta-F",
+    "p2": "bis-THF",
+    "linker": "Reverse amide",
+    "stereo": "R",
+    "quantum_probability": 0.00874398328388084,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cccc(F)c1"
+  },
+  {
+    "core": "Quinoline",
+    "p1": "meta-F",
+    "p2": "spiro-THF",
+    "linker": "Reverse amide",
+    "stereo": "R",
+    "quantum_probability": 0.008685081749936478,
+    "smiles": "c1cncc2ccccc12C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)Cc11cccc(F)c1"
+  },
+  {
+    "core": "Isoquinoline",
+    "p1": "meta-CF3",
+    "p2": "bis-THF",
+    "linker": "Reverse amide",
+    "stereo": "S",
+    "quantum_probability": 0.008670386928006635,
+    "smiles": "c1ccc2cccnc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cccc(C(F)(F)F)c1"
+  },
+  {
+    "core": "Indole",
+    "p1": "meta-CF3",
+    "p2": "spiro-THF",
+    "linker": "Reverse amide",
+    "stereo": "S",
+    "quantum_probability": 0.008651036346402375,
+    "smiles": "c1ccc2[nH]ccc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)Cc11cccc(C(F)(F)F)c1"
+  },
+  {
+    "core": "Quinoline",
+    "p1": "3,5-diF",
+    "p2": "bis-THF",
+    "linker": "Reverse amide",
+    "stereo": "S",
+    "quantum_probability": 0.008294950139347106,
+    "smiles": "c1cncc2ccccc12C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cc(F)cc(F)c1"
+  },
+  {
+    "core": "Naphthalene",
+    "p1": "3,5-diF",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "stereo": "S",
+    "quantum_probability": 0.008176240872171558,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cc(F)cc(F)c1"
+  },
+  {
+    "core": "Isoquinoline",
+    "p1": "meta-CF3",
+    "p2": "bis-THF",
+    "linker": "Reverse amide",
+    "stereo": "R",
+    "quantum_probability": 0.008148654789232889,
+    "smiles": "c1ccc2cccnc2c1C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11cccc(C(F)(F)F)c1"
+  },
+  {
+    "core": "Indole",
+    "p1": "Benzyl",
+    "p2": "bis-THF",
+    "linker": "Amide",
+    "stereo": "S",
+    "quantum_probability": 0.008062267667220733,
+    "smiles": "c1ccc2[nH]ccc2c1C(=O)N[C@@H](C[C@@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21)Cc11ccccc1"
+  },
+  {
+    "core": "Naphthalene",
+    "p1": "meta-CF3",
+    "p2": "spiro-THF",
+    "linker": "Reverse amide",
+    "stereo": "R",
+    "quantum_probability": 0.007654958320672621,
+    "smiles": "c1ccc2ccccc2c1C(=O)N[C@H](C[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21)Cc11cccc(C(F)(F)F)c1"
+  }
+]

@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Synthesis Assessment - Quantum Drug Discovery</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+            padding: 20px;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 20px; }
+        .back-btn { background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 50px; color: white; text-decoration: none; }
+        h1 { background: linear-gradient(135deg, #fff, #a8c0ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .card { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 25px; margin-bottom: 25px; border: 1px solid rgba(255,255,255,0.1); }
+        .warning-card { background: rgba(255,193,7,0.2); border-left: 4px solid #ffc107; border-radius: 12px; padding: 15px; margin-bottom: 20px; }
+        .property-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px; }
+        .property { background: rgba(0,0,0,0.3); padding: 10px; border-radius: 10px; text-align: center; }
+        .property-value { font-size: 1.5em; font-weight: bold; color: #ff9800; }
+        .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 5px 12px; margin: 3px; border-radius: 20px; font-size: 0.82em; }
+        .complexity-High { background: #dc3545; border-radius: 6px; padding: 2px 8px; }
+        .complexity-Very-High { background: #9c27b0; border-radius: 6px; padding: 2px 8px; }
+        .complexity-Medium { background: #ff9800; border-radius: 6px; padding: 2px 8px; }
+        .complexity-Low { background: #4caf50; border-radius: 6px; padding: 2px 8px; }
+        .challenge-item { background: rgba(0,0,0,0.3); padding: 10px; margin: 10px 0; border-radius: 8px; border-left: 3px solid #ff9800; }
+        .challenge-herg { background: rgba(220,53,69,0.15); padding: 10px; margin: 10px 0; border-radius: 8px; border-left: 4px solid #dc3545; }
+        .smiles { font-family: monospace; background: rgba(0,0,0,0.3); padding: 10px; border-radius: 10px; word-break: break-all; margin: 10px 0; font-size: 0.9em; }
+        .btn { background: linear-gradient(135deg, #667eea, #764ba2); padding: 12px 24px; border: none; border-radius: 50px; color: white; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 20px; }
+        .tool-link { color: #ff9800; text-decoration: none; }
+        .tool-link:hover { text-decoration: underline; }
+        .loading { text-align: center; padding: 40px; color: #a8c0ff; }
+        .pass-4 { background: #4caf50; color: #fff; border-radius: 20px; padding: 4px 14px; font-weight: bold; }
+        .pass-3 { background: #ff9800; color: #fff; border-radius: 20px; padding: 4px 14px; font-weight: bold; }
+        .pass-2 { background: #f44336; color: #fff; border-radius: 20px; padding: 4px 14px; font-weight: bold; }
+        .pass-1, .pass-0 { background: #9c27b0; color: #fff; border-radius: 20px; padding: 4px 14px; font-weight: bold; }
+        ol { padding-left: 20px; }
+        ol li { margin: 8px 0; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <a href="/drug_library" class="back-btn">← Back to Library</a>
+        <h1>🧪 Synthesis Assessment</h1>
+        <div></div>
+    </div>
+    <div id="synthesis" class="card">
+        <div class="loading">🔬 Analyzing molecule structure...</div>
+    </div>
+</div>
+
+<script>
+    const candidate = {{ candidate | tojson | safe }};
+
+    async function loadSynthesis() {
+        const div = document.getElementById('synthesis');
+        try {
+            const response = await fetch('/api/synthesis_plan', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ smiles: candidate.smiles, name: candidate.id })
+            });
+            const data = await response.json();
+
+            if (data.error) {
+                div.innerHTML = `<div class="warning-card"><strong>⚠️ ${data.error}</strong><br>For a real synthesis plan, consult a medicinal chemist or use AiZynthFinder.</div>`;
+                return;
+            }
+
+            const a = data.analysis;
+            const complexClass = 'complexity-' + a.complexity.replace(' ', '-');
+
+            const challengesHtml = a.challenges.map(c => {
+                const isHerg  = c.includes('hERG') || c.includes('CARDIAC');
+                const isPains = c.includes('PAINS ALERT');
+                const isInfo  = c.includes('No modification needed') ||
+                                c.includes('Positive design choice') ||
+                                c.includes('excellent oral absorption') ||
+                                c.includes('commercial building block') ||
+                                c.includes('Well-precedented') ||
+                                c.includes('approved drugs') ||
+                                c.includes('positive design') ||
+                                c.includes('feasible with experienced');
+                const cls  = (isHerg || isPains) ? 'challenge-herg' : 'challenge-item';
+                const icon = (isHerg || isPains) ? '🚨' : isInfo ? 'ℹ️' : '⚠️';
+                return `<div class="${cls}">${icon} ${c}</div>`;
+            }).join('');
+            const featuresHtml = a.detected_features.map(f => `<span class="badge">${f}</span>`).join('');
+
+            // PAINS banner — shown at the very top if any hits
+            const lipinskiStr = candidate.lipinski || 'PASS (0/4)';
+            const painsBanner = (a.pains_hits && a.pains_hits.length > 0)
+                ? `<div style="background:rgba(220,53,69,0.2);border-left:4px solid #dc3545;border-radius:12px;padding:15px;margin-bottom:16px">
+                    <strong>🚫 PAINS ALERT</strong> — This molecule contains ${a.pains_hits.length} Pan-Assay Interference substructure(s): 
+                    <strong>${a.pains_hits.map(h => h.name || h).join(', ')}</strong>.<br>
+                    May cause false positives in biochemical assays. Recommend structural modification before biological testing.
+                   </div>`
+                : '';
+            const passMatch = lipinskiStr.match(/\(([0-9])\/4\)/);
+            const passCount = passMatch ? parseInt(passMatch[1]) : 0;
+            const passClass = `pass-${passCount}`;
+            const passBadge = `<span class="${passClass}">${lipinskiStr}</span>`;
+            const lastStep = a.true_macrocycle
+                ? '<li>Optimize the critical macrocyclization step using high-dilution technique</li>'
+                : a.fused_medium_ring
+                ? '<li>Optimize the medium-ring lactamization step — reductive amination or direct lactamization</li>'
+                : '<li>Optimize the key bond-forming step for maximum yield</li>';
+
+            div.innerHTML = `
+                <div class="warning-card">
+                    <strong>⚠️ HONEST ASSESSMENT</strong><br>
+                    This is a computational assessment only. For a reliable synthesis plan, consult a medicinal chemist or specialized retrosynthesis tools.
+                </div>
+                ${painsBanner}
+
+                <h2>🧪 ${data.name}</h2>
+                <div style="margin: 8px 0 4px">${passBadge} &nbsp; QED: <strong>${candidate.qed}</strong> &nbsp; MW: <strong>${candidate.mw} g/mol</strong> &nbsp; LogP: <strong>${candidate.logp}</strong></div>
+                <div class="smiles">🔬 SMILES: ${data.smiles}</div>
+
+                <h3 style="margin-top:20px">📊 Structural Analysis</h3>
+                <div class="property-grid">
+                    <div class="property">
+                        <div>Rings</div>
+                        <div class="property-value">${a.n_rings}</div>
+                        <div>largest: ${a.largest_ring} atoms</div>
+                    </div>
+                    <div class="property">
+                        <div>Rotatable Bonds</div>
+                        <div class="property-value">${a.rotatable_bonds}</div>
+                    </div>
+                    <div class="property">
+                        <div>Complexity</div>
+                        <div class="property-value"><span class="${complexClass}">${a.complexity}</span></div>
+                    </div>
+                    <div class="property" style="text-align:left">
+                        <div style="margin-bottom:6px">Detected Features</div>
+                        <div>${featuresHtml || '<span class="badge">None detected</span>'}</div>
+                    </div>
+                </div>
+
+                <div class="synthesis-note">💡 ${a.synthesis_note}</div>
+
+                <h3 style="margin-top:20px">⚠️ Synthetic Challenges</h3>
+                ${challengesHtml}
+
+                <h3 style="margin-top:20px">📈 Realistic Estimates</h3>
+                <div class="property-grid">
+                    <div class="property"><div>Estimated Steps</div><div class="property-value">${a.estimated_steps}</div></div>
+                    <div class="property"><div>Overall Yield</div><div class="property-value">${a.estimated_yield}</div></div>
+                    <div class="property"><div>Estimated Cost</div><div class="property-value">${a.estimated_cost}</div></div>
+                </div>
+
+                <h3 style="margin-top:20px">🔧 Recommended Tools</h3>
+                <ul style="list-style:none; padding:0">
+                    <li style="margin:8px 0">🔗 <a href="https://github.com/AiZynthFinder/aizynthfinder" class="tool-link" target="_blank">AiZynthFinder</a> — Open-source retrosynthesis</li>
+                    <li style="margin:8px 0">🔗 <a href="https://rxn.res.ibm.com/" class="tool-link" target="_blank">IBM RXN</a> — Free reaction prediction API</li>
+                    <li style="margin:8px 0">🔗 <a href="https://www.cas.org/solutions/cas-scifinder" class="tool-link" target="_blank">SciFinder</a> — Literature search</li>
+                    <li style="margin:8px 0">🔗 <a href="https://www.reaxys.com/" class="tool-link" target="_blank">Reaxys</a> — Reaction database</li>
+                </ul>
+
+                <div style="background:rgba(0,0,0,0.3); border-radius:15px; padding:15px; margin-top:20px">
+                    <h4>📋 Next Steps for Real Synthesis:</h4>
+                    <ol>
+                        <li>Literature search for similar scaffolds on SciFinder or Reaxys</li>
+                        <li>Run AiZynthFinder for retrosynthetic route analysis</li>
+                        <li>Consult a medicinal chemist for route validation</li>
+                        <li>Start with small-scale test reactions (mg scale)</li>
+                        ${lastStep}
+                    </ol>
+                </div>
+
+                <button class="btn" onclick="window.print()">🖨️ Print Assessment</button>
+            `;
+        } catch (err) {
+            div.innerHTML = `<div class="warning-card"><strong>⚠️ Error loading synthesis plan</strong><br>${err.message}</div>`;
+        }
+    }
+
+    loadSynthesis();
+</script>
+</body>
+</html>

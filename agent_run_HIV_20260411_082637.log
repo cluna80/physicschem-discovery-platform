@@ -1,0 +1,139 @@
+PhysicsChem Agent v2 - 2026-04-11 08:26:37.692453
+============================================================
+========================================================================
+  AUTONOMOUS DRUG DISCOVERY AGENT v2  -  HIV-1 Protease
+========================================================================
+[08:26:37] Orchestrator     Disease target  : HIV/AIDS
+[08:26:37] Orchestrator     Receptor        : hiv_protease.pdbqt
+[08:26:37] Orchestrator     Reference drug  : Darunavir (-10.4 kcal/mol)
+[08:26:37] Orchestrator     Fragment budget : 20
+[08:26:37] Orchestrator     Max iterations  : 1
+[08:26:37] Orchestrator     Confidence goal : 70%
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+[08:26:37] Orchestrator     ITERATION 1/1  (best confidence so far: 0%)
+------------------------------------------------------------------------
+[08:26:37] FragmentAgent    Loading fragment library (120 total)...
+[08:26:37] FragmentAgent    Selected 20 Ro3-compliant fragments (MW<=300, LogP<=3.5, HBD<=3)
+[08:26:37] FragmentAgent    PAINS filter removed 1 fragments
+[08:26:37] DockingAgent     Screening 19 fragments (exhaustiveness=4)...
+[08:26:37] DockingAgent     Threshold: affinity < -6.9 kcal/mol
+[08:26:39] DockingAgent       . F001     pyridine                         -2.69 kcal/mol  7 poses
+[08:26:41] DockingAgent       . F002     quinoline                        -3.89 kcal/mol  8 poses
+[08:26:43] DockingAgent       . F003     benzimidazole                    -3.41 kcal/mol  8 poses
+[08:26:45] DockingAgent       . F004     7-azaindole                      -3.66 kcal/mol  8 poses
+[08:26:46] DockingAgent       . F005     4-azaindole                      -3.70 kcal/mol  8 poses
+[08:26:48] DockingAgent       . F006     isoquinoline                     -3.54 kcal/mol  8 poses
+[08:26:51] DockingAgent       . F007     2-aminoquinoline                 -3.99 kcal/mol  8 poses
+[08:26:54] DockingAgent       . F008     4-aminoquinazoline               -3.85 kcal/mol  7 poses
+[08:26:57] DockingAgent       . F009     adenine                          -3.86 kcal/mol  8 poses
+[08:26:59] DockingAgent       . F010     quinoxaline                      -3.78 kcal/mol  8 poses
+[08:27:01] DockingAgent       . F011     1,6-naphthyridine                -3.73 kcal/mol  8 poses
+[08:27:03] DockingAgent       . F012     pyrrolo[2,3-b]pyridine           -3.11 kcal/mol  7 poses
+[08:27:05] DockingAgent       . F014     indazole-2H                      -3.64 kcal/mol  8 poses
+[08:27:08] DockingAgent       . F015     2-aminopurine                    -3.68 kcal/mol  8 poses
+[08:27:10] DockingAgent       . F016     aniline                          -2.86 kcal/mol  7 poses
+[08:27:12] DockingAgent       . F017     4-fluoroaniline                  -3.02 kcal/mol  8 poses
+[08:27:14] DockingAgent       . F018     3-fluoroaniline                  -3.15 kcal/mol  8 poses
+[08:27:17] DockingAgent       . F019     4-chloroaniline                  -2.96 kcal/mol  8 poses
+[08:27:20] DockingAgent       . F020     4-trifluoromethylaniline         -3.35 kcal/mol  8 poses
+[08:27:20] DockingAgent     Fragment screening complete: 0/19 hit threshold
+[08:27:20] Orchestrator     Top 3 fragment hits selected for growing
+------------------------------------------------------------------------
+[08:27:20] Orchestrator     Fitting 5-sigma null distribution from fragment scores...
+[08:27:20] HiggsTest        Null distribution: affinity = -3.47 +/- 0.38 kcal/mol (n=19)
+[08:27:20] HiggsTest        Fragment null median: -3.64 kcal/mol
+[08:27:20] HiggsTest        5-sigma threshold: -5.37 kcal/mol
+[08:27:20] HiggsTest        3-sigma threshold: -4.61 kcal/mol
+------------------------------------------------------------------------
+[08:27:20] GrowingAgent     Growing 3 fragment hits -> target leads...
+[08:27:20] GrowingAgent     Strategy: R-group + pharmacophore tail attachment
+[08:27:20] GrowingAgent       Growing SEED_R1C1 (isobutyl-piperidine-aniline (R1-C1 proven)) - base affinity -7.52 kcal/mol
+[08:27:21] GrowingAgent         Generated 70 candidates -> docking top 15...
+[08:47:32] GrowingAgent       Growing SEED_R1C2 (decalin-fluorophenyl (R1-C2 proven)) - base affinity -8.48 kcal/mol
+[08:47:32] GrowingAgent         Generated 53 candidates -> docking top 15...
+[09:03:03] GrowingAgent       Growing SEED_R1C5 (decalin-hydroxyphenyl (R1-C5 proven)) - base affinity -8.34 kcal/mol
+[09:03:03] GrowingAgent         Generated 66 candidates -> docking top 15...
+[09:29:36] GrowingAgent     Growth cycle complete: 45 compounds produced
+[09:29:36] ADMETAgent       Profiling 45 compounds (ADMET-AI)...
+[09:29:36] ADMETAgent         XX FAIL  SEED_R1C5_G031 hERG=0.85  DILI=0.12
+[09:29:37] ADMETAgent         XX FAIL  SEED_R1C5_G030 hERG=0.88  DILI=0.09
+[09:29:37] ADMETAgent         XX FAIL  SEED_R1C2_G016 hERG=0.83  DILI=0.14
+[09:29:38] ADMETAgent         OK PASS  SEED_R1C2_G020 hERG=0.70  DILI=0.07
+[09:29:38] ADMETAgent         OK PASS  SEED_R1C2_G026 hERG=0.70  DILI=0.09
+[09:29:38] ADMETAgent         XX FAIL  SEED_R1C1_G011 hERG=0.93  DILI=0.12
+[09:29:39] ADMETAgent         XX FAIL  SEED_R1C2_G047 hERG=0.98  DILI=0.04
+[09:29:39] ADMETAgent         OK PASS  SEED_R1C2_G023 hERG=0.73  DILI=0.08
+[09:29:40] ADMETAgent         XX FAIL  SEED_R1C2_G035 hERG=0.91  DILI=0.04
+[09:29:40] ADMETAgent         OK PASS  SEED_R1C5_G053 hERG=0.78  DILI=0.09
+[09:29:41] ADMETAgent         OK PASS  SEED_R1C2_G019 hERG=0.71  DILI=0.07
+[09:29:41] ADMETAgent         OK PASS  SEED_R1C1_G050 hERG=0.82  DILI=0.02
+[09:29:42] ADMETAgent         OK PASS  SEED_R1C1_G037 hERG=0.77  DILI=0.07
+[09:29:42] ADMETAgent         XX FAIL  SEED_R1C1_G024 hERG=0.98  DILI=0.33
+[09:29:43] ADMETAgent         OK PASS  SEED_R1C2_G050 hERG=0.82  DILI=0.07
+[09:29:43] ADMETAgent         XX FAIL  SEED_R1C1_G059 hERG=0.89  DILI=0.07
+[09:29:44] ADMETAgent         XX FAIL  SEED_R1C1_G056 hERG=0.83  DILI=0.05
+[09:29:44] ADMETAgent         XX FAIL  SEED_R1C2_G034 hERG=0.86  DILI=0.06
+[09:29:45] ADMETAgent         XX FAIL  SEED_R1C2_G033 hERG=0.93  DILI=0.04
+[09:29:45] ADMETAgent         XX FAIL  SEED_R1C5_G002 hERG=0.93  DILI=0.31
+[09:29:46] ADMETAgent         OK PASS  SEED_R1C5_G026 hERG=0.82  DILI=0.16
+[09:29:46] ADMETAgent         OK PASS  SEED_R1C2_G011 hERG=0.73  DILI=0.06
+[09:29:47] ADMETAgent         OK PASS  SEED_R1C1_G036 hERG=0.80  DILI=0.07
+[09:29:47] ADMETAgent         XX FAIL  SEED_R1C1_G008 hERG=0.96  DILI=0.44
+[09:29:48] ADMETAgent         XX FAIL  SEED_R1C1_G048 hERG=0.86  DILI=0.11
+[09:29:48] ADMETAgent         XX FAIL  SEED_R1C1_G031 hERG=0.97  DILI=0.13
+[09:29:49] ADMETAgent         OK PASS  SEED_R1C5_G021 hERG=0.79  DILI=0.07
+[09:29:49] ADMETAgent         OK PASS  SEED_R1C1_G026 hERG=0.82  DILI=0.07
+[09:29:50] ADMETAgent         OK PASS  SEED_R1C5_G038 hERG=0.70  DILI=0.11
+[09:29:50] ADMETAgent         OK PASS  SEED_R1C2_G029 hERG=0.68  DILI=0.09
+[09:29:51] ADMETAgent         OK PASS  SEED_R1C5_G051 hERG=0.75  DILI=0.07
+[09:29:51] ADMETAgent         XX FAIL  SEED_R1C1_G043 hERG=0.79  DILI=0.11
+[09:29:51] ADMETAgent         OK PASS  SEED_R1C5_G037 hERG=0.77  DILI=0.08
+[09:29:52] ADMETAgent         XX FAIL  SEED_R1C1_G028 hERG=0.88  DILI=0.08
+[09:29:52] ADMETAgent         OK PASS  SEED_R1C5_G032 hERG=0.72  DILI=0.08
+[09:29:53] ADMETAgent         XX FAIL  SEED_R1C2_G014 hERG=0.84  DILI=0.07
+[09:29:53] ADMETAgent         XX FAIL  SEED_R1C2_G017 hERG=0.85  DILI=0.09
+[09:29:53] ADMETAgent         XX FAIL  SEED_R1C1_G046 hERG=0.78  DILI=0.11
+[09:29:54] ADMETAgent         OK PASS  SEED_R1C1_G053 hERG=0.81  DILI=0.02
+[09:29:54] ADMETAgent         OK PASS  SEED_R1C5_G039 hERG=0.75  DILI=0.10
+[09:29:55] ADMETAgent         OK PASS  SEED_R1C5_G022 hERG=0.76  DILI=0.07
+[09:29:55] ADMETAgent         XX FAIL  SEED_R1C5_G046 hERG=0.92  DILI=0.05
+[09:29:55] ADMETAgent         OK PASS  SEED_R1C5_G043 hERG=0.72  DILI=0.11
+[09:29:56] ADMETAgent         OK PASS  SEED_R1C2_G037 hERG=0.75  DILI=0.07
+[09:29:56] ADMETAgent         OK PASS  SEED_R1C5_G033 hERG=0.75  DILI=0.07
+[09:29:56] ADMETAgent       ADMET filter: 24/45 compounds pass
+[09:29:56] ValidatorAgent   Validating 24 compounds...
+[09:29:56] ValidatorAgent     - MODERATE  SEED_R1C2_G020  aff=-3.95  LE=0.197  conf=40%  [ADMET pass, DILI safe, drug-sized]
+[09:29:56] ValidatorAgent     - MODERATE  SEED_R1C2_G026  aff=-3.78  LE=0.189  conf=40%  [ADMET pass, DILI safe, drug-sized]
+[09:29:56] ValidatorAgent     - MODERATE  SEED_R1C2_G023  aff=-3.49  LE=0.146  conf=40%  [ADMET pass, DILI safe, drug-sized]
+[09:29:56] ValidatorAgent     - MODERATE  SEED_R1C5_G053  aff=-3.49  LE=0.159  conf=40%  [ADMET pass, DILI safe, drug-sized]
+[09:29:56] ValidatorAgent     - MODERATE  SEED_R1C2_G019  aff=-3.45  LE=0.172  conf=40%  [ADMET pass, DILI safe, drug-sized]
+[09:29:56] ValidatorAgent     - MODERATE  SEED_R1C1_G050  aff=-3.31  LE=0.184  conf=40%  [ADMET pass, DILI safe, drug-sized]
+[09:29:56] ValidatorAgent     - MODERATE  SEED_R1C1_G037  aff=-3.27  LE=0.192  conf=40%  [ADMET pass, DILI safe, drug-sized]
+[09:29:56] ValidatorAgent     - MODERATE  SEED_R1C2_G050  aff=-3.20  LE=0.133  conf=40%  [ADMET pass, DILI safe, drug-sized]
+[09:29:56] ValidatorAgent     - MODERATE  SEED_R1C5_G026  aff=-3.11  LE=0.124  conf=40%  [ADMET pass, DILI safe, drug-sized]
+[09:29:56] ValidatorAgent     - MODERATE  SEED_R1C2_G011  aff=-3.09  LE=0.147  conf=40%  [ADMET pass, DILI safe, drug-sized]
+[09:29:56] ValidatorAgent     - MODERATE  SEED_R1C1_G036  aff=-3.08  LE=0.181  conf=40%  [ADMET pass, DILI safe, drug-sized]
+[09:29:56] ValidatorAgent     - MODERATE  SEED_R1C5_G021  aff=-3.03  LE=0.151  conf=40%  [ADMET pass, DILI safe, drug-sized]
+[09:29:56] ValidatorAgent     - MODERATE  SEED_R1C1_G026  aff=-3.01  LE=0.177  conf=40%  [ADMET pass, DILI safe, drug-sized]
+[09:29:56] ValidatorAgent     - MODERATE  SEED_R1C5_G038  aff=-2.98  LE=0.149  conf=40%  [ADMET pass, DILI safe, drug-sized]
+[09:29:56] ValidatorAgent     - MODERATE  SEED_R1C2_G029  aff=-2.98  LE=0.149  conf=40%  [ADMET pass, DILI safe, drug-sized]
+[09:29:56] ValidatorAgent     - MODERATE  SEED_R1C5_G051  aff=-2.98  LE=0.142  conf=40%  [ADMET pass, DILI safe, drug-sized]
+[09:29:56] ValidatorAgent     - MODERATE  SEED_R1C5_G037  aff=-2.97  LE=0.119  conf=40%  [ADMET pass, DILI safe, drug-sized]
+[09:29:56] ValidatorAgent     - MODERATE  SEED_R1C5_G032  aff=-2.95  LE=0.147  conf=40%  [ADMET pass, DILI safe, drug-sized]
+[09:29:56] ValidatorAgent     - MODERATE  SEED_R1C1_G053  aff=-2.93  LE=0.154  conf=40%  [ADMET pass, DILI safe, drug-sized]
+[09:29:56] ValidatorAgent     - MODERATE  SEED_R1C5_G039  aff=-2.93  LE=0.146  conf=40%  [ADMET pass, DILI safe, drug-sized]
+[09:29:56] ValidatorAgent     - MODERATE  SEED_R1C5_G022  aff=-2.91  LE=0.146  conf=40%  [ADMET pass, DILI safe, drug-sized]
+[09:29:56] ValidatorAgent     - MODERATE  SEED_R1C5_G043  aff=-2.83  LE=0.135  conf=40%  [ADMET pass, DILI safe, drug-sized]
+[09:29:56] ValidatorAgent     - MODERATE  SEED_R1C2_G037  aff=-2.80  LE=0.133  conf=40%  [ADMET pass, DILI safe, drug-sized]
+[09:29:56] ValidatorAgent     - MODERATE  SEED_R1C5_G033  aff=-2.78  LE=0.139  conf=40%  [ADMET pass, DILI safe, drug-sized]
+[09:29:56] HiggsTest        Significance scan: 0 x 5-sigma discoveries, 0 x 3-sigma evidence candidates
+[09:29:56] Orchestrator     Iteration 1 best: confidence=40%  affinity=-3.95
+========================================================================
+[09:29:56] Orchestrator     ===  FINAL LEADERBOARD  (with 5-sigma significance)
+========================================================================
+[09:29:56] Orchestrator     Results saved -> agent_results_HIV_20260411_082637.csv
+[09:29:56] Orchestrator     Leaderboard -> agent_leaderboard_HIV_20260411_082637.json
+========================================================================
+========================================================================
+[09:29:56] Orchestrator     Campaign complete. Log -> agent_run_HIV_20260411_082637.log

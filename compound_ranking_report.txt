@@ -1,0 +1,38 @@
+======================================================================
+COMPREHENSIVE COMPOUND RANKING REPORT
+HIV Protease Inhibitor Candidates
+======================================================================
+
+GNINA DOCKING RESULTS:
+--------------------------------------------------
+1. CURE_17G_003: CNN=0.5668, Vina=-6.65 kcal/mol, Combined=0.6403
+2. CURE_17G_002: CNN=0.5596, Vina=-6.58 kcal/mol, Combined=0.6037
+3. CURE_13G_001: CNN=0.6542, Vina=-4.97 kcal/mol, Combined=0.5068
+4. CURE_16G_007: CNN=0.4795, Vina=-7.13 kcal/mol, Combined=0.5000
+5. CURE_17G_007: CNN=0.5340, Vina=-6.06 kcal/mol, Combined=0.4117
+6. Q15_020: CNN=0.4986, Vina=-4.94 kcal/mol, Combined=0.0547
+
+MD SIMULATION VALIDATION:
+--------------------------------------------------
+Protein RMSD: 0.136 +/- 0.021 nm (excellent stability)
+Temperature: 300.1 +/- 0.5 K
+Pressure: 1.3 +/- 0.5 bar
+System well-equilibrated for docking
+
+RECOMMENDATION:
+--------------------------------------------------
+PRIMARY CANDIDATE: CURE_17G_003
+  - Combined Score: 0.6403
+  - CNN: 0.5668 | Vina: -6.65 kcal/mol
+
+SECONDARY CANDIDATE: CURE_17G_002
+  - Combined Score: 0.6037
+  - CNN: 0.5596 | Vina: -6.58 kcal/mol
+
+TERTIARY CANDIDATE: CURE_13G_001
+  - Combined Score: 0.5068
+  - CNN: 0.6542 | Vina: -4.97 kcal/mol
+
+======================================================================
+Generated: March 27, 2026
+======================================================================

@@ -1,0 +1,5 @@
+id,smiles,target,dock_affinity,vina_affinity,validated
+HYB-005,Cc1cnc(C(=O)C(=O)O)cc1C(=O)Nc1ccc2cccnc2c1Cc1cc(F)cc(F)c1,HIV_INTEGRASE,-8.43,-8.327,True
+isoq_35diF,O=C(NCC(O)Cc1cc(F)cc(F)c1)c1cccc2cccnc12,HIV_INTEGRASE,-9.82,-8.593,True
+naph_metaCF3,O=C(NCC(O)CNC(=O)C1COC2OCCC12)c1cccc2ccccc12,HIV_INTEGRASE,-10.65,-8.874,True
+naph_metaF,O=C(NCC(O)Cc1cccc(F)c1)c1cccc2ccccc12,HIV_INTEGRASE,-10.35,-8.759,True

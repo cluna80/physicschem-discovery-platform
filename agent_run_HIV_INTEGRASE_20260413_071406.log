@@ -1,0 +1,298 @@
+PhysicsChem Agent v2 - 2026-04-13 07:14:06.583892
+============================================================
+========================================================================
+  AUTONOMOUS DRUG DISCOVERY AGENT v2  -  HIV-1 Integrase
+========================================================================
+[07:14:06] Orchestrator     Disease target  : HIV/AIDS
+[07:14:06] Orchestrator     Receptor        : hiv_integrase.pdbqt
+[07:14:06] Orchestrator     Reference drug  : Dolutegravir (-9.43 kcal/mol)
+[07:14:06] Orchestrator     Fragment budget : 20
+[07:14:06] Orchestrator     Max iterations  : 1
+[07:14:06] Orchestrator     Confidence goal : 70%
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+[07:14:06] Orchestrator     ITERATION 1/1  (best confidence so far: 0%)
+------------------------------------------------------------------------
+[07:14:06] FragmentAgent    Loading fragment library (120 total)...
+[07:14:06] FragmentAgent    Selected 20 Ro3-compliant fragments (MW<=300, LogP<=3.5, HBD<=3)
+[07:14:06] FragmentAgent    PAINS filter removed 1 fragments
+[07:14:06] DockingAgent     Screening 19 fragments (exhaustiveness=4)...
+[07:14:06] DockingAgent     Threshold: affinity < -5.93 kcal/mol
+[07:14:08] DockingAgent       . F001     pyridine                         -4.05 kcal/mol  7 poses
+[07:14:10] DockingAgent       OK F002     quinoline                        -6.42 kcal/mol  8 poses
+[07:14:11] DockingAgent       OK F003     benzimidazole                    -6.10 kcal/mol  7 poses
+[07:14:13] DockingAgent       . F004     7-azaindole                      -5.71 kcal/mol  8 poses
+[07:14:15] DockingAgent       . F005     4-azaindole                      -4.66 kcal/mol  7 poses
+[07:14:17] DockingAgent       OK F006     isoquinoline                     -6.34 kcal/mol  8 poses
+[07:14:20] DockingAgent       . F007     2-aminoquinoline                 -5.68 kcal/mol  8 poses
+[07:14:22] DockingAgent       . F008     4-aminoquinazoline               -5.54 kcal/mol  8 poses
+[07:14:25] DockingAgent       . F009     adenine                          -5.64 kcal/mol  8 poses
+[07:14:26] DockingAgent       OK F010     quinoxaline                      -6.52 kcal/mol  8 poses
+[07:14:29] DockingAgent       OK F011     1,6-naphthyridine                -5.99 kcal/mol  6 poses
+[07:14:30] DockingAgent       . F012     pyrrolo[2,3-b]pyridine           -5.69 kcal/mol  8 poses
+[07:14:33] DockingAgent       . F014     indazole-2H                      -5.17 kcal/mol  8 poses
+[07:14:35] DockingAgent       . F015     2-aminopurine                    -5.23 kcal/mol  8 poses
+[07:14:37] DockingAgent       . F016     aniline                          -4.70 kcal/mol  8 poses
+[07:14:40] DockingAgent       . F017     4-fluoroaniline                  -5.20 kcal/mol  8 poses
+[07:14:42] DockingAgent       . F018     3-fluoroaniline                  -5.38 kcal/mol  8 poses
+[07:14:44] DockingAgent       . F019     4-chloroaniline                  -5.20 kcal/mol  8 poses
+[07:14:47] DockingAgent       . F020     4-trifluoromethylaniline         -5.68 kcal/mol  8 poses
+[07:14:47] DockingAgent     Fragment screening complete: 5/19 hit threshold
+[07:14:47] GrowingAgent     Using 4 target-specific seeds for HIV_INTEGRASE
+[07:14:47] Orchestrator     Top 9 fragment hits selected for growing
+------------------------------------------------------------------------
+[07:14:47] Orchestrator     Fitting 5-sigma null distribution from fragment scores...
+[07:14:47] HiggsTest        Null distribution: affinity = -5.52 +/- 0.61 kcal/mol (n=19)
+[07:14:47] HiggsTest        Fragment null median: -5.64 kcal/mol
+[07:14:47] HiggsTest        5-sigma threshold: -8.59 kcal/mol
+[07:14:47] HiggsTest        3-sigma threshold: -7.36 kcal/mol
+------------------------------------------------------------------------
+[07:14:47] GrowingAgent     Growing 9 fragment hits -> target leads...
+[07:14:47] GrowingAgent     Strategy: R-group + pharmacophore tail attachment
+[07:14:47] GrowingAgent       Growing SEED_INT_DTG (naphthalene amide (validated -8.87 Vina)) - base affinity -8.87 kcal/mol
+[07:14:47] GrowingAgent         Generated 0 candidates -> docking top 15...
+[07:14:47] GrowingAgent       Growing SEED_INT_ISQ (isoq-35diF (validated -8.59 Vina)) - base affinity -8.59 kcal/mol
+[07:14:47] GrowingAgent         Generated 0 candidates -> docking top 15...
+[07:14:47] GrowingAgent       Growing SEED_INT_HYB (HYB-005 diketo warhead (validated -8.33 Vina)) - base affinity -8.33 kcal/mol
+[07:14:47] GrowingAgent         Generated 16 candidates -> docking top 15...
+[07:21:25] GrowingAgent       Growing SEED_INT_RAL (Raltegravir isoxazole carboxamide scaffold) - base affinity -8.10 kcal/mol
+[07:21:25] GrowingAgent         Generated 15 candidates -> docking top 15...
+[07:25:58] GrowingAgent       Growing F010 (quinoxaline) - base affinity -6.52 kcal/mol
+[07:25:58] GrowingAgent         Generated 42 candidates -> docking top 15...
+[07:28:22] GrowingAgent       Growing F002 (quinoline) - base affinity -6.42 kcal/mol
+[07:28:22] GrowingAgent         Generated 12 candidates -> docking top 15...
+[07:29:07] GrowingAgent       Growing F006 (isoquinoline) - base affinity -6.34 kcal/mol
+[07:29:07] GrowingAgent         Generated 12 candidates -> docking top 15...
+[07:29:47] GrowingAgent       Growing F003 (benzimidazole) - base affinity -6.10 kcal/mol
+[07:29:47] GrowingAgent         Generated 12 candidates -> docking top 15...
+[07:30:30] GrowingAgent       Growing F011 (1,6-naphthyridine) - base affinity -5.99 kcal/mol
+[07:30:30] GrowingAgent         Generated 42 candidates -> docking top 15...
+[07:32:56] GrowingAgent     Growth cycle complete: 96 compounds produced
+[07:32:56] ADMETAgent       Profiling 96 compounds (rule-based fallback)...
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_RAL_G004   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_RAL_G013   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_RAL_G003   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_HYB_G001   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_RAL_G012   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_HYB_G008   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_HYB_G003   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_HYB_G007   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_RAL_G014   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_HYB_G005   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_HYB_G015   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_HYB_G014   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_HYB_G012   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_HYB_G006   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_HYB_G010   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_HYB_G009   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_HYB_G004   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_HYB_G011   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_HYB_G002   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_HYB_G013   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_RAL_G009   
+[07:32:56] ADMETAgent         OK PASS  F010_G006        
+[07:32:56] ADMETAgent         OK PASS  F011_G006        
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_RAL_G008   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_RAL_G001   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_RAL_G011   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_RAL_G002   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_RAL_G007   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_RAL_G015   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_RAL_G010   
+[07:32:56] ADMETAgent         OK PASS  F003_G003        
+[07:32:56] ADMETAgent         OK PASS  F010_G008        
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_RAL_G005   
+[07:32:56] ADMETAgent         OK PASS  SEED_INT_RAL_G006   
+[07:32:56] ADMETAgent         OK PASS  F002_G010        
+[07:32:56] ADMETAgent         OK PASS  F010_G009        
+[07:32:56] ADMETAgent         OK PASS  F011_G009        
+[07:32:56] ADMETAgent         OK PASS  F011_G008        
+[07:32:56] ADMETAgent         OK PASS  F010_G004        
+[07:32:56] ADMETAgent         OK PASS  F002_G003        
+[07:32:56] ADMETAgent         OK PASS  F011_G005        
+[07:32:56] ADMETAgent         OK PASS  F010_G007        
+[07:32:56] ADMETAgent         OK PASS  F003_G002        
+[07:32:56] ADMETAgent         OK PASS  F006_G003        
+[07:32:56] ADMETAgent         OK PASS  F006_G010        
+[07:32:56] ADMETAgent         OK PASS  F003_G009        
+[07:32:56] ADMETAgent         OK PASS  F010_G005        
+[07:32:56] ADMETAgent         OK PASS  F010_G035        
+[07:32:56] ADMETAgent         OK PASS  F010_G033        
+[07:32:56] ADMETAgent         OK PASS  F011_G007        
+[07:32:56] ADMETAgent         OK PASS  F002_G002        
+[07:32:56] ADMETAgent         OK PASS  F010_G037        
+[07:32:56] ADMETAgent         OK PASS  F011_G037        
+[07:32:56] ADMETAgent         OK PASS  F011_G033        
+[07:32:56] ADMETAgent         OK PASS  F010_G036        
+[07:32:56] ADMETAgent         OK PASS  F006_G009        
+[07:32:56] ADMETAgent         OK PASS  F002_G009        
+[07:32:56] ADMETAgent         OK PASS  F011_G032        
+[07:32:56] ADMETAgent         OK PASS  F010_G014        
+[07:32:56] ADMETAgent         OK PASS  F006_G002        
+[07:32:56] ADMETAgent         OK PASS  F010_G034        
+[07:32:56] ADMETAgent         OK PASS  F011_G004        
+[07:32:56] ADMETAgent         OK PASS  F010_G032        
+[07:32:56] ADMETAgent         OK PASS  F011_G035        
+[07:32:56] ADMETAgent         OK PASS  F011_G034        
+[07:32:56] ADMETAgent         OK PASS  F002_G008        
+[07:32:56] ADMETAgent         OK PASS  F011_G036        
+[07:32:56] ADMETAgent         OK PASS  F010_G013        
+[07:32:56] ADMETAgent         OK PASS  F003_G010        
+[07:32:56] ADMETAgent         OK PASS  F010_G040        
+[07:32:56] ADMETAgent         OK PASS  F006_G011        
+[07:32:56] ADMETAgent         OK PASS  F002_G011        
+[07:32:56] ADMETAgent         OK PASS  F011_G014        
+[07:32:56] ADMETAgent         OK PASS  F003_G011        
+[07:32:56] ADMETAgent         OK PASS  F006_G008        
+[07:32:56] ADMETAgent         OK PASS  F006_G006        
+[07:32:56] ADMETAgent         OK PASS  F011_G040        
+[07:32:56] ADMETAgent         OK PASS  F006_G007        
+[07:32:56] ADMETAgent         OK PASS  F011_G013        
+[07:32:56] ADMETAgent         OK PASS  F003_G007        
+[07:32:56] ADMETAgent         OK PASS  F002_G012        
+[07:32:56] ADMETAgent         OK PASS  F002_G006        
+[07:32:56] ADMETAgent         OK PASS  F006_G001        
+[07:32:56] ADMETAgent         OK PASS  F002_G007        
+[07:32:56] ADMETAgent         OK PASS  F006_G012        
+[07:32:56] ADMETAgent         OK PASS  F006_G005        
+[07:32:56] ADMETAgent         OK PASS  F002_G004        
+[07:32:56] ADMETAgent         OK PASS  F003_G008        
+[07:32:56] ADMETAgent         OK PASS  F006_G004        
+[07:32:56] ADMETAgent         OK PASS  F002_G005        
+[07:32:56] ADMETAgent         OK PASS  F003_G006        
+[07:32:56] ADMETAgent         OK PASS  F003_G005        
+[07:32:56] ADMETAgent         OK PASS  F003_G001        
+[07:32:56] ADMETAgent         OK PASS  F003_G004        
+[07:32:56] ADMETAgent         OK PASS  F002_G001        
+[07:32:56] ADMETAgent         OK PASS  F003_G012        
+[07:32:56] ADMETAgent       ADMET filter: 96/96 compounds pass
+[07:32:56] ValidatorAgent   Validating 96 compounds...
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_RAL_G004  aff=-9.12  LE=0.314  conf=30%  [ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_RAL_G013  aff=-9.03  LE=0.323  conf=30%  [ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_RAL_G003  aff=-8.63  LE=0.308  conf=30%  [ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_HYB_G001  aff=-8.53  LE=0.244  conf=25%  [ADMET pass]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_RAL_G012  aff=-8.49  LE=0.303  conf=30%  [ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_HYB_G008  aff=-8.46  LE=0.242  conf=25%  [ADMET pass]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_HYB_G003  aff=-8.45  LE=0.235  conf=25%  [ADMET pass]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_HYB_G007  aff=-8.27  LE=0.23  conf=25%  [ADMET pass]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_RAL_G014  aff=-8.23  LE=0.305  conf=30%  [ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_HYB_G005  aff=-8.22  LE=0.235  conf=25%  [ADMET pass]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_HYB_G015  aff=-8.17  LE=0.227  conf=25%  [ADMET pass]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_HYB_G014  aff=-8.12  LE=0.226  conf=25%  [ADMET pass]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_HYB_G012  aff=-8.12  LE=0.225  conf=25%  [ADMET pass]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_HYB_G006  aff=-8.08  LE=0.231  conf=25%  [ADMET pass]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_HYB_G010  aff=-8.05  LE=0.23  conf=25%  [ADMET pass]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_HYB_G009  aff=-8.05  LE=0.23  conf=25%  [ADMET pass]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_HYB_G004  aff=-8.02  LE=0.223  conf=25%  [ADMET pass]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_HYB_G011  aff=-7.96  LE=0.227  conf=25%  [ADMET pass]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_HYB_G002  aff=-7.89  LE=0.225  conf=25%  [ADMET pass]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_HYB_G013  aff=-7.85  LE=0.218  conf=25%  [ADMET pass]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_RAL_G009  aff=-7.42  LE=0.309  conf=30%  [ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F010_G006       aff=-7.38  LE=0.434  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F011_G006       aff=-7.37  LE=0.433  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_RAL_G008  aff=-7.23  LE=0.314  conf=30%  [ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_RAL_G001  aff=-7.20  LE=0.313  conf=30%  [ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_RAL_G011  aff=-7.20  LE=0.288  conf=30%  [ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_RAL_G002  aff=-7.19  LE=0.3  conf=30%  [ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_RAL_G007  aff=-7.17  LE=0.312  conf=30%  [ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_RAL_G015  aff=-7.15  LE=0.286  conf=30%  [ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_RAL_G010  aff=-7.14  LE=0.298  conf=30%  [ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F003_G003       aff=-7.11  LE=0.418  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F010_G008       aff=-6.98  LE=0.411  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_RAL_G005  aff=-6.94  LE=0.302  conf=30%  [ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     XX WEAK  SEED_INT_RAL_G006  aff=-6.76  LE=0.294  conf=30%  [ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F002_G010       aff=-6.71  LE=0.419  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F010_G009       aff=-6.67  LE=0.37  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F011_G009       aff=-6.57  LE=0.365  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F011_G008       aff=-6.56  LE=0.386  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F010_G004       aff=-6.50  LE=0.406  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F002_G003       aff=-6.49  LE=0.382  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F011_G005       aff=-6.45  LE=0.403  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F010_G007       aff=-6.45  LE=0.379  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F003_G002       aff=-6.40  LE=0.4  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F006_G003       aff=-6.36  LE=0.374  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F006_G010       aff=-6.36  LE=0.398  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F003_G009       aff=-6.34  LE=0.396  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F010_G005       aff=-6.33  LE=0.396  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F010_G035       aff=-6.31  LE=0.395  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F010_G033       aff=-6.28  LE=0.393  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F011_G007       aff=-6.26  LE=0.368  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F002_G002       aff=-6.19  LE=0.387  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F010_G037       aff=-6.17  LE=0.363  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F011_G037       aff=-6.16  LE=0.362  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F011_G033       aff=-6.15  LE=0.384  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F010_G036       aff=-6.11  LE=0.382  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F006_G009       aff=-6.08  LE=0.38  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F002_G009       aff=-6.05  LE=0.378  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F011_G032       aff=-6.05  LE=0.378  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F010_G014       aff=-6.03  LE=0.377  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F006_G002       aff=-6.02  LE=0.376  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F010_G034       aff=-6.00  LE=0.353  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F011_G004       aff=-5.91  LE=0.369  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F010_G032       aff=-5.88  LE=0.367  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F011_G035       aff=-5.85  LE=0.366  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     XX WEAK  F011_G034       aff=-5.85  LE=0.344  conf=30%  [ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F002_G008       aff=-5.84  LE=0.449  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F011_G036       aff=-5.81  LE=0.363  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F010_G013       aff=-5.77  LE=0.385  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F003_G010       aff=-5.77  LE=0.361  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F010_G040       aff=-5.77  LE=0.36  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F006_G011       aff=-5.76  LE=0.384  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F002_G011       aff=-5.72  LE=0.381  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F011_G014       aff=-5.62  LE=0.351  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F003_G011       aff=-5.56  LE=0.371  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F006_G008       aff=-5.49  LE=0.423  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F006_G006       aff=-5.40  LE=0.45  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     XX WEAK  F011_G040       aff=-5.38  LE=0.336  conf=30%  [ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F006_G007       aff=-5.37  LE=0.448  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F011_G013       aff=-5.29  LE=0.352  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F003_G007       aff=-5.28  LE=0.44  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F002_G012       aff=-5.19  LE=0.399  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F002_G006       aff=-5.19  LE=0.432  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F006_G001       aff=-5.19  LE=0.432  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F002_G007       aff=-5.16  LE=0.43  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F006_G012       aff=-5.15  LE=0.396  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F006_G005       aff=-5.07  LE=0.46  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F002_G004       aff=-5.05  LE=0.459  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F003_G008       aff=-5.04  LE=0.388  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F006_G004       aff=-5.01  LE=0.455  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F002_G005       aff=-4.98  LE=0.453  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F003_G006       aff=-4.89  LE=0.407  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F003_G005       aff=-4.86  LE=0.442  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F003_G001       aff=-4.82  LE=0.402  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F003_G004       aff=-4.82  LE=0.438  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F002_G001       aff=-4.76  LE=0.397  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] ValidatorAgent     - MODERATE  F003_G012       aff=-4.66  LE=0.359  conf=50%  [good LE, ADMET pass, drug-sized]
+[07:32:56] HiggsTest        Significance scan: 3 x 5-sigma discoveries, 20 x 3-sigma evidence candidates
+[07:32:56] Orchestrator       ** 3-sigma evidence: F010_G006 Z=3.02
+[07:32:56] Orchestrator       ** 3-sigma evidence: F011_G006 Z=3.01
+[07:32:56] Orchestrator       *** 5-SIGMA DISCOVERY: SEED_INT_RAL_G004 Z=5.87 aff=-9.12 kcal/mol ***
+[07:32:56] Orchestrator       *** 5-SIGMA DISCOVERY: SEED_INT_RAL_G013 Z=5.73 aff=-9.03 kcal/mol ***
+[07:32:56] Orchestrator       *** 5-SIGMA DISCOVERY: SEED_INT_RAL_G003 Z=5.08 aff=-8.63 kcal/mol ***
+[07:32:56] Orchestrator       ** 3-sigma evidence: SEED_INT_RAL_G012 Z=4.85
+[07:32:57] Orchestrator       ** 3-sigma evidence: SEED_INT_RAL_G014 Z=4.42
+[07:32:57] Orchestrator       ** 3-sigma evidence: SEED_INT_RAL_G009 Z=3.10
+[07:32:57] Orchestrator       ** 3-sigma evidence: SEED_INT_HYB_G001 Z=4.90
+[07:32:57] Orchestrator       ** 3-sigma evidence: SEED_INT_HYB_G008 Z=4.79
+[07:32:57] Orchestrator       ** 3-sigma evidence: SEED_INT_HYB_G003 Z=4.77
+[07:32:57] Orchestrator       ** 3-sigma evidence: SEED_INT_HYB_G007 Z=4.48
+[07:32:57] Orchestrator       ** 3-sigma evidence: SEED_INT_HYB_G005 Z=4.39
+[07:32:57] Orchestrator       ** 3-sigma evidence: SEED_INT_HYB_G015 Z=4.32
+[07:32:57] Orchestrator       ** 3-sigma evidence: SEED_INT_HYB_G014 Z=4.24
+[07:32:57] Orchestrator       ** 3-sigma evidence: SEED_INT_HYB_G012 Z=4.23
+[07:32:57] Orchestrator       ** 3-sigma evidence: SEED_INT_HYB_G006 Z=4.17
+[07:32:57] Orchestrator       ** 3-sigma evidence: SEED_INT_HYB_G010 Z=4.12
+[07:32:57] Orchestrator       ** 3-sigma evidence: SEED_INT_HYB_G009 Z=4.12
+[07:32:57] Orchestrator       ** 3-sigma evidence: SEED_INT_HYB_G004 Z=4.07
+[07:32:57] Orchestrator       ** 3-sigma evidence: SEED_INT_HYB_G011 Z=3.97
+[07:32:57] Orchestrator       ** 3-sigma evidence: SEED_INT_HYB_G002 Z=3.86
+[07:32:57] Orchestrator       ** 3-sigma evidence: SEED_INT_HYB_G013 Z=3.80
+[07:32:57] Orchestrator     Iteration 1 best: confidence=50%  affinity=-7.38
+========================================================================
+[07:32:57] Orchestrator     ===  FINAL LEADERBOARD  (with 5-sigma significance)
+========================================================================
+[07:32:57] Orchestrator     Results saved -> agent_results_HIV_INTEGRASE_20260413_071406.csv
+[07:32:57] Orchestrator     Leaderboard -> agent_leaderboard_HIV_INTEGRASE_20260413_071406.json
+========================================================================
+========================================================================
+[07:32:57] Orchestrator     Campaign complete. Log -> agent_run_HIV_INTEGRASE_20260413_071406.log

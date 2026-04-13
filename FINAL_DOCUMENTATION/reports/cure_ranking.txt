@@ -1,0 +1,28 @@
+======================================================================
+CURE COMPOUNDS RANKING - HIV PROTEASE INHIBITORS
+======================================================================
+
+RANKING BY VINA AFFINITY:
+--------------------------------------------------
+1. CURE_17G_002: -7.753 kcal/mol (CNN: 0.4417)
+2. CURE_17G_003: -7.549 kcal/mol (CNN: 0.4534)
+3. CURE_17G_007: -7.522 kcal/mol (CNN: 0.4309)
+4. CURE_16G_007: -7.487 kcal/mol (CNN: 0.4795)
+5. Q15_020: -7.398 kcal/mol (CNN: 0.4986)
+6. CURE_13G_001: -7.333 kcal/mol (CNN: 0.6542)
+
+RANKING BY COMBINED SCORE:
+--------------------------------------------------
+1. CURE_17G_002: Combined=0.5242 (Vina=-7.753, CNN=0.4417)
+2. CURE_13G_001: Combined=0.5000 (Vina=-7.333, CNN=0.6542)
+3. CURE_17G_003: Combined=0.3075 (Vina=-7.549, CNN=0.4534)
+4. CURE_16G_007: Combined=0.2922 (Vina=-7.487, CNN=0.4795)
+5. Q15_020: Combined=0.2290 (Vina=-7.398, CNN=0.4986)
+6. CURE_17G_007: Combined=0.2250 (Vina=-7.522, CNN=0.4309)
+
+======================================================================
+RECOMMENDATION:
+======================================================================
+STRONGEST BINDER: CURE_17G_002 (-7.753 kcal/mol)
+BEST BALANCED: CURE_17G_002 (Combined=0.5242)
+HIGHEST CONFIDENCE: CURE_13G_001 (CNN=0.6542)

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "CURE_4G_001",
+    "smiles": "c1cc(F)c(F)c(F)c1C(=O)OC(CN)C(=O)CCCF",
+    "modification": "Hydroxyethylamine core added",
+    "description": "Darunavir-like hydroxyethylamine",
+    "expected_improvement": 1.2
+  },
+  {
+    "name": "CURE_4G_002",
+    "smiles": "c1cc(F)c(F)c(F)c1C(=O)OC(CN)C(=O)CCCFC1CCOC1",
+    "modification": "Hydroxyethylamine + THF ring",
+    "description": "Darunavir-inspired with THF",
+    "expected_improvement": 1.8
+  },
+  {
+    "name": "CURE_4G_003",
+    "smiles": "c1cc(F)c(F)c(F)c1C(=O)OC(CN)C(=O)CCCFC1CCOC1S(=O)(=O)N",
+    "modification": "Full Darunavir-like scaffold",
+    "description": "Hydroxyethylamine + THF + Sulfonamide",
+    "expected_improvement": 2.5
+  },
+  {
+    "name": "CURE_4G_004",
+    "smiles": "c1cc(F)c(F)c(F)c1C(=O)NC(CN)C(=O)CCCFC1CCOC1S(=O)(=O)N",
+    "modification": "Amide-linked Darunavir analog",
+    "description": "Enhanced binding with amide",
+    "expected_improvement": 2.7
+  }
+]

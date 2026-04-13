@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Large binary files
+*.gz
+*.zip
+*.tar
+gnina
+gnina_cu11
+gnina_new
+gnina_v12
+kraken.exe
+bin/
+
+# Sensitive
+*.token
+save_ibm_token.py
+save_token.py
+
+# Temp/scratch
+nul
+temp_*
+*_temp.*
+dashboard_live.log
+dashboard_done.flag
+
+# Screenshots
+Screenshot*.png
+
+# Large docking outputs (keep CSVs, skip PDBQTs)
+*_result.pdbqt
+result_*.pdbqt
+ligand*.pdbqt
+receptor*.pdbqt
+correct_*.pdbqt
+proper_*.pdbqt
+clean_*.pdbqt
+final_*.pdbqt
+working_*.pdbqt
+test_*.pdbqt
+inhibitor*.pdbqt
+gefitinib_like*.pdbqt
+erlotinib_like*.pdbqt
+simple_quinazoline*.pdbqt
+P2_SO2NH2*.pdbqt
+CURE_*[0-9].pdbqt
+naphthalene_metaF*.pdbqt
+Darunavir_scaffold*.pdbqt
+
+# Keep these important PDBQTs
+!egfr.pdbqt
+!hiv_protease.pdbqt
+!hiv_integrase.pdbqt
+!covid_mpro.pdbqt
+!bace1.pdbqt
+!thrombin.pdbqt
+!vegfr2.pdbqt
+!kras_g12c.pdbqt
+!jak1.pdbqt
+!cox2.pdbqt
+
+# Virtual envs
+quantum-agent-env/
+
+# Node
+node_modules/

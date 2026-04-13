@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real Drug Library - Quantum Discovery Lab</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .back-btn {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        h1 {
+            font-size: 2em;
+            background: linear-gradient(135deg, #fff, #a8c0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Toolbar */
+        .toolbar {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .stats-badge {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+        }
+        
+        .stats-badge span {
+            font-size: 1.5em;
+            color: #ffd700;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-csv { background: #28a745; color: white; }
+        .btn-json { background: #17a2b8; color: white; }
+        .btn-report { background: #6c757d; color: white; }
+        .btn-clear { background: #dc3545; color: white; }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+        
+        /* Candidate Cards */
+        .candidate {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            margin: 20px 0;
+            padding: 25px;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .candidate:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+        
+        .candidate-info {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .candidate-structure {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            background: rgba(0,0,0,0.2);
+            border-radius: 15px;
+            padding: 15px;
+        }
+        
+        .candidate-id {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #a8c0ff;
+            margin-bottom: 15px;
+        }
+        
+        .property-tag {
+            display: inline-block;
+            background: rgba(0,0,0,0.4);
+            padding: 5px 12px;
+            margin: 5px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+        
+        .binding-badge {
+            display: inline-block;
+            padding: 8px 15px;
+            margin: 10px 0;
+            border-radius: 30px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #ff9800, #ff5722);
+        }
+        
+        .target-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+        }
+        
+        .smiles-code {
+            font-family: monospace;
+            font-size: 0.7em;
+            background: rgba(0,0,0,0.3);
+            padding: 8px;
+            border-radius: 8px;
+            margin-top: 10px;
+            word-break: break-all;
+        }
+        
+        .delete-btn {
+            background: rgba(220, 53, 69, 0.8);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        
+        .delete-btn:hover {
+            background: #dc3545;
+        }
+        
+        .molecule-img {
+            max-width: 100%;
+            border-radius: 10px;
+            background: white;
+            padding: 10px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <a href="/" class="back-btn">← Back to Lab</a>
+        <h1>🧬 QUANTUM DRUG LIBRARY</h1>
+        <div></div>
+    </div>
+    
+    <div class="toolbar">
+        <div class="stats-badge">
+            💊 <span id="drugCount">0</span> DRUG CANDIDATES
+        </div>
+        <div class="button-group">
+            <a href="/download/csv" class="btn btn-csv">📊 EXPORT CSV</a>
+            <a href="/download/data" class="btn btn-json">📄 EXPORT JSON</a>
+            <a href="/download/report" class="btn btn-report">📝 FULL REPORT</a>
+            <button class="btn btn-clear" onclick="clearLibrary()">🗑️ CLEAR ALL</button>
+        </div>
+    </div>
+    
+    <div id="library"></div>
+</div>
+
+<script>
+async function loadLibrary() {
+    const div = document.getElementById('library');
+    div.innerHTML = '<div class="loading">🔬 Loading quantum drug library...</div>';
+    
+    const res = await fetch('/api/get_library');
+    const data = await res.json();
+    
+    document.getElementById('drugCount').innerText = data.count;
+    
+    if (data.count === 0) {
+        div.innerHTML = '<div class="loading">✨ No drugs yet. Go to Drug Discovery to generate candidates! ✨</div>';
+        return;
+    }
+    
+    let html = '';
+    
+    for (let c of data.library.slice().reverse()) {
+        const targets = Object.entries(c.bindings).sort((a,b) => a[1] - b[1]);
+        const topTargets = targets.slice(0, 5);
+        
+        html += `
+        <div class="candidate">
+            <div class="candidate-info">
+                <div class="candidate-id">🔬 ${c.id}</div>
+                <div>
+                    <span class="property-tag">⚖️ MW: ${c.mw} g/mol</span>
+                    <span class="property-tag">📊 LogP: ${c.logp}</span>
+                    <span class="property-tag">⭐ QED: ${c.qed}</span>
+                    <span class="property-tag">💊 ${c.lipinski}</span>
+                </div>
+                <div class="binding-badge">
+                    🎯 BEST TARGET: ${c.best_target} (${c.best_binding} kcal/mol)
+                </div>
+                <div>
+                    <strong>📈 TOP 5 BINDINGS:</strong>
+                    ${topTargets.map(t => `
+                        <div class="target-item">
+                            <span>${t[0]}</span>
+                            <span>${t[1]} kcal/mol</span>
+                        </div>
+                    `).join('')}
+                </div>
+                <div class="smiles-code">
+                    🔬 SMILES: ${c.smiles}
+                </div>
+                <div style="font-size:0.75em; color:#aaa; margin-top:10px;">
+                    📅 Discovered: ${c.discovery_date}
+                </div>
+                <button class="delete-btn" onclick="deleteCandidate('${c.id}')">🗑️ DELETE CANDIDATE</button>
+            </div>
+            <div class="candidate-structure">
+                <div id="img-${c.id}">
+                    <div class="loading">🧪 Loading structure...</div>
+                </div>
+            </div>
+        </div>`;
+    }
+    
+    div.innerHTML = html;
+    
+    for (let c of data.library) {
+        loadStructure(c.id);
+    }
+}
+
+async function loadStructure(id) {
+    const imgDiv = document.getElementById(`img-${id}`);
+    if (!imgDiv) return;
+    
+    try {
+        const res = await fetch(`/api/get_structure/${id}`);
+        const data = await res.json();
+        if (data.image) {
+            imgDiv.innerHTML = `<img src="data:image/png;base64,${data.image}" class="molecule-img">`;
+        }
+    } catch (error) {
+        imgDiv.innerHTML = '<div style="color:#888;">⚠️ Error</div>';
+    }
+}
+
+async function deleteCandidate(id) {
+    if (!confirm('Delete this drug candidate?')) return;
+    await fetch('/api/delete_candidate', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({id: id})
+    });
+    loadLibrary();
+}
+
+async function clearLibrary() {
+    if (!confirm('⚠️ DELETE ALL DRUG CANDIDATES? This cannot be undone!')) return;
+    await fetch('/api/clear_library', {method: 'POST'});
+    loadLibrary();
+}
+
+loadLibrary();
+</script>
+</body>
+</html>

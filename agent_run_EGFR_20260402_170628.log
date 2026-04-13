@@ -1,0 +1,115 @@
+PhysicsChem Agent v2 - 2026-04-02 17:06:28.377181
+============================================================
+========================================================================
+  AUTONOMOUS DRUG DISCOVERY AGENT v2  -  EGFR Kinase (Wild-Type)
+========================================================================
+[17:06:28] Orchestrator     Disease target  : Non-Small Cell Lung Cancer
+[17:06:28] Orchestrator     Receptor        : cancer_egfr_agent/egfr_receptor.pdbqt
+[17:06:28] Orchestrator     Reference drug  : Erlotinib (-8.0 kcal/mol)
+[17:06:28] Orchestrator     Fragment budget : 20
+[17:06:28] Orchestrator     Max iterations  : 1
+[17:06:28] Orchestrator     Confidence goal : 70%
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+[17:06:28] Orchestrator     ITERATION 1/1  (best confidence so far: 0%)
+------------------------------------------------------------------------
+[17:06:28] FragmentAgent    Loading fragment library (120 total)...
+[17:06:28] FragmentAgent    Selected 20 Ro3-compliant fragments (MW<=300, LogP<=3.5, HBD<=3)
+[17:06:28] DockingAgent     Screening 20 fragments (exhaustiveness=4)...
+[17:06:28] DockingAgent     Threshold: affinity < -6.0 kcal/mol
+[17:06:31] DockingAgent       OK F071     4-aminoquinazoline-EGFR          -6.21 kcal/mol  8 poses
+[17:06:33] DockingAgent       . F001     pyridine                         -3.71 kcal/mol  8 poses
+[17:06:35] DockingAgent       . F002     quinoline                        -5.99 kcal/mol  8 poses
+[17:06:37] DockingAgent       . F003     benzimidazole                    -5.47 kcal/mol  8 poses
+[17:06:38] DockingAgent       . F004     7-azaindole                      -5.46 kcal/mol  8 poses
+[17:06:40] DockingAgent       . F005     4-azaindole                      -5.44 kcal/mol  8 poses
+[17:06:42] DockingAgent       . F006     isoquinoline                     -5.72 kcal/mol  8 poses
+[17:06:44] DockingAgent       OK F007     2-aminoquinoline                 -6.17 kcal/mol  8 poses
+[17:06:44] DockingAgent       OK F008     4-aminoquinazoline               -6.21 kcal/mol  8 poses
+[17:06:47] DockingAgent       . F009     adenine                          -5.25 kcal/mol  8 poses
+[17:06:49] DockingAgent       . F010     quinoxaline                      -5.99 kcal/mol  7 poses
+[17:06:51] DockingAgent       . F011     1,6-naphthyridine                -5.33 kcal/mol  8 poses
+[17:06:53] DockingAgent       . F012     pyrrolo[2,3-b]pyridine           -4.85 kcal/mol  8 poses
+[17:06:55] DockingAgent       . F014     indazole-2H                      -5.49 kcal/mol  8 poses
+[17:06:58] DockingAgent       . F015     2-aminopurine                    -5.55 kcal/mol  8 poses
+[17:07:00] DockingAgent       . F016     aniline                          -4.87 kcal/mol  8 poses
+[17:07:03] DockingAgent       . F017     4-fluoroaniline                  -5.19 kcal/mol  8 poses
+[17:07:05] DockingAgent       . F018     3-fluoroaniline                  -5.24 kcal/mol  8 poses
+[17:07:07] DockingAgent       . F019     4-chloroaniline                  -4.76 kcal/mol  8 poses
+[17:07:10] DockingAgent       . F020     4-trifluoromethylaniline         -5.55 kcal/mol  8 poses
+[17:07:10] DockingAgent     Fragment screening complete: 3/20 hit threshold
+[17:07:10] Orchestrator     Top 3 fragment hits selected for growing
+[17:07:10] GrowingAgent     Growing 3 fragment hits -> target leads...
+[17:07:10] GrowingAgent     Strategy: R-group + pharmacophore tail attachment
+[17:07:10] GrowingAgent       Growing F071 (4-aminoquinazoline-EGFR) - base affinity -6.21 kcal/mol
+[17:07:10] GrowingAgent         Generated 14 candidates -> docking top 8...
+[17:08:02] GrowingAgent       Growing F008 (4-aminoquinazoline) - base affinity -6.21 kcal/mol
+[17:08:02] GrowingAgent         Generated 14 candidates -> docking top 8...
+[17:08:02] GrowingAgent       Growing F007 (2-aminoquinoline) - base affinity -6.17 kcal/mol
+[17:08:02] GrowingAgent         Generated 67 candidates -> docking top 8...
+[17:13:49] GrowingAgent         * F007_G009     -10.85 kcal/mol  MW=378.4  LogP=5.36
+[17:13:49] GrowingAgent         * F007_G013     -10.71 kcal/mol  MW=393.5  LogP=4.87
+[17:13:49] GrowingAgent         * F007_G015     -10.53 kcal/mol  MW=394.4  LogP=5.29
+[17:13:49] GrowingAgent         * F007_G010     -10.35 kcal/mol  MW=392.5  LogP=5.4
+[17:13:49] GrowingAgent         * F007_G005      -9.96 kcal/mol  MW=302.3  LogP=3.12
+[17:13:49] GrowingAgent         * F007_G007      -9.74 kcal/mol  MW=303.3  LogP=3.55
+[17:13:49] GrowingAgent         * F007_G002      -9.72 kcal/mol  MW=301.4  LogP=3.66
+[17:13:49] GrowingAgent         * F007_G014      -9.59 kcal/mol  MW=407.5  LogP=4.91
+[17:13:49] GrowingAgent     Growth cycle complete: 24 compounds produced
+[17:13:49] ADMETAgent       Profiling 24 compounds (rule-based fallback)...
+[17:13:49] ADMETAgent         XX FAIL  F007_G009        
+[17:13:49] ADMETAgent         OK PASS  F007_G013        
+[17:13:49] ADMETAgent         XX FAIL  F007_G015        
+[17:13:49] ADMETAgent         XX FAIL  F007_G010        
+[17:13:49] ADMETAgent         OK PASS  F007_G005        
+[17:13:49] ADMETAgent         OK PASS  F007_G007        
+[17:13:49] ADMETAgent         OK PASS  F007_G002        
+[17:13:49] ADMETAgent         OK PASS  F007_G014        
+[17:13:49] ADMETAgent         OK PASS  F071_G010        
+[17:13:49] ADMETAgent         OK PASS  F008_G010        
+[17:13:49] ADMETAgent         OK PASS  F071_G012        
+[17:13:49] ADMETAgent         OK PASS  F008_G012        
+[17:13:49] ADMETAgent         OK PASS  F071_G011        
+[17:13:49] ADMETAgent         OK PASS  F008_G011        
+[17:13:49] ADMETAgent         OK PASS  F071_G013        
+[17:13:49] ADMETAgent         OK PASS  F008_G013        
+[17:13:49] ADMETAgent         OK PASS  F071_G006        
+[17:13:49] ADMETAgent         OK PASS  F008_G006        
+[17:13:49] ADMETAgent         OK PASS  F071_G014        
+[17:13:49] ADMETAgent         OK PASS  F008_G014        
+[17:13:49] ADMETAgent         OK PASS  F071_G008        
+[17:13:49] ADMETAgent         OK PASS  F008_G008        
+[17:13:49] ADMETAgent         OK PASS  F071_G007        
+[17:13:49] ADMETAgent         OK PASS  F008_G007        
+[17:13:49] ADMETAgent       ADMET filter: 21/24 compounds pass
+[17:13:49] ValidatorAgent   Validating 21 compounds...
+[17:13:49] ValidatorAgent     *** EXCELLENT  F007_G013       aff=-10.71  LE=0.357  conf=80%  [strong docking, good LE, ADMET pass, drug-sized]
+[17:13:49] ValidatorAgent     *** EXCELLENT  F007_G005       aff=-9.96  LE=0.433  conf=80%  [strong docking, good LE, ADMET pass, drug-sized]
+[17:13:49] ValidatorAgent     *** EXCELLENT  F007_G007       aff=-9.74  LE=0.423  conf=80%  [strong docking, good LE, ADMET pass, drug-sized]
+[17:13:49] ValidatorAgent     *** EXCELLENT  F007_G002       aff=-9.72  LE=0.422  conf=80%  [strong docking, good LE, ADMET pass, drug-sized]
+[17:13:49] ValidatorAgent     OK GOOD  F007_G014       aff=-9.59  LE=0.309  conf=60%  [strong docking, ADMET pass, drug-sized]
+[17:13:49] ValidatorAgent     - MODERATE  F071_G010       aff=-7.96  LE=0.468  conf=50%  [good LE, ADMET pass, drug-sized]
+[17:13:49] ValidatorAgent     - MODERATE  F008_G010       aff=-7.96  LE=0.468  conf=50%  [good LE, ADMET pass, drug-sized]
+[17:13:49] ValidatorAgent     - MODERATE  F071_G012       aff=-7.76  LE=0.457  conf=50%  [good LE, ADMET pass, drug-sized]
+[17:13:49] ValidatorAgent     - MODERATE  F008_G012       aff=-7.76  LE=0.457  conf=50%  [good LE, ADMET pass, drug-sized]
+[17:13:49] ValidatorAgent     - MODERATE  F071_G011       aff=-7.46  LE=0.439  conf=50%  [good LE, ADMET pass, drug-sized]
+[17:13:49] ValidatorAgent     - MODERATE  F008_G011       aff=-7.46  LE=0.439  conf=50%  [good LE, ADMET pass, drug-sized]
+[17:13:49] ValidatorAgent     - MODERATE  F071_G013       aff=-6.74  LE=0.421  conf=50%  [good LE, ADMET pass, drug-sized]
+[17:13:49] ValidatorAgent     - MODERATE  F008_G013       aff=-6.74  LE=0.421  conf=50%  [good LE, ADMET pass, drug-sized]
+[17:13:49] ValidatorAgent     - MODERATE  F071_G006       aff=-6.40  LE=0.533  conf=50%  [good LE, ADMET pass, drug-sized]
+[17:13:49] ValidatorAgent     - MODERATE  F008_G006       aff=-6.40  LE=0.533  conf=50%  [good LE, ADMET pass, drug-sized]
+[17:13:49] ValidatorAgent     - MODERATE  F071_G014       aff=-6.16  LE=0.44  conf=50%  [good LE, ADMET pass, drug-sized]
+[17:13:49] ValidatorAgent     - MODERATE  F008_G014       aff=-6.16  LE=0.44  conf=50%  [good LE, ADMET pass, drug-sized]
+[17:13:49] ValidatorAgent     - MODERATE  F071_G008       aff=-6.03  LE=0.464  conf=50%  [good LE, ADMET pass, drug-sized]
+[17:13:49] ValidatorAgent     - MODERATE  F008_G008       aff=-6.03  LE=0.464  conf=50%  [good LE, ADMET pass, drug-sized]
+[17:13:49] ValidatorAgent     - MODERATE  F071_G007       aff=-6.01  LE=0.463  conf=50%  [good LE, ADMET pass, drug-sized]
+[17:13:49] ValidatorAgent     - MODERATE  F008_G007       aff=-6.01  LE=0.463  conf=50%  [good LE, ADMET pass, drug-sized]
+[17:13:49] Orchestrator     Iteration 1 best: confidence=80%  affinity=-10.71
+========================================================================
+[17:13:49] Orchestrator     ===  FINAL LEADERBOARD
+========================================================================
+[17:13:49] Orchestrator     Results saved -> agent_results_EGFR_20260402_170628.csv
+[17:13:49] Orchestrator     Leaderboard -> agent_leaderboard_EGFR_20260402_170628.json
+========================================================================
+========================================================================
+[17:13:49] Orchestrator     Campaign complete. Log -> agent_run_EGFR_20260402_170628.log

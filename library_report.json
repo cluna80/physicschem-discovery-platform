@@ -1,0 +1,167 @@
+{
+  "generated": "2026-04-13T07:56:19.200106",
+  "platform": "PhysicsChem Discovery Platform v3.0",
+  "statistics": {
+    "total": 12794,
+    "discoveries": 8082,
+    "evidence": 8367,
+    "novel": 97,
+    "campaigns": 185,
+    "targets": 14
+  },
+  "top_discoveries": [
+    {
+      "id": "CHEMBL250295",
+      "smiles": "C[C@@]1(N)Cc2cccc(c2)CC[C@H](c2ccccc2)NC(=O)c2cc(cc(N(c3ccccc3)S(C)(=O)=O)c2)COC1=O",
+      "target": "BACE1",
+      "dock_affinity": -12.24,
+      "hERG": 0.5,
+      "DILI": 0.2,
+      "sigma_value": 27.812,
+      "confidence": 0,
+      "is_novel": 0
+    },
+    {
+      "id": "CHEMBL400530",
+      "smiles": "CCCN(c1cc2cc(c1)C(=O)N[C@@H](c1ccccc1)CCc1cccc(c1)C[C@@](C)(N)C(=O)OC2)S(C)(=O)=O",
+      "target": "BACE1",
+      "dock_affinity": -11.832,
+      "hERG": 0.5,
+      "DILI": 0.2,
+      "sigma_value": 26.537,
+      "confidence": 0,
+      "is_novel": 0
+    },
+    {
+      "id": "CHEMBL247416",
+      "smiles": "CC1CC1CNc1cc(C(=O)N[C@@H](Cc2ccccc2)[C@@H](N)CCC(F)(F)F)cc(N(C)S(C)(=O)=O)n1",
+      "target": "BACE1",
+      "dock_affinity": -11.832,
+      "hERG": 0.5,
+      "DILI": 0.2,
+      "sigma_value": 26.537,
+      "confidence": 0,
+      "is_novel": 0
+    },
+    {
+      "id": "CHEMBL400438",
+      "smiles": "CN(c1cc2cc(c1)C(=O)N[C@@H](c1ccccc1)CCc1cccc(c1)C[C@@](C)(N)C(=O)OC2)S(C)(=O)=O",
+      "target": "BACE1",
+      "dock_affinity": -11.832,
+      "hERG": 0.5,
+      "DILI": 0.2,
+      "sigma_value": 26.537,
+      "confidence": 0,
+      "is_novel": 0
+    },
+    {
+      "id": "CHEMBL230245",
+      "smiles": "CC(C)S(=O)(=O)N(C)c1cc(C(=O)N[C@@H](Cc2ccccc2)[C@@H](N)CF)cc(NC[C@H]2C[C@@H]2C)n1",
+      "target": "BACE1",
+      "dock_affinity": -11.832,
+      "hERG": 0.5,
+      "DILI": 0.2,
+      "sigma_value": 26.537,
+      "confidence": 0,
+      "is_novel": 0
+    },
+    {
+      "id": "CHEMBL397275",
+      "smiles": "CCCN(CCC)C(=O)c1cc(C)cc(C(=O)N[C@@H](Cc2cc(F)cc(F)c2)[C@H](O)CNCc2cccc(CC)c2)c1",
+      "target": "BACE1",
+      "dock_affinity": -11.832,
+      "hERG": 0.5,
+      "DILI": 0.2,
+      "sigma_value": 26.537,
+      "confidence": 0,
+      "is_novel": 0
+    },
+    {
+      "id": "CHEMBL403727",
+      "smiles": "CCCN(CCC)C(=O)c1cc(C)cc(C(=O)N[C@@H](Cc2cc(F)cc(F)c2)[C@H](O)[C@H]2C[C@@H](Oc3ccccc3)CN2)c1",
+      "target": "BACE1",
+      "dock_affinity": -11.587200000000001,
+      "hERG": 0.5,
+      "DILI": 0.2,
+      "sigma_value": 25.772,
+      "confidence": 0,
+      "is_novel": 0
+    },
+    {
+      "id": "CHEMBL264322",
+      "smiles": "CCNc1cc(C(=O)N[C@@H](Cc2ccccc2)[C@H](O)CNCc2cccc(OC)c2)c(F)c(N2CCCCS2(=O)=O)c1",
+      "target": "BACE1",
+      "dock_affinity": -11.424000000000001,
+      "hERG": 0.5,
+      "DILI": 0.2,
+      "sigma_value": 25.262,
+      "confidence": 0,
+      "is_novel": 0
+    },
+    {
+      "id": "CHEMBL427884",
+      "smiles": "CN(C)S(=O)(=O)N(C)c1cc2cc(c1)C(=O)N[C@@H](c1ccccc1)CCc1cccc(c1)C[C@@](C)(N)C(=O)OC2",
+      "target": "BACE1",
+      "dock_affinity": -11.424000000000001,
+      "hERG": 0.5,
+      "DILI": 0.2,
+      "sigma_value": 25.262,
+      "confidence": 0,
+      "is_novel": 0
+    },
+    {
+      "id": "CHEMBL393733",
+      "smiles": "CCCCS(=O)(=O)C[C@@H](NC(=O)OC)C(=O)N[C@@H](Cc1cc(F)cc(F)c1)[C@H](O)CNCc1cccc(CC)c1",
+      "target": "BACE1",
+      "dock_affinity": -11.424000000000001,
+      "hERG": 0.5,
+      "DILI": 0.2,
+      "sigma_value": 25.262,
+      "confidence": 0,
+      "is_novel": 0
+    }
+  ],
+  "disease_coverage": {
+    "Neurological": {
+      "total": 1496,
+      "discoveries": 1487
+    },
+    "Infectious Disease": {
+      "total": 3915,
+      "discoveries": 3902
+    },
+    "Cardiovascular": {
+      "total": 1101,
+      "discoveries": 1097
+    },
+    "Oncology": {
+      "total": 2371,
+      "discoveries": 688
+    },
+    "Inflammation": {
+      "total": 875,
+      "discoveries": 808
+    },
+    "Unknown": {
+      "total": 221,
+      "discoveries": 87
+    },
+    "COVID-19": {
+      "total": 13,
+      "discoveries": 13
+    },
+    "Fragment": {
+      "total": 28,
+      "discoveries": 0
+    },
+    "Multi-target": {
+      "total": 2774,
+      "discoveries": 0
+    }
+  },
+  "novel_count_by_target": {
+    "OPT_20260413": 66,
+    "EGFR": 7,
+    "HIV_INTEGRASE_20260413": 24
+  }
+}

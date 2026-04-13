@@ -1,0 +1,20 @@
+QUANTUM DRUG DISCOVERY - 16 DRUGS
+==================================================
+
+Target: ASPIRIN (C9H8O4)
+Confidence: 47.2%
+
+Top 10 Candidates:
+1. Aspirin: 47.2%
+2. Metformin: 4.0%
+3. Celecoxib: 3.8%
+4. Acetaminophen: 3.8%
+5. Lisinopril: 3.8%
+6. Atorvastatin: 3.6%
+7. Caffeine: 3.6%
+8. Indomethacin: 3.5%
+9. Ketoprofen: 3.5%
+10. Omeprazole: 3.4%
+
+Random guess: 6.7%
+Quantum speedup: 4x

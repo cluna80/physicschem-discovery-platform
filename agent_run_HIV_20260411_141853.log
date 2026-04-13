@@ -1,0 +1,40 @@
+PhysicsChem Agent v2 - 2026-04-11 14:18:53.428795
+============================================================
+========================================================================
+  AUTONOMOUS DRUG DISCOVERY AGENT v2  -  HIV-1 Protease
+========================================================================
+[14:18:53] Orchestrator     Disease target  : HIV/AIDS
+[14:18:53] Orchestrator     Receptor        : hiv_protease.pdbqt
+[14:18:53] Orchestrator     Reference drug  : Darunavir (-10.4 kcal/mol)
+[14:18:53] Orchestrator     Fragment budget : 20
+[14:18:53] Orchestrator     Max iterations  : 1
+[14:18:53] Orchestrator     Confidence goal : 70%
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+[14:18:53] Orchestrator     ITERATION 1/1  (best confidence so far: 0%)
+------------------------------------------------------------------------
+[14:18:53] FragmentAgent    Loading fragment library (120 total)...
+[14:18:53] FragmentAgent    Selected 20 Ro3-compliant fragments (MW<=300, LogP<=3.5, HBD<=3)
+[14:18:53] FragmentAgent    PAINS filter removed 1 fragments
+[14:18:53] DockingAgent     Screening 19 fragments (exhaustiveness=4)...
+[14:18:53] DockingAgent     Threshold: affinity < -6.9 kcal/mol
+[14:18:55] DockingAgent       . F001     pyridine                         -2.65 kcal/mol  8 poses
+[14:18:56] DockingAgent       . F002     quinoline                        -3.89 kcal/mol  8 poses
+[14:18:58] DockingAgent       . F003     benzimidazole                    -3.76 kcal/mol  8 poses
+[14:19:00] DockingAgent       . F004     7-azaindole                      -3.63 kcal/mol  8 poses
+[14:19:02] DockingAgent       . F005     4-azaindole                      -3.69 kcal/mol  8 poses
+[14:19:04] DockingAgent       . F006     isoquinoline                     -3.60 kcal/mol  8 poses
+[14:19:07] DockingAgent       . F007     2-aminoquinoline                 -3.86 kcal/mol  8 poses
+[14:19:10] DockingAgent       . F008     4-aminoquinazoline               -3.76 kcal/mol  8 poses
+[14:19:12] DockingAgent       . F009     adenine                          -3.34 kcal/mol  8 poses
+[14:19:14] DockingAgent       . F010     quinoxaline                      -3.68 kcal/mol  8 poses
+[14:19:17] DockingAgent       . F011     1,6-naphthyridine                -3.72 kcal/mol  8 poses
+[14:19:19] DockingAgent       . F012     pyrrolo[2,3-b]pyridine           -3.10 kcal/mol  8 poses
+[14:19:21] DockingAgent       . F014     indazole-2H                      -3.64 kcal/mol  8 poses
+[14:19:24] DockingAgent       . F015     2-aminopurine                    -3.69 kcal/mol  8 poses
+[14:19:26] DockingAgent       . F016     aniline                          -3.00 kcal/mol  8 poses
+[14:19:28] DockingAgent       . F017     4-fluoroaniline                  -3.02 kcal/mol  8 poses
+[14:19:30] DockingAgent       . F018     3-fluoroaniline                  -2.98 kcal/mol  8 poses
+[14:19:33] DockingAgent       . F019     4-chloroaniline                  -3.03 kcal/mol  8 poses
+[14:19:36] DockingAgent       . F020     4-trifluoromethylaniline         -3.09 kcal/mol  7 poses
+[14:19:36] DockingAgent     Fragment screening complete: 0/19 hit threshold

@@ -1,0 +1,8 @@
+Mutant,Affinity,Resistance
+WT,-7.753,Baseline
+D30N,-5.2,High Resistance ⚠️
+I50V,-4.8,High Resistance ⚠️
+V82A,-5.5,High Resistance ⚠️
+I84V,-4.2,High Resistance ⚠️
+L90M,-4.5,High Resistance ⚠️
+D30N+V82A,-3.8,High Resistance ⚠️

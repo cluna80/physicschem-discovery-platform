@@ -1,0 +1,13 @@
+REMARK  Name = docking_results/cand_6.pdb
+REMARK  10 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C1_2  and  C20_31
+REMARK    2  A    between atoms: N1_3  and  C2_4
+REMARK    3  A    between atoms: C2_4  and  C3_5
+REMARK    4  A    between atoms: C2_4  and  C11_16
+REMARK    5  A    between atoms: C3_5  and  C4_6
+REMARK    6  A    between atoms: C8_10  and  C9_11
+REMARK    7  A    between atoms: C11_16  and  O2_17
+REMARK    8  A    between atoms: C11_16  and  C12_18
+REMARK    9  A    between atoms: C12_18  and  N2_19
+REMARK   10  A    between atoms: C13_20  and  C14_22

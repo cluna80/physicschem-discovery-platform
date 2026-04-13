@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Drug Discovery</title>
+<style>
+body { font-family: Arial; background: #f5f5f5; margin: 0; padding: 20px; }
+.container { max-width: 800px; margin: 0 auto; }
+.card { background: white; border-radius: 10px; padding: 20px; margin-bottom: 20px; }
+button { background: #667eea; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+select { padding: 8px; margin: 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="/">← Back</a>
+<h1>Drug Discovery</h1>
+<div class="card">
+<select id="num"><option value="5">5</option><option value="10">10</option><option value="20">20</option></select>
+<button onclick="run()">Run Quantum Discovery</button>
+<div id="results"></div>
+</div>
+</div>
+<script>
+async function run() {
+    const num = document.getElementById('num').value;
+    const div = document.getElementById('results');
+    div.innerHTML = '<p>Running...</p>';
+    const res = await fetch('/api/discover_drug', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({num_candidates: parseInt(num)})
+    });
+    const data = await res.json();
+    let html = `<h3>${data.count} candidates generated!</h3>`;
+    for (let c of data.candidates) {
+        html += `<div style="border:1px solid #ddd; padding:10px; margin:10px;">
+            <b>${c.id}</b><br>
+            MW: ${c.mw} | LogP: ${c.logp} | QED: ${c.qed}<br>
+            Best: ${c.best_target} (${c.best_binding} kcal/mol)<br>
+            SMILES: ${c.smiles.substring(0, 60)}...
+        </div>`;
+    }
+    div.innerHTML = html;
+}
+</script>
+</body>
+</html>

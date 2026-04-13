@@ -1,0 +1,212 @@
+[
+  {
+    "generation": 13,
+    "smiles": "[10*]C(CCN(C[17*])CCOC[18*])(c1ccc(Cl)cc1)c1ccc(NC(=O)C#C)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.976,
+    "mw": 483.0120000000003,
+    "logp": 2.7920000000000007
+  },
+  {
+    "generation": 14,
+    "smiles": "[10*]C(CCN(C[17*])CCOC[18*])(c1ccc(Cl)cc1)c1ccc(NC(=O)C#C)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.976,
+    "mw": 483.0120000000003,
+    "logp": 2.7920000000000007
+  },
+  {
+    "generation": 15,
+    "smiles": "[10*]C(CCN(C[17*])CCOC[18*])(c1ccc(Cl)cc1)c1ccc(NC(=O)C#C)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.976,
+    "mw": 483.0120000000003,
+    "logp": 2.7920000000000007
+  },
+  {
+    "generation": 16,
+    "smiles": "[10*]C(CCN(C[17*])CCOC[18*])(c1ccc(Cl)cc1)c1ccc(NC(=O)C#C)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.976,
+    "mw": 483.0120000000003,
+    "logp": 2.7920000000000007
+  },
+  {
+    "generation": 17,
+    "smiles": "[10*]C(CCN(C[17*])CCOC[18*])(c1ccc(Cl)cc1)c1ccc(NC(=O)C#C)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.976,
+    "mw": 483.0120000000003,
+    "logp": 2.7920000000000007
+  },
+  {
+    "generation": 18,
+    "smiles": "[10*]C(CCN(C[17*])CCOC[18*])(c1ccc(Cl)cc1)c1ccc(NC(=O)C#C)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.976,
+    "mw": 483.0120000000003,
+    "logp": 2.7920000000000007
+  },
+  {
+    "generation": 19,
+    "smiles": "[10*]C(CCN(C[17*])CCOC[18*])(c1ccc(Cl)cc1)c1ccc(NC(=O)C#C)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.976,
+    "mw": 483.0120000000003,
+    "logp": 2.7920000000000007
+  },
+  {
+    "generation": 20,
+    "smiles": "[10*]C(CCN(C[17*])CCOC[18*])(c1ccc(Cl)cc1)c1ccc(NC(=O)C#C)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.976,
+    "mw": 483.0120000000003,
+    "logp": 2.7920000000000007
+  },
+  {
+    "generation": 21,
+    "smiles": "[10*]C(CCN(C[17*])CCOC[18*])(c1ccc(Cl)cc1)c1ccc(NC(=O)C#C)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.976,
+    "mw": 483.0120000000003,
+    "logp": 2.7920000000000007
+  },
+  {
+    "generation": 22,
+    "smiles": "[10*]C(CCN(C[17*])CCOC[18*])(c1ccc(Cl)cc1)c1ccc(NC(=O)C#C)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.976,
+    "mw": 483.0120000000003,
+    "logp": 2.7920000000000007
+  },
+  {
+    "generation": 23,
+    "smiles": "[10*]C(CCN(C[17*])CCOC[18*])(c1ccc(Cl)cc1)c1ccc(NC(=O)C#C)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.976,
+    "mw": 483.0120000000003,
+    "logp": 2.7920000000000007
+  },
+  {
+    "generation": 24,
+    "smiles": "[10*]C(CCN(C[17*])CCOC[18*])(c1ccc(Cl)cc1)c1ccc(NC(=O)C#C)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.976,
+    "mw": 483.0120000000003,
+    "logp": 2.7920000000000007
+  },
+  {
+    "generation": 25,
+    "smiles": "[10*]C(CCN(C[17*])CCOC[18*])(c1ccc(Cl)cc1)c1ccc(NC(=O)C#C)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.976,
+    "mw": 483.0120000000003,
+    "logp": 2.7920000000000007
+  },
+  {
+    "generation": 26,
+    "smiles": "[10*]C(CCN(C[17*])CCOC[18*])(c1ccc(Cl)cc1)c1ccc(NC(=O)C#C)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.976,
+    "mw": 483.0120000000003,
+    "logp": 2.7920000000000007
+  },
+  {
+    "generation": 27,
+    "smiles": "[10*]C(CCN(C[17*])CCOC[18*])(c1ccc(Cl)cc1)c1ccc(NC(=O)C#C)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.976,
+    "mw": 483.0120000000003,
+    "logp": 2.7920000000000007
+  },
+  {
+    "generation": 28,
+    "smiles": "[10*]C(CCN(C[17*])CCOC[18*])(c1ccc(Cl)cc1)c1ccc(NC(=O)C#C)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.976,
+    "mw": 483.0120000000003,
+    "logp": 2.7920000000000007
+  },
+  {
+    "generation": 29,
+    "smiles": "[10*]C(CCN(C[17*])CCOC[18*])(c1ccc(Cl)cc1)c1ccc(NC(=O)C#C)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.976,
+    "mw": 483.0120000000003,
+    "logp": 2.7920000000000007
+  },
+  {
+    "generation": 30,
+    "smiles": "[10*]C(CCN(C[17*])CCOC[18*])(c1ccc(Cl)cc1)c1ccc(NC(=O)C#C)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.976,
+    "mw": 483.0120000000003,
+    "logp": 2.7920000000000007
+  },
+  {
+    "generation": 6,
+    "smiles": "[10*]C(CCN1CCOCC1)(c1ccc(Cl)cc1)c1ccc(NC=O)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.9658,
+    "mw": 458.9900000000002,
+    "logp": 2.7886000000000006
+  },
+  {
+    "generation": 7,
+    "smiles": "[10*]C(CCN1CCOCC1)(c1ccc(Cl)cc1)c1ccc(NC=O)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.9658,
+    "mw": 458.9900000000002,
+    "logp": 2.7886000000000006
+  },
+  {
+    "generation": 8,
+    "smiles": "[10*]C(CCN1CCOCC1)(c1ccc(Cl)cc1)c1ccc(NC=O)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.9658,
+    "mw": 458.9900000000002,
+    "logp": 2.7886000000000006
+  },
+  {
+    "generation": 9,
+    "smiles": "[10*]C(CCN1CCOCC1)(c1ccc(Cl)cc1)c1ccc(NC=O)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.9658,
+    "mw": 458.9900000000002,
+    "logp": 2.7886000000000006
+  },
+  {
+    "generation": 10,
+    "smiles": "[10*]C(CCN1CCOCC1)(c1ccc(Cl)cc1)c1ccc(NC=O)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.9658,
+    "mw": 458.9900000000002,
+    "logp": 2.7886000000000006
+  },
+  {
+    "generation": 11,
+    "smiles": "[10*]C(CCN1CCOCC1)(c1ccc(Cl)cc1)c1ccc(NC=O)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.9658,
+    "mw": 458.9900000000002,
+    "logp": 2.7886000000000006
+  },
+  {
+    "generation": 12,
+    "smiles": "[10*]C(CCN1CCOCC1)(c1ccc(Cl)cc1)c1ccc(NC=O)c(N)c1.[12*]N1CCOCC1",
+    "fitness": 342.9658,
+    "mw": 458.9900000000002,
+    "logp": 2.7886000000000006
+  },
+  {
+    "generation": 5,
+    "smiles": "[10*]C(CCN1CCOCO1)(c1ccc(Cl)cc1)c1ccc(NC=O)c(N)c1.[8*]=O",
+    "fitness": 342.928,
+    "mw": 390.8470000000001,
+    "logp": 2.7760000000000007
+  },
+  {
+    "generation": 4,
+    "smiles": "C#CNC(=O)C(CN(C)C)N(C)Cc1cc(-c2ccc3ccn(C)c3c2)c2ncncc2c1",
+    "fitness": 342.8278,
+    "mw": 440.55100000000016,
+    "logp": 2.857400000000001
+  },
+  {
+    "generation": 2,
+    "smiles": "[10*]C(CCN1CCOCC1)(c1ccc(Cl)cc1)c1ccc(NC=O)c(N)c1.[8*]=O",
+    "fitness": 342.7393,
+    "mw": 388.875,
+    "logp": 2.8869000000000016
+  },
+  {
+    "generation": 3,
+    "smiles": "[10*]C(CCN1CCOCC1)(c1ccc(Cl)cc1)c1ccc(NC=O)c(N)c1.[8*]=O",
+    "fitness": 342.7393,
+    "mw": 388.875,
+    "logp": 2.8869000000000016
+  },
+  {
+    "generation": 1,
+    "smiles": "Nc1cc(C(O)(CCN2CCOCC2)c2ccc(Cl)cc2)ccc1NC=O",
+    "fitness": 341.9461,
+    "mw": 389.88300000000004,
+    "logp": 2.4487000000000005
+  }
+]

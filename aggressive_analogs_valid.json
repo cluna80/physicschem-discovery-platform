@@ -1,0 +1,52 @@
+[
+  {
+    "name": "CURE_3G_003",
+    "smiles": "c1cc(F)c(F)c(F)c1C(=O)OOCC(=O)CCCF",
+    "modification": "Multiple fluorines on aromatic",
+    "description": "Stronger pi-stacking with electron withdrawal",
+    "valid": true,
+    "mw": 294.2,
+    "logp": 2.5111000000000008,
+    "predicted_affinity": -3.9699999999999998
+  },
+  {
+    "name": "CURE_3G_001",
+    "smiles": "c1ccccc1C(=O)OOCC(=O)CCCFC",
+    "modification": "Extended chain +1 carbon",
+    "description": "Better hydrophobic packing",
+    "valid": false,
+    "predicted_affinity": -4.27
+  },
+  {
+    "name": "CURE_3G_002",
+    "smiles": "c1ccccc1C(=O)OOCC(=O)CCCFCC",
+    "modification": "Extended chain +2 carbons",
+    "description": "Enhanced hydrophobic interactions",
+    "valid": false,
+    "predicted_affinity": -4.27
+  },
+  {
+    "name": "CURE_3G_004",
+    "smiles": "c1ccccc1C(=O)OOCC(=O)CCCFC(=O)N",
+    "modification": "Add amide group",
+    "description": "Hydrogen bonding interactions",
+    "valid": false,
+    "predicted_affinity": -4.27
+  },
+  {
+    "name": "CURE_3G_005",
+    "smiles": "c1ccccc1C(=O)OOCC(=O)CCCFC(F)F",
+    "modification": "Difluoromethyl",
+    "description": "Stronger electron withdrawal",
+    "valid": false,
+    "predicted_affinity": -4.27
+  },
+  {
+    "name": "CURE_3G_006",
+    "smiles": "c1ccccc1C(=O)OOCC(=O)CCCFC(F)(F)F",
+    "modification": "Trifluoromethyl (valid)",
+    "description": "Maximum electron withdrawal",
+    "valid": false,
+    "predicted_affinity": -4.27
+  }
+]

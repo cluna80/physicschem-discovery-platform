@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Maraviroc",
+    "class": "Entry Inhibitor",
+    "quantum_probability": 0.9988809670228788,
+    "quantum_score": 1.399216676916015
+  },
+  {
+    "name": "Raltegravir",
+    "class": "Integrase Inhibitor",
+    "quantum_probability": 6.521559542617781e-05,
+    "quantum_score": 0.7000456509167983
+  },
+  {
+    "name": "AZT",
+    "class": "NRTI",
+    "quantum_probability": 8.602890160644553e-07,
+    "quantum_score": 0.7000006022023112
+  },
+  {
+    "name": "Enfuvirtide",
+    "class": "Fusion Inhibitor",
+    "quantum_probability": 8.829651039281287e-07,
+    "quantum_score": 0.500000441482552
+  },
+  {
+    "name": "Darunavir",
+    "class": "Protease Inhibitor",
+    "quantum_probability": 1.0110522421509905e-06,
+    "quantum_score": 0.4000004044208969
+  },
+  {
+    "name": "Vicriviroc",
+    "class": "Entry Inhibitor",
+    "quantum_probability": 8.687206429530763e-07,
+    "quantum_score": 0.4000003474882572
+  },
+  {
+    "name": "Betulinic Acid",
+    "class": "Natural Product",
+    "quantum_probability": 8.758151706368523e-07,
+    "quantum_score": 0.30000026274455116
+  }
+]

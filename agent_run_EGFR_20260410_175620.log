@@ -1,0 +1,412 @@
+PhysicsChem Agent v2 - 2026-04-10 17:56:20.482419
+============================================================
+========================================================================
+  AUTONOMOUS DRUG DISCOVERY AGENT v2  -  EGFR Kinase (Wild-Type)
+========================================================================
+[17:56:20] Orchestrator     Disease target  : Non-Small Cell Lung Cancer
+[17:56:20] Orchestrator     Receptor        : cancer_egfr_agent/egfr_receptor.pdbqt
+[17:56:20] Orchestrator     Reference drug  : Erlotinib (-8.0 kcal/mol)
+[17:56:20] Orchestrator     Fragment budget : 20
+[17:56:20] Orchestrator     Max iterations  : 1
+[17:56:20] Orchestrator     Confidence goal : 70%
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+[17:56:20] Orchestrator     ITERATION 1/1  (best confidence so far: 0%)
+------------------------------------------------------------------------
+[17:56:20] FragmentAgent    Loading fragment library (120 total)...
+[17:56:20] FragmentAgent    Selected 20 Ro3-compliant fragments (MW<=300, LogP<=3.5, HBD<=3)
+[17:56:20] DockingAgent     Screening 20 fragments (exhaustiveness=4)...
+[17:56:20] DockingAgent     Threshold: affinity < -4.5 kcal/mol
+[17:56:25] DockingAgent       OK F071     4-aminoquinazoline-EGFR          -6.28 kcal/mol  8 poses
+[17:56:28] DockingAgent       . F001     pyridine                         -3.54 kcal/mol  8 poses
+[17:56:30] DockingAgent       OK F002     quinoline                        -5.99 kcal/mol  8 poses
+[17:56:32] DockingAgent       OK F003     benzimidazole                    -5.37 kcal/mol  8 poses
+[17:56:35] DockingAgent       OK F004     7-azaindole                      -5.43 kcal/mol  8 poses
+[17:56:38] DockingAgent       OK F005     4-azaindole                      -5.45 kcal/mol  8 poses
+[17:56:41] DockingAgent       OK F006     isoquinoline                     -5.72 kcal/mol  8 poses
+[17:56:44] DockingAgent       OK F007     2-aminoquinoline                 -6.16 kcal/mol  8 poses
+[17:56:44] DockingAgent       OK F008     4-aminoquinazoline               -6.28 kcal/mol  8 poses
+[17:56:47] DockingAgent       OK F009     adenine                          -5.25 kcal/mol  8 poses
+[17:56:50] DockingAgent       OK F010     quinoxaline                      -6.00 kcal/mol  8 poses
+[17:56:53] DockingAgent       OK F011     1,6-naphthyridine                -5.24 kcal/mol  8 poses
+[17:56:55] DockingAgent       OK F012     pyrrolo[2,3-b]pyridine           -4.89 kcal/mol  8 poses
+[17:56:58] DockingAgent       OK F014     indazole-2H                      -5.60 kcal/mol  8 poses
+[17:57:02] DockingAgent       OK F015     2-aminopurine                    -5.27 kcal/mol  8 poses
+[17:57:05] DockingAgent       OK F016     aniline                          -4.53 kcal/mol  8 poses
+[17:57:08] DockingAgent       OK F017     4-fluoroaniline                  -5.19 kcal/mol  8 poses
+[17:57:10] DockingAgent       OK F018     3-fluoroaniline                  -5.29 kcal/mol  8 poses
+[17:57:13] DockingAgent       OK F019     4-chloroaniline                  -4.77 kcal/mol  8 poses
+[17:57:17] DockingAgent       OK F020     4-trifluoromethylaniline         -6.14 kcal/mol  7 poses
+[17:57:17] DockingAgent     Fragment screening complete: 19/20 hit threshold
+[17:57:17] Orchestrator     Top 8 fragment hits selected for growing
+------------------------------------------------------------------------
+[17:57:17] Orchestrator     Fitting 5-sigma null distribution from fragment scores...
+[17:57:17] HiggsTest        Null distribution: affinity = -5.42 +/- 0.65 kcal/mol (n=20)
+[17:57:17] HiggsTest        Fragment null median: -5.40 kcal/mol
+[17:57:17] HiggsTest        5-sigma threshold: -8.68 kcal/mol
+[17:57:17] HiggsTest        3-sigma threshold: -7.38 kcal/mol
+------------------------------------------------------------------------
+[17:57:17] GrowingAgent     Growing 8 fragment hits -> target leads...
+[17:57:17] GrowingAgent     Strategy: R-group + pharmacophore tail attachment
+[17:57:17] GrowingAgent       Growing SEED_R1C1 (isobutyl-piperidine-aniline (R1-C1 proven)) - base affinity -7.52 kcal/mol
+[17:57:17] GrowingAgent         Generated 66 candidates -> docking top 15...
+[18:14:56] GrowingAgent         * SEED_R1C1_G009   -9.73 kcal/mol  MW=467.6  LogP=5.89
+[18:14:56] GrowingAgent         * SEED_R1C1_G010   -9.28 kcal/mol  MW=481.6  LogP=5.93
+[18:14:56] GrowingAgent         * SEED_R1C1_G016   -9.22 kcal/mol  MW=376.5  LogP=4.81
+[18:14:56] GrowingAgent         * SEED_R1C1_G004   -9.09 kcal/mol  MW=403.6  LogP=4.75
+[18:14:56] GrowingAgent         * SEED_R1C1_G015   -9.07 kcal/mol  MW=362.5  LogP=4.42
+[18:14:56] GrowingAgent         * SEED_R1C1_G003   -9.06 kcal/mol  MW=389.5  LogP=4.36
+[18:14:56] GrowingAgent         * SEED_R1C1_G008   -9.01 kcal/mol  MW=391.5  LogP=4.15
+[18:14:56] GrowingAgent         * SEED_R1C1_G011   -8.98 kcal/mol  MW=468.6  LogP=5.85
+[18:14:56] GrowingAgent         * SEED_R1C1_G006   -8.94 kcal/mol  MW=390.5  LogP=4.19
+[18:14:56] GrowingAgent         * SEED_R1C1_G012   -8.93 kcal/mol  MW=482.6  LogP=5.9
+[18:14:56] GrowingAgent         * SEED_R1C1_G001   -8.92 kcal/mol  MW=361.5  LogP=4.45
+[18:14:56] GrowingAgent         * SEED_R1C1_G020   -8.79 kcal/mol  MW=364.5  LogP=4.22
+[18:14:56] GrowingAgent         * SEED_R1C1_G030   -8.73 kcal/mol  MW=312.4  LogP=?
+[18:14:56] GrowingAgent         * SEED_R1C1_G007   -8.65 kcal/mol  MW=377.5  LogP=4.11
+[18:14:56] GrowingAgent         * SEED_R1C1_G005   -8.63 kcal/mol  MW=376.5  LogP=4.14
+[18:14:56] GrowingAgent       Growing SEED_R1C2 (decalin-fluorophenyl (R1-C2 proven)) - base affinity -8.48 kcal/mol
+[18:14:56] GrowingAgent         Generated 46 candidates -> docking top 15...
+[18:23:52] GrowingAgent         * SEED_R1C2_G040   -9.57 kcal/mol  MW=343.5  LogP=?
+[18:23:52] GrowingAgent         * SEED_R1C2_G042   -9.39 kcal/mol  MW=330.5  LogP=?
+[18:23:52] GrowingAgent         * SEED_R1C2_G036   -9.34 kcal/mol  MW=337.5  LogP=?
+[18:23:52] GrowingAgent         * SEED_R1C2_G012   -9.30 kcal/mol  MW=278.4  LogP=?
+[18:23:52] GrowingAgent         * SEED_R1C2_G011   -9.30 kcal/mol  MW=368.5  LogP=?
+[18:23:52] GrowingAgent         * SEED_R1C2_G041   -9.28 kcal/mol  MW=357.6  LogP=?
+[18:23:52] GrowingAgent         * SEED_R1C2_G007   -9.27 kcal/mol  MW=336.5  LogP=?
+[18:23:52] GrowingAgent         * SEED_R1C2_G010   -9.26 kcal/mol  MW=354.5  LogP=?
+[18:23:52] GrowingAgent         * SEED_R1C2_G039   -9.26 kcal/mol  MW=343.5  LogP=?
+[18:23:52] GrowingAgent         * SEED_R1C2_G008   -9.25 kcal/mol  MW=350.5  LogP=?
+[18:23:52] GrowingAgent         * SEED_R1C2_G024   -9.18 kcal/mol  MW=275.4  LogP=?
+[18:23:52] GrowingAgent         * SEED_R1C2_G044   -9.18 kcal/mol  MW=344.5  LogP=?
+[18:23:52] GrowingAgent         * SEED_R1C2_G031   -8.97 kcal/mol  MW=290.4  LogP=?
+[18:23:52] GrowingAgent         * SEED_R1C2_G025   -8.96 kcal/mol  MW=275.4  LogP=?
+[18:23:52] GrowingAgent         * SEED_R1C2_G017   -8.95 kcal/mol  MW=356.4  LogP=?
+[18:23:52] GrowingAgent       Growing SEED_R1C5 (decalin-hydroxyphenyl (R1-C5 proven)) - base affinity -8.34 kcal/mol
+[18:23:52] GrowingAgent         Generated 46 candidates -> docking top 15...
+[18:33:47] GrowingAgent         * SEED_R1C5_G010   -9.99 kcal/mol  MW=352.5  LogP=?
+[18:33:47] GrowingAgent         * SEED_R1C5_G006   -9.51 kcal/mol  MW=334.5  LogP=?
+[18:33:47] GrowingAgent         * SEED_R1C5_G007   -9.38 kcal/mol  MW=334.5  LogP=?
+[18:33:47] GrowingAgent         * SEED_R1C5_G009   -9.34 kcal/mol  MW=352.5  LogP=?
+[18:33:47] GrowingAgent         * SEED_R1C5_G037   -9.31 kcal/mol  MW=335.5  LogP=?
+[18:33:47] GrowingAgent         * SEED_R1C5_G036   -9.11 kcal/mol  MW=335.5  LogP=?
+[18:33:47] GrowingAgent         * SEED_R1C5_G042   -9.10 kcal/mol  MW=328.5  LogP=?
+[18:33:47] GrowingAgent         * SEED_R1C5_G031   -9.09 kcal/mol  MW=288.4  LogP=?
+[18:33:47] GrowingAgent         * SEED_R1C5_G008   -9.04 kcal/mol  MW=348.5  LogP=?
+[18:33:47] GrowingAgent         * SEED_R1C5_G002   -9.04 kcal/mol  MW=272.4  LogP=?
+[18:33:47] GrowingAgent         * SEED_R1C5_G041   -9.01 kcal/mol  MW=355.6  LogP=?
+[18:33:47] GrowingAgent         * SEED_R1C5_G044   -8.99 kcal/mol  MW=342.5  LogP=?
+[18:33:47] GrowingAgent         * SEED_R1C5_G013   -8.95 kcal/mol  MW=276.4  LogP=?
+[18:33:47] GrowingAgent         * SEED_R1C5_G040   -8.90 kcal/mol  MW=341.5  LogP=?
+[18:33:47] GrowingAgent         * SEED_R1C5_G039   -8.85 kcal/mol  MW=341.5  LogP=?
+[18:33:47] GrowingAgent       Growing F071 (4-aminoquinazoline-EGFR) - base affinity -6.28 kcal/mol
+[18:33:47] GrowingAgent         Generated 15 candidates -> docking top 15...
+[18:34:36] GrowingAgent         * F071_G004      -8.32 kcal/mol  MW=239.3  LogP=?
+[18:34:36] GrowingAgent       Growing F008 (4-aminoquinazoline) - base affinity -6.28 kcal/mol
+[18:34:36] GrowingAgent         Generated 15 candidates -> docking top 15...
+[18:34:36] GrowingAgent         * F008_G004      -8.32 kcal/mol  MW=239.3  LogP=?
+[18:34:36] GrowingAgent       Growing F007 (2-aminoquinoline) - base affinity -6.16 kcal/mol
+[18:34:36] GrowingAgent         Generated 70 candidates -> docking top 15...
+[18:41:10] GrowingAgent         * F007_G009     -10.81 kcal/mol  MW=378.4  LogP=5.36
+[18:41:10] GrowingAgent         * F007_G013     -10.53 kcal/mol  MW=393.5  LogP=4.87
+[18:41:10] GrowingAgent         * F007_G010     -10.40 kcal/mol  MW=392.5  LogP=5.4
+[18:41:10] GrowingAgent         * F007_G005      -9.96 kcal/mol  MW=302.3  LogP=3.12
+[18:41:10] GrowingAgent         * F007_G015      -9.81 kcal/mol  MW=394.4  LogP=5.29
+[18:41:10] GrowingAgent         * F007_G001      -9.79 kcal/mol  MW=287.3  LogP=3.62
+[18:41:10] GrowingAgent         * F007_G007      -9.54 kcal/mol  MW=303.3  LogP=3.55
+[18:41:10] GrowingAgent         * F007_G021      -9.44 kcal/mol  MW=275.3  LogP=3.55
+[18:41:10] GrowingAgent         * F007_G022      -9.40 kcal/mol  MW=289.3  LogP=3.23
+[18:41:10] GrowingAgent         * F007_G006      -9.38 kcal/mol  MW=316.4  LogP=3.16
+[18:41:10] GrowingAgent         * F007_G019      -9.36 kcal/mol  MW=288.4  LogP=3.77
+[18:41:10] GrowingAgent         * F007_G020      -9.35 kcal/mol  MW=302.4  LogP=4.16
+[18:41:10] GrowingAgent         * F007_G014      -9.32 kcal/mol  MW=407.5  LogP=4.91
+[18:41:10] GrowingAgent         * F007_G024      -9.31 kcal/mol  MW=290.3  LogP=3.65
+[18:41:10] GrowingAgent         * F007_G002      -9.29 kcal/mol  MW=301.4  LogP=3.66
+[18:41:10] GrowingAgent       Growing F020 (4-trifluoromethylaniline) - base affinity -6.14 kcal/mol
+[18:41:10] GrowingAgent         Generated 69 candidates -> docking top 15...
+[20:59:21] GrowingAgent         * F020_G012     -10.16 kcal/mol  MW=410.4  LogP=5.41
+[20:59:21] GrowingAgent         * F020_G009      -9.67 kcal/mol  MW=395.4  LogP=5.72
+[20:59:21] GrowingAgent         * F020_G010      -9.45 kcal/mol  MW=409.4  LogP=5.59
+[20:59:21] GrowingAgent         * F020_G006      -9.43 kcal/mol  MW=333.3  LogP=3.71
+[20:59:21] GrowingAgent         * F020_G011      -9.39 kcal/mol  MW=423.4  LogP=5.63
+[20:59:21] GrowingAgent         * F020_G014      -9.31 kcal/mol  MW=411.4  LogP=5.38
+[20:59:21] GrowingAgent         * F020_G015      -9.26 kcal/mol  MW=425.4  LogP=5.42
+[20:59:21] GrowingAgent         * F020_G001      -9.22 kcal/mol  MW=304.3  LogP=3.97
+[20:59:21] GrowingAgent         * F020_G005      -9.13 kcal/mol  MW=319.3  LogP=3.67
+[20:59:21] GrowingAgent         * F020_G004      -9.11 kcal/mol  MW=346.4  LogP=4.28
+[20:59:21] GrowingAgent         * F020_G013      -9.00 kcal/mol  MW=424.4  LogP=5.46
+[20:59:21] GrowingAgent         * F020_G018      -8.98 kcal/mol  MW=305.3  LogP=3.95
+[20:59:21] GrowingAgent         * F020_G002      -8.96 kcal/mol  MW=318.3  LogP=3.84
+[20:59:21] GrowingAgent         * F020_G003      -8.91 kcal/mol  MW=332.3  LogP=3.89
+[20:59:21] GrowingAgent         * F020_G017      -8.89 kcal/mol  MW=291.3  LogP=3.75
+[20:59:21] GrowingAgent       Growing F010 (quinoxaline) - base affinity -6.00 kcal/mol
+[20:59:21] GrowingAgent         Generated 74 candidates -> docking top 15...
+[21:05:14] GrowingAgent         * F010_G013     -10.44 kcal/mol  MW=378.4  LogP=5.36
+[21:05:14] GrowingAgent         * F010_G015      -9.98 kcal/mol  MW=379.4  LogP=5.33
+[21:05:14] GrowingAgent         * F010_G014      -9.51 kcal/mol  MW=392.5  LogP=5.4
+[21:05:14] GrowingAgent         * F010_G010      -9.50 kcal/mol  MW=377.5  LogP=5.53
+[21:05:14] GrowingAgent         * F010_G016      -9.48 kcal/mol  MW=393.5  LogP=5.37
+[21:05:14] GrowingAgent         * F010_G020      -9.42 kcal/mol  MW=287.4  LogP=4.29
+[21:05:14] GrowingAgent         * F010_G011      -9.36 kcal/mol  MW=391.5  LogP=5.58
+[21:05:14] GrowingAgent         * F010_G009      -9.35 kcal/mol  MW=363.4  LogP=5.67
+[21:05:14] GrowingAgent         * F010_G002      -9.31 kcal/mol  MW=286.3  LogP=3.79
+[21:05:14] GrowingAgent         * F010_G003      -9.29 kcal/mol  MW=300.4  LogP=3.83
+[21:05:14] GrowingAgent         * F010_G004      -9.25 kcal/mol  MW=314.4  LogP=4.22
+[21:05:14] GrowingAgent         * F010_G012      -9.20 kcal/mol  MW=405.5  LogP=5.97
+[21:05:14] GrowingAgent         * F010_G006      -9.17 kcal/mol  MW=301.4  LogP=3.66
+[21:05:14] GrowingAgent         * F010_G007      -9.14 kcal/mol  MW=288.3  LogP=3.58
+[21:05:14] GrowingAgent         * F010_G005      -9.13 kcal/mol  MW=287.3  LogP=3.62
+[21:05:14] GrowingAgent     Growth cycle complete: 120 compounds produced
+[21:05:14] ADMETAgent       Profiling 120 compounds (rule-based fallback)...
+[21:05:14] ADMETAgent         XX FAIL  F007_G009        
+[21:05:14] ADMETAgent         OK PASS  F007_G013        
+[21:05:14] ADMETAgent         XX FAIL  F010_G013        
+[21:05:14] ADMETAgent         XX FAIL  F007_G010        
+[21:05:14] ADMETAgent         XX FAIL  F020_G012        
+[21:05:14] ADMETAgent         XX FAIL  SEED_R1C5_G010   
+[21:05:14] ADMETAgent         XX FAIL  F010_G015        
+[21:05:14] ADMETAgent         OK PASS  F007_G005        
+[21:05:14] ADMETAgent         XX FAIL  F007_G015        
+[21:05:14] ADMETAgent         OK PASS  F007_G001        
+[21:05:14] ADMETAgent         XX FAIL  SEED_R1C1_G009   
+[21:05:14] ADMETAgent         XX FAIL  F020_G009        
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C2_G040   
+[21:05:15] ADMETAgent         OK PASS  F007_G007        
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C5_G006   
+[21:05:15] ADMETAgent         XX FAIL  F010_G014        
+[21:05:15] ADMETAgent         XX FAIL  F010_G010        
+[21:05:15] ADMETAgent         XX FAIL  F010_G016        
+[21:05:15] ADMETAgent         XX FAIL  F020_G010        
+[21:05:15] ADMETAgent         OK PASS  F007_G021        
+[21:05:15] ADMETAgent         OK PASS  F020_G006        
+[21:05:15] ADMETAgent         OK PASS  F010_G020        
+[21:05:15] ADMETAgent         OK PASS  F007_G022        
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C2_G042   
+[21:05:15] ADMETAgent         XX FAIL  F020_G011        
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C5_G007   
+[21:05:15] ADMETAgent         OK PASS  F007_G006        
+[21:05:15] ADMETAgent         XX FAIL  F010_G011        
+[21:05:15] ADMETAgent         OK PASS  F007_G019        
+[21:05:15] ADMETAgent         XX FAIL  F010_G009        
+[21:05:15] ADMETAgent         OK PASS  F007_G020        
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C2_G036   
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C5_G009   
+[21:05:15] ADMETAgent         OK PASS  F007_G014        
+[21:05:15] ADMETAgent         XX FAIL  F020_G014        
+[21:05:15] ADMETAgent         OK PASS  F010_G002        
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C5_G037   
+[21:05:15] ADMETAgent         OK PASS  F007_G024        
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C2_G012   
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C2_G011   
+[21:05:15] ADMETAgent         OK PASS  F007_G002        
+[21:05:15] ADMETAgent         OK PASS  F010_G003        
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C2_G041   
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C1_G010   
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C2_G007   
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C2_G010   
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C2_G039   
+[21:05:15] ADMETAgent         XX FAIL  F020_G015        
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C2_G008   
+[21:05:15] ADMETAgent         OK PASS  F010_G004        
+[21:05:15] ADMETAgent         OK PASS  SEED_R1C1_G016   
+[21:05:15] ADMETAgent         OK PASS  F020_G001        
+[21:05:15] ADMETAgent         XX FAIL  F010_G012        
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C2_G024   
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C2_G044   
+[21:05:15] ADMETAgent         OK PASS  F010_G006        
+[21:05:15] ADMETAgent         OK PASS  F010_G007        
+[21:05:15] ADMETAgent         OK PASS  F020_G005        
+[21:05:15] ADMETAgent         OK PASS  F010_G005        
+[21:05:15] ADMETAgent         OK PASS  F020_G004        
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C5_G036   
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C5_G042   
+[21:05:15] ADMETAgent         OK PASS  SEED_R1C5_G031   
+[21:05:15] ADMETAgent         OK PASS  SEED_R1C1_G004   
+[21:05:15] ADMETAgent         OK PASS  SEED_R1C1_G015   
+[21:05:15] ADMETAgent         OK PASS  SEED_R1C1_G003   
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C5_G008   
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C5_G002   
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C5_G041   
+[21:05:15] ADMETAgent         OK PASS  SEED_R1C1_G008   
+[21:05:15] ADMETAgent         XX FAIL  F020_G013        
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C5_G044   
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C1_G011   
+[21:05:15] ADMETAgent         OK PASS  F020_G018        
+[21:05:15] ADMETAgent         OK PASS  SEED_R1C2_G031   
+[21:05:15] ADMETAgent         OK PASS  F020_G002        
+[21:05:15] ADMETAgent         OK PASS  SEED_R1C2_G025   
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C2_G017   
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C5_G013   
+[21:05:15] ADMETAgent         OK PASS  SEED_R1C1_G006   
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C1_G012   
+[21:05:15] ADMETAgent         OK PASS  SEED_R1C1_G001   
+[21:05:15] ADMETAgent         OK PASS  F020_G003        
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C5_G040   
+[21:05:15] ADMETAgent         OK PASS  F020_G017        
+[21:05:15] ADMETAgent         XX FAIL  SEED_R1C5_G039   
+[21:05:15] ADMETAgent         OK PASS  SEED_R1C1_G020   
+[21:05:15] ADMETAgent         OK PASS  SEED_R1C1_G030   
+[21:05:15] ADMETAgent         OK PASS  SEED_R1C1_G007   
+[21:05:15] ADMETAgent         OK PASS  SEED_R1C1_G005   
+[21:05:15] ADMETAgent         OK PASS  F071_G004        
+[21:05:15] ADMETAgent         OK PASS  F008_G004        
+[21:05:15] ADMETAgent         OK PASS  F071_G003        
+[21:05:15] ADMETAgent         OK PASS  F008_G003        
+[21:05:15] ADMETAgent         OK PASS  F071_G013        
+[21:05:15] ADMETAgent         OK PASS  F008_G013        
+[21:05:15] ADMETAgent         OK PASS  F071_G012        
+[21:05:15] ADMETAgent         OK PASS  F008_G012        
+[21:05:15] ADMETAgent         OK PASS  F071_G014        
+[21:05:15] ADMETAgent         OK PASS  F008_G014        
+[21:05:15] ADMETAgent         OK PASS  F071_G008        
+[21:05:15] ADMETAgent         OK PASS  F008_G008        
+[21:05:15] ADMETAgent         OK PASS  F071_G009        
+[21:05:15] ADMETAgent         OK PASS  F008_G009        
+[21:05:15] ADMETAgent         OK PASS  F071_G015        
+[21:05:15] ADMETAgent         OK PASS  F008_G015        
+[21:05:15] ADMETAgent         OK PASS  F071_G010        
+[21:05:15] ADMETAgent         OK PASS  F008_G010        
+[21:05:15] ADMETAgent         OK PASS  F071_G011        
+[21:05:15] ADMETAgent         OK PASS  F008_G011        
+[21:05:15] ADMETAgent         OK PASS  F071_G006        
+[21:05:15] ADMETAgent         OK PASS  F008_G006        
+[21:05:15] ADMETAgent         OK PASS  F071_G005        
+[21:05:15] ADMETAgent         OK PASS  F008_G005        
+[21:05:15] ADMETAgent         OK PASS  F071_G007        
+[21:05:15] ADMETAgent         OK PASS  F008_G007        
+[21:05:15] ADMETAgent         OK PASS  F071_G002        
+[21:05:15] ADMETAgent         OK PASS  F008_G002        
+[21:05:15] ADMETAgent         OK PASS  F071_G001        
+[21:05:15] ADMETAgent         OK PASS  F008_G001        
+[21:05:15] ADMETAgent       ADMET filter: 71/120 compounds pass
+[21:05:15] ValidatorAgent   Validating 71 compounds...
+[21:05:15] ValidatorAgent     *** EXCELLENT  F007_G013       aff=-10.53  LE=0.351  conf=85%  [excellent docking, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     *** EXCELLENT  F007_G005       aff=-9.96  LE=0.433  conf=75%  [strong docking, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     *** EXCELLENT  F007_G001       aff=-9.79  LE=0.445  conf=75%  [strong docking, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     *** EXCELLENT  F007_G007       aff=-9.54  LE=0.415  conf=75%  [strong docking, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     *** EXCELLENT  F007_G021       aff=-9.44  LE=0.449  conf=75%  [strong docking, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     *** EXCELLENT  F020_G006       aff=-9.43  LE=0.393  conf=75%  [strong docking, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     *** EXCELLENT  F010_G020       aff=-9.42  LE=0.428  conf=75%  [strong docking, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     *** EXCELLENT  F007_G022       aff=-9.40  LE=0.427  conf=75%  [strong docking, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     *** EXCELLENT  F007_G006       aff=-9.38  LE=0.391  conf=75%  [strong docking, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     *** EXCELLENT  F007_G019       aff=-9.36  LE=0.425  conf=75%  [strong docking, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     *** EXCELLENT  F007_G020       aff=-9.35  LE=0.406  conf=75%  [strong docking, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     OK GOOD  F007_G014       aff=-9.32  LE=0.301  conf=55%  [strong docking, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     *** EXCELLENT  F010_G002       aff=-9.31  LE=0.423  conf=75%  [strong docking, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     *** EXCELLENT  F007_G024       aff=-9.31  LE=0.423  conf=75%  [strong docking, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     *** EXCELLENT  F007_G002       aff=-9.29  LE=0.404  conf=75%  [strong docking, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     *** EXCELLENT  F010_G003       aff=-9.29  LE=0.404  conf=75%  [strong docking, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     *** EXCELLENT  F010_G004       aff=-9.25  LE=0.386  conf=75%  [strong docking, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     OK GOOD  SEED_R1C1_G016  aff=-9.22  LE=0.329  conf=55%  [strong docking, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     *** EXCELLENT  F020_G001       aff=-9.22  LE=0.419  conf=75%  [strong docking, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     *** EXCELLENT  F010_G006       aff=-9.17  LE=0.399  conf=75%  [strong docking, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     *** EXCELLENT  F010_G007       aff=-9.14  LE=0.415  conf=75%  [strong docking, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     *** EXCELLENT  F020_G005       aff=-9.13  LE=0.397  conf=75%  [strong docking, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     *** EXCELLENT  F010_G005       aff=-9.13  LE=0.415  conf=75%  [strong docking, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     *** EXCELLENT  F020_G004       aff=-9.11  LE=0.365  conf=75%  [strong docking, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     *** EXCELLENT  SEED_R1C5_G031  aff=-9.09  LE=0.433  conf=75%  [strong docking, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     OK GOOD  SEED_R1C1_G004  aff=-9.09  LE=0.303  conf=55%  [strong docking, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     OK GOOD  SEED_R1C1_G015  aff=-9.07  LE=0.336  conf=55%  [strong docking, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     OK GOOD  SEED_R1C1_G003  aff=-9.06  LE=0.312  conf=55%  [strong docking, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     OK GOOD  SEED_R1C1_G008  aff=-9.01  LE=0.311  conf=55%  [strong docking, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     OK GOOD  F020_G018       aff=-8.98  LE=0.408  conf=65%  [meets threshold, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     OK GOOD  SEED_R1C2_G031  aff=-8.97  LE=0.427  conf=65%  [meets threshold, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     OK GOOD  F020_G002       aff=-8.96  LE=0.39  conf=65%  [meets threshold, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     OK GOOD  SEED_R1C2_G025  aff=-8.96  LE=0.448  conf=65%  [meets threshold, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  SEED_R1C1_G006  aff=-8.94  LE=0.308  conf=45%  [meets threshold, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  SEED_R1C1_G001  aff=-8.92  LE=0.33  conf=45%  [meets threshold, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     OK GOOD  F020_G003       aff=-8.91  LE=0.371  conf=65%  [meets threshold, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     OK GOOD  F020_G017       aff=-8.89  LE=0.423  conf=65%  [meets threshold, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  SEED_R1C1_G020  aff=-8.79  LE=0.325  conf=45%  [meets threshold, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     OK GOOD  SEED_R1C1_G030  aff=-8.73  LE=0.38  conf=65%  [meets threshold, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  SEED_R1C1_G007  aff=-8.65  LE=0.309  conf=45%  [meets threshold, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  SEED_R1C1_G005  aff=-8.63  LE=0.308  conf=45%  [meets threshold, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     OK GOOD  F071_G004       aff=-8.32  LE=0.462  conf=65%  [meets threshold, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     OK GOOD  F008_G004       aff=-8.32  LE=0.462  conf=65%  [meets threshold, good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F071_G003       aff=-7.94  LE=0.467  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F008_G003       aff=-7.94  LE=0.467  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F071_G013       aff=-7.77  LE=0.457  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F008_G013       aff=-7.77  LE=0.457  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F071_G012       aff=-7.46  LE=0.439  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F008_G012       aff=-7.46  LE=0.439  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F071_G014       aff=-6.76  LE=0.422  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F008_G014       aff=-6.76  LE=0.422  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F071_G008       aff=-6.39  LE=0.533  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F008_G008       aff=-6.39  LE=0.533  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F071_G009       aff=-6.13  LE=0.471  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F008_G009       aff=-6.13  LE=0.471  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F071_G015       aff=-6.10  LE=0.436  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F008_G015       aff=-6.10  LE=0.436  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F071_G010       aff=-6.05  LE=0.465  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F008_G010       aff=-6.05  LE=0.465  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F071_G011       aff=-6.00  LE=0.428  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F008_G011       aff=-6.00  LE=0.428  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F071_G006       aff=-5.95  LE=0.496  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F008_G006       aff=-5.95  LE=0.496  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F071_G005       aff=-5.92  LE=0.493  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F008_G005       aff=-5.92  LE=0.493  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F071_G007       aff=-5.82  LE=0.485  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F008_G007       aff=-5.82  LE=0.485  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F071_G002       aff=-5.78  LE=0.444  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F008_G002       aff=-5.78  LE=0.444  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F071_G001       aff=-5.66  LE=0.472  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] ValidatorAgent     - MODERATE  F008_G001       aff=-5.66  LE=0.472  conf=50%  [good LE, ADMET pass, drug-sized]
+[21:05:15] HiggsTest        Significance scan: 39 x 5-sigma discoveries, 10 x 3-sigma evidence candidates
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F007_G013 Z=7.83 aff=-10.53 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F007_G005 Z=6.95 aff=-9.96 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F007_G001 Z=6.69 aff=-9.79 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F007_G007 Z=6.32 aff=-9.54 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F007_G021 Z=6.15 aff=-9.44 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F020_G006 Z=6.14 aff=-9.43 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F010_G020 Z=6.13 aff=-9.42 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F007_G022 Z=6.10 aff=-9.40 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F007_G006 Z=6.07 aff=-9.38 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F007_G019 Z=6.04 aff=-9.36 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F007_G020 Z=6.02 aff=-9.35 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F010_G002 Z=5.96 aff=-9.31 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F007_G024 Z=5.96 aff=-9.31 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F007_G002 Z=5.92 aff=-9.29 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F010_G003 Z=5.92 aff=-9.29 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F010_G004 Z=5.87 aff=-9.25 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F020_G001 Z=5.83 aff=-9.22 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F010_G006 Z=5.75 aff=-9.17 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F010_G007 Z=5.70 aff=-9.14 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F020_G005 Z=5.69 aff=-9.13 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F010_G005 Z=5.68 aff=-9.13 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F020_G004 Z=5.66 aff=-9.11 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: SEED_R1C5_G031 Z=5.63 aff=-9.09 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F020_G018 Z=5.45 aff=-8.98 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: SEED_R1C2_G031 Z=5.45 aff=-8.97 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F020_G002 Z=5.42 aff=-8.96 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: SEED_R1C2_G025 Z=5.42 aff=-8.96 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F020_G003 Z=5.34 aff=-8.91 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F020_G017 Z=5.32 aff=-8.89 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: SEED_R1C1_G030 Z=5.07 aff=-8.73 kcal/mol ***
+[21:05:15] Orchestrator       ** 3-sigma evidence: F071_G004 Z=4.45
+[21:05:15] Orchestrator       ** 3-sigma evidence: F008_G004 Z=4.45
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: F007_G014 Z=5.97 aff=-9.32 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: SEED_R1C1_G016 Z=5.83 aff=-9.22 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: SEED_R1C1_G004 Z=5.62 aff=-9.09 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: SEED_R1C1_G015 Z=5.59 aff=-9.07 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: SEED_R1C1_G003 Z=5.58 aff=-9.06 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: SEED_R1C1_G008 Z=5.50 aff=-9.01 kcal/mol ***
+[21:05:15] Orchestrator       ** 3-sigma evidence: F071_G003 Z=3.86
+[21:05:15] Orchestrator       ** 3-sigma evidence: F008_G003 Z=3.86
+[21:05:15] Orchestrator       ** 3-sigma evidence: F071_G013 Z=3.60
+[21:05:15] Orchestrator       ** 3-sigma evidence: F008_G013 Z=3.60
+[21:05:15] Orchestrator       ** 3-sigma evidence: F071_G012 Z=3.12
+[21:05:15] Orchestrator       ** 3-sigma evidence: F008_G012 Z=3.12
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: SEED_R1C1_G006 Z=5.39 aff=-8.94 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: SEED_R1C1_G001 Z=5.36 aff=-8.92 kcal/mol ***
+[21:05:15] Orchestrator       *** 5-SIGMA DISCOVERY: SEED_R1C1_G020 Z=5.16 aff=-8.79 kcal/mol ***
+[21:05:15] Orchestrator       ** 3-sigma evidence: SEED_R1C1_G007 Z=4.95
+[21:05:15] Orchestrator       ** 3-sigma evidence: SEED_R1C1_G005 Z=4.92
+[21:05:15] Orchestrator     Iteration 1 best: confidence=85%  affinity=-10.53
+========================================================================
+[21:05:15] Orchestrator     ===  FINAL LEADERBOARD  (with 5-sigma significance)
+========================================================================
+[21:05:15] Orchestrator     Results saved -> agent_results_EGFR_20260410_175620.csv
+[21:05:15] Orchestrator     Leaderboard -> agent_leaderboard_EGFR_20260410_175620.json
+========================================================================
+========================================================================
+[21:05:15] Orchestrator     Campaign complete. Log -> agent_run_EGFR_20260410_175620.log

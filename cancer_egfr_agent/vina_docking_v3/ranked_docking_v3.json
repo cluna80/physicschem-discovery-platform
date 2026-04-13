@@ -1,0 +1,575 @@
+{
+  "mode": "variants",
+  "box_center": [
+    24.77,
+    9.19,
+    -0.0
+  ],
+  "box_size": [
+    22.0,
+    22.0,
+    22.0
+  ],
+  "results": [
+    {
+      "name": "original",
+      "note": "best from evolution \u2014 CYS751 6.35 \u00c5 (baseline)",
+      "smiles": "C#Cc1cnc2c(C#C)c(OCCN)c(-c3cc(C=CC(=O)NCC)c4ncncc4c3)c(C)c2n1",
+      "generation": "38",
+      "fitness": 184.0,
+      "mw": 477.0,
+      "logp": 3.0,
+      "docking": {
+        "success": true,
+        "best": -10.69,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -10.69,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -9.755,
+            "rmsd_lb": 2.444,
+            "rmsd_ub": 5.221
+          },
+          {
+            "mode": 3,
+            "affinity": -9.479,
+            "rmsd_lb": 1.767,
+            "rmsd_ub": 3.79
+          },
+          {
+            "mode": 4,
+            "affinity": -9.437,
+            "rmsd_lb": 2.753,
+            "rmsd_ub": 5.48
+          },
+          {
+            "mode": 5,
+            "affinity": -9.234,
+            "rmsd_lb": 4.389,
+            "rmsd_ub": 9.808
+          },
+          {
+            "mode": 6,
+            "affinity": -9.227,
+            "rmsd_lb": 2.731,
+            "rmsd_ub": 8.229
+          },
+          {
+            "mode": 7,
+            "affinity": -9.226,
+            "rmsd_lb": 3.14,
+            "rmsd_ub": 7.148
+          },
+          {
+            "mode": 8,
+            "affinity": -9.1,
+            "rmsd_lb": 4.257,
+            "rmsd_ub": 9.573
+          },
+          {
+            "mode": 9,
+            "affinity": -8.959,
+            "rmsd_lb": 2.675,
+            "rmsd_ub": 5.162
+          }
+        ],
+        "cys751_sg_dist": 6.28
+      }
+    },
+    {
+      "name": "linker+2",
+      "note": "+2 CH2 \u2014 maximum reach toward CYS751",
+      "smiles": "C#Cc1cnc2c(C#C)c(OCCN)c(-c3cc(C=CC(=O)NCCCC)c4ncncc4c3)c(C)c2n1",
+      "generation": "variant",
+      "fitness": 0.0,
+      "mw": 505.0,
+      "logp": 3.1,
+      "docking": {
+        "success": true,
+        "best": -10.4,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -10.4,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -9.626,
+            "rmsd_lb": 2.297,
+            "rmsd_ub": 5.148
+          },
+          {
+            "mode": 3,
+            "affinity": -9.52,
+            "rmsd_lb": 3.318,
+            "rmsd_ub": 8.363
+          },
+          {
+            "mode": 4,
+            "affinity": -9.338,
+            "rmsd_lb": 2.563,
+            "rmsd_ub": 5.41
+          },
+          {
+            "mode": 5,
+            "affinity": -9.322,
+            "rmsd_lb": 3.11,
+            "rmsd_ub": 5.416
+          },
+          {
+            "mode": 6,
+            "affinity": -9.132,
+            "rmsd_lb": 3.078,
+            "rmsd_ub": 7.155
+          },
+          {
+            "mode": 7,
+            "affinity": -9.092,
+            "rmsd_lb": 4.526,
+            "rmsd_ub": 10.66
+          },
+          {
+            "mode": 8,
+            "affinity": -8.973,
+            "rmsd_lb": 3.251,
+            "rmsd_ub": 5.625
+          },
+          {
+            "mode": 9,
+            "affinity": -8.97,
+            "rmsd_lb": 2.095,
+            "rmsd_ub": 4.566
+          }
+        ],
+        "cys751_sg_dist": 6.23
+      }
+    },
+    {
+      "name": "piperazine",
+      "note": "piperazine linker \u2014 -11.45 kcal/mol lead, non-covalent",
+      "smiles": "C#Cc1cnc2c(C#C)c(OCCN)c(-c3cc(C=CC(=O)N4CCNCC4)c4ncncc4c3)c(C)c2n1",
+      "generation": "variant",
+      "fitness": 0.0,
+      "mw": 517.0,
+      "logp": 2.85,
+      "docking": {
+        "success": true,
+        "best": -10.06,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -10.06,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -9.026,
+            "rmsd_lb": 1.853,
+            "rmsd_ub": 3.75
+          },
+          {
+            "mode": 3,
+            "affinity": -8.887,
+            "rmsd_lb": 2.911,
+            "rmsd_ub": 8.269
+          },
+          {
+            "mode": 4,
+            "affinity": -8.747,
+            "rmsd_lb": 2.06,
+            "rmsd_ub": 4.456
+          },
+          {
+            "mode": 5,
+            "affinity": -8.665,
+            "rmsd_lb": 2.243,
+            "rmsd_ub": 5.241
+          },
+          {
+            "mode": 6,
+            "affinity": -8.473,
+            "rmsd_lb": 3.589,
+            "rmsd_ub": 8.384
+          },
+          {
+            "mode": 7,
+            "affinity": -8.453,
+            "rmsd_lb": 2.863,
+            "rmsd_ub": 8.337
+          },
+          {
+            "mode": 8,
+            "affinity": -8.313,
+            "rmsd_lb": 4.716,
+            "rmsd_ub": 10.8
+          },
+          {
+            "mode": 9,
+            "affinity": -8.278,
+            "rmsd_lb": 4.468,
+            "rmsd_ub": 10.63
+          }
+        ],
+        "cys751_sg_dist": 6.25
+      }
+    },
+    {
+      "name": "dimethyl_linker",
+      "note": "N,N-dimethyl + longer chain \u2014 osimertinib-like solubilizer",
+      "smiles": "C#Cc1cnc2c(C#C)c(OCCN)c(-c3cc(C=CC(=O)NCCN(C)C)c4ncncc4c3)c(C)c2n1",
+      "generation": "variant",
+      "fitness": 0.0,
+      "mw": 504.0,
+      "logp": 3.2,
+      "docking": {
+        "success": true,
+        "best": -9.89,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -9.89,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -9.409,
+            "rmsd_lb": 2.094,
+            "rmsd_ub": 5.04
+          },
+          {
+            "mode": 3,
+            "affinity": -8.965,
+            "rmsd_lb": 3.39,
+            "rmsd_ub": 8.392
+          },
+          {
+            "mode": 4,
+            "affinity": -8.837,
+            "rmsd_lb": 2.396,
+            "rmsd_ub": 5.286
+          },
+          {
+            "mode": 5,
+            "affinity": -8.694,
+            "rmsd_lb": 4.927,
+            "rmsd_ub": 11.35
+          },
+          {
+            "mode": 6,
+            "affinity": -8.655,
+            "rmsd_lb": 3.625,
+            "rmsd_ub": 8.107
+          },
+          {
+            "mode": 7,
+            "affinity": -8.607,
+            "rmsd_lb": 3.27,
+            "rmsd_ub": 5.984
+          },
+          {
+            "mode": 8,
+            "affinity": -8.516,
+            "rmsd_lb": 2.421,
+            "rmsd_ub": 4.911
+          },
+          {
+            "mode": 9,
+            "affinity": -8.439,
+            "rmsd_lb": 3.393,
+            "rmsd_ub": 7.106
+          }
+        ],
+        "cys751_sg_dist": 6.28
+      }
+    },
+    {
+      "name": "E_acrylamide",
+      "note": "trans acrylamide \u2014 locks Michael acceptor geometry",
+      "smiles": "C#Cc1cnc2c(C#C)c(OCCN)c(-c3cc(/C=C/C(=O)NCC)c4ncncc4c3)c(C)c2n1",
+      "generation": "variant",
+      "fitness": 0.0,
+      "mw": 477.0,
+      "logp": 3.0,
+      "docking": {
+        "success": true,
+        "best": -8.922,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -8.922,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -8.026,
+            "rmsd_lb": 2.433,
+            "rmsd_ub": 5.213
+          },
+          {
+            "mode": 3,
+            "affinity": -7.936,
+            "rmsd_lb": 1.898,
+            "rmsd_ub": 3.876
+          },
+          {
+            "mode": 4,
+            "affinity": -7.912,
+            "rmsd_lb": 2.51,
+            "rmsd_ub": 5.501
+          },
+          {
+            "mode": 5,
+            "affinity": -7.82,
+            "rmsd_lb": 2.601,
+            "rmsd_ub": 8.229
+          },
+          {
+            "mode": 6,
+            "affinity": -7.75,
+            "rmsd_lb": 4.341,
+            "rmsd_ub": 9.649
+          },
+          {
+            "mode": 7,
+            "affinity": -7.636,
+            "rmsd_lb": 3.167,
+            "rmsd_ub": 7.093
+          },
+          {
+            "mode": 8,
+            "affinity": -7.508,
+            "rmsd_lb": 1.917,
+            "rmsd_ub": 4.454
+          },
+          {
+            "mode": 9,
+            "affinity": -7.488,
+            "rmsd_lb": 4.436,
+            "rmsd_ub": 9.825
+          }
+        ],
+        "cys751_sg_dist": 6.19
+      }
+    },
+    {
+      "name": "piperazine_acrylamide",
+      "note": "piperazine + acrylamide N-cap \u2014 best of both worlds",
+      "smiles": "C#Cc1cnc2c(C#C)c(OCCN)c(-c3cc(C=CC(=O)N4CCN(C=O)CC4)c4ncncc4c3)c(C)c2n1",
+      "generation": "variant",
+      "fitness": 0.0,
+      "mw": 571.0,
+      "logp": 2.9,
+      "docking": {
+        "success": true,
+        "best": -8.855,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -8.855,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -8.817,
+            "rmsd_lb": 2.752,
+            "rmsd_ub": 7.449
+          },
+          {
+            "mode": 3,
+            "affinity": -8.68,
+            "rmsd_lb": 2.663,
+            "rmsd_ub": 6.944
+          },
+          {
+            "mode": 4,
+            "affinity": -8.649,
+            "rmsd_lb": 2.189,
+            "rmsd_ub": 6.707
+          },
+          {
+            "mode": 5,
+            "affinity": -8.62,
+            "rmsd_lb": 2.447,
+            "rmsd_ub": 5.935
+          },
+          {
+            "mode": 6,
+            "affinity": -8.385,
+            "rmsd_lb": 2.56,
+            "rmsd_ub": 7.585
+          },
+          {
+            "mode": 7,
+            "affinity": -8.217,
+            "rmsd_lb": 1.887,
+            "rmsd_ub": 6.457
+          },
+          {
+            "mode": 8,
+            "affinity": -8.119,
+            "rmsd_lb": 2.791,
+            "rmsd_ub": 4.631
+          },
+          {
+            "mode": 9,
+            "affinity": -8.047,
+            "rmsd_lb": 2.688,
+            "rmsd_ub": 7.14
+          }
+        ],
+        "cys751_sg_dist": 6.28
+      }
+    },
+    {
+      "name": "linker+1",
+      "note": "+1 CH2 in amine linker \u2014 target CYS751 < 5 \u00c5",
+      "smiles": "C#Cc1cnc2c(C#C)c(OCCN)c(-c3cc(C=CC(=O)NCCC)c4ncncc4c3)c(C)c2n1",
+      "generation": "variant",
+      "fitness": 0.0,
+      "mw": 491.0,
+      "logp": 3.05,
+      "docking": {
+        "success": true,
+        "best": -8.835,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -8.835,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -8.442,
+            "rmsd_lb": 1.997,
+            "rmsd_ub": 4.586
+          },
+          {
+            "mode": 3,
+            "affinity": -8.429,
+            "rmsd_lb": 2.116,
+            "rmsd_ub": 4.612
+          },
+          {
+            "mode": 4,
+            "affinity": -8.259,
+            "rmsd_lb": 2.478,
+            "rmsd_ub": 5.26
+          },
+          {
+            "mode": 5,
+            "affinity": -8.18,
+            "rmsd_lb": 2.019,
+            "rmsd_ub": 3.978
+          },
+          {
+            "mode": 6,
+            "affinity": -8.144,
+            "rmsd_lb": 2.949,
+            "rmsd_ub": 5.204
+          },
+          {
+            "mode": 7,
+            "affinity": -8.089,
+            "rmsd_lb": 2.622,
+            "rmsd_ub": 5.109
+          },
+          {
+            "mode": 8,
+            "affinity": -8.01,
+            "rmsd_lb": 2.645,
+            "rmsd_ub": 5.343
+          },
+          {
+            "mode": 9,
+            "affinity": -7.993,
+            "rmsd_lb": 2.192,
+            "rmsd_ub": 5.776
+          }
+        ],
+        "cys751_sg_dist": 6.29
+      }
+    },
+    {
+      "name": "warhead_flipped",
+      "note": "acrylamide on N-side of phthalazine \u2014 different vector toward CYS751",
+      "smiles": "C#Cc1cnc2c(C#C)c(OCCN)c(-c3cc(NCC(=O)C=C)c4ncncc4c3)c(C)c2n1",
+      "generation": "variant",
+      "fitness": 0.0,
+      "mw": 477.0,
+      "logp": 3.0,
+      "docking": {
+        "success": true,
+        "best": -8.372,
+        "poses": [
+          {
+            "mode": 1,
+            "affinity": -8.372,
+            "rmsd_lb": 0.0,
+            "rmsd_ub": 0.0
+          },
+          {
+            "mode": 2,
+            "affinity": -7.954,
+            "rmsd_lb": 1.97,
+            "rmsd_ub": 4.575
+          },
+          {
+            "mode": 3,
+            "affinity": -7.672,
+            "rmsd_lb": 3.263,
+            "rmsd_ub": 6.725
+          },
+          {
+            "mode": 4,
+            "affinity": -7.656,
+            "rmsd_lb": 2.524,
+            "rmsd_ub": 5.527
+          },
+          {
+            "mode": 5,
+            "affinity": -7.52,
+            "rmsd_lb": 2.507,
+            "rmsd_ub": 5.869
+          },
+          {
+            "mode": 6,
+            "affinity": -7.406,
+            "rmsd_lb": 2.055,
+            "rmsd_ub": 3.76
+          },
+          {
+            "mode": 7,
+            "affinity": -7.237,
+            "rmsd_lb": 2.438,
+            "rmsd_ub": 8.088
+          },
+          {
+            "mode": 8,
+            "affinity": -7.217,
+            "rmsd_lb": 4.569,
+            "rmsd_ub": 9.998
+          },
+          {
+            "mode": 9,
+            "affinity": -7.073,
+            "rmsd_lb": 4.398,
+            "rmsd_ub": 9.144
+          }
+        ],
+        "cys751_sg_dist": 6.27
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "CURE_5G_001",
+    "modification": "Add THF ring",
+    "smiles": "c1cc(F)c(F)c(F)c1C(=O)NCC(O)CNC(=O)CCCFCCOCCO",
+    "expected_boost": 0.6
+  },
+  {
+    "name": "CURE_5G_002",
+    "modification": "Add sulfonamide-like group",
+    "smiles": "c1cc(F)c(F)c(F)c1C(=O)NCC(O)CNC(=O)CCCFS(=O)(=O)N",
+    "expected_boost": 0.5
+  },
+  {
+    "name": "CURE_5G_003",
+    "modification": "Extended chain + more fluorines",
+    "smiles": "c1cc(F)c(F)c(F)c1C(=O)NCC(O)CNC(=O)CCCCF",
+    "expected_boost": 0.4
+  }
+]

@@ -1,0 +1,66 @@
+QDD-4399f716 - EXPANDED MULTI-TARGET TESTING RESULTS
+================================================================================
+
+Date: 2026-03-25 11:54:28
+SMILES: CC1=CC=C(C=C1)NS(=O)(=O)C2=CC=C(C=C2)C3=CC=NN3C4=CC=NC=C4
+
+Properties:
+  MW: 390.5 g/mol
+  LogP: 4.04
+  QED: 0.558
+
+Binding Predictions:
+------------------------------------------------------------
+ACE             | High Blood Pressure (Lisinopril)         | -10.22 kcal/mol
+Proteasome      | Multiple Myeloma (Bortezomib)            |  -9.97 kcal/mol
+HIV             | HIV/AIDS (Ritonavir)                     |  -9.87 kcal/mol
+JAK             | Rheumatoid Arthritis (Tofacitinib)       |  -9.82 kcal/mol
+Antibiotic      | Bacterial Infections                     |  -9.77 kcal/mol
+BRAF            | Cancer - Melanoma (Vemurafenib)          |  -9.72 kcal/mol
+HDAC            | Cancer/Neurological (Vorinostat)         |  -9.72 kcal/mol
+AKT             | Cancer - Multiple (Capivasertib)         |  -9.67 kcal/mol
+PARP            | Cancer - Ovarian (Olaparib)              |  -9.67 kcal/mol
+PD1             | Cancer Immunotherapy (Pembrolizumab)     |  -9.67 kcal/mol
+Antiviral       | Viral Infections                         |  -9.67 kcal/mol
+MTOR            | Cancer - Renal (Everolimus)              |  -9.62 kcal/mol
+CTLA4           | Cancer Immunotherapy (Ipilimumab)        |  -9.62 kcal/mol
+Antifungal      | Fungal Infections                        |  -9.62 kcal/mol
+PI3K            | Cancer - Breast (Alpelisib)              |  -9.57 kcal/mol
+CDK             | Cancer - Breast (Palbociclib)            |  -9.57 kcal/mol
+ATPase          | Heart Failure                            |  -9.57 kcal/mol
+SERCA           | Heart Disease                            |  -9.57 kcal/mol
+Antiparasitic   | Parasitic Infections                     |  -9.57 kcal/mol
+PDL1            | Cancer Immunotherapy (Atezolizumab)      |  -9.52 kcal/mol
+BRD4            | Inflammation/Autoimmune (JQ1)            |  -9.52 kcal/mol
+MEK             | Cancer - Melanoma (Trametinib)           |  -9.52 kcal/mol
+BTK             | Lymphoma/Leukemia (Ibrutinib)            |  -9.37 kcal/mol
+GPCR            | Neurological Disorders                   |  -9.32 kcal/mol
+Diabetes        | Type 2 Diabetes (Metformin)              |  -9.32 kcal/mol
+EGFR            | Cancer - Lung/Breast (Erlotinib)         |  -9.32 kcal/mol
+Parkinsons      | Parkinson's Disease                      |  -9.27 kcal/mol
+HMGCR           | High Cholesterol (Atorvastatin)          |  -9.27 kcal/mol
+Alzheimers      | Alzheimer's Disease                      |  -9.22 kcal/mol
+Autoimmune      | Autoimmune Diseases                      |  -9.07 kcal/mol
+COX2            | Inflammation/Pain (Celecoxib)            |  -8.82 kcal/mol
+
+New Discoveries:
+  Proteasome: Multiple Myeloma (Bortezomib) (-9.97 kcal/mol)
+  JAK: Rheumatoid Arthritis (Tofacitinib) (-9.82 kcal/mol)
+  Antibiotic: Bacterial Infections (-9.77 kcal/mol)
+  BRAF: Cancer - Melanoma (Vemurafenib) (-9.72 kcal/mol)
+  HDAC: Cancer/Neurological (Vorinostat) (-9.72 kcal/mol)
+  AKT: Cancer - Multiple (Capivasertib) (-9.67 kcal/mol)
+  PARP: Cancer - Ovarian (Olaparib) (-9.67 kcal/mol)
+  PD1: Cancer Immunotherapy (Pembrolizumab) (-9.67 kcal/mol)
+  Antiviral: Viral Infections (-9.67 kcal/mol)
+  MTOR: Cancer - Renal (Everolimus) (-9.62 kcal/mol)
+  CTLA4: Cancer Immunotherapy (Ipilimumab) (-9.62 kcal/mol)
+  Antifungal: Fungal Infections (-9.62 kcal/mol)
+  PI3K: Cancer - Breast (Alpelisib) (-9.57 kcal/mol)
+  CDK: Cancer - Breast (Palbociclib) (-9.57 kcal/mol)
+  ATPase: Heart Failure (-9.57 kcal/mol)
+  SERCA: Heart Disease (-9.57 kcal/mol)
+  Antiparasitic: Parasitic Infections (-9.57 kcal/mol)
+  PDL1: Cancer Immunotherapy (Atezolizumab) (-9.52 kcal/mol)
+  BRD4: Inflammation/Autoimmune (JQ1) (-9.52 kcal/mol)
+  MEK: Cancer - Melanoma (Trametinib) (-9.52 kcal/mol)

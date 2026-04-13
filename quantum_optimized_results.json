@@ -1,0 +1,58 @@
+[
+  {
+    "ligand": "ligand_023.pdbqt",
+    "classical_affinity": -3.925,
+    "quantum_probability": 0.19180891896563004,
+    "hybrid_score": -4.677850006940098,
+    "ranking_improvement": 0
+  },
+  {
+    "ligand": "ligand_016.pdbqt",
+    "classical_affinity": -3.913,
+    "quantum_probability": 0.19273002729070862,
+    "hybrid_score": -4.667152596788543,
+    "ranking_improvement": 0
+  },
+  {
+    "ligand": "ligand_078.pdbqt",
+    "classical_affinity": -3.908,
+    "quantum_probability": 0.19311365701109692,
+    "hybrid_score": -4.662688171599367,
+    "ranking_improvement": 0
+  },
+  {
+    "ligand": "ligand_017.pdbqt",
+    "classical_affinity": -3.89,
+    "quantum_probability": 0.1944939023018746,
+    "hybrid_score": -4.646581279954292,
+    "ranking_improvement": 0
+  },
+  {
+    "ligand": "ligand_055.pdbqt",
+    "classical_affinity": -3.845,
+    "quantum_probability": 0.19793867881974822,
+    "hybrid_score": -4.606074220061932,
+    "ranking_improvement": 0
+  },
+  {
+    "ligand": "ligand_014.pdbqt",
+    "classical_affinity": -4.199,
+    "quantum_probability": 0.007429869510130338,
+    "hybrid_score": -4.230198022073036,
+    "ranking_improvement": 0
+  },
+  {
+    "ligand": "ligand_008.pdbqt",
+    "classical_affinity": -3.997,
+    "quantum_probability": 0.010959657410593645,
+    "hybrid_score": -4.040805750670143,
+    "ranking_improvement": 0
+  },
+  {
+    "ligand": "ligand_092.pdbqt",
+    "classical_affinity": -3.967,
+    "quantum_probability": 0.011525288690217399,
+    "hybrid_score": -4.012720820234092,
+    "ranking_improvement": 0
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "name": "CURE_7G_003",
+    "mod": "Naphthalene + bis-THF",
+    "score": 0.9,
+    "quantum_prob": 0.010394036768213427,
+    "quantum_score": 0.9093546330913921
+  },
+  {
+    "name": "CURE_7G_001",
+    "mod": "Naphthalene + THF",
+    "score": 0.7,
+    "quantum_prob": 0.01987569681988288,
+    "quantum_score": 0.7139129877739179
+  },
+  {
+    "name": "CURE_7G_006",
+    "mod": "+ diol linker",
+    "score": 0.7,
+    "quantum_prob": 0.01987569681988287,
+    "quantum_score": 0.7139129877739179
+  },
+  {
+    "name": "CURE_7G_002",
+    "mod": "+ chiral hydroxymethyl",
+    "score": 0.6,
+    "quantum_prob": 0.17258791733677173,
+    "quantum_score": 0.703552750402063
+  },
+  {
+    "name": "CURE_7G_005",
+    "mod": "Fluoronaphthyl",
+    "score": 0.6,
+    "quantum_prob": 0.17258791733677173,
+    "quantum_score": 0.703552750402063
+  },
+  {
+    "name": "CURE_7G_004",
+    "mod": "2-Naphthyl isomer",
+    "score": 0.5,
+    "quantum_prob": 0.18718912530977147,
+    "quantum_score": 0.5935945626548857
+  },
+  {
+    "name": "CURE_7G_007",
+    "mod": "THP ring",
+    "score": 0.4,
+    "quantum_prob": 0.20162838101529187,
+    "quantum_score": 0.4806513524061168
+  },
+  {
+    "name": "CURE_7G_008",
+    "mod": "Isobutyl",
+    "score": 0.3,
+    "quantum_prob": 0.2158612285934144,
+    "quantum_score": 0.3647583685780243
+  },
+  {
+    "name": "CURE_7G_009",
+    "mod": "Benzyl",
+    "score": 0.4
+  },
+  {
+    "name": "CURE_7G_010",
+    "mod": "Hydroxynaphthyl",
+    "score": 0.5
+  }
+]

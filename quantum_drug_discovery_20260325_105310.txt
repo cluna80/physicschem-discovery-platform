@@ -1,0 +1,19 @@
+QUANTUM DRUG DISCOVERY - NOVEL MOLECULES
+============================================================
+
+Date: 2026-03-25 10:53:10
+Molecules generated: 1000
+
+BEST NOVEL DRUG CANDIDATE:
+ID: 336a3b9c
+Drug Score: 100.0/100
+Quantum Score: 100.0/100
+
+Properties:
+  Molecular Weight: 226 g/mol
+  LogP: 1.25
+  H-bond Donors: 0
+  H-bond Acceptors: 4
+  Binding Affinity: -6.27 kcal/mol
+  Toxicity: 22.90%
+  Solubility: 81.40%

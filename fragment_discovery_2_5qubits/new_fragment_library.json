@@ -1,0 +1,204 @@
+{
+  "cores": [
+    {
+      "name": "Quinazoline",
+      "smiles": "c1ccc2c(c1)ncnc2",
+      "score": 0.8587083333333334,
+      "mw": 130.15,
+      "rings": 2
+    },
+    {
+      "name": "Cinnoline",
+      "smiles": "c1ccc2c(c1)ccnn2",
+      "score": 0.8587083333333333,
+      "mw": 130.14999999999998,
+      "rings": 2
+    },
+    {
+      "name": "Benzothiophene",
+      "smiles": "c1ccc2c(c1)ccs2",
+      "score": 0.8355075,
+      "mw": 134.20299999999997,
+      "rings": 2
+    },
+    {
+      "name": "Benzofuran",
+      "smiles": "c1ccc2c(c1)cco2",
+      "score": 0.7953374999999999,
+      "mw": 118.13499999999996,
+      "rings": 2
+    },
+    {
+      "name": "Triazine",
+      "smiles": "c1ncncn1",
+      "score": 0.5026949999999999,
+      "mw": 81.07799999999999,
+      "rings": 1
+    },
+    {
+      "name": "Pyrazine",
+      "smiles": "c1cnccn1",
+      "score": 0.500225,
+      "mw": 80.09,
+      "rings": 1
+    },
+    {
+      "name": "Pyridazine",
+      "smiles": "c1ccnnc1",
+      "score": 0.5002249999999999,
+      "mw": 80.08999999999999,
+      "rings": 1
+    },
+    {
+      "name": "Thiazole",
+      "smiles": "c1cscn1",
+      "score": 0.47949416666666667,
+      "mw": 85.131,
+      "rings": 1
+    }
+  ],
+  "p1_groups": [
+    {
+      "name": "Iodo",
+      "smiles": "Cc1cccc(I)c1",
+      "score": 0.9088212,
+      "mw": 218.037,
+      "logp": 2.5996200000000007
+    },
+    {
+      "name": "Trifluoromethoxy",
+      "smiles": "Cc1cccc(OC(F)(F)F)c1",
+      "score": 0.8711812000000001,
+      "mw": 176.137,
+      "logp": 2.893620000000001
+    },
+    {
+      "name": "tert-Butyl",
+      "smiles": "Cc1cccc(C(C)(C)C)c1",
+      "score": 0.8664504000000002,
+      "mw": 148.249,
+      "logp": 3.2925200000000023
+    },
+    {
+      "name": "Bromo",
+      "smiles": "Cc1cccc(Br)c1",
+      "score": 0.8494112,
+      "mw": 171.037,
+      "logp": 2.7575200000000013
+    },
+    {
+      "name": "Isopropyl",
+      "smiles": "Cc1cccc(C(C)C)c1",
+      "score": 0.8265972000000001,
+      "mw": 134.222,
+      "logp": 3.1184200000000013
+    },
+    {
+      "name": "Ethyl",
+      "smiles": "Cc1cccc(CC)c1",
+      "score": 0.748054,
+      "mw": 120.195,
+      "logp": 2.5574200000000005
+    },
+    {
+      "name": "Methylsulfonyl",
+      "smiles": "Cc1cccc(S(=O)(=O)C)c1",
+      "score": 0.7122248,
+      "mw": 170.233,
+      "logp": 1.3985200000000002
+    },
+    {
+      "name": "Nitro",
+      "smiles": "Cc1cccc([N+](=O)[O-])c1",
+      "score": 0.7097428,
+      "mw": 137.138,
+      "logp": 1.90322
+    }
+  ],
+  "p2_groups": [
+    {
+      "name": "Morpholine",
+      "smiles": "C1COCCN1",
+      "score": 0.6404066666666666,
+      "mw": 87.122,
+      "rings": 1
+    },
+    {
+      "name": "Piperazine",
+      "smiles": "C1CNCCN1",
+      "score": 0.6371266666666666,
+      "mw": 86.138,
+      "rings": 1
+    },
+    {
+      "name": "Tetrahydropyran",
+      "smiles": "C1CCOCC1",
+      "score": 0.6371133333333334,
+      "mw": 86.134,
+      "rings": 1
+    },
+    {
+      "name": "Piperidine",
+      "smiles": "C1CCNCC1",
+      "score": 0.6338333333333332,
+      "mw": 85.15,
+      "rings": 1
+    },
+    {
+      "name": "Cyclohexyl",
+      "smiles": "C1CCCCC1",
+      "score": 0.6305400000000001,
+      "mw": 84.162,
+      "rings": 1
+    },
+    {
+      "name": "Cyclopentyl",
+      "smiles": "C1CCCC1",
+      "score": 0.5837833333333333,
+      "mw": 70.135,
+      "rings": 1
+    },
+    {
+      "name": "Oxetane",
+      "smiles": "C1COC1",
+      "score": 0.5436,
+      "mw": 58.07999999999999,
+      "rings": 1
+    },
+    {
+      "name": "Azetidine",
+      "smiles": "C1CNC1",
+      "score": 0.5403199999999999,
+      "mw": 57.096,
+      "rings": 1
+    }
+  ],
+  "linkers": [
+    {
+      "name": "Thioamide",
+      "smiles": "C(=S)N",
+      "score": 0.6404264630850381
+    },
+    {
+      "name": "Carbamate",
+      "smiles": "OC(=O)N",
+      "score": 0.5994212467140423
+    },
+    {
+      "name": "Sulfonamide",
+      "smiles": "S(=O)(=O)N",
+      "score": 0.5216686576766281
+    },
+    {
+      "name": "Urea",
+      "smiles": "NC(=O)N",
+      "score": 0.3671617611283648
+    },
+    {
+      "name": "Sulfoxide",
+      "smiles": "S(=O)",
+      "score": 0.35365233725145917
+    }
+  ],
+  "timestamp": "2026-03-28T09:33:03.154761"
+}

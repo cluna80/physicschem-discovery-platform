@@ -1,0 +1,402 @@
+[
+  {
+    "ligand": "ligand_001.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_002.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_003.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_004.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_005.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_006.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_007.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_008.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_009.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_010.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_011.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_012.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_013.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_014.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_015.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_016.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_017.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_018.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_019.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_020.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_021.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_022.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_023.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_024.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_025.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_026.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_027.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_028.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_029.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_030.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_031.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_032.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_033.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_034.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_035.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_036.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_037.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_038.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_039.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_040.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_041.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_042.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_043.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_044.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_045.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_046.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_047.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_048.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_049.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_050.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_051.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_052.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_053.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_054.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_055.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_056.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_057.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_058.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_059.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_060.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_061.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_062.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_063.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_064.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_065.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_066.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_067.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_068.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_069.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_070.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_071.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_072.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_073.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_074.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_075.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_076.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_077.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_078.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_079.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_080.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_081.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_082.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_083.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_084.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_085.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_086.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_087.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_088.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_089.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_090.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_091.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_092.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_093.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_094.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_095.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_096.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_097.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_098.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_099.pdbqt",
+    "affinity": 10.0
+  },
+  {
+    "ligand": "ligand_100.pdbqt",
+    "affinity": 10.0
+  }
+]

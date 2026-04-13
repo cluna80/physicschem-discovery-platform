@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Darunavir_scaffold",
+    "smiles": "CC(C)C1=CC=C(C=C1)COC(=O)N2CC(C3=CC=CC=C3)CC2C(=O)NC(CC4=CC=CC=C4)C(O)CN5CCOCC5",
+    "description": "Darunavir-like - potent HIV inhibitor",
+    "expected_range": -8.0
+  },
+  {
+    "name": "Saquinavir_scaffold",
+    "smiles": "CC(C)C1=CC=C(C=C1)CNC(=O)C2CC3=CC=CC=C3CN2C(=O)C(CC4=CC=CC=C4)NC(=O)C(CC5=CC=CC=C5)NC(=O)C(CC6=CC=CC=C6)N",
+    "description": "Saquinavir-like - first HIV protease inhibitor",
+    "expected_range": -7.5
+  },
+  {
+    "name": "Ritonavir_scaffold",
+    "smiles": "CC(C)C1=CC=C(C=C1)COC(=O)N2CC(C3=CC=CC=C3)CC2C(=O)NC(CC4=CC=CC=C4)C(O)CN5CCOCC5",
+    "description": "Ritonavir-like - strong booster activity",
+    "expected_range": -8.0
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "name": "CURE_4G_004",
+  "smiles": "c1cc(F)c(F)c(F)c1C(=O)NCC(O)CNC(=O)CCCCOCC",
+  "description": "Darunavir-inspired with ether group for water interactions",
+  "predicted_affinity": -4.765000000000001,
+  "mw": 376.3750000000003,
+  "logp": 1.5175999999999998,
+  "hbd": 3,
+  "hba": 4
+}

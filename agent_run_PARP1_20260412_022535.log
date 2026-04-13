@@ -1,0 +1,78 @@
+PhysicsChem Agent v2 - 2026-04-12 02:25:35.574047
+============================================================
+========================================================================
+  AUTONOMOUS DRUG DISCOVERY AGENT v2  -  PARP1 DNA Repair Enzyme
+========================================================================
+[02:25:35] Orchestrator     Disease target  : BRCA-mutant Breast/Ovarian Cancer
+[02:25:35] Orchestrator     Receptor        : parp1.pdbqt
+[02:25:35] Orchestrator     Reference drug  : Olaparib (-9.2 kcal/mol)
+[02:25:35] Orchestrator     Fragment budget : 50
+[02:25:35] Orchestrator     Max iterations  : 1
+[02:25:35] Orchestrator     Confidence goal : 70%
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+[02:25:35] Orchestrator     ITERATION 1/1  (best confidence so far: 0%)
+------------------------------------------------------------------------
+[02:25:35] FragmentAgent    Loading fragment library (120 total)...
+[02:25:35] FragmentAgent    Selected 50 Ro3-compliant fragments (MW<=300, LogP<=3.5, HBD<=3)
+[02:25:35] FragmentAgent    PAINS filter removed 3 fragments
+[02:25:35] DockingAgent     Screening 47 fragments (exhaustiveness=16)...
+[02:25:35] DockingAgent     Threshold: affinity < -5.699999999999999 kcal/mol
+[02:25:37] DockingAgent       XX F001     pyridine                       FAILED (No poses parsed)
+[02:25:38] DockingAgent       XX F002     quinoline                      FAILED (No poses parsed)
+[02:25:40] DockingAgent       XX F003     benzimidazole                  FAILED (No poses parsed)
+[02:25:41] DockingAgent       XX F004     7-azaindole                    FAILED (No poses parsed)
+[02:25:42] DockingAgent       XX F005     4-azaindole                    FAILED (No poses parsed)
+[02:25:44] DockingAgent       XX F006     isoquinoline                   FAILED (No poses parsed)
+[02:25:45] DockingAgent       XX F007     2-aminoquinoline               FAILED (No poses parsed)
+[02:25:47] DockingAgent       XX F008     4-aminoquinazoline             FAILED (No poses parsed)
+[02:25:49] DockingAgent       XX F009     adenine                        FAILED (No poses parsed)
+[02:25:50] DockingAgent       XX F010     quinoxaline                    FAILED (No poses parsed)
+[02:25:51] DockingAgent       XX F011     1,6-naphthyridine              FAILED (No poses parsed)
+[02:25:53] DockingAgent       XX F012     pyrrolo[2,3-b]pyridine         FAILED (No poses parsed)
+[02:25:54] DockingAgent       XX F014     indazole-2H                    FAILED (No poses parsed)
+[02:25:56] DockingAgent       XX F015     2-aminopurine                  FAILED (No poses parsed)
+[02:25:57] DockingAgent       XX F016     aniline                        FAILED (No poses parsed)
+[02:25:58] DockingAgent       XX F017     4-fluoroaniline                FAILED (No poses parsed)
+[02:26:00] DockingAgent       XX F018     3-fluoroaniline                FAILED (No poses parsed)
+[02:26:01] DockingAgent       XX F019     4-chloroaniline                FAILED (No poses parsed)
+[02:26:08] DockingAgent       XX F020     4-trifluoromethylaniline       FAILED (No poses parsed)
+[02:26:09] DockingAgent       XX F022     3-methylaniline                FAILED (No poses parsed)
+[02:26:11] DockingAgent       XX F023     4-cyanoaniline                 FAILED (No poses parsed)
+[02:26:12] DockingAgent       XX F026     ethylamine                     FAILED (No poses parsed)
+[02:26:13] DockingAgent       XX F027     N-methylethylamine             FAILED (No poses parsed)
+[02:26:14] DockingAgent       XX F028     propyl                         FAILED (No poses parsed)
+[02:26:16] DockingAgent       XX F029     butyl                          FAILED (No poses parsed)
+[02:26:17] DockingAgent       XX F030     isobutyl                       FAILED (No poses parsed)
+[02:26:22] DockingAgent       XX F031     diethylamine                   FAILED (No poses parsed)
+[02:26:23] DockingAgent       XX F032     ethanolamide                   FAILED (No poses parsed)
+[02:26:25] DockingAgent       XX F033     ethanolamine                   FAILED (No poses parsed)
+[02:26:26] DockingAgent       XX F034     glycinamide                    FAILED (No poses parsed)
+[02:26:33] DockingAgent       XX F035     4-aminobutyl                   FAILED (No poses parsed)
+[02:26:34] DockingAgent       XX F036     piperidine                     FAILED (No poses parsed)
+[02:26:35] DockingAgent       XX F037     piperazine                     FAILED (No poses parsed)
+[02:26:36] DockingAgent       XX F038     N-methylpiperidine             FAILED (No poses parsed)
+[02:26:38] DockingAgent       XX F039     N-acetylpiperazine             FAILED (No poses parsed)
+[02:26:39] DockingAgent       XX F040     tetrahydrofuran                FAILED (No poses parsed)
+[02:26:40] DockingAgent       XX F041     tetrahydropyran                FAILED (No poses parsed)
+[02:26:41] DockingAgent       XX F042     pyrrolidine                    FAILED (No poses parsed)
+[02:26:42] DockingAgent       XX F043     tetrahydrothiophene            FAILED (No poses parsed)
+[02:26:43] DockingAgent       XX F044     octahydroindolizine            FAILED (No poses parsed)
+[02:26:44] DockingAgent       XX F045     azetidine-pyrrolidine          FAILED (No poses parsed)
+[02:26:46] DockingAgent       XX F046     phenol                         FAILED (No poses parsed)
+[02:26:47] DockingAgent       XX F047     aniline-para                   FAILED (No poses parsed)
+[02:26:51] DockingAgent       XX F048     benzamide                      FAILED (No poses parsed)
+[02:26:57] DockingAgent       XX F049     benzenesulfonamide             FAILED (No poses parsed)
+[02:26:58] DockingAgent       XX F050     catechol                       FAILED (No poses parsed)
+[02:27:02] DockingAgent       XX F051     trifluoromethylbenzene         FAILED (No poses parsed)
+[02:27:02] DockingAgent     Fragment screening complete: 0/0 hit threshold
+[02:27:02] GrowingAgent     Using 3 target-specific seeds for PARP1
+[02:27:02] Orchestrator     Top 3 fragment hits selected for growing
+------------------------------------------------------------------------
+[02:27:02] Orchestrator     Fitting 5-sigma null distribution from fragment scores...
+[02:27:02] HiggsTest        Too few fragments for null distribution — using defaults
+------------------------------------------------------------------------
+[02:27:02] GrowingAgent     Growing 3 fragment hits -> target leads...
+[02:27:02] GrowingAgent     Strategy: R-group + pharmacophore tail attachment
+[02:27:02] GrowingAgent       Growing SEED_R1C1 (isobutyl-piperidine-aniline (R1-C1 proven)) - base affinity -7.52 kcal/mol
+[02:27:02] GrowingAgent         Generated 46 candidates -> docking top 15...

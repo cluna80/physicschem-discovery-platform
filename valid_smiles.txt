@@ -1,0 +1,10 @@
+c1ccc2ccccc2c1C(=O)N[C@@H](Cc1cccc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21
+c1ccc2ccccc2c1C(=O)N[C@@H](Cc1cccc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21
+c1ccc2ccccc2c1C(=O)N[C@@H](Cc1cccc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2CCCO[C@H]21
+c1ccc2ccccc2c1C(=O)N[C@@H](Cc1cc(F)cc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21
+c1ccc2ccccc2c1C(=O)N[C@@H](Cc1cccc(C(C)(C)C)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21
+c1ccc2cccnc2c1C(=O)N[C@@H](Cc1cccc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21
+c1ccc2cccnc2c1C(=O)N[C@@H](Cc1cc(F)cc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21
+c1ccc2c(c1)ncnc2C(=O)N[C@@H](Cc1cccc(F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21
+c1ccc2c(c1)ncnc2C(=O)N[C@@H](Cc1cccc(C(F)(F)F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21
+c1ccc2[nH]ccc2c1C(=O)N[C@@H](Cc1cccc(C(F)(F)F)c1)[C@H](O)CNC(=O)[C@@H]1CO[C@@H]2OCCO[C@H]21

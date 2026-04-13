@@ -1,0 +1,6 @@
+{
+  "name": "CURE_6G_002",
+  "smiles": "c1ccc2cc(C(=O)NCC(O)CNC(=O)C3CCCO3)ccc2c1",
+  "feature": "Naphthalene + THF ring",
+  "affinity": -3.639
+}

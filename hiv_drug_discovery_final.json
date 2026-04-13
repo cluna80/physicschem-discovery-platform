@@ -1,0 +1,12 @@
+{
+  "lead_compound": "CURE_4G_003",
+  "binding_affinity": -5.365,
+  "smiles": "c1cc(F)c(F)c(F)c1C(=O)NCC(O)CNC(=O)CCCF",
+  "improvement": -0.774,
+  "all_results": {
+    "CURE_070 (Original)": -4.591,
+    "CURE_076 (First Gen)": -4.424,
+    "CURE_3G_003 (Fluorinated)": -4.737,
+    "CURE_4G_003 (Amide Core)": -5.365
+  }
+}
