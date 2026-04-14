@@ -726,7 +726,7 @@ pharma partnerships or internal wet lab synthesis.
         st.info("💡 Tip: Start with **HIV Integrase** or **EGFR** — receptors are pre-prepared and ready to dock.")
 
 # ── Tab navigation ────────────────────────────────────────────────────
-_tab_discovery, _tab_library, _tab_optimize, _tab_export = st.tabs(["🔬 Discovery Agent", "📚 Fragment Library", "⚡ Lead Optimizer", "💼 Hit Packages"])
+_tab_discovery, _tab_library, _tab_optimize, _tab_validate, _tab_export = st.tabs(["🔬 Discovery Agent", "📚 Fragment Library", "⚡ Lead Optimizer", "🎯 Validate Leads", "💼 Hit Packages"])
 
 with _tab_discovery:
     pass  # placeholder — actual content below is already indented to page level
@@ -910,6 +910,374 @@ with _tab_library:
             Last refresh: {datetime.now().strftime("%H:%M:%S")}</div>""",
             unsafe_allow_html=True)
 
+
+# ══════════════════════════════════════════════════════════════════════
+# VALIDATE LEADS TAB — Direct Vina Docking
+# ══════════════════════════════════════════════════════════════════════
+with _tab_validate:
+    import sqlite3 as _sqv
+    import pandas as _pdv
+
+    st.markdown("""<div style="font-family:'Space Mono',monospace;font-size:.7rem;
+    color:#00b4a0;text-transform:uppercase;letter-spacing:.1em;
+    border-bottom:2px solid #00b4a0;padding-bottom:.4rem;margin-bottom:1rem">
+    🎯 Lead Validator — Direct AutoDock Vina Scoring</div>""",
+    unsafe_allow_html=True)
+
+    # ── Info banner ───────────────────────────────────────────────────
+    st.markdown("""<div style="background:#0f2033;border-left:3px solid #f59e0b;
+    border-radius:0 6px 6px 0;padding:.7rem 1rem;margin-bottom:1rem;
+    font-size:.72rem;color:#94a3b8;line-height:1.7">
+    <b style="color:#f59e0b">Why validate?</b> Lead optimizer scores are MPO estimates.
+    Vina docking gives real binding affinity. Compounds scoring
+    <b style="color:#4ade80">≤ -9.43 kcal/mol</b> beat Dolutegravir computationally.
+    Each compound takes ~3–5 min to dock.
+    </div>""", unsafe_allow_html=True)
+
+    # ── Receptor status ───────────────────────────────────────────────
+    _val_receptors = {
+        "HIV_INTEGRASE": ("hiv_integrase.pdbqt", "Dolutegravir", -9.43),
+        "HIV":           ("hiv_protease.pdbqt",  "Darunavir",   -10.4),
+        "EGFR":          ("egfr.pdbqt",           "Erlotinib",   -8.0),
+        "COVID_MPRO":    ("covid_mpro.pdbqt",     "Nirmatrelvir",-7.8),
+        "BACE1":         ("bace1.pdbqt",           "Verubecestat",-8.5),
+        "THROMBIN":      ("thrombin.pdbqt",        "Dabigatran",  -9.8),
+    }
+    _ready_recs = [t for t,(f,_,_) in _val_receptors.items() if os.path.isfile(f)]
+
+    _rc1,_rc2 = st.columns([2,1])
+    with _rc1:
+        st.markdown("""<div style="font-size:.68rem;color:#00b4a0;
+        font-family:'Space Mono',monospace;text-transform:uppercase;
+        letter-spacing:.1em;margin-bottom:.4rem">Select Compounds</div>""",
+        unsafe_allow_html=True)
+
+        _val_mode = st.radio("Validation source",
+            ["Top N from library","Top N from target",
+             "Specific IDs","Latest OPT results"],
+            label_visibility="collapsed", key="val_mode")
+
+        @st.cache_data(ttl=30)
+        def _load_val_compounds():
+            if not os.path.isfile("fragment_library.db"):
+                return _pdv.DataFrame()
+            conn = _sqv.connect("fragment_library.db")
+            df = _pdv.read_sql(
+                "SELECT id,smiles,target,dock_affinity,sigma_value,notes "
+                "FROM compounds WHERE dock_affinity < -5.0 "
+                "ORDER BY CASE WHEN notes LIKE '%Vina-validated%' THEN 0 "
+                "WHEN id NOT LIKE 'CHEMBL%' THEN 1 ELSE 2 END, "
+                "dock_affinity ASC LIMIT 500", conn)
+            conn.close()
+            return df
+
+        _val_df = _load_val_compounds()
+        _val_ids_to_dock = []
+
+        if _val_mode == "Top N from library":
+            _val_n = st.slider("Top N", 1, 20, 5, key="val_n")
+            _val_ids_to_dock = _val_df.head(_val_n)['id'].tolist()
+
+        elif _val_mode == "Top N from target":
+            _vtgt = st.selectbox("Target", _ready_recs, key="val_tgt")
+            _val_n2 = st.slider("Top N", 1, 20, 5, key="val_n2")
+            _tgt_df = _val_df[_val_df['target'].str.contains(_vtgt, na=False)]
+            _val_ids_to_dock = _tgt_df.head(_val_n2)['id'].tolist()
+
+        elif _val_mode == "Specific IDs":
+            _all_val_ids = _val_df['id'].tolist()
+            _val_ids_to_dock = st.multiselect(
+                "Choose compounds", _all_val_ids[:200],
+                default=_all_val_ids[:3], key="val_ids_sel")
+
+        else:  # Latest OPT results
+            import glob as _glob
+            _opt_csvs = sorted(_glob.glob("agent_results_OPT_*.csv"),
+                               key=os.path.getmtime, reverse=True)
+            if _opt_csvs:
+                try:
+                    _opt_latest = _pdv.read_csv(_opt_csvs[0])
+                    _opt_top = _opt_latest.nsmallest(
+                        10, 'dock_affinity') if 'dock_affinity' in _opt_latest.columns                         else _opt_latest.head(10)
+                    _val_ids_to_dock = _opt_top['id'].tolist()
+                    st.info(f"Loaded {len(_val_ids_to_dock)} compounds from {_opt_csvs[0]}")
+                except Exception:
+                    st.warning("Could not load OPT CSV")
+            else:
+                st.info("No optimization results found — run Lead Optimizer first")
+
+        # Preview selected
+        if _val_ids_to_dock:
+            _prev = _val_df[_val_df['id'].isin(_val_ids_to_dock)][
+                ['id','target','dock_affinity','sigma_value']].copy()
+            if _prev.empty:
+                # May be OPT compounds not in DB yet
+                st.markdown(f"""<div style="font-size:.65rem;color:#94a3b8">
+                {len(_val_ids_to_dock)} compound(s) selected</div>""",
+                unsafe_allow_html=True)
+            else:
+                _prev['dock_affinity'] = _prev['dock_affinity'].apply(
+                    lambda x: f"{x:.3f}")
+                _prev['sigma_value'] = _prev['sigma_value'].apply(
+                    lambda x: f"{x:.1f}σ" if x else "-")
+                st.dataframe(_prev, height=160,
+                             use_container_width=True, hide_index=True)
+
+    with _rc2:
+        st.markdown("""<div style="font-size:.68rem;color:#00b4a0;
+        font-family:'Space Mono',monospace;text-transform:uppercase;
+        letter-spacing:.1em;margin-bottom:.4rem">Docking Settings</div>""",
+        unsafe_allow_html=True)
+
+        _val_target = st.selectbox("Receptor target",
+            _ready_recs if _ready_recs else ["No receptors found"],
+            key="val_target_sel")
+
+        _val_exh = st.select_slider("Exhaustiveness",
+            options=[4, 8, 12, 16, 32],
+            value=8, key="val_exh",
+            help="Higher = more accurate, slower. 8 = ~3min/compound")
+
+        _time_est = len(_val_ids_to_dock) * (
+            2 if _val_exh <= 4 else 4 if _val_exh <= 8 else 8) if _val_ids_to_dock else 0
+        if _time_est > 0:
+            st.markdown(f"""<div style="background:#0f2033;border-radius:6px;
+            padding:.5rem;font-size:.65rem;text-align:center;margin-top:.3rem">
+            <div style="color:#f59e0b">⏱ Est. time</div>
+            <div style="color:#e2e8f0;font-size:.9rem;font-weight:700">
+            ~{_time_est} min</div>
+            <div style="color:#475569">{len(_val_ids_to_dock)} compounds
+            × {2 if _val_exh<=4 else 4 if _val_exh<=8 else 8} min each</div>
+            </div>""", unsafe_allow_html=True)
+
+        _rec_file = _val_receptors.get(_val_target, ("","",0))[0]
+        _ref_drug = _val_receptors.get(_val_target, ("","",0))[1]
+        _ref_aff  = _val_receptors.get(_val_target, ("","",0))[2]
+        _rec_ok   = os.path.isfile(_rec_file)
+        st.markdown(f"""<div style="font-size:.62rem;
+        color:{'#4ade80' if _rec_ok else '#ef4444'};margin-top:.3rem">
+        {'✓' if _rec_ok else '✗'} {_rec_file}
+        </div>""", unsafe_allow_html=True)
+
+    st.markdown("---")
+
+    # ── Run button ────────────────────────────────────────────────────
+    _vb1, _vb2, _vb3 = st.columns([2,1,1])
+    _val_log_key = "val_log_lines"
+    _val_res_key = "val_results"
+    _val_run_key = "val_running"
+    for _k,_v in [(_val_log_key,[]),(_val_res_key,[]),(_val_run_key,False)]:
+        if _k not in st.session_state: st.session_state[_k] = _v
+
+    with _vb1:
+        _run_val = st.button(
+            f"🎯 Dock {len(_val_ids_to_dock)} Compound(s) with Vina",
+            type="primary", width="stretch", key="run_val",
+            disabled=not (_val_ids_to_dock and _rec_ok))
+
+    with _vb2:
+        _refresh_val = st.button("🔄 Refresh Results",
+                                  width="stretch", key="refresh_val")
+
+    with _vb3:
+        _clear_val = st.button("🗑 Clear Log",
+                                width="stretch", key="clear_val")
+
+    if _clear_val:
+        st.session_state[_val_log_key] = []
+        st.session_state[_val_res_key] = []
+        st.rerun()
+
+    if _refresh_val:
+        st.cache_data.clear()
+        st.session_state[_val_res_key] = []
+        st.rerun()
+
+    # ── Launch validation subprocess ──────────────────────────────────
+    if _run_val and _val_ids_to_dock:
+        st.session_state[_val_log_key] = []
+        st.session_state[_val_res_key] = []
+        st.session_state[_val_run_key] = True
+
+        _py_val = (r".venv\Scripts\python.exe"
+                   if os.path.isfile(r".venv\Scripts\python.exe")
+                   else sys.executable)
+        _val_cmd = [_py_val, "validate_leads.py",
+                    "--id"] + _val_ids_to_dock + [
+                    "--target", _val_target,
+                    "--exhaustiveness", str(_val_exh)]
+
+        _val_env = os.environ.copy()
+        _val_env["PYTHONIOENCODING"] = "utf-8"
+        _val_env["PYTHONUNBUFFERED"] = "1"
+
+        try:
+            _val_proc = _subpo.Popen(
+                _val_cmd, stdout=_subpo.PIPE, stderr=_subpo.STDOUT,
+                text=True, bufsize=1, env=_val_env,
+                encoding="utf-8", errors="replace")
+            st.session_state["val_proc"] = _val_proc
+        except Exception as _ve:
+            st.error(f"Failed to launch validator: {_ve}")
+            st.session_state[_val_run_key] = False
+
+    # ── Poll validation subprocess ────────────────────────────────────
+    if st.session_state.get(_val_run_key):
+        _vproc = st.session_state.get("val_proc")
+        if _vproc:
+            try:
+                _vline = _vproc.stdout.readline()
+                if _vline:
+                    import re as _reval
+                    _vclean = _reval.sub(
+                        r'(?:|)\[[0-9;]*m', '', _vline).strip()
+                    if _vclean:
+                        st.session_state[_val_log_key].append(_vclean)
+                if _vproc.poll() is not None:
+                    st.session_state[_val_run_key] = False
+                    # Load results CSV
+                    import glob as _gv
+                    _vcsvs = sorted(_gv.glob("validation_results_*.csv"),
+                                    key=os.path.getmtime, reverse=True)
+                    if _vcsvs:
+                        try:
+                            _vres = _pdv.read_csv(_vcsvs[0], encoding='utf-8',
+                                                   encoding_errors='replace')
+                            st.session_state[_val_res_key] =                                 _vres.to_dict('records')
+                        except Exception: pass
+            except Exception:
+                st.session_state[_val_run_key] = False
+
+    # ── Live log ──────────────────────────────────────────────────────
+    _vlog = st.session_state[_val_log_key]
+    if _vlog:
+        def _vcolor(l):
+            if 'CONFIRMED' in l or '★' in l: return '#4ade80'
+            if 'WEAK' in l or '✗' in l:      return '#ef4444'
+            if 'MODERATE' in l or '~' in l:   return '#f59e0b'
+            if 'Prepared' in l:               return '#00b4a0'
+            return '#94a3b8'
+        _vhtml = "".join(
+            f'<div style="font-size:.63rem;font-family:Space Mono,monospace;'
+            f'color:{_vcolor(l)};padding:.1rem 0">{l}</div>'
+            for l in _vlog[-50:])
+        st.markdown(
+            f'<div style="background:#050d18;border:1px solid #1e3a5f;'
+            f'border-radius:6px;padding:.8rem;height:200px;overflow-y:auto;'
+            f'margin-bottom:1rem">{_vhtml}</div>',
+            unsafe_allow_html=True)
+
+    if st.session_state.get(_val_run_key):
+        st.markdown("""<div style="color:#f59e0b;font-size:.7rem;
+        font-family:'Space Mono',monospace">
+        ⏳ Docking in progress — each compound takes 3-5 minutes...</div>""",
+        unsafe_allow_html=True)
+        time.sleep(0.8)
+        st.rerun()
+
+    # ── Results table ─────────────────────────────────────────────────
+    _vresults = st.session_state.get(_val_res_key, [])
+
+    # Also load from latest CSV
+    if not _vresults:
+        import glob as _gvr
+        _vcsvs2 = sorted(_gvr.glob("validation_results_*.csv"),
+                         key=os.path.getmtime, reverse=True)
+        if _vcsvs2:
+            try:
+                _vr = _pdv.read_csv(_vcsvs2[0], encoding='utf-8',
+                                     encoding_errors='replace')
+                _vresults = _vr.to_dict('records')
+            except Exception: pass
+
+    if _vresults:
+        st.markdown("""<div style="font-family:'Space Mono',monospace;
+        font-size:.68rem;color:#00b4a0;text-transform:uppercase;
+        letter-spacing:.1em;margin:.8rem 0 .5rem">Validation Results</div>""",
+        unsafe_allow_html=True)
+
+        _vdf = _pdv.DataFrame(_vresults)
+
+        # Summary stats
+        _vs1,_vs2,_vs3,_vs4 = st.columns(4)
+        _validated = _vdf[_vdf.get('validated',_pdv.Series(dtype=bool))==True]             if 'validated' in _vdf.columns else _pdv.DataFrame()
+        _beats = _validated[_validated['vina_affinity'].astype(float) <= _ref_aff]             if 'vina_affinity' in _validated.columns and len(_validated) else _pdv.DataFrame()
+
+        for _col,_val,_lbl,_clr in zip(
+            [_vs1,_vs2,_vs3,_vs4],
+            [len(_vresults),
+             len(_validated) if len(_validated) else 0,
+             len(_beats) if len(_beats) else 0,
+             f"{_validated['vina_affinity'].astype(float).min():.3f}"                  if len(_validated) and 'vina_affinity' in _validated.columns else "-"],
+            ["Attempted","Docked","Beat Ref Drug","Best Vina"],
+            ["#00b4a0","#4ade80","#f59e0b","#f43f5e"]
+        ):
+            _col.markdown(f"""<div style="background:#0f2033;
+            border-top:3px solid {_clr};border-radius:6px;
+            padding:.6rem;text-align:center">
+            <div style="font-family:'Space Mono',monospace;
+            font-size:1.1rem;color:{_clr};font-weight:700">{_val}</div>
+            <div style="font-size:.6rem;color:#94a3b8;
+            text-transform:uppercase">{_lbl}</div>
+            </div>""", unsafe_allow_html=True)
+
+        st.markdown(f"""<div style="font-size:.65rem;color:#475569;
+        margin:.3rem 0">Reference: {_ref_drug} = {_ref_aff} kcal/mol
+        </div>""", unsafe_allow_html=True)
+
+        # Results table with color coding
+        _show_vcols = [c for c in ['id','vina_affinity','dock_affinity',
+                                    'target','validated','smiles']
+                       if c in _vdf.columns]
+        _vshow = _vdf[_show_vcols].copy()
+        if 'vina_affinity' in _vshow.columns:
+            _vshow = _vshow.sort_values('vina_affinity')
+            _vshow['vina_affinity'] = _vshow['vina_affinity'].apply(
+                lambda x: f"{float(x):.3f}" if x else "-")
+        if 'dock_affinity' in _vshow.columns:
+            _vshow['dock_affinity'] = _vshow['dock_affinity'].apply(
+                lambda x: f"{float(x):.3f}" if x else "-")
+        if 'validated' in _vshow.columns:
+            _vshow['validated'] = _vshow['validated'].apply(
+                lambda x: "✓" if x==True or x=="True" else "✗")
+
+        st.dataframe(_vshow, height=300,
+                     use_container_width=True, hide_index=True)
+
+        # Download
+        _vd1, _vd2 = st.columns(2)
+        with _vd1:
+            st.download_button(
+                "📥 Download Validation CSV",
+                _vdf.to_csv(index=False),
+                f"validation_{_val_target}_{datetime.now().strftime('%Y%m%d')}.csv",
+                "text/csv", width="stretch", key="dl_val")
+        with _vd2:
+            if st.button("📚 Save to Library", width="stretch",
+                         key="save_val_lib"):
+                if len(_validated):
+                    import sqlite3 as _svlib
+                    conn = _svlib.connect("fragment_library.db")
+                    for _, row in _validated.iterrows():
+                        conn.execute(
+                            "UPDATE compounds SET "
+                            "dock_affinity=?, "
+                            "notes=notes||' [Vina-validated "
+                            + _val_target + "]' "
+                            "WHERE id=?",
+                            (float(row['vina_affinity']), row['id']))
+                    conn.commit(); conn.close()
+                    st.success(
+                        f"✓ {len(_validated)} validated scores saved to library")
+                    st.cache_data.clear()
+    else:
+        st.markdown("""<div style="background:#0f2033;border:1px solid #1e3a5f;
+        border-radius:8px;padding:2rem;text-align:center;margin-top:1rem">
+        <div style="font-size:.85rem;color:#475569;
+        font-family:'Space Mono',monospace">
+        No validation results yet.<br>
+        Select compounds above and click Dock.
+        </div></div>""", unsafe_allow_html=True)
 
 # ══════════════════════════════════════════════════════════════════════
 # HIT PACKAGES / REVENUE TAB
@@ -1198,7 +1566,13 @@ with _tab_optimize:
         df = _pdo.read_sql(
             "SELECT id,smiles,target,disease_area,dock_affinity,"
             "sigma_value,mw,logp,hERG,DILI FROM compounds "
-            "WHERE dock_affinity < -4.0 ORDER BY sigma_value DESC",conn)
+            """WHERE dock_affinity < -4.0
+                ORDER BY
+                    CASE WHEN notes LIKE '%Vina-validated%' THEN 0
+                         WHEN id NOT LIKE 'CHEMBL%' AND id NOT LIKE 'GEN_%' THEN 1
+                         ELSE 2 END,
+                    dock_affinity ASC
+                LIMIT 500""",conn)
         conn.close()
         return df
 
@@ -1303,17 +1677,26 @@ with _tab_optimize:
             st.session_state[_opt_res_key]  = []
             st.session_state[_opt_run_key]  = True
 
-            _cmd = [sys.executable, "lead_optimizer.py",
+            # Use .venv python if available (Streamlit sys.executable may differ)
+            _py = (r".venv\Scripts\python.exe"
+                   if os.path.isfile(r".venv\Scripts\python.exe")
+                   else sys.executable)
+            _cmd = [_py, "lead_optimizer.py",
                     "--id"] + _opt_ids + [
                     "--strategy"] + _strat_opts + [
                     "--n", str(_n_per_strat)]
             if _do_dock:
                 _cmd.append("--dock")
 
+            _opt_env = os.environ.copy()
+            _opt_env["PYTHONIOENCODING"] = "utf-8"
+            _opt_env["PYTHONUNBUFFERED"] = "1"
+
             try:
                 _opt_proc = _subpo.Popen(
                     _cmd, stdout=_subpo.PIPE, stderr=_subpo.STDOUT,
-                    text=True, bufsize=1)
+                    text=True, bufsize=1, env=_opt_env,
+                    encoding="utf-8", errors="replace")
                 st.session_state["opt_proc"] = _opt_proc
             except Exception as _e:
                 st.error(f"Failed to launch optimizer: {_e}")
@@ -1326,17 +1709,29 @@ with _tab_optimize:
                 try:
                     _line = _proc.stdout.readline()
                     if _line:
-                        st.session_state[_opt_log_key].append(_line.strip())
+                        # Strip ANSI color codes for clean display
+                        import re as _re
+                        _clean = _re.sub('\x1b' + r'[[0-9;]*m', '', _line).strip()
+                        if _clean:
+                            st.session_state[_opt_log_key].append(_clean)
                     if _proc.poll() is not None:
                         st.session_state[_opt_run_key] = False
-                        # Load results
+                        # Load results from latest OPT CSV
                         _opt_csvs = sorted(
                             Path(".").glob("agent_results_OPT_*.csv"),
                             key=os.path.getmtime)
                         if _opt_csvs:
-                            _res_df = _pdo.read_csv(_opt_csvs[-1])
-                            st.session_state[_opt_res_key] = _res_df.to_dict('records')
-                except Exception:
+                            try:
+                                _res_df = _pdo.read_csv(
+                                    _opt_csvs[-1], encoding='utf-8',
+                                    encoding_errors='replace')
+                                st.session_state[_opt_res_key] =                                     _res_df.to_dict('records')
+                            except Exception as _csv_e:
+                                st.session_state[_opt_log_key].append(
+                                    f"Results loaded with warning: {_csv_e}")
+                except Exception as _poll_e:
+                    st.session_state[_opt_log_key].append(
+                        f"Process error: {_poll_e}")
                     st.session_state[_opt_run_key] = False
 
         # ── Live log panel ────────────────────────────────────────────

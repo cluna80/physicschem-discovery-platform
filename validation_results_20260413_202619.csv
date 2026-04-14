@@ -1,0 +1,3 @@
+id,smiles,target,dock_affinity,vina_affinity,validated
+OPT_SEED_INT_RAL_G004_HOP_001,O=C(NCC(O)c1ccc(F)c(F)c1)c1cc(C(=O)Cc2ccccc2F)on1,OPT_20260413,-11.790635720826856,-9.21,True
+OPT_SEED_INT_RAL_G004_RG_004,O=C(NCCC(O)c1cc(F)cc(F)c1)c1cc(C(=O)Cc2ccccc2F)on1,OPT_20260413,-10.996131250248498,-9.09,True

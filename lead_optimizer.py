@@ -766,6 +766,23 @@ class LeadOptimizer:
             warn(f"No SMILES for {lead_id}")
             return []
 
+        # Strip stereochemistry for ChEMBL/complex SMILES
+        # so R-group and scaffold hop patterns can match
+        smiles_flat = smiles
+        if RDKIT_OK and ('@' in smiles or '/' in smiles or '\\' in smiles):
+            try:
+                from rdkit.Chem import AllChem
+                mol_flat = Chem.MolFromSmiles(smiles)
+                if mol_flat:
+                    # Remove stereo for pattern matching
+                    Chem.RemoveStereochemistry(mol_flat)
+                    smiles_flat = Chem.MolToSmiles(mol_flat)
+                    if smiles_flat != smiles:
+                        log(f"  Stripped stereo for pattern matching: "
+                            f"{smiles[:40]} → {smiles_flat[:40]}", YLW)
+            except Exception:
+                smiles_flat = smiles
+
         log(f"Optimizing: {lead_id}  [{smiles[:50]}...]", CYN)
         log(f"  Base: {base_aff:.3f} kcal/mol  "
             f"sigma={lead.get('sigma_value',0):.2f}σ  "
@@ -785,7 +802,7 @@ class LeadOptimizer:
         # Run each strategy
         if 'rgroup' in strategies:
             log(f"  Strategy 1: R-group scan...", MAG)
-            rg_smiles = self.rgroup.generate_analogs(smiles, n_per_strategy)
+            rg_smiles = self.rgroup.generate_analogs(smiles_flat, n_per_strategy)
             for s in rg_smiles:
                 all_analogs.append({
                     'smiles': s,
@@ -800,7 +817,7 @@ class LeadOptimizer:
 
         if 'bioisostere' in strategies:
             log(f"  Strategy 2: Bioisostere replacement...", MAG)
-            bio_smiles = self.bioisostere.generate(smiles, n_per_strategy)
+            bio_smiles = self.bioisostere.generate(smiles_flat, n_per_strategy)
             for s in bio_smiles:
                 all_analogs.append({
                     'smiles': s,
@@ -815,7 +832,7 @@ class LeadOptimizer:
 
         if 'scaffold' in strategies:
             log(f"  Strategy 3: Scaffold hopping...", MAG)
-            hop_smiles = self.scaffold.generate(smiles, n_per_strategy)
+            hop_smiles = self.scaffold.generate(smiles_flat, n_per_strategy)
             for s in hop_smiles:
                 all_analogs.append({
                     'smiles': s,
