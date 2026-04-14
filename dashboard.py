@@ -260,7 +260,49 @@ section[data-testid="stSidebar"] {
 </style>
 """, unsafe_allow_html=True)
 
+# ── Constants ─────────────────────────────────────────────────────────
+LIVE_LOG  = "dashboard_live.log"
+DONE_FLAG = "dashboard_done.flag"
+
 # ── State ─────────────────────────────────────────────────────────────
+def init_state():
+    defaults = {
+        "running":    False,
+        "done":       False,
+        "log_lines":  [],
+        "fragments":  [],
+        "leads":      [],
+        "best":       None,
+        "run_id":     None,
+        "proc":       None,
+        "iter_n":     0,
+    }
+    for k, v in defaults.items():
+        if k not in st.session_state:
+            st.session_state[k] = v
+
+init_state()
+
+# ── Auto-recover from Streamlit page reload ────────────────────────────
+# Only recover if log is very recent (within 2 min) AND done flag absent
+import time as _tcheck
+if (not st.session_state.get("running") and
+    not st.session_state.get("done") and
+    os.path.isfile(LIVE_LOG) and
+    not os.path.isfile(DONE_FLAG)):
+    try:
+        _log_age = _tcheck.time() - os.path.getmtime(LIVE_LOG)
+        # Only auto-recover if log was modified in last 2 minutes
+        # (not old runs from yesterday)
+        if _log_age < 120:
+            st.session_state["running"] = True
+            with open(LIVE_LOG, encoding="utf-8", errors="replace") as _rf:
+                _rlines = [l.rstrip() for l in _rf.readlines() if l.strip()]
+            st.session_state["log_lines"] = _rlines[-200:]
+            st.session_state["_lpos"]     = os.path.getsize(LIVE_LOG)
+    except Exception:
+        pass
+
 def init_state():
     defaults = {
         "running":    False,
@@ -478,15 +520,19 @@ TARGET_INFO = {k: {"disease": v["disease"], "ref": v.get("ref","")}
                for k, v in DISEASE_DB.items()}
 
 
-LIVE_LOG = "dashboard_live.log"
-DONE_FLAG = "dashboard_done.flag"
-
 def run_agent(target, frags, iters, exh):
     """Run agent subprocess, write output to log file for dashboard to read."""
+    # Use .venv python explicitly — sys.executable inside Streamlit
+    # may point to the wrong interpreter
+    _py = (r".venv\Scripts\python.exe"
+           if os.path.isfile(r".venv\Scripts\python.exe")
+           else sys.executable)
+    # Ensure target key is clean (no date suffix, uppercase)
+    _target = target.split("_2026")[0].split("_2025")[0].upper()
     cmd = [
-        sys.executable, "-u", "-W", "ignore",
+        _py, "-u", "-W", "ignore",
         "autonomous_drug_agentV2.py",
-        "--target", target,
+        "--target", _target,
         "--frags", str(frags),
         "--iterations", str(iters),
         "--exhaustiveness", str(exh),
@@ -498,6 +544,7 @@ def run_agent(target, frags, iters, exh):
     try:
         env = os.environ.copy()
         env["PYTHONUNBUFFERED"] = "1"
+        env["PYTHONIOENCODING"] = "utf-8"
         proc = subprocess.Popen(
             cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL,
             text=True, bufsize=1, encoding="utf-8", errors="replace", env=env
@@ -1111,6 +1158,7 @@ with _tab_validate:
         _val_env["PYTHONIOENCODING"] = "utf-8"
         _val_env["PYTHONUNBUFFERED"] = "1"
 
+        import subprocess as _subpo
         try:
             _val_proc = _subpo.Popen(
                 _val_cmd, stdout=_subpo.PIPE, stderr=_subpo.STDOUT,

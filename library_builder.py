@@ -679,55 +679,22 @@ def harvest_existing(db: LibraryDB):
 
     # Deduplicate — only process each unique CSV once
     seen_paths = set()
+    unique_csvs = []
     for csv_path in csvs:
-        real_path = str(csv_path.resolve())
-        if real_path in seen_paths:
-            continue
-        seen_paths.add(real_path)
+        rp = str(csv_path.resolve())
+        if rp not in seen_paths:
+            seen_paths.add(rp)
+            unique_csvs.append(csv_path)
 
+    log(f"Processing {len(unique_csvs)} unique files (deduped from {len(csvs)})")
+
+    for csv_path in unique_csvs:
         m = re.search(r'agent_results_(\w+)_', csv_path.name)
         if not m: continue
         target = m.group(1)
-
-        # Parse this specific CSV directly (not via glob re-search)
-        log(f"Parsing results: {csv_path.name}", GRN)
-        rows = []
-        try:
-            with open(csv_path, encoding="utf-8-sig") as f:
-                for row in csv.DictReader(f):
-                    rows.append(row)
-        except Exception as e:
-            warn(f"CSV parse failed: {e}")
-            continue
-
-        if not rows:
-            continue
-
-        n_added = 0
-        n_disc  = 0
-        best    = 0.0
-        for row in rows:
-            try:
-                aff = float(row.get("dock_affinity","0") or 0)
-            except:
-                aff = 0.0
-            if aff >= -4.0:
-                continue
-            smiles = row.get("smiles","")
-            if not smiles:
-                continue
-            r = runner._insert_compound(row, target)
-            if r:
-                n_added += 1
-                if aff < best: best = aff
-                try:
-                    if float(row.get("sigma_value","0") or 0) >= 5.0:
-                        n_disc += 1
-                except: pass
-
-        log(f"{target}_{csv_path.stem[-8:]}: {n_added} compounds added "
-            f"({n_disc} discoveries, best={best:.2f})", GRN)
-        total += n_added
+        result = runner._parse_latest_results(target, 0)
+        if result:
+            total += result.get("n_hits", 0)
 
     ok(f"Harvested {total} compounds from existing results")
     return total
