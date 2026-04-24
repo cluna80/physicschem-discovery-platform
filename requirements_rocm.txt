@@ -1,0 +1,24 @@
+# Requirements for Qwen FBDD Fine-Tuning on AMD MI300X (ROCm)
+# Install with: pip install -r requirements_rocm.txt
+
+# Core ML
+torch>=2.1.0  # ROCm build pre-installed on AMD Dev Cloud
+transformers>=4.45.0
+peft>=0.12.0
+accelerate>=0.30.0
+datasets>=2.20.0
+huggingface_hub>=0.24.0
+
+# Training utilities
+bitsandbytes>=0.43.0   # may need ROCm build — see note below
+trl>=0.9.0
+einops>=0.7.0
+sentencepiece>=0.1.99
+protobuf>=3.20.0
+
+# Monitoring (optional)
+# wandb
+
+# NOTE on bitsandbytes for ROCm:
+# If bitsandbytes fails, remove it — we're using bf16 (not 4bit) anyway
+# on MI300X with 192GB VRAM we don't need quantization for 7B model
