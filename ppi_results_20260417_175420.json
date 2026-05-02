@@ -1,0 +1,92 @@
+[
+  {
+    "id": "SEED_INT_RAL_G013",
+    "smiles": "O=C(NCC(O)c1cc(F)cc(F)c1)c1cc(C(=O)CC2CCCNC2)on1",
+    "original_affinity": -8.767,
+    "target_affinities": {},
+    "pan_hiv_score": 0,
+    "n_targets_hit": 0,
+    "resistance_coverage": {}
+  },
+  {
+    "id": "F002_G010",
+    "smiles": "c1ccc2c(C3CCCNC3)ccnc2c1",
+    "original_affinity": -6.687,
+    "target_affinities": {},
+    "pan_hiv_score": 0,
+    "n_targets_hit": 0,
+    "resistance_coverage": {}
+  },
+  {
+    "id": "SEED_INT_ISQ_G010",
+    "smiles": "c1cnc2c(C3CCCNC3)cccc2c1",
+    "original_affinity": -6.649,
+    "target_affinities": {},
+    "pan_hiv_score": 0,
+    "n_targets_hit": 0,
+    "resistance_coverage": {}
+  },
+  {
+    "id": "F006_G010",
+    "smiles": "c1ccc2c(C3CCCNC3)cncc2c1",
+    "original_affinity": -6.37,
+    "target_affinities": {},
+    "pan_hiv_score": 0,
+    "n_targets_hit": 0,
+    "resistance_coverage": {}
+  },
+  {
+    "id": "F006_G011",
+    "smiles": "c1ccc2c(C3CCCO3)cncc2c1",
+    "original_affinity": -5.77,
+    "target_affinities": {},
+    "pan_hiv_score": 0,
+    "n_targets_hit": 0,
+    "resistance_coverage": {}
+  },
+  {
+    "id": "F002_G011",
+    "smiles": "c1ccc2c(C3CCCO3)ccnc2c1",
+    "original_affinity": -5.653,
+    "target_affinities": {},
+    "pan_hiv_score": 0,
+    "n_targets_hit": 0,
+    "resistance_coverage": {}
+  },
+  {
+    "id": "F006_G008",
+    "smiles": "OCCc1cncc2ccccc12",
+    "original_affinity": -5.6,
+    "target_affinities": {},
+    "pan_hiv_score": 0,
+    "n_targets_hit": 0,
+    "resistance_coverage": {}
+  },
+  {
+    "id": "SEED_INT_ISQ_G001",
+    "smiles": "CCc1cccc2cccnc12",
+    "original_affinity": -5.314,
+    "target_affinities": {},
+    "pan_hiv_score": 0,
+    "n_targets_hit": 0,
+    "resistance_coverage": {}
+  },
+  {
+    "id": "F002_G007",
+    "smiles": "OCc1ccnc2ccccc12",
+    "original_affinity": -5.22,
+    "target_affinities": {},
+    "pan_hiv_score": 0,
+    "n_targets_hit": 0,
+    "resistance_coverage": {}
+  },
+  {
+    "id": "F006_G007",
+    "smiles": "OCc1cncc2ccccc12",
+    "original_affinity": -5.191,
+    "target_affinities": {},
+    "pan_hiv_score": 0,
+    "n_targets_hit": 0,
+    "resistance_coverage": {}
+  }
+]

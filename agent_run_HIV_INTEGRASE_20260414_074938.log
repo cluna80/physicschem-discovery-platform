@@ -1,0 +1,69 @@
+PhysicsChem Agent v2 - 2026-04-14 07:49:38.303149
+============================================================
+========================================================================
+  AUTONOMOUS DRUG DISCOVERY AGENT v2  -  HIV-1 Integrase
+========================================================================
+[07:49:38] Orchestrator     Disease target  : HIV/AIDS
+[07:49:38] Orchestrator     Receptor        : hiv_integrase.pdbqt
+[07:49:38] Orchestrator     Reference drug  : Dolutegravir (-9.43 kcal/mol)
+[07:49:38] Orchestrator     Fragment budget : 30
+[07:49:38] Orchestrator     Max iterations  : 1
+[07:49:38] Orchestrator     Confidence goal : 70%
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+[07:49:38] Orchestrator     ITERATION 1/1  (best confidence so far: 0%)
+------------------------------------------------------------------------
+[07:49:38] FragmentAgent    Loading fragment library (120 total)...
+[07:49:38] FragmentAgent    Selected 30 Ro3-compliant fragments (MW<=300, LogP<=3.5, HBD<=3)
+[07:49:38] FragmentAgent    PAINS filter removed 3 fragments
+[07:49:38] DockingAgent     Screening 27 fragments (exhaustiveness=8)...
+[07:49:38] DockingAgent     Threshold: affinity < -5.93 kcal/mol
+[07:49:40] DockingAgent       . F001     pyridine                         -4.19 kcal/mol  8 poses
+[07:49:42] DockingAgent       OK F002     quinoline                        -6.54 kcal/mol  8 poses
+[07:49:45] DockingAgent       . F003     benzimidazole                    -4.64 kcal/mol  8 poses
+[07:49:47] DockingAgent       . F004     7-azaindole                      -5.69 kcal/mol  8 poses
+[07:49:49] DockingAgent       . F005     4-azaindole                      -5.64 kcal/mol  8 poses
+[07:49:52] DockingAgent       OK F006     isoquinoline                     -6.33 kcal/mol  8 poses
+[07:49:55] DockingAgent       OK F007     2-aminoquinoline                 -6.30 kcal/mol  8 poses
+[07:49:58] DockingAgent       . F008     4-aminoquinazoline               -5.88 kcal/mol  8 poses
+[07:50:01] DockingAgent       . F009     adenine                          -5.63 kcal/mol  8 poses
+[07:50:03] DockingAgent       OK F010     quinoxaline                      -6.54 kcal/mol  8 poses
+[07:50:06] DockingAgent       OK F011     1,6-naphthyridine                -6.20 kcal/mol  8 poses
+[07:50:08] DockingAgent       . F012     pyrrolo[2,3-b]pyridine           -5.12 kcal/mol  8 poses
+[07:50:10] DockingAgent       OK F014     indazole-2H                      -6.20 kcal/mol  8 poses
+[07:50:14] DockingAgent       . F015     2-aminopurine                    -5.16 kcal/mol  8 poses
+[07:50:16] DockingAgent       . F016     aniline                          -4.74 kcal/mol  8 poses
+[07:50:19] DockingAgent       . F017     4-fluoroaniline                  -5.22 kcal/mol  8 poses
+[07:50:22] DockingAgent       . F018     3-fluoroaniline                  -5.43 kcal/mol  8 poses
+[07:50:24] DockingAgent       . F019     4-chloroaniline                  -5.19 kcal/mol  7 poses
+[07:50:28] DockingAgent       . F020     4-trifluoromethylaniline         -5.41 kcal/mol  8 poses
+[07:50:31] DockingAgent       . F022     3-methylaniline                  -5.68 kcal/mol  8 poses
+[07:50:34] DockingAgent       . F023     4-cyanoaniline                   -4.84 kcal/mol  8 poses
+[07:50:37] DockingAgent       . F026     ethylamine                       -2.65 kcal/mol  7 poses
+[07:50:40] DockingAgent       . F027     N-methylethylamine               -3.07 kcal/mol  8 poses
+[07:50:43] DockingAgent       . F028     propyl                           -2.75 kcal/mol  8 poses
+[07:50:46] DockingAgent       . F029     butyl                            -2.94 kcal/mol  8 poses
+[07:50:48] DockingAgent       . F030     isobutyl                         -3.14 kcal/mol  8 poses
+[07:50:52] DockingAgent       . F031     diethylamine                     -3.10 kcal/mol  8 poses
+[07:50:52] DockingAgent     Fragment screening complete: 6/27 hit threshold
+[07:50:52] GrowingAgent     Using 4 target-specific seeds for HIV_INTEGRASE
+[07:50:52] Orchestrator     Top 9 fragment hits selected for growing
+------------------------------------------------------------------------
+[07:50:52] Orchestrator     Fitting 5-sigma null distribution from fragment scores...
+[07:50:52] HiggsTest        Null distribution: affinity = -4.97 +/- 1.23 kcal/mol (n=27)
+[07:50:52] HiggsTest        Fragment null median: -5.22 kcal/mol
+[07:50:52] HiggsTest        5-sigma threshold: -11.10 kcal/mol
+[07:50:52] HiggsTest        3-sigma threshold: -8.65 kcal/mol
+------------------------------------------------------------------------
+[07:50:52] GrowingAgent     Growing 9 fragment hits -> target leads...
+[07:50:52] GrowingAgent     Strategy: R-group + pharmacophore tail attachment
+[07:50:52] GrowingAgent       Growing SEED_INT_DTG (naphthalene amide (validated -8.87 Vina)) - base affinity -8.87 kcal/mol
+[07:50:52] GrowingAgent         Generated 0 candidates -> docking top 15...
+[07:50:52] GrowingAgent       Growing SEED_INT_ISQ (isoq-35diF (validated -8.59 Vina)) - base affinity -8.59 kcal/mol
+[07:50:52] GrowingAgent         Generated 0 candidates -> docking top 15...
+[07:50:52] GrowingAgent       Growing SEED_INT_HYB (HYB-005 diketo warhead (validated -8.33 Vina)) - base affinity -8.33 kcal/mol
+[07:50:52] GrowingAgent         Generated 16 candidates -> docking top 15...
+[08:00:29] GrowingAgent       Growing SEED_INT_RAL (Raltegravir isoxazole carboxamide scaffold) - base affinity -8.10 kcal/mol
+[08:00:29] GrowingAgent         Generated 15 candidates -> docking top 15...
+[08:05:47] GrowingAgent       Growing F010 (quinoxaline) - base affinity -6.54 kcal/mol
+[08:05:47] GrowingAgent         Generated 42 candidates -> docking top 15...

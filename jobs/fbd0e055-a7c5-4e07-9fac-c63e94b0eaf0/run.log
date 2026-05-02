@@ -1,0 +1,44 @@
+[90m========================================================================[0m
+[1m[36m  AUTONOMOUS DRUG DISCOVERY AGENT v2  -  HIV-1 Integrase[0m
+[90m========================================================================[0m
+[08:08:20] [37m[1mOrchestrator    [0m Disease target  : HIV/AIDS
+[08:08:20] [37m[1mOrchestrator    [0m Receptor        : hiv_integrase.pdbqt
+[08:08:20] [37m[1mOrchestrator    [0m Reference drug  : Dolutegravir (-9.43 kcal/mol)
+[08:08:20] [37m[1mOrchestrator    [0m Fragment budget : 10
+[08:08:20] [37m[1mOrchestrator    [0m Max iterations  : 1
+[08:08:20] [37m[1mOrchestrator    [0m Confidence goal : 70%
+[90m------------------------------------------------------------------------[0m
+[90m------------------------------------------------------------------------[0m
+[08:08:20] [37m[1mOrchestrator    [0m ITERATION 1/1  (best confidence so far: 0%)
+[90m------------------------------------------------------------------------[0m
+[08:08:20] [37m[1mFragmentAgent   [0m Loading fragment library (120 total)...
+[08:08:20] [37m[1mFragmentAgent   [0m Selected 10 Ro3-compliant fragments (MW<=300, LogP<=3.5, HBD<=3)
+[08:08:20] [37m[1mDockingAgent    [0m Screening 10 fragments (exhaustiveness=2)...
+[08:08:20] [37m[1mDockingAgent    [0m Threshold: affinity < -5.93 kcal/mol
+[08:08:22] [37m[1mDockingAgent    [0m   OK F056     naphthalene                      -6.97 kcal/mol  8 poses
+[08:08:24] [37m[1mDockingAgent    [0m   . F057     2-aminonaphthalene               -5.82 kcal/mol  8 poses
+[08:08:26] [37m[1mDockingAgent    [0m   . F001     pyridine                         -3.76 kcal/mol  8 poses
+[08:08:27] [37m[1mDockingAgent    [0m   . F002     quinoline                        -5.00 kcal/mol  8 poses
+[08:08:29] [37m[1mDockingAgent    [0m   . F003     benzimidazole                    -4.65 kcal/mol  8 poses
+[08:08:31] [37m[1mDockingAgent    [0m   . F004     7-azaindole                      -5.74 kcal/mol  7 poses
+[08:08:33] [37m[1mDockingAgent    [0m   . F005     4-azaindole                      -4.33 kcal/mol  8 poses
+[08:08:35] [37m[1mDockingAgent    [0m   OK F006     isoquinoline                     -6.50 kcal/mol  8 poses
+[08:08:37] [37m[1mDockingAgent    [0m   . F007     2-aminoquinoline                 -5.58 kcal/mol  8 poses
+[08:08:40] [37m[1mDockingAgent    [0m   . F008     4-aminoquinazoline               -5.14 kcal/mol  8 poses
+[08:08:40] [37m[1mDockingAgent    [0m Fragment screening complete: 2/10 hit threshold
+[08:08:40] [37m[1mGrowingAgent    [0m Using 4 target-specific seeds for HIV_INTEGRASE
+[08:08:40] [37m[1mOrchestrator    [0m Top 6 fragment hits selected for growing
+[90m------------------------------------------------------------------------[0m
+[08:08:40] [37m[1mOrchestrator    [0m Fitting 5-sigma null distribution from fragment scores...
+[08:08:40] [37m[1mHiggsTest       [0m Using historical null for HIV_INTEGRASE: -5.52 +/- 0.61 (overrides 0.93)
+[08:08:40] [37m[1mHiggsTest       [0m Null distribution: affinity = -5.52 +/- 0.61 kcal/mol (n=10)
+[08:08:40] [37m[1mHiggsTest       [0m Fragment null median: -5.36 kcal/mol
+[08:08:40] [37m[1mHiggsTest       [0m 5-sigma threshold: -8.57 kcal/mol
+[08:08:40] [37m[1mHiggsTest       [0m 3-sigma threshold: -7.35 kcal/mol
+[90m------------------------------------------------------------------------[0m
+[08:08:40] [37m[1mGrowingAgent    [0m Growing 6 fragment hits -> target leads...
+[08:08:40] [37m[1mGrowingAgent    [0m Strategy: R-group + pharmacophore tail attachment
+[08:08:40] [37m[1mGrowingAgent    [0m   Growing SEED_INT_DTG (naphthalene core (MW=128, grows to INSTI leads)) - base affinity -8.87 kcal/mol
+[08:08:40] [37m[1mGrowingAgent    [0m     Generated 129 candidates -> docking top 15...
+[08:19:56] [37m[1mGrowingAgent    [0m   Growing SEED_INT_ISQ (isoquinoline core (MW=129, grows to INSTI leads)) - base affinity -8.59 kcal/mol
+[08:19:56] [37m[1mGrowingAgent    [0m     Generated 12 candidates -> docking top 15...

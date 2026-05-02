@@ -1,0 +1,23 @@
+PhysicsChem Agent v2 - 2026-04-14 07:36:24.326910
+============================================================
+========================================================================
+  AUTONOMOUS DRUG DISCOVERY AGENT v2  -  HIV-1 Integrase
+========================================================================
+[07:36:24] Orchestrator     Disease target  : HIV/AIDS
+[07:36:24] Orchestrator     Receptor        : hiv_integrase.pdbqt
+[07:36:24] Orchestrator     Reference drug  : Dolutegravir (-9.43 kcal/mol)
+[07:36:24] Orchestrator     Fragment budget : 30
+[07:36:24] Orchestrator     Max iterations  : 1
+[07:36:24] Orchestrator     Confidence goal : 70%
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+[07:36:24] Orchestrator     ITERATION 1/1  (best confidence so far: 0%)
+------------------------------------------------------------------------
+[07:36:24] FragmentAgent    Loading fragment library (120 total)...
+[07:36:24] FragmentAgent    Selected 30 Ro3-compliant fragments (MW<=300, LogP<=3.5, HBD<=3)
+[07:36:24] FragmentAgent    PAINS filter removed 3 fragments
+[07:36:24] DockingAgent     Screening 27 fragments (exhaustiveness=8)...
+[07:36:24] DockingAgent     Threshold: affinity < -5.93 kcal/mol
+[07:36:35] DockingAgent       . F001     pyridine                         -4.05 kcal/mol  8 poses
+[07:36:42] DockingAgent       OK F002     quinoline                        -6.46 kcal/mol  7 poses
+[07:36:47] DockingAgent       XX F003     benzimidazole                  FAILED (No poses parsed)

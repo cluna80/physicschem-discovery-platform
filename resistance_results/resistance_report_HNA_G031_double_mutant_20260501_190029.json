@@ -1,0 +1,15 @@
+{
+  "lead_id": "HNA_G031_double_mutant",
+  "smiles": "O=C(O)/C=C/c1ccc(O)cc1CCc1ccccc1",
+  "wt_affinity": -7.68,
+  "mutations_tested": [
+    "Q148R+G140S"
+  ],
+  "per_mutation_results": [],
+  "robustness": {
+    "robustness_score": 0,
+    "tier": "FAIL",
+    "summary": "no data"
+  },
+  "timestamp": "20260501_190029"
+}

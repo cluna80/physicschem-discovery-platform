@@ -1,0 +1,76 @@
+Total lines: 1965
+
+=== All def/class definitions ===
+  L  42: class _SilenceRDKit:
+  L  44: def __enter__(self):
+  L  49: def __exit__(self,*a):
+  L 251: class HiggsSignificanceTester:
+  L 281: def __init__(self, logger=None):
+  L 287: def _info(self, msg):
+  L 293: def fit_null(self, fragment_affinities: list):
+  L 322: def z_score(self, affinity: float) -> float:
+  L 331: def classify(self, affinity: float) -> dict:
+  L 368: def p_value(self, affinity: float) -> float:
+  L 373: def summary(self, compounds: list) -> dict:
+  L 648: class AgentLogger:
+  L 665: def __init__(self, logfile="agent_run.log"):
+  L 671: def log(self, agent: str, msg: str, level="INFO"):
+  L 681: def separator(self, char="-", width=72):
+  L 686: def header(self, text):
+  L 692: def get_entries(self): return self._entries
+  L 696: def generate_novel_fragments(n=20, seed=42):
+  L 760: class FragmentSelectorAgent:
+  L 766: def __init__(self, logger: AgentLogger):
+  L 770: def load(self, n: int = 50, bias: str = None) -> list:
+  L 806: def pains_filter(self, frags: list) -> list:
+  L 826: class DockingAgent:
+  L 833: def __init__(self, logger: AgentLogger, receptor: str,
+  L 843: def _smiles_to_pdbqt(self, smiles: str, path: str) -> bool:
+  L 864: def dock(self, smiles: str, name: str) -> dict:
+  L 921: def screen_fragments(self, frags: list,
+  L 958: class GrowingAgent:
+  L 997: def __init__(self, logger: AgentLogger, docking_agent: DockingAgent,
+  L1004: def _attach_rgroup(self, base_smi: str, rgroup: str) -> list:
+  L1028: def _merge_fragments(self, frag1: str, frag2: str) -> list:
+  L1052: def grow(self, top_frags: list, n_per_frag: int = 10,
+  L1136: class ADMETAgent:
+  L1150: def __init__(self, logger: AgentLogger):
+  L1153: def profile(self, compounds: list) -> list:
+  L1219: class ValidatorAgent:
+  L1250: def __init__(self, logger, selectivity_targets: dict, ref_affinity: float,
+  L1259: def _standard_score(self, c: dict) -> tuple[int, list]:
+  L1299: def _dip_score(self, c: dict) -> tuple[int, list]:
+  L1412: def validate(self, compounds: list) -> list:
+  L1500: class OrchestratorAgent:
+  L1513: def __init__(self, target_key: str = "EGFR",
+  L1538: def run(self):
+  L1788: def _simulation_mode(self, p, frag_agent, admet_agent, valid_agent):
+  L1835: def _print_leaderboard(self, compounds: list):
+  L1854: def _save_results(self, compounds: list):
+  L1870: def _print_certificate(self, best: dict):
+  L1911: def main():
+
+=== Lines containing 'canonicalize' ===
+
+=== Lines containing 'CANONICAL_CSV_COLUMNS' ===
+
+=== Lines containing row["confidence"] or row['confidence'] ===
+=== Lines containing 'dip_' ===
+  Found 17 lines
+  L1299:     def _dip_score(self, c: dict) -> tuple[int, list]:
+  L1335:         c["dip_competitive_advantage"] = round(comp_adv, 3)
+  L1354:         c["dip_viable"]         = (comp_adv >= 0)
+  L1355:         c["dip_advantage_tier"] = tier
+  L1369:         c["dip_cd4_safe"] = cd4_safe
+  L1391:         dip_sel = round(comp_adv / max(mw, 1) * 1000, 4)  # kcal/mol per kDa
+  L1392:         c["dip_selectivity_score"] = dip_sel
+  L1448:                 score, reasons = self._dip_score(c)
+  L1462:                 tier = c.get("dip_advantage_tier", "?")
+  L1463:                 adv  = c.get("dip_competitive_advantage", "?")
+  L1481:             strong   = sum(1 for c in compounds if c.get("dip_advantage_tier") == "STRONG")
+  L1482:             moderate = sum(1 for c in compounds if c.get("dip_advantage_tier") == "MODERATE")
+  L1483:             marginal = sum(1 for c in compounds if c.get("dip_advantage_tier") == "MARGINAL")
+  L1484:             fail     = sum(1 for c in compounds if c.get("dip_advantage_tier") == "FAIL")
+  L1485:             cd4_safe = sum(1 for c in compounds if c.get("dip_cd4_safe"))
+  L1490:                 best = next(c for c in compounds if c.get("dip_advantage_tier") == "STRONG")
+  L1493:                     f"advantage={best.get('dip_competitive_advantage'):+.3f} kcal/mol "

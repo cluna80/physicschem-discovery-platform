@@ -1,0 +1,24 @@
+{
+  "total_records_loaded": 14221,
+  "unique_records": 13316,
+  "docked_records": 653,
+  "total_instruction_pairs": 2334,
+  "train_size": 2100,
+  "val_size": 234,
+  "task_distribution": {
+    "affinity_classification": 653,
+    "affinity_regression": 653,
+    "admet_assessment": 653,
+    "target_identification": 172,
+    "fragment_growing": 203
+  },
+  "targets": {
+    "BACE1": 19,
+    "COVID_MPRO": 17,
+    "EGFR": 132,
+    "HIV": 168,
+    "OPT": 300,
+    "THROMBIN": 17,
+    "FRAGMENT": 12663
+  }
+}

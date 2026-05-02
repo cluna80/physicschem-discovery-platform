@@ -1,0 +1,14 @@
+{
+  "total_pairs": 3266,
+  "train_size": 2939,
+  "val_size": 327,
+  "task_distribution": {
+    "affinity_classification": 500,
+    "cot_affinity": 400,
+    "chembl_experimental": 2000,
+    "sar_analysis": 66,
+    "lead_optimization": 300
+  },
+  "docking_records": 620,
+  "chembl_records": 4998
+}

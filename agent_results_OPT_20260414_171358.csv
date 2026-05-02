@@ -1,0 +1,2 @@
+id,smiles,target,dock_affinity,LE,hERG,DILI,AMES,confidence,mpo_score,strategy,parent_id,sigma_value
+OPT_SEED_INT_RAL_G004_BIO_001,O=C(NCC(O)c1c(F)cc(F)cc1)c1cc(C(=O)Cc2ccccc2F)on1,HIV_INTEGRASE_20260413,-9.274210991519679,0.32,0,0,0,65,72.8,bioisostere,SEED_INT_RAL_G004,6.11

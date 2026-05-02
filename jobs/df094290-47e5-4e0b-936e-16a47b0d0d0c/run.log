@@ -1,0 +1,31 @@
+[PPI] Loaded 18 compounds from agent_results_HIV_INTEGRASE_20260419_082016.csv
+
+[PPI Network] Patient CD4=320, Viral Load=158489
+[PPI Network] Active targets: ['HIV_RT', 'HIV_INTEGRASE', 'HIV_PROTEASE']
+[PPI Network] Resistance variants: ['HIV_PROT_D30N', 'HIV_PROT_V82A']
+[PPI] SEED_INT_RAL_G013: HIV_RT=-2.67 | HIV_INTEGRASE=-8.95 | HIV_PROTEASE=1.10
+      Pan-HIV score=0.375 | Targets hit=1
+[PPI] SEED_INT_ISQ_G010: HIV_RT=-2.60 | HIV_INTEGRASE=-6.74 | HIV_PROTEASE=-3.91
+      Pan-HIV score=0.433 | Targets hit=1
+[PPI] F002_G010: HIV_RT=-2.56 | HIV_INTEGRASE=-6.94 | HIV_PROTEASE=-3.88
+      Pan-HIV score=0.439 | Targets hit=1
+[PPI] F006_G010: HIV_RT=-2.50 | HIV_INTEGRASE=-6.63 | HIV_PROTEASE=-3.27
+      Pan-HIV score=0.408 | Targets hit=1
+[PPI] F002_G007: HIV_RT=-2.43 | HIV_INTEGRASE=-5.38 | HIV_PROTEASE=-3.79
+      Pan-HIV score=0.376 | Targets hit=0
+[PPI] F006_G011: HIV_RT=-2.15 | HIV_INTEGRASE=-5.86 | HIV_PROTEASE=-3.31
+      Pan-HIV score=0.371 | Targets hit=0
+[PPI] F002_G011: HIV_RT=-2.55 | HIV_INTEGRASE=-5.72 | HIV_PROTEASE=-3.67
+      Pan-HIV score=0.389 | Targets hit=0
+[PPI] SEED_INT_ISQ_G007: HIV_RT=-2.23 | HIV_INTEGRASE=-5.32 | HIV_PROTEASE=-3.75
+      Pan-HIV score=0.366 | Targets hit=0
+[PPI] F006_G008: HIV_RT=-2.43 | HIV_INTEGRASE=-5.40 | HIV_PROTEASE=-3.56
+      Pan-HIV score=0.371 | Targets hit=0
+[PPI] SEED_INT_ISQ_G001: HIV_RT=-1.88 | HIV_INTEGRASE=-5.37 | HIV_PROTEASE=-3.77
+      Pan-HIV score=0.357 | Targets hit=0
+[PPI] Results saved: ppi_results_20260419_091852.json, ppi_results_20260419_091852.csv
+
+[PPI] Best pan-HIV candidate: F002_G010
+  Pan-HIV score: 0.439
+  Targets hit:   1
+  Target profile: {'HIV_RT': -2.564, 'HIV_INTEGRASE': -6.944, 'HIV_PROTEASE': -3.881}

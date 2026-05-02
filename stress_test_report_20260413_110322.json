@@ -1,0 +1,315 @@
+{
+  "timestamp": "20260413_110322",
+  "passed": 57,
+  "failed": 4,
+  "skipped": 0,
+  "total": 61,
+  "pct": 93.4,
+  "tests": [
+    {
+      "name": "Python >= 3.10",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "RDKit available",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Streamlit available",
+      "status": "PASS",
+      "detail": "2.0s"
+    },
+    {
+      "name": "Pandas available",
+      "status": "PASS",
+      "detail": "1.8s"
+    },
+    {
+      "name": "Plotly available",
+      "status": "PASS",
+      "detail": "0.3s"
+    },
+    {
+      "name": "Meeko available",
+      "status": "PASS",
+      "detail": "4.5s"
+    },
+    {
+      "name": "ADMET-AI available",
+      "status": "FAIL",
+      "detail": "Command '['.venv/Scripts/python.exe', '-c', 'import admet_ai"
+    },
+    {
+      "name": "NumPy available",
+      "status": "PASS",
+      "detail": "0.1s"
+    },
+    {
+      "name": "SQLite3 available",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "FBDD Agent (autonomous_drug_agentV2.py)",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Streamlit Dashboard (dashboard.py)",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Library Builder (library_builder.py)",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Lead Optimizer (lead_optimizer.py)",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Vina Validator (validate_leads.py)",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Library Expander (library_expander.py)",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Universal Harvester (harvest_all.py)",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Whitepaper Generator (higgs_whitepaper.py)",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Library Database (fragment_library.db)",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Receptor: HIV Integrase (3L2T)",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Receptor: HIV Protease",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Receptor: EGFR Kinase",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Receptor: COVID-19 Mpro",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Receptor: BACE1 Alzheimer's",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Receptor: Thrombin",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Vina executable",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "DB schema valid",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Library has compounds",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "5\u03c3 discoveries present",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "HIV Integrase in library",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Validated compounds tracked",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Syntax: autonomous_drug_agentV2.py",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Syntax: dashboard.py",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Syntax: library_builder.py",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Syntax: lead_optimizer.py",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Syntax: validate_leads.py",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Syntax: library_expander.py",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Syntax: harvest_all.py",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Syntax: higgs_whitepaper.py",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Parse & props: SEED_INT_RAL_G004",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Parse & props: F007_G013",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Parse & props: naph_metaCF3",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Parse & props: HYB-005",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "3D conformer generation",
+      "status": "PASS",
+      "detail": "0.1s"
+    },
+    {
+      "name": "Meeko PDBQT preparation",
+      "status": "PASS",
+      "detail": "1.2s"
+    },
+    {
+      "name": "R-group scan (1 compound, 5 analogs)",
+      "status": "PASS",
+      "detail": "0.8s"
+    },
+    {
+      "name": "Bioisostere replacement",
+      "status": "FAIL",
+      "detail": "0.8s"
+    },
+    {
+      "name": "OPT CSV output exists",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Vina binary found",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Validator --help runs",
+      "status": "PASS",
+      "detail": "0.8s"
+    },
+    {
+      "name": "Previous validation results",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Dolutegravir-beating compounds tracked",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Combinatorial generator (50 mols, dry run)",
+      "status": "FAIL",
+      "detail": "40.8s"
+    },
+    {
+      "name": "BRICS expander (dry run)",
+      "status": "FAIL",
+      "detail": "2.7s"
+    },
+    {
+      "name": "Whitepaper HTML generation",
+      "status": "PASS",
+      "detail": "0.2s"
+    },
+    {
+      "name": "Library CSV export exists",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Library SDF export exists",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Dashboard syntax & tab count",
+      "status": "PASS",
+      "detail": "0.1s"
+    },
+    {
+      "name": "No deprecated Streamlit calls",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "HIV_INTEGRASE in DISEASE_DB",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "All 4 tabs present",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Getting Started guide & progress tracker",
+      "status": "PASS",
+      "detail": "0.0s"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+PhysicsChem Agent v2 - 2026-04-20 08:08:20.680392
+============================================================
+========================================================================
+  AUTONOMOUS DRUG DISCOVERY AGENT v2  -  HIV-1 Integrase
+========================================================================
+[08:08:20] Orchestrator     Disease target  : HIV/AIDS
+[08:08:20] Orchestrator     Receptor        : hiv_integrase.pdbqt
+[08:08:20] Orchestrator     Reference drug  : Dolutegravir (-9.43 kcal/mol)
+[08:08:20] Orchestrator     Fragment budget : 10
+[08:08:20] Orchestrator     Max iterations  : 1
+[08:08:20] Orchestrator     Confidence goal : 70%
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+[08:08:20] Orchestrator     ITERATION 1/1  (best confidence so far: 0%)
+------------------------------------------------------------------------
+[08:08:20] FragmentAgent    Loading fragment library (120 total)...
+[08:08:20] FragmentAgent    Selected 10 Ro3-compliant fragments (MW<=300, LogP<=3.5, HBD<=3)
+[08:08:20] DockingAgent     Screening 10 fragments (exhaustiveness=2)...
+[08:08:20] DockingAgent     Threshold: affinity < -5.93 kcal/mol
+[08:08:22] DockingAgent       OK F056     naphthalene                      -6.97 kcal/mol  8 poses
+[08:08:24] DockingAgent       . F057     2-aminonaphthalene               -5.82 kcal/mol  8 poses
+[08:08:26] DockingAgent       . F001     pyridine                         -3.76 kcal/mol  8 poses
+[08:08:27] DockingAgent       . F002     quinoline                        -5.00 kcal/mol  8 poses
+[08:08:29] DockingAgent       . F003     benzimidazole                    -4.65 kcal/mol  8 poses
+[08:08:31] DockingAgent       . F004     7-azaindole                      -5.74 kcal/mol  7 poses
+[08:08:33] DockingAgent       . F005     4-azaindole                      -4.33 kcal/mol  8 poses
+[08:08:35] DockingAgent       OK F006     isoquinoline                     -6.50 kcal/mol  8 poses
+[08:08:37] DockingAgent       . F007     2-aminoquinoline                 -5.58 kcal/mol  8 poses
+[08:08:40] DockingAgent       . F008     4-aminoquinazoline               -5.14 kcal/mol  8 poses
+[08:08:40] DockingAgent     Fragment screening complete: 2/10 hit threshold
+[08:08:40] GrowingAgent     Using 4 target-specific seeds for HIV_INTEGRASE
+[08:08:40] Orchestrator     Top 6 fragment hits selected for growing
+------------------------------------------------------------------------
+[08:08:40] Orchestrator     Fitting 5-sigma null distribution from fragment scores...
+[08:08:40] HiggsTest        Using historical null for HIV_INTEGRASE: -5.52 +/- 0.61 (overrides 0.93)
+[08:08:40] HiggsTest        Null distribution: affinity = -5.52 +/- 0.61 kcal/mol (n=10)
+[08:08:40] HiggsTest        Fragment null median: -5.36 kcal/mol
+[08:08:40] HiggsTest        5-sigma threshold: -8.57 kcal/mol
+[08:08:40] HiggsTest        3-sigma threshold: -7.35 kcal/mol
+------------------------------------------------------------------------
+[08:08:40] GrowingAgent     Growing 6 fragment hits -> target leads...
+[08:08:40] GrowingAgent     Strategy: R-group + pharmacophore tail attachment
+[08:08:40] GrowingAgent       Growing SEED_INT_DTG (naphthalene core (MW=128, grows to INSTI leads)) - base affinity -8.87 kcal/mol
+[08:08:40] GrowingAgent         Generated 129 candidates -> docking top 15...
+[08:19:56] GrowingAgent       Growing SEED_INT_ISQ (isoquinoline core (MW=129, grows to INSTI leads)) - base affinity -8.59 kcal/mol
+[08:19:56] GrowingAgent         Generated 12 candidates -> docking top 15...

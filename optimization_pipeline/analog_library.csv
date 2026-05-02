@@ -1,7 +1,0 @@
-name,modification,expected_gain
-CURE_17G_002_opt1,"Replace 3,5-diF with 3,5-diCl",0.3
-CURE_17G_002_opt2,Add additional F at position 4,0.5
-CURE_17G_002_opt3,Replace bis-THF with spiro-THF,0.4
-CURE_17G_002_opt4,Add methyl group to isoquinoline,0.6
-CURE_17G_002_opt5,Combine opt2 + opt3,1.0
-CURE_17G_002_opt6,Replace S-OH with R-OH,0.2

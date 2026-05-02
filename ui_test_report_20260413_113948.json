@@ -1,0 +1,264 @@
+{
+  "timestamp": "20260413_113948",
+  "passed": 50,
+  "failed": 1,
+  "total": 51,
+  "pct": 98.0,
+  "tests": [
+    {
+      "name": "Dashboard loads without error",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Main header visible",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "No Python traceback on load",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Sidebar present",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Workflow progress tracker visible",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Disease Area dropdown exists",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Disease area selectbox rendered",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Target protein selectbox rendered",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Fragment slider present",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Launch button present",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "All 4 tabs rendered",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Discovery Agent tab present",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Fragment Library tab present",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Lead Optimizer tab present",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Hit Packages tab present",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Fragment Library tab clickable",
+      "status": "PASS",
+      "detail": "1.9s"
+    },
+    {
+      "name": "Lead Optimizer tab clickable",
+      "status": "PASS",
+      "detail": "2.3s"
+    },
+    {
+      "name": "Hit Packages tab clickable",
+      "status": "PASS",
+      "detail": "1.6s"
+    },
+    {
+      "name": "Discovery Agent tab clickable",
+      "status": "PASS",
+      "detail": "1.6s"
+    },
+    {
+      "name": "Library stats banner visible",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Disease area filter exists",
+      "status": "PASS",
+      "detail": "0.1s"
+    },
+    {
+      "name": "Min Sigma slider exists",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Novel only checkbox exists",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Compounds table rendered",
+      "status": "PASS",
+      "detail": "0.1s"
+    },
+    {
+      "name": "Compound inspector present",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Export CSV button present",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Refresh Library button present",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Selection mode radio exists",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Strategy multiselect exists",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Analogs per strategy slider",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Run Optimization button present",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Harvest to Library button present",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Dock with Vina checkbox present",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Value banner visible",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Package builder target selector",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Package type selector",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Export formats multiselect",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Build & Download button present",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Revenue tiers displayed",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Metric cards visible",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "LAUNCH button clickable (without running)",
+      "status": "PASS",
+      "detail": "0.1s"
+    },
+    {
+      "name": "STOP button present",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Log panel area present",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Dark theme applied",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Teal accent color present",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Space Mono font loaded",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "No visible error messages",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Page title correct",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Favicon/icon set",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Multi-column layouts rendering",
+      "status": "FAIL",
+      "detail": "0.0s"
+    },
+    {
+      "name": "No horizontal scroll (content fits)",
+      "status": "PASS",
+      "detail": "0.0s"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "lead_id": "HNA_G031_insert",
+  "smiles": "O=C(O)/C=C/c1ccc(O)cc1CCc1ccccc1",
+  "wt_affinity": -7.68,
+  "mutations_tested": [
+    "T66I",
+    "E92Q",
+    "G140S",
+    "Q148R",
+    "N155H"
+  ],
+  "per_mutation_results": [
+    {
+      "mutation": "T66I",
+      "wt_affinity": -7.68,
+      "mutant_affinity": -6.738,
+      "ddg": 0.9419999999999993,
+      "tier": "PENALIZED",
+      "n_poses": 8
+    },
+    {
+      "mutation": "E92Q",
+      "wt_affinity": -7.68,
+      "mutant_affinity": -7.264,
+      "ddg": 0.4159999999999995,
+      "tier": "ROBUST",
+      "n_poses": 8
+    },
+    {
+      "mutation": "G140S",
+      "wt_affinity": -7.68,
+      "mutant_affinity": -6.726,
+      "ddg": 0.9539999999999997,
+      "tier": "PENALIZED",
+      "n_poses": 8
+    },
+    {
+      "mutation": "Q148R",
+      "wt_affinity": -7.68,
+      "mutant_affinity": -6.05,
+      "ddg": 1.63,
+      "tier": "PENALIZED",
+      "n_poses": 8
+    },
+    {
+      "mutation": "N155H",
+      "wt_affinity": -7.68,
+      "mutant_affinity": -7.017,
+      "ddg": 0.6629999999999994,
+      "tier": "PENALIZED",
+      "n_poses": 8
+    }
+  ],
+  "robustness": {
+    "robustness_score": 91.2,
+    "tier": "ACCEPTABLE",
+    "avg_ddg": 0.92,
+    "max_ddg": 1.63,
+    "n_robust": 1,
+    "n_vulnerable": 0,
+    "n_total": 5
+  },
+  "timestamp": "20260501_185355"
+}

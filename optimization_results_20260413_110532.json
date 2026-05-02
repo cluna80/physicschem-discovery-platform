@@ -1,0 +1,40 @@
+{
+  "CHEMBL250295": {
+    "lead": {
+      "id": "CHEMBL250295",
+      "smiles": "C[C@@]1(N)Cc2cccc(c2)CC[C@H](c2ccccc2)NC(=O)c2cc(cc(N(c3ccccc3)S(C)(=O)=O)c2)COC1=O",
+      "inchi_key": null,
+      "campaign_id": "BACE1_20260413",
+      "target": "BACE1",
+      "cancer_type": "Neurological",
+      "disease_area": "Neurological",
+      "dock_affinity": -12.24,
+      "ligand_eff": 0.0,
+      "mw": 597.74,
+      "logp": 5.2,
+      "hbd": 2,
+      "hba": 6,
+      "tpsa": 118.8,
+      "rotbonds": 4,
+      "rings": 5,
+      "hERG": 0.5,
+      "DILI": 0.2,
+      "AMES": 0.0,
+      "sigma_label": "27.81s",
+      "sigma_value": 27.812,
+      "is_discovery": 1,
+      "is_evidence": 1,
+      "confidence": 0,
+      "is_novel": 0,
+      "chembl_match": "CHEMBL250295",
+      "pubchem_cid": 0,
+      "tanimoto_max": 0.0,
+      "fragment_parent": "",
+      "grow_generation": 0,
+      "timestamp": "2026-04-13T07:25:50.182862",
+      "notes": "source=chembl"
+    },
+    "analogs": [],
+    "best": null
+  }
+}

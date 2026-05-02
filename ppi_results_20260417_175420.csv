@@ -1,0 +1,11 @@
+﻿id,smiles,original_affinity,pan_hiv_score,n_targets_hit,HIV_RT,HIV_INTEGRASE,HIV_PROTEASE
+SEED_INT_RAL_G013,O=C(NCC(O)c1cc(F)cc(F)c1)c1cc(C(=O)CC2CCCNC2)on1,-8.767,0,0,,,
+F002_G010,c1ccc2c(C3CCCNC3)ccnc2c1,-6.687,0,0,,,
+SEED_INT_ISQ_G010,c1cnc2c(C3CCCNC3)cccc2c1,-6.649,0,0,,,
+F006_G010,c1ccc2c(C3CCCNC3)cncc2c1,-6.37,0,0,,,
+F006_G011,c1ccc2c(C3CCCO3)cncc2c1,-5.77,0,0,,,
+F002_G011,c1ccc2c(C3CCCO3)ccnc2c1,-5.653,0,0,,,
+F006_G008,OCCc1cncc2ccccc12,-5.6,0,0,,,
+SEED_INT_ISQ_G001,CCc1cccc2cccnc12,-5.314,0,0,,,
+F002_G007,OCc1ccnc2ccccc12,-5.22,0,0,,,
+F006_G007,OCc1cncc2ccccc12,-5.191,0,0,,,

@@ -1,8 +1,0 @@
-Name,Predicted Affinity,Improvement,Meets -10.0
-opt5_v2_1,-9.933,0.08,❌ NO
-opt5_v2_2,-9.913,0.06,❌ NO
-opt5_v2_3,-9.903,0.05,❌ NO
-opt5_v2_4,-9.923,0.07,❌ NO
-opt5_v2_5,-9.892999999999999,0.04,❌ NO
-opt5_v2_6,-10.043,0.19,✅ YES
-opt5_v2_7,-10.103,0.25,✅ YES

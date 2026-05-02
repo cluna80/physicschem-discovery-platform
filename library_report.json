@@ -1,13 +1,13 @@
 {
-  "generated": "2026-04-13T07:56:19.200106",
+  "generated": "2026-04-14T09:53:03.853881",
   "platform": "PhysicsChem Discovery Platform v3.0",
   "statistics": {
-    "total": 12794,
-    "discoveries": 8082,
-    "evidence": 8367,
-    "novel": 97,
-    "campaigns": 185,
-    "targets": 14
+    "total": 12850,
+    "discoveries": 8106,
+    "evidence": 8407,
+    "novel": 123,
+    "campaigns": 218,
+    "targets": 15
   },
   "top_discoveries": [
     {
@@ -143,8 +143,8 @@
       "discoveries": 808
     },
     "Unknown": {
-      "total": 221,
-      "discoveries": 87
+      "total": 277,
+      "discoveries": 111
     },
     "COVID-19": {
       "total": 13,
@@ -160,8 +160,9 @@
     }
   },
   "novel_count_by_target": {
-    "OPT_20260413": 66,
+    "OPT_20260413": 83,
     "EGFR": 7,
-    "HIV_INTEGRASE_20260413": 24
+    "HIV_INTEGRASE_20260413": 24,
+    "HIV_INTEGRASE_20260414": 9
   }
 }

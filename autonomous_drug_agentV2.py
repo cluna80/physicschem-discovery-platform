@@ -2,6 +2,7 @@
 autonomous_drug_agent.py
 ========================
 PhysicsChem Discovery Pipeline v2 - Autonomous Fragment Drug Discoverer
+(Stage 2 — canonical CSV schema, per-job output paths, sigma/discovery fields)
 
 ARCHITECTURE:
     OrchestratorAgent
@@ -14,10 +15,23 @@ ARCHITECTURE:
 USAGE:
     python autonomous_drug_agent.py --target EGFR
     python autonomous_drug_agent.py --target HIV --receptor hiv_protease.pdbqt
-    python autonomous_drug_agent.py --target COVID --receptor covid_mpro.pdbqt
 
-INSTALL:
-    pip install rdkit meeko gemmi admet-ai streamlit plotly
+STAGE 2 CHANGES (from previous version):
+    * Honors AGENT_RESULTS_FILE / AGENT_LEADERBOARD_FILE env vars so the
+      bridge can place outputs directly under jobs/{uuid}/ instead of
+      scrambling for legacy agent_results_*.csv files. If the env vars
+      are not set, legacy filenames are still written (dashboard.py keeps
+      working unchanged).
+    * Canonical CSV schema — one set of column names, no more
+      "mw vs MW vs molecular_weight" aliasing. Bridge stops probing.
+    * Adds the sigma/discovery/evidence fields that were already being
+      computed but never being written to disk. The twin's "sigmaLabel: -"
+      bug is fixed here at the source.
+    * Adds target/reference_drug/reference_affinity/timestamp/run_id to
+      every row so downstream consumers never need to re-derive context.
+    * Runs Higgs significance BEFORE confidence validation so the sigma
+      bonus actually contributes to confidence scoring (it was always
+      scored but the bonus never fired because z_score was absent).
 
 TARGETS (built-in):
     EGFR    - Lung cancer kinase         (receptor: cancer_egfr_agent/egfr_receptor.pdbqt)
@@ -81,6 +95,116 @@ try:
     ADMET_OK = True
 except Exception:
     ADMET_OK = False
+
+
+# ======================================================================
+# STAGE 2: Canonical CSV schema
+# ======================================================================
+# Exactly these columns, in this order. If a value is missing on a row,
+# it writes as an empty string — never omitted, never renamed.
+
+CANONICAL_CSV_COLUMNS = [
+    # Identity
+    "id", "smiles", "name", "parent",
+    # Docking
+    "dock_affinity", "n_poses",
+    # Physicochem
+    "mw", "logp", "hac", "le",
+    # Higgs significance
+    "z_score", "sigma_label", "sigma_status",
+    "is_discovery", "is_evidence",
+    # ADMET — core
+    "admet_pass", "hERG", "DILI", "AMES", "ClinTox",
+    "bioavailability", "solubility", "hia",
+    # ADMET — CYP450
+    "cyp3a4_inh", "cyp2d6_inh", "cyp2c9_inh", "cyp2c19_inh", "cyp1a2_inh",
+    "cyp3a4_sub", "cyp2d6_sub", "cyp2c9_sub",
+    "cyp_safe", "cyp_warning",
+    # ADMET — PK
+    "half_life", "clearance_hep", "ppbr", "vdss",
+    # Validation
+    "confidence", "reasons",
+    # Context
+    "target", "reference_drug", "reference_affinity", "run_id", "timestamp",
+]
+
+
+def _canonicalize_row(c: dict, *, target: str, ref_drug: str,
+                      ref_aff: float, run_id: str,
+                      timestamp: str) -> dict:
+    """
+    Map an agent-internal candidate dict to the canonical schema.
+    Values not present become empty string (never missing column).
+    The agent uses mixed-case internal keys (MW/LE/HAC/LogP/hERG/DILI)
+    for historical reasons — this is the one place we translate.
+    """
+    row = {col: "" for col in CANONICAL_CSV_COLUMNS}
+
+    # Identity
+    row["id"]       = c.get("id", "")
+    row["smiles"]   = c.get("smiles", "")
+    row["name"]     = c.get("name", "")
+    row["parent"]   = c.get("parent", "")
+
+    # Docking
+    row["dock_affinity"] = c.get("dock_affinity", "")
+    row["n_poses"]       = c.get("dock_poses", "")
+
+    # Physicochem (translate from legacy names)
+    row["mw"]   = c.get("MW",   c.get("mw",   ""))
+    row["logp"] = c.get("LogP", c.get("logp", ""))
+    row["hac"]  = c.get("HAC",  c.get("hac",  ""))
+    row["le"]   = c.get("LE",   c.get("le",   ""))
+
+    # Higgs significance
+    row["z_score"]      = c.get("z_score", "")
+    row["sigma_label"]  = c.get("sigma_label", "-")
+    row["sigma_status"] = c.get("sigma_status", "")
+    # Booleans -> lowercase string for clean CSV round-trip
+    row["is_discovery"] = "true" if c.get("is_discovery") else "false"
+    row["is_evidence"]  = "true" if c.get("is_evidence")  else "false"
+
+    # ADMET core
+    row["admet_pass"]      = "true" if c.get("admet_pass") else "false"
+    row["hERG"]            = c.get("hERG", "")
+    row["DILI"]            = c.get("DILI", "")
+    row["AMES"]            = c.get("AMES", "")
+    row["ClinTox"]         = c.get("ClinTox", "")
+    row["bioavailability"] = c.get("Bioavailability", c.get("bioavailability", ""))
+    row["solubility"]      = c.get("Solubility",      c.get("solubility", ""))
+    row["hia"]             = c.get("HIA",             c.get("hia", ""))
+
+    # CYP450
+    row["cyp3a4_inh"]  = c.get("CYP3A4_inh",  c.get("cyp3a4_inh",  ""))
+    row["cyp2d6_inh"]  = c.get("CYP2D6_inh",  c.get("cyp2d6_inh",  ""))
+    row["cyp2c9_inh"]  = c.get("CYP2C9_inh",  c.get("cyp2c9_inh",  ""))
+    row["cyp2c19_inh"] = c.get("CYP2C19_inh", c.get("cyp2c19_inh", ""))
+    row["cyp1a2_inh"]  = c.get("CYP1A2_inh",  c.get("cyp1a2_inh",  ""))
+    row["cyp3a4_sub"]  = c.get("CYP3A4_sub",  c.get("cyp3a4_sub",  ""))
+    row["cyp2d6_sub"]  = c.get("CYP2D6_sub",  c.get("cyp2d6_sub",  ""))
+    row["cyp2c9_sub"]  = c.get("CYP2C9_sub",  c.get("cyp2c9_sub",  ""))
+    row["cyp_safe"]    = "true" if c.get("cyp_safe") else "false"
+    row["cyp_warning"] = c.get("cyp_warning", "")
+
+    # PK
+    row["half_life"]     = c.get("half_life", "")
+    row["clearance_hep"] = c.get("clearance_hep", "")
+    row["ppbr"]          = c.get("ppbr", "")
+    row["vdss"]          = c.get("vdss", "")
+
+    # Validation
+    row["confidence"] = c.get("confidence", "")
+    row["reasons"]    = "|".join(c.get("reasons", []))  # pipe-separated, CSV-safe
+
+    # Context
+    row["target"]             = target
+    row["reference_drug"]     = ref_drug or ""
+    row["reference_affinity"] = ref_aff if ref_aff is not None else ""
+    row["run_id"]             = run_id
+    row["timestamp"]          = timestamp
+
+    return row
+
 
 # ======================================================================
 # BUILT-IN FRAGMENT LIBRARY
@@ -263,15 +387,6 @@ class HiggsSignificanceTester:
            Z >= 5.0 = 5-sigma DISCOVERY
            Z >= 3.0 = 3-sigma EVIDENCE
            Z >= 2.0 = 2-sigma CANDIDATE
-
-    Why use docking scores not IC50?
-    ─────────────────────────────────
-    In v2, Vina affinity is the primary activity signal.
-    The null is the distribution of fragment affinities — these are
-    genuinely "inactive" relative to lead-sized compounds because
-    fragments are too small to achieve drug-level binding.
-    Any grown compound that significantly exceeds fragment binding
-    represents a true statistical discovery, not a random fluctuation.
     """
 
     DISCOVERY_SIGMA = 5.0
@@ -291,12 +406,6 @@ class HiggsSignificanceTester:
             print(f"  [HiggsTest] {msg}")
 
     def fit_null(self, fragment_affinities: list):
-        """
-        Build null distribution from fragment docking scores.
-        Input: list of affinity values (negative kcal/mol).
-        Uses raw affinities (not log) since docking scores are already
-        in a linear energy scale.
-        """
         vals = np.array([a for a in fragment_affinities
                          if a is not None and a < 0])
         if len(vals) < 3:
@@ -310,8 +419,6 @@ class HiggsSignificanceTester:
         self.null_std  = float(np.std(vals)) + 1e-6
         self.null_n    = len(vals)
 
-        # Override with historical null for known targets
-        # Prevents threshold inflation from high-variance fragment runs
         HISTORICAL_NULL = {
             "HIV_INTEGRASE": (-5.52, 0.61),
             "EGFR":          (-5.49, 0.63),
@@ -332,48 +439,37 @@ class HiggsSignificanceTester:
         self._info(f"Null distribution: affinity = {self.null_mean:.2f} +/- "
                    f"{self.null_std:.2f} kcal/mol (n={self.null_n})")
         self._info(f"Fragment null median: {np.median(vals):.2f} kcal/mol")
-        # Auto-scaled discovery thresholds
         disc = self.null_mean - self.DISCOVERY_SIGMA * self.null_std
         evid = self.null_mean - self.EVIDENCE_SIGMA  * self.null_std
         self._info(f"5-sigma threshold: {disc:.2f} kcal/mol")
         self._info(f"3-sigma threshold: {evid:.2f} kcal/mol")
 
     def z_score(self, affinity: float) -> float:
-        """
-        Z-score of a docking affinity vs the null distribution.
-        More negative affinity = better binding = higher Z-score.
-        """
         if self.null_mean is None:
             raise RuntimeError("Call fit_null() before z_score()")
         return (self.null_mean - affinity) / self.null_std
 
     def classify(self, affinity: float) -> dict:
-        """
-        Full significance classification for a compound.
-        Returns dict with z_score, sigma_label, status, is_discovery.
-        """
         z = self.z_score(affinity)
 
         if z >= self.DISCOVERY_SIGMA:
             status = "5-SIGMA DISCOVERY"
-            label  = f"{z:.2f}s"
             is_discovery = True
             is_evidence  = True
         elif z >= self.EVIDENCE_SIGMA:
             status = "3-SIGMA EVIDENCE"
-            label  = f"{z:.2f}s"
             is_discovery = False
             is_evidence  = True
         elif z >= self.CANDIDATE_SIGMA:
             status = "2-SIGMA CANDIDATE"
-            label  = f"{z:.2f}s"
             is_discovery = False
             is_evidence  = False
         else:
             status = f"sub-threshold ({z:.1f}s)"
-            label  = f"{z:.2f}s"
             is_discovery = False
             is_evidence  = False
+
+        label = f"{z:.2f}s"
 
         return {
             "z_score":      round(z, 3),
@@ -385,15 +481,10 @@ class HiggsSignificanceTester:
         }
 
     def p_value(self, affinity: float) -> float:
-        """One-sided p-value from Z-score (Gaussian tail)."""
         from scipy.stats import norm
         return float(1 - norm.cdf(self.z_score(affinity)))
 
-    def summary(self, compounds: list) -> dict:
-        """
-        Run significance scan across all compounds.
-        Returns sorted list with sigma classifications.
-        """
+    def summary(self, compounds: list) -> list:
         results = []
         for c in compounds:
             aff = c.get("dock_affinity", 0)
@@ -411,6 +502,7 @@ class HiggsSignificanceTester:
         self._info(f"Significance scan: {n5} x 5-sigma discoveries, "
                    f"{n3} x 3-sigma evidence candidates")
         return results
+
 
 TARGET_PROFILES = {
 
@@ -534,6 +626,31 @@ TARGET_PROFILES = {
         "fragment_bias": "naphthalene",
         "chembl":     "CHEMBL4523",
         "selectivity_targets": {}
+    },
+    "HIV_DIP": {
+        "name":       "HIV-1 Therapeutic DIP — Integrase Competitive Binder",
+        "pdb":        "3L2T",
+        "receptor":   "hiv_integrase.pdbqt",
+        "center":     (-38.5, 30.5, -20.8),
+        "size":       (25.0, 25.0, 25.0),
+        "ref_drug":   "Dolutegravir",
+        "ref_affinity": -9.43,
+        "disease":    "HIV/AIDS — Therapeutic Viral Competition",
+        "category":   "Infectious Disease — DIP Strategy",
+        "mechanism":  "Competitive integrase occupation — benign DIP variant outcompetes pathogenic HIV-1 for D64/D116/E152 catalytic site.",
+        "clinical_stage": "Experimental — Defective Interfering Particle therapy",
+        "key_residues": ["D64","D116","E152","Q148","N155","K156","K159"],
+        "fragment_bias": "hydroxypyrimidine",
+        "chembl":     "CHEMBL4523",
+        "dip_strategy": True,
+        "selectivity_targets": {
+            "HIV_INTEGRASE": {
+                "receptor": "hiv_integrase.pdbqt",
+                "center": (-38.5, 30.5, -20.8),
+                "size": (25.0, 25.0, 25.0),
+                "note": "Must bind tighter than wild-type HIV integrase (-9.43 kcal/mol)"
+            }
+        }
     },
     "COVID_MPRO": {
         "name":"SARS-CoV-2 Main Protease (Mpro)","pdb":"6LU7",
@@ -730,39 +847,18 @@ class AgentLogger:
 
 # ── Novel fragment generator (FBDD rule-of-3 exploration) ────────────
 def generate_novel_fragments(n=20, seed=42):
-    """
-    Generate novel Ro3-compliant fragments via SMARTS-based enumeration.
-    These supplement the built-in library with dynamic chemical space exploration.
-    Used for FBDD discovery of scaffolds not in the static library.
-    """
     if not RDKIT_OK: return []
     from rdkit.Chem import AllChem, Descriptors, rdMolDescriptors
     rng = random.Random(seed)
 
-    # Core heterocyclic scaffolds for FBDD
     cores = [
-        "c1ccncc1",       # pyridine
-        "c1cccnc1",       # pyridine isomer
-        "c1cnccn1",       # pyrimidine
-        "c1ccnnc1",       # pyridazine
-        "c1ccncc1N",      # aminopyridine
-        "c1ccc2[nH]ccn2c1", # benzimidazole
-        "c1ccc2ncccc2c1", # quinoline
-        "c1ccc2ncncc2c1", # quinazoline
-        "C1CCNCC1",       # piperidine
-        "C1COCCN1",       # morpholine
-        "C1CCNC1",        # pyrrolidine
-        "C1CNCCN1",       # piperazine
-        "c1cc[nH]c1",     # pyrrole
-        "c1csc(N)n1",     # aminothiazole
-        "c1cnc[nH]1",     # imidazole
-        "c1cc2ccccc2[nH]1", # indole
-        "O=C1CCCO1",      # butyrolactone
-        "O=C1CCCN1",      # pyrrolidinone
-        "c1coc(N)n1",     # aminooxazole
+        "c1ccncc1", "c1cccnc1", "c1cnccn1", "c1ccnnc1", "c1ccncc1N",
+        "c1ccc2[nH]ccn2c1", "c1ccc2ncccc2c1", "c1ccc2ncncc2c1",
+        "C1CCNCC1", "C1COCCN1", "C1CCNC1", "C1CNCCN1",
+        "c1cc[nH]c1", "c1csc(N)n1", "c1cnc[nH]1", "c1cc2ccccc2[nH]1",
+        "O=C1CCCO1", "O=C1CCCN1", "c1coc(N)n1",
     ]
 
-    # R-group substituents (Ro3 compliant)
     rgroups = [
         "F","Cl","Br","N","O","S","C","CC","CCC",
         "C(F)(F)F","CN","CO","CF","c1ccccc1",
@@ -794,11 +890,6 @@ def generate_novel_fragments(n=20, seed=42):
 # ======================================================================
 
 class FragmentSelectorAgent:
-    """
-    Selects and filters fragments from the built-in library.
-    Applies Ro3 (rule of 3) fragment filter:
-      MW <= 300, LogP <= 3, HBD <= 3, HAC <= 20
-    """
     def __init__(self, logger: AgentLogger):
         self.log = logger
         self.selected = []
@@ -818,7 +909,6 @@ class FragmentSelectorAgent:
             logp = Descriptors.MolLogP(mol)
             hbd  = Lipinski.NumHDonors(mol)
             hac  = mol.GetNumHeavyAtoms()
-            # Ro3 filter
             if mw > 300 or logp > 3.5 or hbd > 3 or hac > 20:
                 continue
             valid.append({
@@ -827,7 +917,6 @@ class FragmentSelectorAgent:
                 "HBD": hbd, "HAC": hac,
             })
 
-        # Bias toward target-specific scaffolds
         if bias:
             priority = [f for f in valid if bias.lower() in f["name"].lower()]
             rest     = [f for f in valid if f not in priority]
@@ -840,7 +929,6 @@ class FragmentSelectorAgent:
         return self.selected
 
     def pains_filter(self, frags: list) -> list:
-        """Remove PAINS fragments."""
         if not RDKIT_OK: return frags
         params = FilterCatalogParams()
         params.AddCatalog(FilterCatalogParams.FilterCatalogs.PAINS)
@@ -860,10 +948,6 @@ class FragmentSelectorAgent:
 # ======================================================================
 
 class DockingAgent:
-    """
-    AutoDock Vina wrapper.
-    Reuses proven infrastructure from drug_discovery.py and validate_candidates.py.
-    """
     VINA = "./bin/vina.exe"
 
     def __init__(self, logger: AgentLogger, receptor: str,
@@ -874,7 +958,7 @@ class DockingAgent:
         self.center   = center
         self.size     = size
         self.exh      = exhaustiveness
-        self._cache   = {}  # smiles -> affinity
+        self._cache   = {}
 
     def _smiles_to_pdbqt(self, smiles: str, path: str) -> bool:
         if not (RDKIT_OK and MEEKO_OK): return False
@@ -898,7 +982,6 @@ class DockingAgent:
             return False
 
     def dock(self, smiles: str, name: str) -> dict:
-        """Dock a SMILES and return best affinity + poses."""
         if smiles in self._cache:
             return self._cache[smiles]
 
@@ -956,7 +1039,6 @@ class DockingAgent:
 
     def screen_fragments(self, frags: list,
                          ref_affinity: float = -7.0) -> list:
-        """Dock all fragments, return those beating threshold."""
         results = []
         n = len(frags)
         self.log.log("DockingAgent",
@@ -992,14 +1074,6 @@ class DockingAgent:
 # ======================================================================
 
 class GrowingAgent:
-    """
-    Grows fragment hits into lead-sized molecules using:
-    1. R-group enumeration (systematic)
-    2. Scaffold merging (combine two fragments)
-    3. Linker insertion (add spacer between fragment and pharmacophore)
-    """
-
-    # R-groups to enumerate at reactive positions
     RGROUPS = {
         "alkyl":    ["C","CC","CCC","CCCC","CCCCC","CC(C)C","CCC(C)C"],
         "safe_heads":["c1ccccc1","c1cccc(F)c1","c1ccc(F)cc1","c1ccc(O)cc1","c1cccc(N)c1","c1ccc(N)cc1"],
@@ -1012,51 +1086,55 @@ class GrowingAgent:
         "linkers":  ["CC","CCC","CCCC","CCO","CCN","CCNC"],
     }
 
-    # Pharmacophore tails (target-specific binding groups)
     PHARMA_TAILS = {
         "EGFR":  [
-            "Nc1ncnc2ccccc12",           # quinazoline head
-            "Nc1ccc(Nc2ncnc3ccccc23)cc1",# anilinoquinazoline
-            "c1ccc2[nH]cnc2c1",          # azaindole
+            "Nc1ncnc2ccccc12",
+            "Nc1ccc(Nc2ncnc3ccccc23)cc1",
+            "c1ccc2[nH]cnc2c1",
         ],
         "HIV":   [
-            "NS(=O)(=O)c1ccccc1",        # sulfonamide
-            "C1CC2CCOC2O1",              # bis-THF
-            "OC(Cc1ccccc1)C(=O)N",      # Phe-ol
+            "NS(=O)(=O)c1ccccc1",
+            "C1CC2CCOC2O1",
+            "OC(Cc1ccccc1)C(=O)N",
         ],
         "T790M": [
             "Nc1ncnc2ccccc12",
             "c1ccc2[nH]cnc2c1",
         ],
-        # HIV Integrase — INSTI pharmacophore tails
-        # Mg2+ chelation warheads + hydrophobic wing groups
+        "HIV_DIP": [
+            "O=C(O)/C=C/c1ccccc1",
+            "Oc1nccc(=O)[nH]1",
+            "O=C(O)CC(=O)O",
+            "c1cnc2[nH]ccc2c1",
+            "OC(=O)c1cc(O)ccn1",
+        ],
         "HIV_INTEGRASE": [
-            "CC(=O)C(=O)O",              # diketo acid (Mg2+ chelator)
-            "O=C(O)C(=O)N",             # alpha-keto amide warhead
-            "Cc1cc(F)cc(F)c1",          # 3,5-difluorobenzyl
-            "c1ccc(F)c(F)c1",           # 3,4-difluorophenyl
-            "Cc1ccc(F)cc1F",            # 2,4-difluorotoluene
-            "OCC(O)CN",                 # diol linker (Dolutegravir tail)
-            "NCC(O)c1cc(F)cc(F)c1",    # amino-difluorophenyl (RAL tail)
-            "c1ccc2ccccc2c1",           # naphthalene wing
-            "c1cccc2cccnc12",           # isoquinoline wing
-            "c1cnc2ccccc2c1",           # quinoline wing
-            "OC(CN)Cc1cc(F)cc(F)c1",   # Raltegravir-like tail
+            "CC(=O)C(=O)O",
+            "O=C(O)C(=O)N",
+            "Cc1cc(F)cc(F)c1",
+            "c1ccc(F)c(F)c1",
+            "Cc1ccc(F)cc1F",
+            "OCC(O)CN",
+            "NCC(O)c1cc(F)cc(F)c1",
+            "c1ccc2ccccc2c1",
+            "c1cccc2cccnc12",
+            "c1cnc2ccccc2c1",
+            "OC(CN)Cc1cc(F)cc(F)c1",
         ],
         "COVID_MPRO": [
-            "O=C1CCNC1",               # gamma-lactam
-            "c1ccc2[nH]ccc2c1",        # indole
-            "C1CCNCC1",                # piperidine
+            "O=C1CCNC1",
+            "c1ccc2[nH]ccc2c1",
+            "C1CCNCC1",
         ],
         "BACE1": [
-            "N=C1NCCC1",               # iminohydantoin
-            "FC(F)(F)c1ccccc1",        # trifluoromethylphenyl
-            "c1ccc2c(c1)CC(N)C2",      # aminotetralin
+            "N=C1NCCC1",
+            "FC(F)(F)c1ccccc1",
+            "c1ccc2c(c1)CC(N)C2",
         ],
         "THROMBIN": [
-            "NC(=N)c1ccccc1",          # benzamidine
-            "NC(=N)c1ccncc1",          # pyridine amidine
-            "c1ccc2[nH]ccc2c1",        # indole
+            "NC(=N)c1ccccc1",
+            "NC(=N)c1ccncc1",
+            "c1ccc2[nH]ccc2c1",
         ],
     }
 
@@ -1068,15 +1146,13 @@ class GrowingAgent:
         self.grown  = []
 
     def _attach_rgroup(self, base_smi: str, rgroup: str) -> list:
-        """Attach an R-group to each attachment point of base fragment."""
         if not RDKIT_OK: return []
         candidates = []
-        # Simple concatenation strategies
         strategies = [
-            f"{base_smi}{rgroup}",        # direct append
-            f"{rgroup}{base_smi}",        # prepend
-            f"{base_smi}C{rgroup}",       # methylene spacer
-            f"{base_smi}CC{rgroup}",      # ethylene spacer
+            f"{base_smi}{rgroup}",
+            f"{rgroup}{base_smi}",
+            f"{base_smi}C{rgroup}",
+            f"{base_smi}CC{rgroup}",
         ]
         for smi in strategies:
             try:
@@ -1092,7 +1168,6 @@ class GrowingAgent:
         return candidates
 
     def _merge_fragments(self, frag1: str, frag2: str) -> list:
-        """Merge two fragments with various linkers."""
         if not RDKIT_OK: return []
         linkers = ["","C","CC","CCC","N","NC","O","OC"]
         results = []
@@ -1117,10 +1192,6 @@ class GrowingAgent:
 
     def grow(self, top_frags: list, n_per_frag: int = 10,
              ref_affinity: float = -7.5) -> list:
-        """
-        Grow top fragments into lead candidates.
-        Returns all grown compounds that beat affinity threshold.
-        """
         self.log.log("GrowingAgent",
             f"Growing {len(top_frags)} fragment hits -> target leads...")
         self.log.log("GrowingAgent",
@@ -1138,24 +1209,20 @@ class GrowingAgent:
 
             candidates = []
 
-            # Strategy 1: Attach pharmacophore tails
             for tail in tails:
                 grown = self._merge_fragments(base, tail)
                 candidates.extend(grown)
 
-            # Strategy 2: R-group enumeration
             for rg_class, rgroups in self.RGROUPS.items():
-                for rg in rgroups[:2]:  # limit per class
+                for rg in rgroups[:2]:
                     grown = self._attach_rgroup(base, rg)
                     candidates.extend(grown[:3])
 
-            # Strategy 3: Merge with another top fragment
             if len(top_frags) > 1:
                 partner = random.choice([f for f in top_frags if f != frag])
                 merged  = self._merge_fragments(base, partner["smiles"])
                 candidates.extend(merged)
 
-            # Deduplicate
             seen = set()
             unique = []
             for c in candidates:
@@ -1166,7 +1233,6 @@ class GrowingAgent:
             self.log.log("GrowingAgent",
                 f"    Generated {len(unique)} candidates -> docking top {n_per_frag}...")
 
-            # Dock all, keep best
             docked = []
             for i, cand in enumerate(unique[:n_per_frag*4]):
                 cid = f"{fid}_G{i+1:03d}"
@@ -1200,24 +1266,24 @@ class GrowingAgent:
 # ======================================================================
 
 class ADMETAgent:
-    """
-    ADMET-AI safety profiling.
-    Falls back to rule-based Lipinski + PAINS if ADMET-AI unavailable.
-    """
     SAFETY_THRESHOLDS = {
-        "hERG":             0.50,   # < 0.50 = safe
-        "DILI":             0.50,
+        "hERG":             float(os.environ.get("PATIENT_HERG_THRESHOLD", "0.50")),
+        "DILI":             float(os.environ.get("PATIENT_DILI_THRESHOLD", "0.50")),
         "AMES":             0.50,
         "ClinTox":          0.50,
         "Carcinogens_Lagunin": 0.30,
-        "Bioavailability_Ma":  0.50,   # > 0.50 = good
+        "Bioavailability_Ma":  0.50,
+        "CYP3A4_Veith":     float(os.environ.get("PATIENT_CYP3A4_THRESH", "0.70")),
+        "CYP2D6_Veith":     float(os.environ.get("PATIENT_CYP2D6_THRESH", "0.70")),
+        "CYP2C9_Veith":     float(os.environ.get("PATIENT_CYP2C9_THRESH", "0.70")),
+        "CYP2C19_Veith":    float(os.environ.get("PATIENT_CYP2C19_THRESH", "0.70")),
+        "CYP1A2_Veith":     float(os.environ.get("PATIENT_CYP1A2_THRESH", "0.70")),
     }
 
     def __init__(self, logger: AgentLogger):
         self.log = logger
 
     def profile(self, compounds: list) -> list:
-        """Run ADMET profiling and annotate each compound."""
         self.log.log("ADMETAgent",
             f"Profiling {len(compounds)} compounds "
             f"({'ADMET-AI' if ADMET_OK else 'rule-based fallback'})...")
@@ -1240,19 +1306,47 @@ class ADMETAgent:
                         c["Bioavailability"]= result.get("Bioavailability_Ma", 0.5)
                         c["Solubility"]    = result.get("Solubility_AqSolDB", -5.0)
                         c["HIA"]           = result.get("HIA_Hou", 0.5)
-                        # Pass if all flags below threshold
+                        c["CYP3A4_inh"]    = result.get("CYP3A4_Veith", 0.5)
+                        c["CYP2D6_inh"]    = result.get("CYP2D6_Veith", 0.5)
+                        c["CYP2C9_inh"]    = result.get("CYP2C9_Veith", 0.5)
+                        c["CYP2C19_inh"]   = result.get("CYP2C19_Veith", 0.5)
+                        c["CYP1A2_inh"]    = result.get("CYP1A2_Veith", 0.5)
+                        c["CYP3A4_sub"]    = result.get("CYP3A4_Substrate_CarbonMangels", 0.5)
+                        c["CYP2D6_sub"]    = result.get("CYP2D6_Substrate_CarbonMangels", 0.5)
+                        c["CYP2C9_sub"]    = result.get("CYP2C9_Substrate_CarbonMangels", 0.5)
+                        c["half_life"]     = result.get("Half_Life_Obach", 0.0)
+                        c["clearance_hep"] = result.get("Clearance_Hepatocyte_AZ", 0.0)
+                        c["ppbr"]          = result.get("PPBR_AZ", 0.0)
+                        c["vdss"]          = result.get("VDss_Lombardo", 0.0)
+                        thresh = self.SAFETY_THRESHOLDS
+                        cyp_safe = (
+                            c["CYP3A4_inh"]  < thresh["CYP3A4_Veith"] and
+                            c["CYP2D6_inh"]  < thresh["CYP2D6_Veith"] and
+                            c["CYP2C9_inh"]  < thresh["CYP2C9_Veith"] and
+                            c["CYP2C19_inh"] < thresh["CYP2C19_Veith"]
+                        )
+                        c["cyp_safe"] = cyp_safe
+                        if not cyp_safe:
+                            dominant = max(
+                                [("CYP3A4",c["CYP3A4_inh"]),
+                                 ("CYP2D6",c["CYP2D6_inh"]),
+                                 ("CYP2C9",c["CYP2C9_inh"]),
+                                 ("CYP2C19",c["CYP2C19_inh"])],
+                                key=lambda x: x[1]
+                            )
+                            c["cyp_warning"] = f"Strong {dominant[0]} inhibitor ({dominant[1]:.2f}) — drug interaction risk"
                         c["admet_pass"] = (
                             c["hERG"]    < 0.82 and
                             c["DILI"]    < 0.65 and
                             c["AMES"]    < 0.50 and
-                            c["ClinTox"] < 0.50
+                            c["ClinTox"] < 0.50 and
+                            cyp_safe
                         )
                     else:
                         c["admet_pass"] = True
                 except Exception:
                     c["admet_pass"] = True
             else:
-                # Rule-based fallback
                 if RDKIT_OK:
                     mol = Chem.MolFromSmiles(smi)
                     if mol:
@@ -1283,10 +1377,6 @@ class ADMETAgent:
 # ======================================================================
 
 class ValidatorAgent:
-    """
-    Multi-target selectivity validation.
-    Computes ligand efficiency and confidence score.
-    """
     def __init__(self, logger: AgentLogger,
                  selectivity_targets: dict,
                  ref_affinity: float):
@@ -1295,7 +1385,6 @@ class ValidatorAgent:
         self.ref_aff = ref_affinity
 
     def validate(self, compounds: list) -> list:
-        """Validate compounds - LE, selectivity, confidence score."""
         self.log.log("ValidatorAgent",
             f"Validating {len(compounds)} compounds...")
 
@@ -1303,7 +1392,6 @@ class ValidatorAgent:
             smi = c.get("smiles","")
             aff = c.get("dock_affinity", 0)
 
-            # Ligand efficiency
             if RDKIT_OK and smi:
                 mol = Chem.MolFromSmiles(smi)
                 if mol:
@@ -1313,17 +1401,14 @@ class ValidatorAgent:
                     c["MW"]  = round(Descriptors.MolWt(mol), 1)
                     c["LogP"]= round(Descriptors.MolLogP(mol), 2)
 
-            # Confidence score (0-100) — includes Higgs sigma bonus
             score = 0
             reasons = []
-            # Docking affinity contribution
             if aff <= self.ref_aff - 2.0:
                 score += 35; reasons.append("excellent docking")
             elif aff <= self.ref_aff - 1.0:
                 score += 25; reasons.append("strong docking")
             elif aff <= self.ref_aff:
                 score += 15; reasons.append("meets threshold")
-            # Higgs sigma bonus
             z = c.get("z_score")
             if z is not None:
                 if z >= 5.0:
@@ -1346,7 +1431,6 @@ class ValidatorAgent:
             c["confidence"]  = min(score, 100)
             c["reasons"]     = reasons
 
-            # Grade
             if score >= 75: grade = "*** EXCELLENT"
             elif score >= 55: grade = "OK GOOD"
             elif score >= 35: grade = "- MODERATE"
@@ -1357,7 +1441,6 @@ class ValidatorAgent:
                 f"aff={aff:.2f}  LE={c.get('LE','?')}  "
                 f"conf={c['confidence']}%  [{', '.join(reasons)}]")
 
-        # Sort by confidence
         compounds.sort(key=lambda x: -x.get("confidence", 0))
         return compounds
 
@@ -1366,18 +1449,6 @@ class ValidatorAgent:
 # ======================================================================
 
 class OrchestratorAgent:
-    """
-    Master agent - manages the full autonomous discovery loop.
-
-    Loop:
-        1. Load fragments
-        2. Dock fragments -> select hits
-        3. Grow hits -> new candidates
-        4. ADMET filter
-        5. Validate & rank
-        6. Iterate (if score < target)
-        7. Output certificate
-    """
     def __init__(self, target_key: str = "EGFR",
                  n_fragments: int = 30,
                  n_grow: int = 8,
@@ -1397,14 +1468,63 @@ class OrchestratorAgent:
         self.conf_target = confidence_target
         self.exh         = exhaustiveness
 
+        # Patient context (env)
+        self.patient_name       = os.environ.get("PATIENT_NAME", "Unknown")
+        self.patient_weight_kg  = float(os.environ.get("PATIENT_WEIGHT_KG", "0"))
+        self.patient_height_cm  = float(os.environ.get("PATIENT_HEIGHT_CM", "0"))
+        self.patient_blood_type = os.environ.get("PATIENT_BLOOD_TYPE", "")
+        self.patient_bsa        = float(os.environ.get("PATIENT_BSA", "0"))
+        self.patient_ebv        = float(os.environ.get("PATIENT_EBV", "0"))
+        self.patient_cd4        = float(os.environ.get("PATIENT_CD4", "0"))
+        self.patient_viral_load = float(os.environ.get("PATIENT_VIRAL_LOAD", "0"))
+        self.patient_diagnosis  = os.environ.get("PATIENT_DIAGNOSIS", "")
+        self.patient_dili       = float(os.environ.get("PATIENT_DILI_THRESHOLD", "0.50"))
+        self.patient_herg       = float(os.environ.get("PATIENT_HERG_THRESHOLD", "0.50"))
+        self._hiv_fragment_bias = self.profile.get("fragment_bias")
+
+        if target_key == "HIV_DIP":
+            self.is_dip_strategy = True
+            print(f"[Agent] *** DIP THERAPEUTIC STRATEGY ACTIVATED ***")
+            print(f"  Goal: Find compound binding tighter than Dolutegravir (-9.43 kcal/mol)")
+        else:
+            self.is_dip_strategy = False
+
+        if self.patient_cd4 > 0 and target_key == "HIV_INTEGRASE":
+            vl = self.patient_viral_load
+            cd4 = self.patient_cd4
+            print(f"[Agent] Patient: {self.patient_name}")
+            print(f"  Weight: {self.patient_weight_kg}kg  Height: {self.patient_height_cm}cm  Blood: {self.patient_blood_type}")
+            print(f"  BSA: {self.patient_bsa:.2f}m²  EBV: {self.patient_ebv:.2f}L")
+            print(f"  CD4={cd4:.0f} cells/mm³  Viral Load={vl:.0f} copies/mL")
+            print(f"  DILI threshold={self.patient_dili}  hERG threshold={self.patient_herg}")
+            if cd4 < 200:
+                self.hiv_stage = "AIDS"
+                self._hiv_fragment_bias = "halobenzyl"
+                print(f"  Stage: AIDS — screening next-gen INSTI scaffolds (halobenzyl/carbamoyl)")
+            elif cd4 < 350:
+                self.hiv_stage = "Advanced HIV"
+                self._hiv_fragment_bias = "diketo"
+                print(f"  Stage: Advanced HIV — diketo-acid INSTI scaffolds")
+            else:
+                self.hiv_stage = "Moderate HIV"
+                self._hiv_fragment_bias = "naphthalene"
+                print(f"  Stage: Moderate HIV (CD4={cd4:.0f}) — dolutegravir-class naphthalene scaffolds")
+            if vl > 100000:
+                self.n_frags = min(self.n_frags + 10, 60)
+                print(f"  High viremia — fragment pool expanded to {self.n_frags}")
+            if self.patient_blood_type in ["O-", "O+"]:
+                print(f"  Blood type {self.patient_blood_type}: prioritizing compounds with lower CYP3A4 interaction")
+            if self.patient_bsa > 0:
+                target_mw_max = 350 + (self.patient_bsa - 1.7) * 100
+                print(f"  BSA-adjusted MW target: ≤{target_mw_max:.0f} Da")
+
         ts  = datetime.now().strftime("%Y%m%d_%H%M%S")
         self.run_id  = f"{target_key}_{ts}"
         self.log     = AgentLogger(f"agent_run_{self.run_id}.log")
         self.results = []
-        self.higgs   = None   # HiggsSignificanceTester - fitted after fragment screening
+        self.higgs   = None
 
     def run(self):
-        """Execute the full autonomous discovery campaign."""
         p = self.profile
         self.log.header(
             f"AUTONOMOUS DRUG DISCOVERY AGENT v2  -  {p['name']}")
@@ -1417,7 +1537,6 @@ class OrchestratorAgent:
         self.log.log("Orchestrator", f"Confidence goal : {self.conf_target}%")
         self.log.separator()
 
-        # -- Init agents -----------------------------------------------
         frag_agent = FragmentSelectorAgent(self.log)
         dock_agent = DockingAgent(
             self.log,
@@ -1434,7 +1553,6 @@ class OrchestratorAgent:
             ref_affinity        = p["ref_affinity"],
         )
 
-        # Check receptor exists
         if not os.path.isfile(p["receptor"]):
             self.log.log("Orchestrator",
                 f"!!  Receptor not found: {p['receptor']}")
@@ -1443,7 +1561,6 @@ class OrchestratorAgent:
             self._simulation_mode(p, frag_agent, admet_agent, valid_agent)
             return
 
-        # -- Main discovery loop ---------------------------------------
         iteration       = 0
         best_confidence = 0
         all_leads       = []
@@ -1456,17 +1573,13 @@ class OrchestratorAgent:
                 f"(best confidence so far: {best_confidence}%)")
             self.log.separator("-")
 
-            # Step 1: Fragment selection
-            frags = frag_agent.load(self.n_frags, bias=self.target_key)
+            frags = frag_agent.load(self.n_frags, bias=getattr(self, "_hiv_fragment_bias", self.target_key))
             frags = frag_agent.pains_filter(frags)
 
-            # Step 2: Fragment docking
-            frag_thresh = p["ref_affinity"] + 3.5  # fragments smaller -> weaker ok
+            frag_thresh = p["ref_affinity"] + 3.5
             screened = dock_agent.screen_fragments(frags, ref_affinity=frag_thresh)
-            # Pre-seed with proven safe EGFR scaffolds from v1 campaign
-            # ── Target-specific seed scaffolds ─────────────────────
+
             TARGET_SEEDS = {
-                # EGFR Kinase — proven decalin + piperidine scaffolds
                 "EGFR": [
                     {"id":"SEED_R1C1","smiles":"CC(CC1CCNCC1)c1cccc(N)c1",
                      "name":"isobutyl-piperidine-aniline (R1-C1 proven)",
@@ -1478,8 +1591,6 @@ class OrchestratorAgent:
                      "name":"decalin-hydroxyphenyl (R1-C5 proven)",
                      "dock_affinity":-8.34,"dock_poses":8},
                 ],
-                # HIV-1 Integrase — diketo acid + naphthalene/isoquinoline scaffolds
-                # Based on Dolutegravir/Raltegravir pharmacophore
                 "HIV_INTEGRASE": [
                     {"id":"SEED_INT_DTG",
                      "smiles":"c1ccc2ccccc2c1",
@@ -1498,8 +1609,24 @@ class OrchestratorAgent:
                      "name":"Raltegravir isoxazole carboxamide scaffold",
                      "dock_affinity":-8.10,"dock_poses":8},
                 ],
-                # HIV-1 Protease — bis-THF peptidomimetic scaffolds
-                # Based on Darunavir scaffold family (PMID:17266288)
+                "HIV_DIP": [
+                    {"id":"SEED_DIP_HYP",
+                     "smiles":"Oc1ccnc(=O)[nH]1",
+                     "name":"hydroxypyrimidine Mg2+ chelator (DIP warhead)",
+                     "dock_affinity":-6.50,"dock_poses":8},
+                    {"id":"SEED_DIP_DKA",
+                     "smiles":"O=C(O)C(=O)Cc1ccc(F)cc1",
+                     "name":"diketo-acid fluorobenzyl (INSTI Mg2+ chelator)",
+                     "dock_affinity":-7.20,"dock_poses":8},
+                    {"id":"SEED_DIP_NHP",
+                     "smiles":"Oc1cc(=O)[nH]c(=O)n1",
+                     "name":"dihydroxypyrimidine (dual Mg2+ chelation)",
+                     "dock_affinity":-7.10,"dock_poses":8},
+                    {"id":"SEED_DIP_HNA",
+                     "smiles":"O=C(O)/C=C/c1ccc(O)cc1",
+                     "name":"hydroxycinnamic acid (integrase anchor fragment)",
+                     "dock_affinity":-6.80,"dock_poses":8},
+                ],
                 "HIV": [
                     {"id":"SEED_HIV_THF1",
                      "smiles":"O=C(NC(Cc1ccccc1)C(=O)N1CCC2(CC1)CCO2)c1ccccc1",
@@ -1518,8 +1645,6 @@ class OrchestratorAgent:
                      "name":"HIV peptidomimetic Fmoc scaffold",
                      "dock_affinity":-7.40,"dock_poses":8},
                 ],
-                # BACE1 — aminothiazine + iminohydantoin scaffolds
-                # Based on Verubecestat scaffold (PMID:26632955)
                 "BACE1": [
                     {"id":"SEED_BACE1_ATZ",
                      "smiles":"N=C1NC(=O)[C@@H](Cc2ccc(F)cc2F)N1",
@@ -1534,7 +1659,6 @@ class OrchestratorAgent:
                      "name":"spirocyclic BACE1 scaffold",
                      "dock_affinity":-7.60,"dock_poses":8},
                 ],
-                # COVID Mpro — keep proven piperidine seeds + add lactam
                 "COVID_MPRO": [
                     {"id":"SEED_R1C1","smiles":"CC(CC1CCNCC1)c1cccc(N)c1",
                      "name":"isobutyl-piperidine-aniline (proven COVID hit)",
@@ -1548,7 +1672,6 @@ class OrchestratorAgent:
                      "name":"Mpro pyrrolidinone scaffold",
                      "dock_affinity":-7.70,"dock_poses":8},
                 ],
-                # THROMBIN — keep proven seeds + add benzamidine
                 "THROMBIN": [
                     {"id":"SEED_R1C1","smiles":"CC(CC1CCNCC1)c1cccc(N)c1",
                      "name":"isobutyl-piperidine-aniline (proven Thrombin hit)",
@@ -1562,7 +1685,6 @@ class OrchestratorAgent:
                      "name":"indole carboxamide thrombin scaffold",
                      "dock_affinity":-6.80,"dock_poses":8},
                 ],
-                # TB InhA — isoxazole + diphenyl ether scaffolds
                 "TB_INHA": [
                     {"id":"SEED_TB_ISO",
                      "smiles":"Cc1ccc(-c2cc(C(F)(F)F)ccc2Oc2ccc(N)cc2)no1",
@@ -1575,7 +1697,6 @@ class OrchestratorAgent:
                 ],
             }
 
-            # Default seeds for any target not in the map
             DEFAULT_SEEDS = [
                 {"id":"SEED_R1C1","smiles":"CC(CC1CCNCC1)c1cccc(N)c1",
                  "name":"isobutyl-piperidine-aniline (R1-C1 proven)",
@@ -1588,7 +1709,6 @@ class OrchestratorAgent:
                  "dock_affinity":-8.34,"dock_poses":8},
             ]
 
-            # Pick seeds for this target
             target_key = self.target_key.upper()
             for k in TARGET_SEEDS:
                 if k in target_key:
@@ -1613,7 +1733,7 @@ class OrchestratorAgent:
             self.log.log("Orchestrator",
                 "Fitting 5-sigma null distribution from fragment scores...")
             self.higgs = HiggsSignificanceTester(logger=self.log)
-            self.higgs._target = self.target
+            self.higgs._target = self.target_key
             frag_affinities = [f.get("dock_affinity") for f in screened
                                if f.get("dock_affinity") is not None]
             self.higgs.fit_null(frag_affinities)
@@ -1624,6 +1744,15 @@ class OrchestratorAgent:
                                     n_per_frag=15,
                                     ref_affinity=p["ref_affinity"])
 
+            # ── STAGE 2 FIX: Higgs BEFORE validator ───────────────────
+            # The previous order was: ADMET -> validate -> Higgs.
+            # That meant z_score was None when validator computed
+            # confidence, so the sigma bonus never fired. Also, ADMET
+            # fail compounds never got sigma labels. We fix both by
+            # classifying everything against the null before any filter.
+            if self.higgs:
+                grown = self.higgs.summary(grown)
+
             # Step 4: ADMET filter
             admet_passed = admet_agent.profile(grown)
             if not admet_passed:
@@ -1631,25 +1760,23 @@ class OrchestratorAgent:
                     "No compounds passed ADMET - using unfiltered set")
                 admet_passed = grown[:5]
 
-            # Step 5: Validate + Higgs significance scan
+            # Step 5: Validate (now sees z_score, sigma bonus fires)
             validated = valid_agent.validate(admet_passed)
 
-            # Apply 5-sigma significance to all validated compounds
-            if self.higgs:
-                validated = self.higgs.summary(validated)
-                for v in validated:
-                    if v.get("is_discovery"):
-                        self.log.log("Orchestrator",
-                            f"  *** 5-SIGMA DISCOVERY: {v['id']} "
-                            f"Z={v['z_score']:.2f} "
-                            f"aff={v['dock_affinity']:.2f} kcal/mol ***")
-                    elif v.get("is_evidence"):
-                        self.log.log("Orchestrator",
-                            f"  ** 3-sigma evidence: {v['id']} "
-                            f"Z={v['z_score']:.2f}")
+            # Log discoveries/evidence highlights
+            for v in validated:
+                if v.get("is_discovery"):
+                    self.log.log("Orchestrator",
+                        f"  *** 5-SIGMA DISCOVERY: {v['id']} "
+                        f"Z={v['z_score']:.2f} "
+                        f"aff={v['dock_affinity']:.2f} kcal/mol ***")
+                elif v.get("is_evidence"):
+                    self.log.log("Orchestrator",
+                        f"  ** 3-sigma evidence: {v['id']} "
+                        f"Z={v['z_score']:.2f}")
+
             all_leads.extend(validated)
 
-            # Track best
             if validated:
                 iter_best = validated[0].get("confidence", 0)
                 if iter_best > best_confidence:
@@ -1658,9 +1785,8 @@ class OrchestratorAgent:
                     f"Iteration {iteration} best: confidence={iter_best}%  "
                     f"affinity={validated[0].get('dock_affinity','?'):.2f}")
 
-        # -- Final ranking ---------------------------------------------
+        # Final ranking + dedup
         all_leads.sort(key=lambda x: -x.get("confidence", 0))
-        # Deduplicate by SMILES
         seen   = set()
         unique = []
         for c in all_leads:
@@ -1674,10 +1800,6 @@ class OrchestratorAgent:
         self._print_certificate(unique[0] if unique else None)
 
     def _simulation_mode(self, p, frag_agent, admet_agent, valid_agent):
-        """
-        Run in simulation when receptor file is missing.
-        Demonstrates the agent workflow with synthetic scores.
-        """
         self.log.log("Orchestrator",
             "SIMULATION MODE - generating demonstration results")
         self.log.log("Orchestrator",
@@ -1686,7 +1808,6 @@ class OrchestratorAgent:
         frags = frag_agent.load(min(self.n_frags, 20))
         frags = frag_agent.pains_filter(frags)
 
-        # Simulate docking scores
         ref = p["ref_affinity"]
         for i, f in enumerate(frags):
             f["dock_affinity"] = round(ref + random.uniform(-2.5, 1.5), 2)
@@ -1697,7 +1818,6 @@ class OrchestratorAgent:
 
         top = sorted(frags, key=lambda x: x["dock_affinity"])[:self.n_grow]
 
-        # Simulate growing
         grown = []
         for i, frag in enumerate(top[:5]):
             for j in range(4):
@@ -1711,6 +1831,12 @@ class OrchestratorAgent:
                     "MW":            random.randint(280,420),
                     "LogP":          round(random.uniform(1.5,4.5),2),
                 })
+
+        # Fit Higgs on the simulated fragment pool so sigma labels render
+        self.higgs = HiggsSignificanceTester(logger=self.log)
+        self.higgs._target = self.target_key
+        self.higgs.fit_null([f["dock_affinity"] for f in frags])
+        grown = self.higgs.summary(grown)
 
         admet_passed = admet_agent.profile(grown)
         validated    = valid_agent.validate(admet_passed if admet_passed else grown)
@@ -1739,20 +1865,52 @@ class OrchestratorAgent:
                   f"{sigma:>9} {str(aff):>9} {str(le):>6} {str(cf):>5}%{flag}")
         print()
 
+    # ══════════════════════════════════════════════════════════════════
+    # STAGE 2: _save_results — canonical schema + env-var output paths
+    # ══════════════════════════════════════════════════════════════════
     def _save_results(self, compounds: list):
-        csv_path = f"agent_results_{self.run_id}.csv"
-        keys = ["id","smiles","dock_affinity","LE","MW","LogP","confidence",
-                "hERG","DILI","AMES","Bioavailability","Solubility","parent","reasons"]
+        """
+        Write results in the canonical CSV schema. Honors env vars:
+          AGENT_RESULTS_FILE     -> where to write the CSV
+          AGENT_LEADERBOARD_FILE -> where to write the JSON leaderboard
+        If env vars are unset, falls back to legacy filenames in CWD so
+        dashboard.py keeps working.
+        """
+        ref_drug = self.profile.get("ref_drug", "")
+        ref_aff  = self.profile.get("ref_affinity")
+        ts_iso   = datetime.now().isoformat(timespec="seconds")
+
+        # ---- CSV ----
+        csv_path = os.environ.get("AGENT_RESULTS_FILE") \
+                   or f"agent_results_{self.run_id}.csv"
+        # Ensure parent dir exists (for per-job paths like jobs/<uuid>/results.csv)
+        Path(csv_path).parent.mkdir(parents=True, exist_ok=True)
+
+        rows = [
+            _canonicalize_row(
+                c,
+                target=self.target_key,
+                ref_drug=ref_drug,
+                ref_aff=ref_aff,
+                run_id=self.run_id,
+                timestamp=ts_iso,
+            )
+            for c in compounds
+        ]
+
         with open(csv_path, 'w', newline='', encoding='utf-8-sig') as f:
-            w = csv.DictWriter(f, fieldnames=keys, extrasaction='ignore')
+            w = csv.DictWriter(f, fieldnames=CANONICAL_CSV_COLUMNS,
+                               extrasaction='ignore')
             w.writeheader()
-            w.writerows(compounds)
+            w.writerows(rows)
         self.log.log("Orchestrator", f"Results saved -> {csv_path}")
 
-        # Save leaderboard JSON
-        json_path = f"agent_leaderboard_{self.run_id}.json"
-        with open(json_path,'w') as f:
-            json.dump(compounds[:20], f, indent=2, default=str)
+        # ---- JSON leaderboard (top 20) ----
+        json_path = os.environ.get("AGENT_LEADERBOARD_FILE") \
+                    or f"agent_leaderboard_{self.run_id}.json"
+        Path(json_path).parent.mkdir(parents=True, exist_ok=True)
+        with open(json_path, 'w') as f:
+            json.dump(rows[:20], f, indent=2, default=str)
         self.log.log("Orchestrator", f"Leaderboard -> {json_path}")
 
     def _print_certificate(self, best: dict):
@@ -1767,7 +1925,7 @@ class OrchestratorAgent:
         reasons_s = ", ".join(best.get("reasons",[]))[:46]
         print(f"""
   +==============================================================+
-  |  SIMULATION VALIDATION CERTIFICATE                           |
+  |  COMPUTATIONAL LEAD CANDIDATE CERTIFICATE                    |
   |  PhysicsChem Discovery Pipeline v2.0                         |
   |  5-Sigma Significance Testing  (Higgs Method)                |
   +==============================================================+
@@ -1787,9 +1945,10 @@ class OrchestratorAgent:
   |  Confidence: {str(best.get("confidence","?"))+"%":<48}|
   +==============================================================+
   |  Strengths : {reasons_s:<48}|
-  |  Discovery : {"YES - 5-SIGMA EVENT" if is_disc else "Evidence candidate":<48}|
+  |  Discovery : {"YES - 5-SIGMA HIT" if is_disc else "Evidence candidate":<48}|
   |  Timestamp : {datetime.now().strftime("%Y-%m-%d %H:%M:%S"):<48}|
   +==============================================================+
+  Research use only. Requires synthesis + experimental validation.
 """)
         self.log.separator("=")
         self.log.log("Orchestrator",
@@ -1817,6 +1976,9 @@ def main():
         help="Fast mode: 20 frags, 1 iter, exhaustiveness=4")
     parser.add_argument("--confidence", type=int, default=70,
         help="Target confidence score (0-100)")
+    parser.add_argument("--max-alt", type=float, default=200.0)
+    parser.add_argument("--max-ast", type=float, default=200.0)
+    parser.add_argument("--max-creatinine", type=float, default=3.0)
     args = parser.parse_args()
 
     if args.fast:

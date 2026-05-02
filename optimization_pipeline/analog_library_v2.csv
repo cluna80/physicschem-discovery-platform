@@ -1,8 +1,0 @@
-name,modification,gain,rationale
-opt5_v2_1,"Replace 3,4,5-triF with 3,5-diF + 4-CF3",0.08,CF3 group enhances hydrophobic interactions
-opt5_v2_2,Add CH3 to isoquinoline C3 position,0.06,Extra methyl fills small hydrophobic pocket
-opt5_v2_3,Optimize spiro-THF ring size (5-membered),0.05,Better fit in S2 subsite
-opt5_v2_4,Add F to isoquinoline C6,0.07,Halogen bonding with flap residues
-opt5_v2_5,Replace amide with reverse amide,0.04,Alternative H-bond geometry
-opt5_v2_6,Combine v2_1 + v2_2 + v2_3,0.19,Synergistic improvements
-opt5_v2_7,Full optimization: all v2 modifications,0.25,Maximum improvement

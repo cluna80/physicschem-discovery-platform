@@ -1,0 +1,93 @@
+{
+  "id": "SEED_INT_RAL_G004",
+  "smiles": "O=C(NCC(O)c1cc(F)cc(F)c1)c1cc(C(=O)Cc2ccccc2F)on1",
+  "sa_score": 2.96,
+  "timestamp": "2026-04-14T17:08:48.358573",
+  "Bioavailability_Ma": 0.8640863299369812,
+  "HIA_Hou": 0.9998294115066528,
+  "Caco2_Wang": -4.458407402038574,
+  "PAMPA_NCATS": 0.9228842854499817,
+  "Solubility_AqSolDB": -5.038639545440674,
+  "BBB_Martins": 0.8167411088943481,
+  "PPBR_AZ": 95.29967498779297,
+  "VDss_Lombardo": 0.01246786117553711,
+  "CYP3A4_Substrate_CarbonMangels": 0.705463707447052,
+  "CYP2C9_Veith": 0.7993041276931763,
+  "CYP2C19_Veith": 0.8472553491592407,
+  "CYP3A4_Veith": 0.6023814082145691,
+  "Half_Life_Obach": 18.62039566040039,
+  "Clearance_Microsome_AZ": 39.356842041015625,
+  "hERG": 0.5702705383300781,
+  "DILI": 0.9404400587081909,
+  "AMES": 0.16674229502677917,
+  "Carcinogens_Lagunin": 0.3242344558238983,
+  "ClinTox": 0.09842430800199509,
+  "Pgp_Broccatelli": 0.6384142637252808,
+  "QED": 0.5909687378072241,
+  "Lipinski": 4.0,
+  "admet_score": 65.2,
+  "pass_count": 12,
+  "warn_count": 6,
+  "fail_count": 5,
+  "admet_flags": {
+    "PASS": [
+      "Oral Bioavailability",
+      "GI Absorption",
+      "Caco2 Permeability",
+      "PAMPA Permeability",
+      "BBB Penetration",
+      "Volume of Distribution",
+      "CYP3A4 Substrate",
+      "Half-Life (h)",
+      "Microsomal Clearance",
+      "AMES Mutagenicity",
+      "Clinical Toxicity",
+      "Synthetic Accessibility"
+    ],
+    "WARN": [
+      "Aqueous Solubility",
+      "CYP3A4 Inhibition",
+      "hERG Cardiotoxicity",
+      "Carcinogenicity",
+      "P-gp Efflux",
+      "Drug-likeness (QED)"
+    ],
+    "FAIL": [
+      "Plasma Protein Binding",
+      "CYP2C9 Inhibition",
+      "CYP2C19 Inhibition",
+      "DILI Liver Toxicity",
+      "Lipinski Violations"
+    ]
+  },
+  "selectivity": {
+    "HIV_INTEGRASE": {
+      "affinity": -9.572,
+      "ref_affinity": -9.43,
+      "ref_drug": "Dolutegravir",
+      "beats_ref": true,
+      "selectivity_ratio": 0.9851650647722524
+    },
+    "THROMBIN": {
+      "affinity": -9.07,
+      "ref_affinity": -9.8,
+      "ref_drug": "Dabigatran",
+      "beats_ref": false,
+      "selectivity_ratio": 1.0804851157662625
+    },
+    "BACE1": {
+      "affinity": -6.583,
+      "ref_affinity": -8.5,
+      "ref_drug": "Verubecestat",
+      "beats_ref": false,
+      "selectivity_ratio": 1.2912046179553396
+    },
+    "COVID_MPRO": {
+      "affinity": -6.821,
+      "ref_affinity": -7.8,
+      "ref_drug": "Nirmatrelvir",
+      "beats_ref": false,
+      "selectivity_ratio": 1.14352734203196
+    }
+  }
+}

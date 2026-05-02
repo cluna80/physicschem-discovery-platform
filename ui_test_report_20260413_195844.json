@@ -1,0 +1,329 @@
+{
+  "timestamp": "20260413_195844",
+  "passed": 63,
+  "failed": 1,
+  "total": 64,
+  "pct": 98.4,
+  "tests": [
+    {
+      "name": "Dashboard loads",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "No Python traceback",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Sidebar renders",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Getting Started / workflow guide",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Disease Area dropdown",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Target Protein dropdown",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Fragment budget slider",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Exhaustiveness slider",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Launch button in sidebar",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "v3 branding",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "4 tabs present",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "\ud83d\udd2c Discovery Agent tab",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "\ud83d\udcda Fragment Library tab",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "\u26a1 Lead Optimizer tab",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "\ud83d\udcbc Hit Packages tab",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Fragment Library tab clickable",
+      "status": "PASS",
+      "detail": "2.0s"
+    },
+    {
+      "name": "Lead Optimizer tab clickable",
+      "status": "PASS",
+      "detail": "1.7s"
+    },
+    {
+      "name": "Hit Packages tab clickable",
+      "status": "PASS",
+      "detail": "1.7s"
+    },
+    {
+      "name": "Discovery Agent tab clickable",
+      "status": "PASS",
+      "detail": "1.7s"
+    },
+    {
+      "name": "Stats banner \u2014 compound count",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Stats banner \u2014 5\u03c3 discoveries",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Disease area filter dropdown",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Min Sigma slider",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Novel only checkbox",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "5\u03c3 only checkbox",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Compounds table (dataframe)",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Compound inspector",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Export Filtered CSV button",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Refresh Library button",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Selection mode options",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Strategy checkboxes (rgroup/bioisostere/scaffold)",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Analogs per strategy slider",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Dock with Vina checkbox",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Run Optimization button",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Harvest to Library button",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Results section or empty state",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Value banner \u2014 library count",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Value banner \u2014 5\u03c3 discoveries",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Value banner \u2014 targets covered",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Value banner \u2014 pricing",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Build Hit Package section",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Target selector (HIV_INTEGRASE etc)",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Package type options",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Export formats selector",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Build & Download Package button",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Revenue tiers section",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Three pricing tiers",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Metric cards area",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "LAUNCH button",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "STOP button",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Agent log panel area",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "3D viewer section",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Dark navy background",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Teal accent color (#00b4a0)",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Space Mono font",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Amber/warning color",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Green success color",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "No error messages visible",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Page title set correctly",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Wide layout (no narrow column)",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "No horizontal scrollbar",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Streamlit version warning-free",
+      "status": "PASS",
+      "detail": "0.0s"
+    },
+    {
+      "name": "HIV_INTEGRASE target available",
+      "status": "FAIL",
+      "detail": "0.0s"
+    },
+    {
+      "name": "Whitepaper link / branding",
+      "status": "PASS",
+      "detail": "0.0s"
+    }
+  ]
+}

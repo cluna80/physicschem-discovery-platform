@@ -1,0 +1,9 @@
+marker_id,marker_name,value,unit,reference_range,status
+WBC,White Blood Cell Count,6.4,10^3/uL,4.5-11.0,Normal
+CD4_COUNT,CD4+ T-Lymphocyte,320,cells/uL,500-1500,Low
+HIV_VL,HIV-1 RNA Viral Load,45000,copies/mL,<20,High
+ALT,Alanine Aminotransferase,42,U/L,7-55,Normal
+AST,Aspartate Aminotransferase,38,U/L,8-48,Normal
+CREAT,Creatinine,1.2,mg/dL,0.7-1.3,Normal
+ALB,Albumin,4.1,g/dL,3.5-5.0,Normal
+HGB,Hemoglobin,14.2,g/dL,13.5-17.5,Normal

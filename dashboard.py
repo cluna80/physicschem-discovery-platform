@@ -1,25 +1,7 @@
 import warnings
 warnings.filterwarnings("ignore")
-"""
-dashboard.py
-============
-PhysicsChem Discovery Pipeline v2 -- Real-Time Dashboard
-
-INSTALL:
-    pip install streamlit plotly stmol py3Dmol
-
-RUN:
-    streamlit run dashboard.py
-
-The dashboard:
-  - Launches the autonomous agent as a subprocess
-  - Streams live console output to the terminal panel
-  - Updates fragment scoring chart in real-time
-  - Shows ADMET traffic lights per compound
-  - Displays the live leaderboard with confidence bars
-  - Renders lead compound 2D structure
-  - Issues the confidence certificate
-"""
+# dashboard.py — PhysicsChem Discovery Platform v3.0
+# Run: streamlit run dashboard.py
 
 import streamlit as st
 import subprocess, sys, os, json, csv, time, re, threading
@@ -441,6 +423,15 @@ DISEASE_DB = {
                    "category":"Infectious Disease",
                    "mechanism":"Mg2+ chelation — strand transfer inhibition",
                    "pdb":"3L2T","clinical":"FDA approved (Dolutegravir, Bictegravir)"},
+    "HIV_DIP": {
+        "disease":   "HIV/AIDS — Therapeutic Interfering Particle",
+        "ref":       "Dolutegravir -9.43",
+        "category":  "Infectious Disease",
+        "mechanism": "DIP integrase competitive binding — benign defective particle outcompetes pathogenic HIV-1 for D64/D116/E152 catalytic Mg²⁺ site.",
+        "pdb":       "3L2T",
+        "clinical":  "Experimental — TIP (Weinberger/Haigwood, Science 2024)",
+    },
+
     "COVID_MPRO": {"disease":"COVID-19","ref":"Nirmatrelvir -8.8",
                    "category":"Infectious Disease","mechanism":"Cys145 covalent",
                    "pdb":"6LU7","clinical":"FDA approved (Paxlovid)"},
@@ -485,7 +476,8 @@ def _load_receptor_status():
     from pathlib import Path
     known = {
         "EGFR":"cancer_egfr_agent/egfr_receptor.pdbqt",
-        "HIV":"hiv_protease.pdbqt","HIV_INTEGRASE":"hiv_integrase.pdbqt","T790M":"egfr_t790m.pdbqt",
+        "HIV":"hiv_protease.pdbqt","HIV_INTEGRASE":"hiv_integrase.pdbqt",
+        "HIV_DIP":"hiv_integrase.pdbqt","T790M":"egfr_t790m.pdbqt",
         "VEGFR2":"vegfr2.pdbqt","KRAS_G12C":"kras_g12c.pdbqt",
         "BRAF_V600E":"braf_v600e.pdbqt","CDK4":"cdk4.pdbqt",
         "PARP1":"parp1.pdbqt","COVID_MPRO":"covid_mpro.pdbqt",
@@ -728,14 +720,121 @@ with st.sidebar:
 # ══════════════════════════════════════════════════════════════════════
 # MAIN CONTENT
 # ══════════════════════════════════════════════════════════════════════
-st.markdown(f"""
-<div class="main-header">
-  <h1>⚗ PhysicsChem Discovery Lab</h1>
-  <div class="subtitle">
-    Autonomous Fragment Drug Discovery · {target} · 5σ Significance Testing
+import streamlit.components.v1 as _stc_hdr
+_stc_hdr.html(f"""
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  * {{ margin:0; padding:0; box-sizing:border-box; }}
+  body {{ background:transparent; font-family:'Space Mono',monospace; overflow:hidden; }}
+  .hdr {{
+    background: linear-gradient(135deg, #0d1b2a 0%, #1a3a5c 100%);
+    border-bottom: 3px solid #00b4a0;
+    padding: 1.2rem 1.5rem 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 110px;
+  }}
+  .hdr-left {{ flex: 1; }}
+  h1 {{
+    font-size: 1.75rem;
+    color: white;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.3rem;
+  }}
+  .sub {{
+    color: #00b4a0;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }}
+  .badges {{ display:flex; gap:0.5rem; flex-wrap:wrap; }}
+  .badge {{
+    border-radius: 3px;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    border: 1px solid;
+  }}
+  .b1 {{ background:#00b4a022;color:#00b4a0;border-color:#00b4a044; }}
+  .b2 {{ background:#4ade8022;color:#4ade80;border-color:#4ade8044; }}
+  .b3 {{ background:#f59e0b22;color:#f59e0b;border-color:#f59e0b44; }}
+  .b4 {{ background:#8b5cf622;color:#8b5cf6;border-color:#8b5cf644; }}
+  .hdr-right {{ flex-shrink:0; }}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <div class="hdr-left">
+    <h1>⚗ PhysicsChem Discovery Lab</h1>
+    <div class="sub">Autonomous Fragment Drug Discovery · {target} · 5σ Significance Testing</div>
+    <div class="badges">
+      <span class="badge b1">FBDD PLATFORM</span>
+      <span class="badge b2">HIGGS 5σ</span>
+
+    </div>
+  </div>
+  <div class="hdr-right">
+    <svg width="360" height="100" viewBox="0 0 360 100"
+         xmlns="http://www.w3.org/2000/svg"
+         style="filter:drop-shadow(0 0 10px #00b4a077)">
+      <defs>
+        <radialGradient id="g1" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#00b4a0" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#00b4a0" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <ellipse cx="180" cy="65" rx="175" ry="60" fill="url(#g1)"/>
+      <text x="8" y="42" fill="#00b4a033" font-size="40" font-family="monospace" font-weight="700">⚗</text>
+      <text x="300" y="42" fill="#00b4a044" font-size="22" font-family="monospace" font-weight="700">5σ</text>
+      <line x1="30" y1="65" x2="55" y2="65" stroke="#00b4a044" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="305" y1="65" x2="330" y2="65" stroke="#00b4a044" stroke-width="1" stroke-dasharray="4,3"/>
+      <polygon points="55,48 72,42 84,52 80,68 63,74 51,64"
+               fill="#0d2a1f" stroke="#4ade80" stroke-width="2" stroke-linejoin="round"/>
+      <circle cx="84" cy="52" r="6" fill="#fbbf24"/>
+      <text x="84" y="56" fill="#0d1b2a" font-size="7" font-family="monospace" text-anchor="middle" font-weight="bold">F</text>
+      <line x1="80" y1="68" x2="98" y2="72" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="3,2"/>
+      <circle cx="105" cy="74" r="5" fill="#ef4444"/>
+      <text x="105" y="78" fill="white" font-size="6.5" font-family="monospace" text-anchor="middle">O</text>
+      <polygon points="118,52 138,45 153,57 148,75 125,78 112,66"
+               fill="#0a1f2e" stroke="#00b4a0" stroke-width="2.2" stroke-linejoin="round"/>
+      <circle cx="112" cy="66" r="6" fill="#ef4444"/>
+      <text x="112" y="70" fill="white" font-size="7" font-family="monospace" text-anchor="middle" font-weight="bold">O</text>
+      <circle cx="125" cy="78" r="6" fill="#8b5cf6"/>
+      <text x="125" y="82" fill="white" font-size="7" font-family="monospace" text-anchor="middle" font-weight="bold">N</text>
+      <line x1="153" y1="57" x2="172" y2="52" stroke="#00b4a0" stroke-width="2.2"/>
+      <circle cx="180" cy="48" r="4.5" fill="#ef4444"/>
+      <text x="180" y="52" fill="white" font-size="6.5" font-family="monospace" text-anchor="middle">O</text>
+      <line x1="172" y1="52" x2="188" y2="65" stroke="#00b4a0" stroke-width="2.2"/>
+      <circle cx="195" cy="72" r="6" fill="#8b5cf6"/>
+      <text x="195" y="76" fill="white" font-size="7" font-family="monospace" text-anchor="middle" font-weight="bold">N</text>
+      <line x1="201" y1="72" x2="215" y2="64" stroke="#00b4a0" stroke-width="2"/>
+      <circle cx="219" cy="58" r="5" fill="#ef4444"/>
+      <text x="219" y="62" fill="white" font-size="6" font-family="monospace" text-anchor="middle">OH</text>
+      <line x1="224" y1="58" x2="238" y2="68" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="3,2"/>
+      <polygon points="238,68 254,62 264,70 260,86 244,92 234,84"
+               fill="#0a1f2e" stroke="#4ade80" stroke-width="2" stroke-linejoin="round"/>
+      <circle cx="264" cy="70" r="6" fill="#fbbf24"/>
+      <text x="264" y="74" fill="#0d1b2a" font-size="7" font-family="monospace" text-anchor="middle" font-weight="bold">F</text>
+      <circle cx="234" cy="84" r="6" fill="#fbbf24"/>
+      <text x="234" y="88" fill="#0d1b2a" font-size="7" font-family="monospace" text-anchor="middle" font-weight="bold">F</text>
+
+      <circle cx="20" cy="20" r="1.8" fill="#00b4a0" opacity="0.5"/>
+      <circle cx="340" cy="15" r="1.5" fill="#4ade80" opacity="0.4"/>
+      <circle cx="350" cy="115" r="1.8" fill="#fbbf24" opacity="0.4"/>
+      <circle cx="10" cy="110" r="1.5" fill="#8b5cf6" opacity="0.4"/>
+    </svg>
   </div>
 </div>
-""", unsafe_allow_html=True)
+</body>
+</html>
+""", height=115, scrolling=False)
 
 # ── Getting Started (collapsible) ───────────────────────────────────
 if not os.path.isfile("fragment_library.db") or    __import__('sqlite3').connect("fragment_library.db").execute(
@@ -893,6 +992,7 @@ with _tab_library:
             letter-spacing:.1em;margin-bottom:.5rem">Inspect Compound</div>""",
             unsafe_allow_html=True)
             _all_ids = _fdf['id'].tolist()
+            smiles = ''  # default
             if _all_ids:
                 _sel_id = st.selectbox("Select compound", _all_ids[:100],
                                        label_visibility="collapsed")
@@ -920,6 +1020,103 @@ with _tab_library:
                     st.code(smiles, language=None)
                     if st.button("Copy SMILES", key="lib_copy"):
                         st.write(smiles)
+
+                # ── Real ADMET Profile button ─────────────────────
+                if st.button("🧪 Run Full ADMET Profile",
+                             key="run_admet", use_container_width=True):
+                    with st.spinner("Running ADMET-AI (104 properties)..."):
+                        try:
+                            import warnings, contextlib, io
+                            warnings.filterwarnings("ignore")
+                            with contextlib.redirect_stderr(io.StringIO()):
+                                from admet_ai import ADMETModel
+                                if "admet_model" not in st.session_state:
+                                    st.session_state["admet_model"] = ADMETModel()
+                                _amodel = st.session_state["admet_model"]
+                            _ares = _amodel.predict(smiles=smiles)
+
+                            # SA Score
+                            _sa = None
+                            try:
+                                import sys as _sys
+                                from rdkit import RDConfig as _rdc
+                                _sys.path.append(
+                                    __import__('os').path.join(
+                                        _rdc.RDContribDir, 'SA_Score'))
+                                import sascorer as _sas
+                                from rdkit import Chem as _C
+                                _sa = round(_sas.calculateScore(
+                                    _C.MolFromSmiles(smiles)), 1)
+                            except Exception:
+                                pass
+
+                            st.session_state["admet_results"] = _ares
+                            st.session_state["admet_sa"]      = _sa
+                            st.session_state["admet_id"]      = _sel_id
+                        except Exception as _ae:
+                            st.error(f"ADMET error: {_ae}")
+
+                # Show cached ADMET results
+                if (st.session_state.get("admet_id") == _sel_id and
+                    st.session_state.get("admet_results")):
+                    _ar = st.session_state["admet_results"]
+                    _sa = st.session_state.get("admet_sa")
+
+                    # Traffic light display
+                    _PANEL = [
+                        ("Bioavailability", "Bioavailability_Ma",  0.7, True),
+                        ("hERG Risk",       "hERG",                0.5, False),
+                        ("DILI Risk",       "DILI",                0.5, False),
+                        ("AMES Mutagen",    "AMES",                0.3, False),
+                        ("CYP2C9 Inhib",   "CYP2C9_Veith",        0.5, False),
+                        ("Solubility",      "Solubility_AqSolDB",  -4,  True),
+                        ("QED",             "QED",                 0.5, True),
+                        ("GI Absorption",   "HIA_Hou",             0.7, True),
+                    ]
+
+                    _cols = st.columns(4)
+                    for _i, (_lbl, _key, _thresh, _higher) in enumerate(_PANEL):
+                        _v = _ar.get(_key)
+                        if _v is None: continue
+                        if _higher:
+                            _ok = _v >= _thresh
+                        else:
+                            _ok = _v <= _thresh
+                        _clr = "#4ade80" if _ok else "#ef4444"
+                        _icon = "✓" if _ok else "✗"
+                        _cols[_i%4].markdown(
+                            f"""<div style="background:#0f2033;border-top:2px solid {_clr};
+                            border-radius:5px;padding:.4rem;text-align:center;margin:.2rem 0">
+                            <div style="font-size:.65rem;color:#94a3b8">{_lbl}</div>
+                            <div style="font-size:.85rem;color:{_clr};font-weight:700">
+                            {_icon} {_v:.3f}</div>
+                            </div>""", unsafe_allow_html=True)
+
+                    if _sa:
+                        _sa_clr = "#4ade80" if _sa < 3 else "#f59e0b" if _sa < 5 else "#ef4444"
+                        st.markdown(
+                            f"""<div style="background:#0f2033;border-top:2px solid {_sa_clr};
+                            border-radius:5px;padding:.4rem;text-align:center;margin:.2rem 0">
+                            <div style="font-size:.65rem;color:#94a3b8">SA Score (synth ease)</div>
+                            <div style="font-size:.85rem;color:{_sa_clr};font-weight:700">
+                            {_sa}/10 ({'Easy' if _sa<3 else 'Moderate' if _sa<5 else 'Hard'})</div>
+                            </div>""", unsafe_allow_html=True)
+
+                    # ADMET score
+                    _pass = sum(1 for _,k,t,h in _PANEL
+                                if _ar.get(k) is not None and
+                                ((_ar.get(k)>=t) if h else (_ar.get(k)<=t)))
+                    _admet_pct = _pass / len(_PANEL) * 100
+                    _admet_clr = "#4ade80" if _admet_pct>=75 else "#f59e0b" if _admet_pct>=50 else "#ef4444"
+                    st.markdown(
+                        f"""<div style="background:#0f2033;border:1px solid {_admet_clr}44;
+                        border-radius:6px;padding:.5rem;text-align:center;margin-top:.4rem">
+                        <span style="color:{_admet_clr};font-family:'Space Mono',monospace;
+                        font-size:.8rem;font-weight:700">
+                        ADMET Score: {_admet_pct:.0f}/100</span>
+                        <span style="color:#475569;font-size:.65rem;margin-left:.5rem">
+                        ({_pass}/{len(_PANEL)} properties pass)</span>
+                        </div>""", unsafe_allow_html=True)
 
         with _dc2:
             if smiles and VIEWER3D_OK:

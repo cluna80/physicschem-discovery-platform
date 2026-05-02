@@ -1,0 +1,37 @@
+{
+  "lead_id": "HNA_G031_double_mutant",
+  "smiles": "O=C(O)/C=C/c1ccc(O)cc1CCc1ccccc1",
+  "wt_affinity": -7.68,
+  "mutations_tested": [
+    "Q148R",
+    "G140S"
+  ],
+  "per_mutation_results": [
+    {
+      "mutation": "Q148R",
+      "wt_affinity": -7.68,
+      "mutant_affinity": -6.847,
+      "ddg": 0.8329999999999993,
+      "tier": "PENALIZED",
+      "n_poses": 8
+    },
+    {
+      "mutation": "G140S",
+      "wt_affinity": -7.68,
+      "mutant_affinity": -6.87,
+      "ddg": 0.8099999999999996,
+      "tier": "PENALIZED",
+      "n_poses": 8
+    }
+  ],
+  "robustness": {
+    "robustness_score": 87.7,
+    "tier": "ACCEPTABLE",
+    "avg_ddg": 0.82,
+    "max_ddg": 0.83,
+    "n_robust": 0,
+    "n_vulnerable": 0,
+    "n_total": 2
+  },
+  "timestamp": "20260501_190136"
+}

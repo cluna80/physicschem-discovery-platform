@@ -1,0 +1,132 @@
+[
+  {
+    "id": "SEED_INT_RAL_G013",
+    "smiles": "O=C(NCC(O)c1cc(F)cc(F)c1)c1cc(C(=O)CC2CCCNC2)on1",
+    "original_affinity": -8.767,
+    "target_affinities": {
+      "HIV_RT": -3.149,
+      "HIV_INTEGRASE": -8.287,
+      "HIV_PROTEASE": -4.519
+    },
+    "pan_hiv_score": 0.523424808530694,
+    "n_targets_hit": 1,
+    "resistance_coverage": {}
+  },
+  {
+    "id": "F002_G010",
+    "smiles": "c1ccc2c(C3CCCNC3)ccnc2c1",
+    "original_affinity": -6.687,
+    "target_affinities": {
+      "HIV_RT": -2.629,
+      "HIV_INTEGRASE": -6.925,
+      "HIV_PROTEASE": -3.904
+    },
+    "pan_hiv_score": 0.4408639212913868,
+    "n_targets_hit": 1,
+    "resistance_coverage": {}
+  },
+  {
+    "id": "SEED_INT_ISQ_G010",
+    "smiles": "c1cnc2c(C3CCCNC3)cccc2c1",
+    "original_affinity": -6.649,
+    "target_affinities": {
+      "HIV_RT": -2.581,
+      "HIV_INTEGRASE": -6.717,
+      "HIV_PROTEASE": -3.886
+    },
+    "pan_hiv_score": 0.43141149994108635,
+    "n_targets_hit": 1,
+    "resistance_coverage": {}
+  },
+  {
+    "id": "F006_G010",
+    "smiles": "c1ccc2c(C3CCCNC3)cncc2c1",
+    "original_affinity": -6.37,
+    "target_affinities": {
+      "HIV_RT": -2.662,
+      "HIV_INTEGRASE": -6.631,
+      "HIV_PROTEASE": -3.755
+    },
+    "pan_hiv_score": 0.4274326676092848,
+    "n_targets_hit": 1,
+    "resistance_coverage": {}
+  },
+  {
+    "id": "F006_G011",
+    "smiles": "c1ccc2c(C3CCCO3)cncc2c1",
+    "original_affinity": -5.77,
+    "target_affinities": {
+      "HIV_RT": -2.441,
+      "HIV_INTEGRASE": -5.815,
+      "HIV_PROTEASE": -3.989
+    },
+    "pan_hiv_score": 0.3977218864145163,
+    "n_targets_hit": 0,
+    "resistance_coverage": {}
+  },
+  {
+    "id": "F002_G011",
+    "smiles": "c1ccc2c(C3CCCO3)ccnc2c1",
+    "original_affinity": -5.653,
+    "target_affinities": {
+      "HIV_RT": -2.447,
+      "HIV_INTEGRASE": -5.738,
+      "HIV_PROTEASE": -3.698
+    },
+    "pan_hiv_score": 0.3871167432543891,
+    "n_targets_hit": 0,
+    "resistance_coverage": {}
+  },
+  {
+    "id": "F006_G008",
+    "smiles": "OCCc1cncc2ccccc12",
+    "original_affinity": -5.6,
+    "target_affinities": {
+      "HIV_RT": -2.305,
+      "HIV_INTEGRASE": -5.502,
+      "HIV_PROTEASE": -3.441
+    },
+    "pan_hiv_score": 0.36690235065394133,
+    "n_targets_hit": 0,
+    "resistance_coverage": {}
+  },
+  {
+    "id": "F002_G007",
+    "smiles": "OCc1ccnc2ccccc12",
+    "original_affinity": -5.22,
+    "target_affinities": {
+      "HIV_RT": -2.336,
+      "HIV_INTEGRASE": -5.25,
+      "HIV_PROTEASE": -3.707
+    },
+    "pan_hiv_score": 0.366416831624838,
+    "n_targets_hit": 0,
+    "resistance_coverage": {}
+  },
+  {
+    "id": "F006_G007",
+    "smiles": "OCc1cncc2ccccc12",
+    "original_affinity": -5.191,
+    "target_affinities": {
+      "HIV_RT": -2.254,
+      "HIV_INTEGRASE": -5.34,
+      "HIV_PROTEASE": -3.42
+    },
+    "pan_hiv_score": 0.3588926122304701,
+    "n_targets_hit": 0,
+    "resistance_coverage": {}
+  },
+  {
+    "id": "SEED_INT_ISQ_G001",
+    "smiles": "CCc1cccc2cccnc12",
+    "original_affinity": -5.314,
+    "target_affinities": {
+      "HIV_RT": -2.103,
+      "HIV_INTEGRASE": -5.328,
+      "HIV_PROTEASE": -3.42
+    },
+    "pan_hiv_score": 0.35343510074231177,
+    "n_targets_hit": 0,
+    "resistance_coverage": {}
+  }
+]

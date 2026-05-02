@@ -1,0 +1,2 @@
+id,smiles,target,dock_affinity,vina_affinity,validated
+SEED_INT_RAL_G004,O=C(NCC(O)c1cc(F)cc(F)c1)c1cc(C(=O)Cc2ccccc2F)on1,HIV_INTEGRASE,0,-9.572,True

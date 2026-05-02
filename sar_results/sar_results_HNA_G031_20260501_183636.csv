@@ -1,0 +1,12 @@
+compound_id,smiles,dock_affinity,MW,LogP,modification_type,confidence
+HNA_G031_link_10,N=C(O)/C=C/c1ccc(O)cc1CCc1ccccc1,-7.657,267.3,3.73,linker_replacement,25
+HNA_G031_insert_0_0,O=C(O)/C=C/c1ccc(O)cc1CCc1ccccc1,-7.332,268.3,3.28,linker_insertion,5
+HNA_G031_link_13,S(=O)=C(O)/C=C/c1ccc(O)cc1CCc1ccccc1,-7.159,300.4,3.09,linker_replacement,5
+HNA_G031_link_9,C=C(O)/C=C/c1ccc(O)cc1CCc1ccccc1,-6.817,266.3,4.26,linker_replacement,5
+HNA_G031_link_6,O=C(O)/C=C/c1ccc(O)cc1CNCc1ccccc1,-6.81,283.3,2.78,linker_replacement,25
+HNA_G031_link_11,S=C(O)/C=C/c1ccc(O)cc1CCc1ccccc1,-6.796,284.4,4.08,linker_replacement,5
+HNA_G031_link_2,O=S(O)/C=C/c1ccc(O)cc1CCc1ccccc1,-6.655,288.4,3.37,linker_replacement,5
+HNA_G031_link_0,O=CC(O)/C=C/c1ccc(O)cc1CCc1ccccc1,-6.649,282.3,2.75,linker_replacement,5
+HNA_G031_link_1,O=CCC(O)/C=C/c1ccc(O)cc1CCc1ccccc1,-6.626,296.4,3.14,linker_replacement,5
+HNA_G031_link_4,O=C(O)/C=C/c1ccc(O)cc1CCCc1ccccc1,-5.848,282.3,3.67,linker_replacement,5
+HNA_G031_link_7,O=C(O)/C=C/c1ccc(O)cc1CSCc1ccccc1,-5.833,300.4,3.92,linker_replacement,5

@@ -1,0 +1,246 @@
+"""
+sar_optimize.py — Round-2 SAR optimization runner
+Takes a lead compound, generates analogs/scaffold-hops/linker-variants,
+docks them through DockingAgent, validates through ValidatorAgent,
+and produces a leaderboard comparing the best analog to the original lead.
+"""
+import argparse, json, os, sys, time, logging, traceback
+from pathlib import Path
+from typing import List, Dict
+
+logging.basicConfig(level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s", datefmt="%H:%M:%S")
+log = logging.getLogger("SAR_OPT")
+
+# HIV integrase docking box (from admet_profiler.py)
+HIV_INTEGRASE_CENTER = (-38.5, 30.5, -20.8)
+HIV_INTEGRASE_SIZE   = (25, 25, 25)
+
+
+def import_engines():
+    try:
+        from sar_intelligence_engine import (
+            SARIntelligenceEngine, AnalogGeneratorAgent,
+            ScaffoldHopAgent, FragmentLinkerAgent)
+        log.info("[ok] SAR engine imported")
+    except ImportError as e:
+        log.error(f"[fail] SAR import: {e}"); sys.exit(1)
+    try:
+        import autonomous_drug_agent as ada
+        log.info("[ok] autonomous_drug_agent imported")
+    except ImportError as e:
+        log.error(f"[fail] ada import: {e}"); sys.exit(1)
+    return ada, AnalogGeneratorAgent, ScaffoldHopAgent, FragmentLinkerAgent
+
+
+class CLILog:
+    """Minimal AgentLogger compatible stub for command-line use."""
+    def log(self, agent, msg):
+        log.info(f"[{agent}] {msg}")
+
+
+def generate_all_analogs(lead_id, lead_smiles,
+                         analog_gen, scaffold_hop, linker_opt, cfg):
+    out = []
+    log.info(f"[1/3] AnalogGenerator on {lead_id}...")
+    try:
+        a = analog_gen.generate_analogs(lead_smiles=lead_smiles,
+            lead_id=lead_id,
+            modifications_per_position=cfg["mods_per_position"],
+            max_analogs=cfg["analogs_per_lead"])
+        log.info(f"      → {len(a)} analogs")
+        out.extend(a)
+    except Exception as e:
+        log.warning(f"      analog gen failed: {e}")
+
+    log.info(f"[2/3] ScaffoldHopper on {lead_id}...")
+    try:
+        h = scaffold_hop.find_scaffold_hops(lead_smiles=lead_smiles,
+            lead_id=lead_id, max_hops=cfg["scaffold_hops"])
+        log.info(f"      → {len(h)} scaffold hops")
+        out.extend(h)
+    except Exception as e:
+        log.warning(f"      scaffold hop failed: {e}")
+
+    log.info(f"[3/3] LinkerOptimizer on {lead_id}...")
+    try:
+        v = linker_opt.optimize_linkers(lead_smiles=lead_smiles,
+            lead_id=lead_id, max_linker_variants=cfg["linker_variants"])
+        log.info(f"      → {len(v)} linker variants")
+        out.extend(v)
+    except Exception as e:
+        log.warning(f"      linker opt failed: {e}")
+
+    seen, uniq = set(), []
+    for a in out:
+        smi = a.get("smiles")
+        if smi and smi not in seen:
+            seen.add(smi); uniq.append(a)
+    log.info(f"      total unique: {len(uniq)}")
+    return uniq
+
+
+def filter_drug_like(analogs):
+    try:
+        from rdkit import Chem
+        from rdkit.Chem import Descriptors, Crippen, rdMolDescriptors
+        from rdkit.Chem.FilterCatalog import FilterCatalog, FilterCatalogParams
+    except ImportError:
+        log.warning("[skip] RDKit missing — no drug-likeness filter")
+        return analogs
+    p = FilterCatalogParams()
+    p.AddCatalog(FilterCatalogParams.FilterCatalogs.PAINS)
+    pains = FilterCatalog(p)
+    kept = []
+    for a in analogs:
+        smi = a.get("smiles", "")
+        if not smi: continue
+        m = Chem.MolFromSmiles(smi)
+        if not m: continue
+        mw = Descriptors.MolWt(m)
+        logp = Crippen.MolLogP(m)
+        hbd = rdMolDescriptors.CalcNumHBD(m)
+        hba = rdMolDescriptors.CalcNumHBA(m)
+        if mw > 600 or logp > 5 or hbd > 5 or hba > 10: continue
+        if pains.HasMatch(m): continue
+        a["MW"] = round(mw, 1); a["LogP"] = round(logp, 2)
+        kept.append(a)
+    log.info(f"[filter] {len(kept)}/{len(analogs)} drug-like")
+    return kept
+
+
+def dock_analogs(analogs, receptor, ada, exhaustiveness=8):
+    if not analogs: return []
+    if not Path(receptor).exists():
+        log.error(f"[fail] receptor not found: {receptor}"); sys.exit(1)
+
+    DockingAgent = ada.DockingAgent
+    docker = DockingAgent(
+        logger=CLILog(),
+        receptor=receptor,
+        center=HIV_INTEGRASE_CENTER,
+        size=HIV_INTEGRASE_SIZE,
+        exhaustiveness=exhaustiveness,
+    )
+    log.info(f"[dock] docking {len(analogs)} analogs (exh={exhaustiveness})...")
+    docked = []
+    t0 = time.time()
+    for i, a in enumerate(analogs, 1):
+        smi = a.get("smiles")
+        cid = a.get("compound_id", f"ANA_{i:04d}")
+        if not smi: continue
+        try:
+            r = docker.dock(smi, cid)
+            if "affinity" in r:
+                a["dock_affinity"] = r["affinity"]
+                a["dock_poses"] = r.get("n_poses", 0)
+                a["id"] = cid
+                docked.append(a)
+                if i % 5 == 0 or i == len(analogs):
+                    best = min(d["dock_affinity"] for d in docked)
+                    log.info(f"  {i}/{len(analogs)} docked, best: {best:.2f}")
+            else:
+                log.debug(f"  {cid}: {r.get('error','no affinity')}")
+        except Exception as e:
+            log.debug(f"  {cid} exception: {e}")
+    dt = time.time() - t0
+    log.info(f"[dock] complete: {len(docked)}/{len(analogs)} in {dt:.0f}s")
+    return docked
+
+
+def validate_and_score(docked, target_key, ref_aff, ada):
+    if not docked: return []
+    log.info(f"[validate] running {len(docked)} compounds through ValidatorAgent...")
+    v = ada.ValidatorAgent(
+        logger=CLILog(),
+        selectivity_targets=[],
+        ref_affinity=ref_aff,
+        target_key=target_key,
+    )
+    return v.validate(docked)
+
+
+def write_leaderboard(validated, lead_id, lead_aff, out_dir):
+    out_dir = Path(out_dir); out_dir.mkdir(parents=True, exist_ok=True)
+    ts = time.strftime("%Y%m%d_%H%M%S")
+    ranked = sorted(
+        [v for v in validated if v.get("dock_affinity") is not None],
+        key=lambda v: v["dock_affinity"])
+
+    jp = out_dir / f"sar_leaderboard_{lead_id}_{ts}.json"
+    cp = out_dir / f"sar_results_{lead_id}_{ts}.csv"
+    with open(jp, "w", encoding="utf-8") as f:
+        json.dump(ranked, f, indent=2, default=str)
+    if ranked:
+        keys = ["compound_id", "smiles", "dock_affinity", "MW", "LogP",
+                "modification_type", "confidence"]
+        with open(cp, "w", encoding="utf-8") as f:
+            f.write(",".join(keys) + "\n")
+            for r in ranked:
+                row = [str(r.get(k, "")).replace(",", ";") for k in keys]
+                f.write(",".join(row) + "\n")
+
+    log.info("=" * 60)
+    log.info(f"SAR RESULT for {lead_id}")
+    log.info(f"  Original lead: {lead_aff:.3f} kcal/mol")
+    if ranked:
+        best = ranked[0]
+        log.info(f"  Best analog:   {best['dock_affinity']:.3f} kcal/mol "
+                f"({best.get('compound_id', '?')})")
+        log.info(f"  Improvement:   {lead_aff - best['dock_affinity']:+.3f} kcal/mol")
+        log.info(f"  SMILES:        {best.get('smiles', '')[:70]}")
+        log.info(f"  TOP 5:")
+        for i, r in enumerate(ranked[:5], 1):
+            log.info(f"    [{i}] {r.get('compound_id', '?'):<25} "
+                    f"aff={r['dock_affinity']:.2f} MW={r.get('MW', '?')} "
+                    f"conf={r.get('confidence', '?')}%")
+    else:
+        log.info("  No analogs scored.")
+    log.info(f"  Saved: {jp.name}")
+    log.info("=" * 60)
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--lead-id", required=True)
+    ap.add_argument("--smiles", required=True)
+    ap.add_argument("--reference-affinity", type=float, default=-9.43)
+    ap.add_argument("--target", default="HIV_DIP")
+    ap.add_argument("--receptor", default="hiv_integrase.pdbqt")
+    ap.add_argument("--analogs-per-lead", type=int, default=80)
+    ap.add_argument("--scaffold-hops", type=int, default=20)
+    ap.add_argument("--linker-variants", type=int, default=20)
+    ap.add_argument("--mods-per-position", type=int, default=10)
+    ap.add_argument("--exhaustiveness", type=int, default=8)
+    ap.add_argument("--out-dir", default="sar_results")
+    args = ap.parse_args()
+
+    log.info("=" * 60)
+    log.info("SAR INTELLIGENCE OPTIMIZATION RUNNER")
+    log.info("=" * 60)
+
+    ada, AnalogGen, ScaffoldHop, LinkerOpt = import_engines()
+    cfg = {
+        "mods_per_position": args.mods_per_position,
+        "analogs_per_lead":  args.analogs_per_lead,
+        "scaffold_hops":     args.scaffold_hops,
+        "linker_variants":   args.linker_variants,
+    }
+
+    log.info(f"\n>>> Optimizing {args.lead_id}: {args.smiles}")
+    log.info(f"    Original affinity: {args.reference_affinity} kcal/mol")
+
+    analogs = generate_all_analogs(
+        args.lead_id, args.smiles,
+        AnalogGen(), ScaffoldHop(), LinkerOpt(), cfg)
+    analogs = filter_drug_like(analogs)
+    if not analogs:
+        log.warning("no drug-like analogs"); sys.exit(0)
+
+    docked = dock_analogs(analogs, args.receptor, ada, args.exhaustiveness)
+    validated = validate_and_score(docked, args.target, args.reference_affinity, ada)
+    write_leaderboard(validated, args.lead_id, args.reference_affinity, args.out_dir)
+
+
+if __name__ == "__main__":
+    main()

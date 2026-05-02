@@ -1,0 +1,223 @@
+PhysicsChem Agent v2 - 2026-05-01 12:09:30.682227
+============================================================
+========================================================================
+  AUTONOMOUS DRUG DISCOVERY AGENT v2  -  HIV-1 Therapeutic DIP — Integrase Competitive Binder
+========================================================================
+[12:09:30] Orchestrator     Disease target  : HIV/AIDS â€” Therapeutic Viral Competition
+[12:09:30] Orchestrator     Receptor        : hiv_integrase.pdbqt
+[12:09:30] Orchestrator     Reference drug  : Dolutegravir (-9.43 kcal/mol)
+[12:09:30] Orchestrator     Fragment budget : 30
+[12:09:30] Orchestrator     Max iterations  : 2
+[12:09:30] Orchestrator     Confidence goal : 70%
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+[12:09:30] Orchestrator     ITERATION 1/2  (best confidence so far: 0%)
+------------------------------------------------------------------------
+[12:09:30] FragmentAgent    Loading fragment library (120 total)...
+[12:09:30] FragmentAgent    Selected 30 Ro3-compliant fragments (MW<=300, LogP<=3.5, HBD<=3)
+[12:09:31] FragmentAgent    PAINS filter removed 3 fragments
+[12:09:31] DockingAgent     Screening 27 fragments (exhaustiveness=12)...
+[12:09:31] DockingAgent     Threshold: affinity < -5.93 kcal/mol
+[12:09:34] DockingAgent       . F001     pyridine                         -4.21 kcal/mol  8 poses
+[12:09:38] DockingAgent       OK F002     quinoline                        -6.55 kcal/mol  8 poses
+[12:09:45] DockingAgent       OK F003     benzimidazole                    -6.20 kcal/mol  8 poses
+[12:09:51] DockingAgent       . F004     7-azaindole                      -5.84 kcal/mol  8 poses
+[12:09:55] DockingAgent       . F005     4-azaindole                      -5.80 kcal/mol  7 poses
+[12:10:00] DockingAgent       OK F006     isoquinoline                     -6.61 kcal/mol  8 poses
+[12:10:08] DockingAgent       . F007     2-aminoquinoline                 -5.66 kcal/mol  8 poses
+[12:10:16] DockingAgent       . F008     4-aminoquinazoline               -5.86 kcal/mol  8 poses
+[12:10:21] DockingAgent       . F009     adenine                          -5.61 kcal/mol  8 poses
+[12:10:24] DockingAgent       OK F010     quinoxaline                      -6.53 kcal/mol  7 poses
+[12:10:27] DockingAgent       OK F011     1,6-naphthyridine                -6.12 kcal/mol  8 poses
+[12:10:30] DockingAgent       . F012     pyrrolo[2,3-b]pyridine           -5.23 kcal/mol  8 poses
+[12:10:33] DockingAgent       . F014     indazole-2H                      -5.82 kcal/mol  8 poses
+[12:10:38] DockingAgent       . F015     2-aminopurine                    -5.77 kcal/mol  8 poses
+[12:10:41] DockingAgent       . F016     aniline                          -4.74 kcal/mol  7 poses
+[12:10:45] DockingAgent       . F017     4-fluoroaniline                  -5.35 kcal/mol  8 poses
+[12:10:48] DockingAgent       . F018     3-fluoroaniline                  -5.41 kcal/mol  8 poses
+[12:10:52] DockingAgent       . F019     4-chloroaniline                  -5.09 kcal/mol  8 poses
+[12:10:57] DockingAgent       . F020     4-trifluoromethylaniline         -5.17 kcal/mol  8 poses
+[12:11:01] DockingAgent       . F022     3-methylaniline                  -5.66 kcal/mol  8 poses
+[12:11:05] DockingAgent       . F023     4-cyanoaniline                   -4.83 kcal/mol  8 poses
+[12:11:08] DockingAgent       . F026     ethylamine                       -2.65 kcal/mol  8 poses
+[12:11:10] DockingAgent       . F027     N-methylethylamine               -3.04 kcal/mol  8 poses
+[12:11:12] DockingAgent       . F028     propyl                           -2.75 kcal/mol  8 poses
+[12:11:15] DockingAgent       . F029     butyl                            -3.09 kcal/mol  8 poses
+[12:11:17] DockingAgent       . F030     isobutyl                         -3.15 kcal/mol  8 poses
+[12:11:20] DockingAgent       . F031     diethylamine                     -3.14 kcal/mol  7 poses
+[12:11:20] DockingAgent     Fragment screening complete: 5/27 hit threshold
+[12:11:20] GrowingAgent     Using 4 target-specific seeds for HIV_DIP
+[12:11:20] Orchestrator     Top 9 fragment hits selected for growing
+------------------------------------------------------------------------
+[12:11:20] Orchestrator     Fitting 5-sigma null distribution from fragment scores...
+[12:11:20] HiggsTest        Null distribution: affinity = -5.03 +/- 1.23 kcal/mol (n=27)
+[12:11:20] HiggsTest        Fragment null median: -5.41 kcal/mol
+[12:11:20] HiggsTest        5-sigma threshold: -11.17 kcal/mol
+[12:11:20] HiggsTest        3-sigma threshold: -8.72 kcal/mol
+------------------------------------------------------------------------
+[12:11:20] GrowingAgent     Growing 9 fragment hits -> target leads...
+[12:11:20] GrowingAgent     Strategy: R-group + pharmacophore tail attachment
+[12:11:20] GrowingAgent       Growing SEED_DIP_HYP (hydroxypyrimidine Mg2+ chelator (DIP warhead)) - base affinity -6.50 kcal/mol
+[12:11:20] GrowingAgent         Generated 8 candidates -> docking top 15...
+[12:12:17] GrowingAgent       Growing SEED_DIP_DKA (diketo-acid fluorobenzyl (INSTI Mg2+ chelator)) - base affinity -7.20 kcal/mol
+[12:12:17] GrowingAgent         Generated 76 candidates -> docking top 15...
+[12:32:41] GrowingAgent       Growing SEED_DIP_NHP (dihydroxypyrimidine (dual Mg2+ chelation)) - base affinity -7.10 kcal/mol
+[12:32:41] GrowingAgent         Generated 73 candidates -> docking top 15...
+[12:42:51] GrowingAgent       Growing SEED_DIP_HNA (hydroxycinnamic acid (integrase anchor fragment)) - base affinity -6.80 kcal/mol
+[12:42:51] GrowingAgent         Generated 68 candidates -> docking top 15...
+[12:59:17] GrowingAgent       Growing F006 (isoquinoline) - base affinity -6.61 kcal/mol
+[12:59:17] GrowingAgent         Generated 12 candidates -> docking top 15...
+[13:00:19] GrowingAgent       Growing F002 (quinoline) - base affinity -6.55 kcal/mol
+[13:00:19] GrowingAgent         Generated 12 candidates -> docking top 15...
+[13:01:18] GrowingAgent       Growing F010 (quinoxaline) - base affinity -6.53 kcal/mol
+[13:01:18] GrowingAgent         Generated 66 candidates -> docking top 15...
+[13:09:51] GrowingAgent       Growing F003 (benzimidazole) - base affinity -6.20 kcal/mol
+[13:09:51] GrowingAgent         Generated 12 candidates -> docking top 15...
+[13:10:51] GrowingAgent       Growing F011 (1,6-naphthyridine) - base affinity -6.12 kcal/mol
+[13:10:51] GrowingAgent         Generated 74 candidates -> docking top 15...
+[13:19:49] GrowingAgent     Growth cycle complete: 119 compounds produced
+[13:19:49] HiggsTest        Significance scan: 0 x 5-sigma discoveries, 0 x 3-sigma evidence candidates
+[13:19:49] ADMETAgent       Profiling 119 compounds (ADMET-AI)...
+[13:19:50] ADMETAgent         XX FAIL  F010_G013      hERG=0.64  DILI=0.93
+[13:19:50] ADMETAgent         XX FAIL  F010_G011      hERG=0.72  DILI=0.78
+[13:19:51] ADMETAgent         XX FAIL  F011_G014      hERG=0.59  DILI=0.89
+[13:19:51] ADMETAgent         XX FAIL  F010_G010      hERG=0.47  DILI=0.81
+[13:19:52] ADMETAgent         XX FAIL  SEED_DIP_DKA_G011 hERG=0.61  DILI=0.85
+[13:19:52] ADMETAgent         XX FAIL  F010_G014      hERG=0.68  DILI=0.85
+[13:19:53] ADMETAgent         XX FAIL  F011_G010      hERG=0.44  DILI=0.85
+[13:19:53] ADMETAgent         XX FAIL  F010_G015      hERG=0.46  DILI=0.92
+[13:19:54] ADMETAgent         XX FAIL  F011_G013      hERG=0.62  DILI=0.93
+[13:19:54] ADMETAgent         XX FAIL  F011_G033      hERG=0.62  DILI=0.72
+[13:19:55] ADMETAgent         XX FAIL  SEED_DIP_HNA_G014 hERG=0.19  DILI=0.83
+[13:19:55] ADMETAgent         XX FAIL  SEED_DIP_HNA_G012 hERG=0.28  DILI=0.75
+[13:19:55] ADMETAgent         XX FAIL  F010_G012      hERG=0.79  DILI=0.73
+[13:19:56] ADMETAgent         XX FAIL  SEED_DIP_DKA_G018 hERG=0.22  DILI=0.91
+[13:19:56] ADMETAgent         XX FAIL  SEED_DIP_DKA_G012 hERG=0.68  DILI=0.83
+[13:19:57] ADMETAgent         XX FAIL  SEED_DIP_DKA_G013 hERG=0.43  DILI=0.93
+[13:19:57] ADMETAgent         XX FAIL  SEED_DIP_DKA_G014 hERG=0.45  DILI=0.86
+[13:19:57] ADMETAgent         XX FAIL  SEED_DIP_DKA_G006 hERG=0.09  DILI=0.83
+[13:19:58] ADMETAgent         XX FAIL  F010_G019      hERG=0.45  DILI=0.88
+[13:19:58] ADMETAgent         XX FAIL  SEED_DIP_NHP_G012 hERG=0.21  DILI=0.85
+[13:19:59] ADMETAgent         XX FAIL  F011_G015      hERG=0.46  DILI=0.93
+[13:19:59] ADMETAgent         XX FAIL  SEED_DIP_DKA_G021 hERG=0.06  DILI=0.94
+[13:20:00] ADMETAgent         XX FAIL  SEED_DIP_NHP_G014 hERG=0.07  DILI=0.96
+[13:20:00] ADMETAgent         XX FAIL  SEED_DIP_NHP_G011 hERG=0.15  DILI=0.88
+[13:20:00] ADMETAgent         XX FAIL  F010_G018      hERG=0.28  DILI=0.91
+[13:20:01] ADMETAgent         XX FAIL  SEED_DIP_HNA_G010 hERG=0.12  DILI=0.79
+[13:20:01] ADMETAgent         XX FAIL  SEED_DIP_DKA_G015 hERG=0.34  DILI=0.92
+[13:20:02] ADMETAgent         XX FAIL  SEED_DIP_HNA_G033 hERG=0.19  DILI=0.72
+[13:20:02] ADMETAgent         XX FAIL  SEED_DIP_HNA_G015 hERG=0.14  DILI=0.89
+[13:20:02] ADMETAgent         XX FAIL  F011_G030      hERG=0.54  DILI=0.71
+[13:20:03] ADMETAgent         XX FAIL  F010_G022      hERG=0.47  DILI=0.93
+[13:20:03] ADMETAgent         XX FAIL  F010_G016      hERG=0.60  DILI=0.88
+[13:20:04] ADMETAgent         XX FAIL  SEED_DIP_DKA_G016 hERG=0.46  DILI=0.90
+[13:20:04] ADMETAgent         XX FAIL  F011_G011      hERG=0.67  DILI=0.83
+[13:20:04] ADMETAgent         XX FAIL  F011_G003      hERG=0.21  DILI=0.90
+[13:20:05] ADMETAgent         XX FAIL  F011_G024      hERG=0.39  DILI=0.95
+[13:20:05] ADMETAgent         XX FAIL  F010_G024      hERG=0.40  DILI=0.93
+[13:20:06] ADMETAgent         XX FAIL  SEED_DIP_HNA_G034 hERG=0.31  DILI=0.69
+[13:20:06] ADMETAgent         XX FAIL  SEED_DIP_HNA_G030 hERG=0.17  DILI=0.69
+[13:20:06] ADMETAgent         XX FAIL  F010_G002      hERG=0.11  DILI=0.88
+[13:20:07] ADMETAgent         XX FAIL  F011_G019      hERG=0.46  DILI=0.90
+[13:20:07] ADMETAgent         XX FAIL  F010_G032      hERG=0.42  DILI=0.83
+[13:20:08] ADMETAgent         XX FAIL  SEED_DIP_HNA_G013 hERG=0.21  DILI=0.91
+[13:20:08] ADMETAgent         XX FAIL  SEED_DIP_DKA_G033 hERG=0.44  DILI=0.80
+[13:20:09] ADMETAgent         XX FAIL  SEED_DIP_NHP_G022 hERG=0.04  DILI=0.97
+[13:20:09] ADMETAgent         XX FAIL  SEED_DIP_DKA_G010 hERG=0.37  DILI=0.86
+[13:20:10] ADMETAgent         XX FAIL  F011_G005      hERG=0.09  DILI=0.96
+[13:20:10] ADMETAgent         XX FAIL  F011_G031      hERG=0.51  DILI=0.80
+[13:20:10] ADMETAgent         XX FAIL  F010_G007      hERG=0.09  DILI=0.96
+[13:20:11] ADMETAgent         XX FAIL  SEED_DIP_DKA_G019 hERG=0.33  DILI=0.90
+[13:20:11] ADMETAgent         XX FAIL  F010_G023      hERG=0.14  DILI=0.97
+[13:20:12] ADMETAgent         XX FAIL  SEED_DIP_HNA_G022 hERG=0.12  DILI=0.89
+[13:20:12] ADMETAgent         XX FAIL  F003_G003      hERG=0.40  DILI=0.91
+[13:20:13] ADMETAgent         XX FAIL  F011_G021      hERG=0.13  DILI=0.98
+[13:20:13] ADMETAgent         XX FAIL  F011_G002      hERG=0.10  DILI=0.89
+[13:20:14] ADMETAgent         XX FAIL  SEED_DIP_HNA_G011 hERG=0.23  DILI=0.78
+[13:20:14] ADMETAgent         XX FAIL  SEED_DIP_HNA_G021 hERG=0.05  DILI=0.93
+[13:20:14] ADMETAgent         XX FAIL  F011_G022      hERG=0.40  DILI=0.95
+[13:20:15] ADMETAgent         XX FAIL  SEED_DIP_HNA_G005 hERG=0.03  DILI=0.89
+[13:20:15] ADMETAgent         XX FAIL  SEED_DIP_NHP_G006 hERG=0.01  DILI=0.95
+[13:20:16] ADMETAgent         XX FAIL  SEED_DIP_NHP_G024 hERG=0.06  DILI=0.97
+[13:20:16] ADMETAgent         XX FAIL  SEED_DIP_HNA_G024 hERG=0.12  DILI=0.88
+[13:20:16] ADMETAgent         XX FAIL  SEED_DIP_HNA_G020 hERG=0.17  DILI=0.81
+[13:20:17] ADMETAgent         XX FAIL  SEED_DIP_HNA_G019 hERG=0.12  DILI=0.83
+[13:20:17] ADMETAgent         XX FAIL  F002_G003      hERG=0.41  DILI=0.76
+[13:20:18] ADMETAgent         XX FAIL  SEED_DIP_NHP_G016 hERG=0.10  DILI=0.96
+[13:20:18] ADMETAgent         XX FAIL  SEED_DIP_DKA_G020 hERG=0.42  DILI=0.88
+[13:20:19] ADMETAgent         XX FAIL  F002_G002      hERG=0.34  DILI=0.78
+[13:20:19] ADMETAgent         XX FAIL  SEED_DIP_DKA_G005 hERG=0.04  DILI=0.91
+[13:20:19] ADMETAgent         XX FAIL  SEED_DIP_DKA_G031 hERG=0.54  DILI=0.76
+[13:20:20] ADMETAgent         XX FAIL  SEED_DIP_NHP_G019 hERG=0.07  DILI=0.91
+[13:20:20] ADMETAgent         XX FAIL  SEED_DIP_NHP_G010 hERG=0.06  DILI=0.92
+[13:20:21] ADMETAgent         OK PASS  F002_G010      hERG=0.53  DILI=0.15
+[13:20:21] ADMETAgent         XX FAIL  SEED_DIP_NHP_G033 hERG=0.25  DILI=0.82
+[13:20:22] ADMETAgent         XX FAIL  F003_G002      hERG=0.33  DILI=0.92
+[13:20:22] ADMETAgent         XX FAIL  SEED_DIP_NHP_G013 hERG=0.09  DILI=0.97
+[13:20:22] ADMETAgent         XX FAIL  SEED_DIP_NHP_G015 hERG=0.07  DILI=0.97
+[13:20:23] ADMETAgent         XX FAIL  F006_G002      hERG=0.49  DILI=0.76
+[13:20:23] ADMETAgent         XX FAIL  SEED_DIP_NHP_G009 hERG=0.06  DILI=0.96
+[13:20:24] ADMETAgent         XX FAIL  SEED_DIP_NHP_G023 hERG=0.03  DILI=0.98
+[13:20:24] ADMETAgent         XX FAIL  SEED_DIP_NHP_G021 hERG=0.01  DILI=0.98
+[13:20:24] ADMETAgent         XX FAIL  F006_G009      hERG=0.52  DILI=0.74
+[13:20:25] ADMETAgent         XX FAIL  F006_G003      hERG=0.56  DILI=0.74
+[13:20:25] ADMETAgent         OK PASS  F006_G010      hERG=0.67  DILI=0.20
+[13:20:26] ADMETAgent         XX FAIL  SEED_DIP_HYP_G001 hERG=0.02  DILI=0.85
+[13:20:26] ADMETAgent         XX FAIL  F003_G009      hERG=0.39  DILI=0.91
+[13:20:27] ADMETAgent         XX FAIL  SEED_DIP_HYP_G002 hERG=0.03  DILI=0.87
+[13:20:27] ADMETAgent         XX FAIL  F002_G009      hERG=0.41  DILI=0.78
+[13:20:27] ADMETAgent         OK PASS  F003_G010      hERG=0.39  DILI=0.41
+[13:20:28] ADMETAgent         XX FAIL  SEED_DIP_HYP_G005 hERG=0.02  DILI=0.84
+[13:20:28] ADMETAgent         OK PASS  F006_G011      hERG=0.29  DILI=0.63
+[13:20:29] ADMETAgent         OK PASS  F002_G011      hERG=0.18  DILI=0.56
+[13:20:29] ADMETAgent         XX FAIL  F003_G011      hERG=0.13  DILI=0.88
+[13:20:29] ADMETAgent         OK PASS  SEED_DIP_HYP_G006 hERG=0.02  DILI=0.21
+[13:20:30] ADMETAgent         OK PASS  F006_G008      hERG=0.19  DILI=0.52
+[13:20:30] ADMETAgent         OK PASS  F002_G007      hERG=0.09  DILI=0.51
+[13:20:31] ADMETAgent         XX FAIL  F003_G006      hERG=0.11  DILI=0.77
+[13:20:31] ADMETAgent         XX FAIL  F003_G004      hERG=0.09  DILI=0.87
+[13:20:31] ADMETAgent         OK PASS  F006_G007      hERG=0.14  DILI=0.49
+[13:20:32] ADMETAgent         OK PASS  F002_G008      hERG=0.14  DILI=0.47
+[13:20:32] ADMETAgent         XX FAIL  F006_G004      hERG=0.23  DILI=0.65
+[13:20:33] ADMETAgent         XX FAIL  F003_G008      hERG=0.06  DILI=0.77
+[13:20:33] ADMETAgent         XX FAIL  F006_G001      hERG=0.30  DILI=0.47
+[13:20:33] ADMETAgent         XX FAIL  F003_G007      hERG=0.06  DILI=0.82
+[13:20:34] ADMETAgent         OK PASS  F002_G001      hERG=0.20  DILI=0.45
+[13:20:34] ADMETAgent         XX FAIL  F002_G012      hERG=0.32  DILI=0.44
+[13:20:35] ADMETAgent         XX FAIL  F006_G012      hERG=0.42  DILI=0.44
+[13:20:35] ADMETAgent         XX FAIL  F002_G006      hERG=0.30  DILI=0.36
+[13:20:36] ADMETAgent         XX FAIL  SEED_DIP_HYP_G007 hERG=0.01  DILI=0.76
+[13:20:36] ADMETAgent         XX FAIL  F006_G005      hERG=0.22  DILI=0.66
+[13:20:36] ADMETAgent         XX FAIL  F006_G006      hERG=0.35  DILI=0.41
+[13:20:37] ADMETAgent         OK PASS  F002_G005      hERG=0.13  DILI=0.63
+[13:20:37] ADMETAgent         XX FAIL  SEED_DIP_HYP_G004 hERG=0.00  DILI=0.68
+[13:20:38] ADMETAgent         OK PASS  F002_G004      hERG=0.13  DILI=0.62
+[13:20:38] ADMETAgent         XX FAIL  SEED_DIP_HYP_G008 hERG=0.01  DILI=0.71
+[13:20:39] ADMETAgent         XX FAIL  F003_G005      hERG=0.09  DILI=0.87
+[13:20:39] ADMETAgent         XX FAIL  F003_G012      hERG=0.13  DILI=0.74
+[13:20:39] ADMETAgent         XX FAIL  F003_G001      hERG=0.08  DILI=0.76
+[13:20:40] ADMETAgent         XX FAIL  SEED_DIP_HYP_G003 hERG=0.01  DILI=0.81
+[13:20:40] ADMETAgent       ADMET filter: 13/119 compounds pass
+[13:20:40] ValidatorAgent   Validating 13 compounds...
+[13:20:40] ValidatorAgent     OK GOOD  F002_G010       aff=-6.71  LE=0.419  conf=60%  [good LE, ADMET pass, DILI safe, drug-sized]
+[13:20:40] ValidatorAgent     OK GOOD  F006_G010       aff=-6.50  LE=0.406  conf=60%  [good LE, ADMET pass, DILI safe, drug-sized]
+[13:20:40] ValidatorAgent     - MODERATE  F003_G010       aff=-6.05  LE=0.378  conf=50%  [good LE, ADMET pass, drug-sized]
+[13:20:40] ValidatorAgent     OK GOOD  F006_G011       aff=-5.78  LE=0.386  conf=60%  [good LE, ADMET pass, hERG safe, drug-sized]
+[13:20:40] ValidatorAgent     OK GOOD  F002_G011       aff=-5.72  LE=0.381  conf=60%  [good LE, ADMET pass, hERG safe, drug-sized]
+[13:20:40] ValidatorAgent     OK GOOD  SEED_DIP_HYP_G006  aff=-5.46  LE=0.39  conf=70%  [good LE, ADMET pass, hERG safe, DILI safe, drug-sized]
+[13:20:40] ValidatorAgent     OK GOOD  F006_G008       aff=-5.46  LE=0.42  conf=60%  [good LE, ADMET pass, hERG safe, drug-sized]
+[13:20:40] ValidatorAgent     OK GOOD  F002_G007       aff=-5.40  LE=0.45  conf=60%  [good LE, ADMET pass, hERG safe, drug-sized]
+[13:20:40] ValidatorAgent     OK GOOD  F006_G007       aff=-5.37  LE=0.448  conf=60%  [good LE, ADMET pass, hERG safe, drug-sized]
+[13:20:40] ValidatorAgent     OK GOOD  F002_G008       aff=-5.37  LE=0.413  conf=60%  [good LE, ADMET pass, hERG safe, drug-sized]
+[13:20:40] ValidatorAgent     OK GOOD  F002_G001       aff=-5.20  LE=0.433  conf=60%  [good LE, ADMET pass, hERG safe, drug-sized]
+[13:20:40] ValidatorAgent     OK GOOD  F002_G005       aff=-5.01  LE=0.455  conf=60%  [good LE, ADMET pass, hERG safe, drug-sized]
+[13:20:40] ValidatorAgent     OK GOOD  F002_G004       aff=-4.99  LE=0.453  conf=60%  [good LE, ADMET pass, hERG safe, drug-sized]
+[13:20:40] Orchestrator     Iteration 1 best: confidence=70%  affinity=-5.46
+========================================================================
+[13:20:40] Orchestrator     ===  FINAL LEADERBOARD  (with 5-sigma significance)
+========================================================================
+[13:20:40] Orchestrator     Results saved -> agent_results_HIV_DIP_20260501_120930.csv
+[13:20:40] Orchestrator     Leaderboard -> agent_leaderboard_HIV_DIP_20260501_120930.json
+========================================================================
+========================================================================
+[13:20:40] Orchestrator     Campaign complete. Log -> agent_run_HIV_DIP_20260501_120930.log
