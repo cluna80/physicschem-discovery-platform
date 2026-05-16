@@ -544,9 +544,12 @@ def run_agent(target, frags, iters, exh):
         )
         # Write each line to file immediately
         with open(LIVE_LOG, "w", encoding="utf-8") as lf:
-            for line in iter(proc.stdout.readline, ""):
-                lf.write(line)
-                lf.flush()
+            if proc.stdout:
+                for line in iter(proc.stdout.readline, ""):
+                    lf.write(line)
+                    lf.flush()
+            else:
+                lf.write("[ERROR] Process stdout is None\n")
         proc.wait()
     except Exception as e:
         with open(LIVE_LOG, "a", encoding="utf-8") as lf:

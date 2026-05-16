@@ -199,7 +199,7 @@ def _canonicalize_row(c: dict, *, target: str, ref_drug: str,
     # Context
     row["target"]             = target
     row["reference_drug"]     = ref_drug or ""
-    row["reference_affinity"] = ref_aff if ref_aff is not None else ""
+    row["reference_affinity"] = str(ref_aff) if ref_aff is not None else "N/A"
     row["run_id"]             = run_id
     row["timestamp"]          = timestamp
 
@@ -445,8 +445,8 @@ class HiggsSignificanceTester:
         self._info(f"3-sigma threshold: {evid:.2f} kcal/mol")
 
     def z_score(self, affinity: float) -> float:
-        if self.null_mean is None:
-            raise RuntimeError("Call fit_null() before z_score()")
+        if not self.null_mean or not self.null_std:
+            return 0.0
         return (self.null_mean - affinity) / self.null_std
 
     def classify(self, affinity: float) -> dict:
