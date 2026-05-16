@@ -535,6 +535,7 @@ def run_agent(target, frags, iters, exh):
         except: pass
     try:
         env = os.environ.copy()
+        env["DASHBOARD_MODE"] = "1"
         env["PYTHONUNBUFFERED"] = "1"
         env["PYTHONIOENCODING"] = "utf-8"
         proc = subprocess.Popen(

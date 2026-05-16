@@ -1520,7 +1520,12 @@ class OrchestratorAgent:
 
         ts  = datetime.now().strftime("%Y%m%d_%H%M%S")
         self.run_id  = f"{target_key}_{ts}"
-        self.log     = AgentLogger(f"agent_run_{self.run_id}.log")
+        # Use fixed log file for dashboard mode, timestamped for CLI
+        if os.environ.get("DASHBOARD_MODE"):
+            logfile = "dashboard_live.log"
+        else:
+            logfile = f"agent_run_{self.run_id}.log"
+        self.log     = AgentLogger(logfile)
         self.results = []
         self.higgs   = None
 
@@ -1798,6 +1803,11 @@ class OrchestratorAgent:
         self._print_leaderboard(unique[:10])
         self._save_results(unique)
         self._print_certificate(unique[0] if unique else None)
+        
+        # Write done flag for dashboard mode
+        if os.environ.get("DASHBOARD_MODE"):
+            with open("dashboard_done.flag", "w") as f:
+                f.write("done")
 
     def _simulation_mode(self, p, frag_agent, admet_agent, valid_agent):
         self.log.log("Orchestrator",
@@ -1845,6 +1855,11 @@ class OrchestratorAgent:
         self._print_leaderboard(validated[:10])
         self._save_results(validated)
         self._print_certificate(validated[0] if validated else None)
+        
+        # Write done flag for dashboard mode
+        if os.environ.get("DASHBOARD_MODE"):
+            with open("dashboard_done.flag", "w") as f:
+                f.write("done")
 
     def _print_leaderboard(self, compounds: list):
         self.log.separator("=")
