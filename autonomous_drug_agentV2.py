@@ -49,6 +49,12 @@ from collections import defaultdict
 import numpy as np
 import pandas as pd
 
+try:
+    import requests
+    REQUESTS_AVAILABLE = True
+except ImportError:
+    REQUESTS_AVAILABLE = False
+
 warnings.filterwarnings('ignore')
 
 import os as _os, ctypes as _ctypes
@@ -124,6 +130,8 @@ CANONICAL_CSV_COLUMNS = [
     "half_life", "clearance_hep", "ppbr", "vdss",
     # Validation
     "confidence", "reasons",
+    # LLM Insights
+    "llm_insight",
     # Context
     "target", "reference_drug", "reference_affinity", "run_id", "timestamp",
 ]
@@ -195,6 +203,9 @@ def _canonicalize_row(c: dict, *, target: str, ref_drug: str,
     # Validation
     row["confidence"] = c.get("confidence", "")
     row["reasons"]    = "|".join(c.get("reasons", []))  # pipe-separated, CSV-safe
+
+    # LLM Insights
+    row["llm_insight"] = c.get("llm_insight", "")
 
     # Context
     row["target"]             = target
@@ -1446,6 +1457,86 @@ class ValidatorAgent:
 
 # ======================================================================
 # ORCHESTRATOR
+
+# ======================================================================
+# LLM ADVISOR AGENT (Optional Ollama Integration)
+# ======================================================================
+
+class LLMAdvisorAgent:
+    """
+    Optional agent that queries Ollama LLM for medicinal chemistry insights.
+    Activated when OLLAMA_MODEL env var is set (e.g., "hf.co/Cluna80/mutant-fbdd-gguf").
+    """
+    def __init__(self, logger: AgentLogger, target: str):
+        self.log = logger
+        self.target = target
+        self.ollama_url = "http://localhost:11434/api/generate"
+        self.model = os.environ.get("OLLAMA_MODEL", "")
+        self.enabled = bool(self.model and REQUESTS_AVAILABLE)
+        
+        if self.model and not REQUESTS_AVAILABLE:
+            self.log.log("LLMAdvisor", "⚠️  OLLAMA_MODEL set but requests library not available")
+        elif self.enabled:
+            self.log.log("LLMAdvisor", f"Enabled with model: {self.model}")
+    
+    def advise(self, compounds: list) -> list:
+        """
+        Query Ollama for insights on top compounds.
+        Returns compounds with 'llm_insight' field added.
+        """
+        if not self.enabled:
+            return compounds
+        
+        # Only advise on top 3 compounds
+        top_compounds = compounds[:3]
+        
+        for c in top_compounds:
+            smiles = c.get("smiles", "")
+            affinity = c.get("dock_affinity", "N/A")
+            compound_id = c.get("id", "unknown")
+            
+            prompt = (
+                f"Given SMILES: {smiles} with binding affinity {affinity} kcal/mol "
+                f"against {self.target}, provide 2 sentences of medicinal chemistry "
+                f"insights about this compound's potential as a drug candidate."
+            )
+            
+            try:
+                self.log.log("LLMAdvisor", f"Querying Ollama for {compound_id}...")
+                
+                response = requests.post(
+                    self.ollama_url,
+                    json={
+                        "model": self.model,
+                        "prompt": prompt,
+                        "stream": False
+                    },
+                    timeout=30
+                )
+                
+                if response.status_code == 200:
+                    result = response.json()
+                    insight = result.get("response", "").strip()
+                    c["llm_insight"] = insight
+                    self.log.log("LLMAdvisor", f"  {compound_id}: {insight[:100]}...")
+                else:
+                    c["llm_insight"] = f"Error: HTTP {response.status_code}"
+                    self.log.log("LLMAdvisor", f"  {compound_id}: HTTP {response.status_code}")
+                    
+            except requests.exceptions.ConnectionError:
+                c["llm_insight"] = "Ollama not available"
+                self.log.log("LLMAdvisor", f"  {compound_id}: Connection failed (is Ollama running?)")
+                self.enabled = False  # Disable for remaining compounds
+                break
+            except requests.exceptions.Timeout:
+                c["llm_insight"] = "Timeout"
+                self.log.log("LLMAdvisor", f"  {compound_id}: Timeout after 30s")
+            except Exception as e:
+                c["llm_insight"] = f"Error: {str(e)[:50]}"
+                self.log.log("LLMAdvisor", f"  {compound_id}: Error - {e}")
+        
+        return compounds
+
 # ======================================================================
 
 class OrchestratorAgent:
@@ -1800,6 +1891,12 @@ class OrchestratorAgent:
                 unique.append(c)
         self.results = unique
 
+        # Step 6: Optional LLM Advisor (if OLLAMA_MODEL env var set)
+        llm_agent = LLMAdvisorAgent(self.log, self.target_key)
+        if llm_agent.enabled:
+            self.log.separator("-")
+            unique = llm_agent.advise(unique)
+
         self._print_leaderboard(unique[:10])
         self._save_results(unique)
         self._print_certificate(unique[0] if unique else None)
@@ -1851,6 +1948,12 @@ class OrchestratorAgent:
         admet_passed = admet_agent.profile(grown)
         validated    = valid_agent.validate(admet_passed if admet_passed else grown)
         self.results = validated
+
+        # Optional LLM Advisor (if OLLAMA_MODEL env var set)
+        llm_agent = LLMAdvisorAgent(self.log, self.target_key)
+        if llm_agent.enabled:
+            self.log.separator("-")
+            validated = llm_agent.advise(validated)
 
         self._print_leaderboard(validated[:10])
         self._save_results(validated)
