@@ -8,6 +8,13 @@ import subprocess, sys, os, json, csv, time, re, threading
 from datetime import datetime
 from pathlib import Path
 
+# Requests for Ollama API
+try:
+    import requests
+    REQUESTS_OK = True
+except ImportError:
+    REQUESTS_OK = False
+
 # 3D visualization
 try:
     from viewer3d import render_3d_panel, render_ligand_spin
@@ -876,7 +883,7 @@ pharma partnerships or internal wet lab synthesis.
         st.info("💡 Tip: Start with **HIV Integrase** or **EGFR** — receptors are pre-prepared and ready to dock.")
 
 # ── Tab navigation ────────────────────────────────────────────────────
-_tab_discovery, _tab_library, _tab_optimize, _tab_validate, _tab_export = st.tabs(["🔬 Discovery Agent", "📚 Fragment Library", "⚡ Lead Optimizer", "🎯 Validate Leads", "💼 Hit Packages"])
+_tab_discovery, _tab_library, _tab_optimize, _tab_validate, _tab_export, _tab_chat = st.tabs(["🔬 Discovery Agent", "📚 Fragment Library", "⚡ Lead Optimizer", "🎯 Validate Leads", "💼 Hit Packages", "💬 Research Chat"])
 
 with _tab_discovery:
     pass  # placeholder — actual content below is already indented to page level
@@ -2577,3 +2584,191 @@ if best and not st.session_state["running"]:
 if st.session_state["running"]:
     time.sleep(1)
     st.rerun()
+
+
+# ══════════════════════════════════════════════════════════════════════
+# RESEARCH CHAT TAB
+# ══════════════════════════════════════════════════════════════════════
+with _tab_chat:
+    st.markdown("""<div style="font-family:'Space Mono',monospace;font-size:.7rem;
+    color:#00b4a0;text-transform:uppercase;letter-spacing:.1em;
+    border-bottom:2px solid #00b4a0;padding-bottom:.4rem;margin-bottom:1rem">
+    💬 Research Chat — LLM-Powered Medicinal Chemistry Advisor</div>""",
+    unsafe_allow_html=True)
+
+    if not REQUESTS_OK:
+        st.warning("⚠ requests library not available — install with: pip install requests")
+        st.stop()
+
+    # ── Info banner ───────────────────────────────────────────────────
+    st.markdown("""<div style="background:#0f2033;border-left:3px solid #8b5cf6;
+    border-radius:0 6px 6px 0;padding:.7rem 1rem;margin-bottom:1rem;
+    font-size:.72rem;color:#94a3b8;line-height:1.7">
+    <b style="color:#8b5cf6">Ollama LLM Integration</b><br>
+    Chat with a local LLM about your compounds. Requires Ollama running locally
+    (<code>ollama serve</code>) with a model pulled (e.g., <code>ollama pull llama3.2</code>).
+    The chat automatically loads context from your top 3 compounds.
+    </div>""", unsafe_allow_html=True)
+
+    # ── Initialize session state ──────────────────────────────────────
+    if "chat_history" not in st.session_state:
+        st.session_state.chat_history = []
+    if "chat_context_loaded" not in st.session_state:
+        st.session_state.chat_context_loaded = False
+
+    # ── Auto-load compound context ────────────────────────────────────
+    if not st.session_state.chat_context_loaded:
+        import glob as _glob_chat
+        import pandas as _pd_chat
+        
+        # Find latest agent results
+        _result_files = sorted(_glob_chat.glob("agent_results_*.csv"),
+                              key=os.path.getmtime, reverse=True)
+        if _result_files:
+            try:
+                _df_chat = _pd_chat.read_csv(_result_files[0])
+                if not _df_chat.empty and 'dock_affinity' in _df_chat.columns:
+                    # Get top 3 compounds
+                    _top3 = _df_chat.nsmallest(3, 'dock_affinity')
+                    _context_lines = ["**Loaded compound context:**\n"]
+                    for _, row in _top3.iterrows():
+                        _context_lines.append(
+                            f"- **{row.get('id','?')}**: "
+                            f"Affinity {row.get('dock_affinity','?'):.2f} kcal/mol, "
+                            f"MW {row.get('mw','?'):.1f}, "
+                            f"LogP {row.get('logp','?'):.2f}, "
+                            f"SMILES: `{row.get('smiles','?')[:50]}...`"
+                        )
+                    _context_msg = "\n".join(_context_lines)
+                    st.session_state.chat_history.append({
+                        "role": "assistant",
+                        "content": _context_msg
+                    })
+                    st.session_state.chat_context_loaded = True
+            except Exception as e:
+                st.info(f"Could not load compound context: {e}")
+
+    # ── Chat interface ────────────────────────────────────────────────
+    # Display chat history
+    for msg in st.session_state.chat_history:
+        with st.chat_message(msg["role"]):
+            st.markdown(msg["content"])
+
+    # Chat input
+    if prompt := st.chat_input("Ask about medicinal chemistry, ADMET, or your compounds..."):
+        # Add user message
+        st.session_state.chat_history.append({"role": "user", "content": prompt})
+        with st.chat_message("user"):
+            st.markdown(prompt)
+
+        # Query Ollama
+        with st.chat_message("assistant"):
+            with st.spinner("Thinking..."):
+                try:
+                    import requests as _req_chat
+                    
+                    # Build context from chat history
+                    _messages = []
+                    for msg in st.session_state.chat_history[-10:]:  # Last 10 messages
+                        _messages.append({
+                            "role": msg["role"],
+                            "content": msg["content"]
+                        })
+                    
+                    # Call Ollama API
+                    _ollama_url = "http://localhost:11434/api/generate"
+                    _model = os.getenv("OLLAMA_MODEL", "llama3.2")
+                    
+                    # Build prompt with context
+                    _full_prompt = f"""You are a medicinal chemistry expert. Answer questions about drug discovery, ADMET properties, and molecular design.
+
+Previous context:
+{chr(10).join([f"{m['role']}: {m['content'][:200]}" for m in _messages[-5:]])}
+
+User question: {prompt}
+
+Provide a concise, technical answer:"""
+
+                    _response = _req_chat.post(
+                        _ollama_url,
+                        json={
+                            "model": _model,
+                            "prompt": _full_prompt,
+                            "stream": False
+                        },
+                        timeout=30
+                    )
+                    
+                    if _response.status_code == 200:
+                        _answer = _response.json().get("response", "No response from LLM")
+                        st.markdown(_answer)
+                        st.session_state.chat_history.append({
+                            "role": "assistant",
+                            "content": _answer
+                        })
+                    else:
+                        _error_msg = f"❌ Ollama API error (status {_response.status_code}). Is Ollama running? Try: `ollama serve`"
+                        st.error(_error_msg)
+                        st.session_state.chat_history.append({
+                            "role": "assistant",
+                            "content": _error_msg
+                        })
+                        
+                except _req_chat.exceptions.ConnectionError:
+                    _error_msg = "❌ Cannot connect to Ollama. Start it with: `ollama serve`"
+                    st.error(_error_msg)
+                    st.session_state.chat_history.append({
+                        "role": "assistant",
+                        "content": _error_msg
+                    })
+                except Exception as e:
+                    _error_msg = f"❌ Error: {str(e)}"
+                    st.error(_error_msg)
+                    st.session_state.chat_history.append({
+                        "role": "assistant",
+                        "content": _error_msg
+                    })
+
+    # ── Chat controls ─────────────────────────────────────────────────
+    st.markdown("---")
+    _cc1, _cc2, _cc3 = st.columns([1, 1, 2])
+    
+    with _cc1:
+        if st.button("🗑 Clear Chat", width="stretch"):
+            st.session_state.chat_history = []
+            st.session_state.chat_context_loaded = False
+            st.rerun()
+    
+    with _cc2:
+        if st.button("🔄 Reload Context", width="stretch"):
+            st.session_state.chat_context_loaded = False
+            st.rerun()
+    
+    with _cc3:
+        _model_name = os.getenv("OLLAMA_MODEL", "llama3.2")
+        st.markdown(f"""<div style="background:#0f2033;border:1px solid #1e3a5f;
+        border-radius:6px;padding:.5rem;text-align:center;font-size:.7rem;color:#94a3b8">
+        Model: <span style="color:#8b5cf6;font-weight:700">{_model_name}</span>
+        </div>""", unsafe_allow_html=True)
+
+    # ── Usage tips ────────────────────────────────────────────────────
+    with st.expander("💡 Usage Tips"):
+        st.markdown("""
+        **Setup:**
+        1. Install Ollama: `winget install Ollama.Ollama` (Windows) or visit ollama.ai
+        2. Start server: `ollama serve`
+        3. Pull a model: `ollama pull llama3.2` (or llama3.1, mistral, etc.)
+        4. Set model: `$env:OLLAMA_MODEL="llama3.2"` (PowerShell) or `export OLLAMA_MODEL=llama3.2` (bash)
+        
+        **Example Questions:**
+        - "Explain the ADMET properties of my top compound"
+        - "What modifications could improve blood-brain barrier penetration?"
+        - "Compare the binding modes of compounds 1 and 2"
+        - "What are the risks of high LogP values?"
+        - "Suggest bioisosteric replacements for this scaffold"
+        
+        **Context:**
+        - Chat automatically loads your top 3 compounds from latest results
+        - Use "Reload Context" to refresh after new docking runs
+        - Chat history is preserved during session
+        """)
